@@ -1,0 +1,10 @@
+{
+  "Id": "VoidHeadWOTRNineSwords",
+  "DisplayName": "VoidHeadWOTRNineSwords",
+  "Author": "",
+  "Version": "0.1",
+  "ManagerVersion": "0.21.3",
+  "Requirements": [],
+  "AssemblyName": "VoidHeadWOTRNineSwords.dll",
+  "EntryMethod": "VoidHeadWOTRNineSwords.Main.Load"
+}

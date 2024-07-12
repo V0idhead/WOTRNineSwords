@@ -1,0 +1,602 @@
+[
+  {
+    "Key": "InitiatorLevel1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Initiator Level 1"
+  },
+  {
+    "Key": "InitiatorLevel2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Initiator Level 2"
+  },
+  {
+    "Key": "InitiatorLevel3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Initiator Level 3"
+  },
+  {
+    "Key": "InitiatorLevel4.Name",
+    "ProcessTemplates": false,
+    "enGB": "Initiator Level 4"
+  },
+  {
+    "Key": "InitiatorLevel5.Name",
+    "ProcessTemplates": false,
+    "enGB": "Initiator Level 5"
+  },
+  {
+    "Key": "InitiatorLevel6.Name",
+    "ProcessTemplates": false,
+    "enGB": "Initiator Level 6"
+  },
+  {
+    "Key": "InitiatorLevel7.Name",
+    "ProcessTemplates": false,
+    "enGB": "Initiator Level 7"
+  },
+  {
+    "Key": "InitiatorLevel8.Name",
+    "ProcessTemplates": false,
+    "enGB": "Initiator Level 8"
+  },
+  {
+    "Key": "InitiatorLevel9.Name",
+    "ProcessTemplates": false,
+    "enGB": "Initiator Level 9"
+  },
+  {
+    "Key": "InitiatorLevel1.Desc",
+    "enGB": "Can learn Maneuvers and Stances of Level 1"
+  },
+  {
+    "Key": "InitiatorLevel2.Desc",
+    "enGB": "Can learn Maneuvers and Stances of Level 2"
+  },
+  {
+    "Key": "InitiatorLevel3.Desc",
+    "enGB": "Can learn Maneuvers and Stances of Level 3"
+  },
+  {
+    "Key": "InitiatorLevel4.Desc",
+    "enGB": "Can learn Maneuvers and Stances of Level 4"
+  },
+  {
+    "Key": "InitiatorLevel5.Desc",
+    "enGB": "Can learn Maneuvers and Stances of Level 5"
+  },
+  {
+    "Key": "InitiatorLevel6.Desc",
+    "enGB": "Can learn Maneuvers and Stances of Level 6"
+  },
+  {
+    "Key": "InitiatorLevel7.Desc",
+    "enGB": "Can learn Maneuvers and Stances of Level 7"
+  },
+  {
+    "Key": "InitiatorLevel8.Desc",
+    "enGB": "Can learn Maneuvers and Stances of Level 8"
+  },
+  {
+    "Key": "InitiatorLevel9.Desc",
+    "enGB": "Can learn Maneuvers and Stances of Level 9"
+  },
+
+  {
+    "Key": "RecoverManeuvers.Name",
+    "ProcessTemplates": false,
+    "enGB": "Recover Maneuvers"
+  },
+  {
+    "Key": "RecoverManeuvers.Desc",
+    "enGB": "Recover one expended Maneuver."
+  },
+  {
+    "Key": "WarbladeC.Name",
+    "ProcessTemplates": false,
+    "enGB": "Warblade"
+  },
+  {
+    "Key": "WarbladeC.Desc",
+    "enGB": "The warblade was born for conflict. Swift, strong, enduring, and utterly confident in his martial skills, he seeks to test himself against worthy foes."
+  },
+  {
+    "Key": "WarbladeProficiencies.Name",
+    "ProcessTemplates": false,
+    "enGB": "Warblade proficiencies"
+  },
+  {
+    "Key": "WarbladeProficiencies.Desc",
+    "enGB": "You are proficient with simple and martial melee weapons (including those that can be used as thrown weapons), light and medium armor, and all shields except tower shields."
+  },
+  {
+    "Key": "WarbladeManeuverSelection.Name",
+    "ProcessTemplates": false,
+    "enGB": "Warblade Maneuver Selection"
+  },
+  {
+    "Key": "WarbladeManeuverSelection.Desc",
+    "enGB": "You begin your career with knowledge of three martial maneuvers. The disciplines available to you are Diamond Mind, Iron Heart, Stone Dragon, Tiger Claw, and White Raven."
+  },
+  {
+    "Key": "WarbladeStanceSelection.Name",
+    "ProcessTemplates": false,
+    "enGB": "Warblade Stance Selection"
+  },
+  {
+    "Key": "WarbladeStanceSelection.Desc",
+    "enGB": " You begin with knowledge of one 1st level stance from any discipline open to warblades. At 4th, 10th, and 16th level, you can choose additional stances. Unlike maneuvers, stances are not expended, and you do not have to ready them. All the stances you know are available to you at all times, and you can change the stance you are currently using as a swift action. A stance is an extraordinary ability unless otherwise stated in the stance description."
+  },
+  {
+    "Key": "BattleClarityReflex.Name",
+    "ProcessTemplates": false,
+    "enGB": "Battle Clarity (Reflex)"
+  },
+  {
+    "Key": "BattleClarityReflex.Desc",
+    "enGB": "As long as you are not flat-footed, you gain an insight bonus equal to your Intelligence bonus (maximum equals your warblade level) on your Reflex saves."
+  },
+  {
+    "Key": "BattleArdor.Name",
+    "ProcessTemplates": false,
+    "enGB": "Battle Ardor"
+  },
+  {
+    "Key": "BattleArdor.Desc",
+    "enGB": "You gain an insight bonus equal to your Intelligence bonus on rolls made to confirm critical hits."
+  },
+  {
+    "Key": "BattleCunning.Name",
+    "ProcessTemplates": false,
+    "enGB": "Battle Cunning"
+  },
+  {
+    "Key": "BattleCunning.Desc",
+    "enGB": "You gain an insight bonus equal to your Intelligence bonus on melee damage rolls against flat-footed or flanked opponents."
+  },
+  {
+    "Key": "BattleSkill.Name",
+    "ProcessTemplates": false,
+    "enGB": "Battle Skill"
+  },
+  {
+    "Key": "BattleSkill.Desc",
+    "enGB": "You gain an insight bonus equal to your Intelligence bonus Combat Maneuver Defense."
+  },
+  {
+    "Key": "BattleMastery.Name",
+    "ProcessTemplates": false,
+    "enGB": "Battle Mastery"
+  },
+  {
+    "Key": "BattleMastery.Desc",
+    "enGB": "You gain an insight bonus equal to your Intelligence bonus on melee attack rolls and melee damage rolls made whenever you make an attack of opportunity."
+  },
+
+  {
+    "Key": "PunishingStance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Punishing Stance"
+  },
+  {
+    "Key": "PunishingStanceBuff.Description",
+    "enGB": "Discipline: Iron Heart\nRequired Initiater Level: Warblade 1\nYou deal an extra 1d6 points of damage with all melee attacks and take a -2 penalty to AC."
+  },
+  {
+    "Key": "PunishingStance.Description",
+    "enGB": "You chop down violently with your weapon, lending extra force to your blows. These attacks come at a cost, as your enemies slash at your undefended legs and flanks. While you are in this stance, you deal an extra 1d6 points of damage with all melee attacks. You also take a -2 penalty to AC, because this fighting stance emphasizes power over a defensive posture."
+  },
+  {
+    "Key": "StoneBones.Name",
+    "ProcessTemplates": false,
+    "enGB": "Stone Bones"
+  },
+  {
+    "Key": "StoneBones.Desc",
+    "enGB": "Discipline: Stone Dragon\nManeuver Type: Strike\nRequired Initiater Level: Warblade 1, Swordsage 1\nWhen you use this maneuver, you make a single melee attack. If this attack hits, you gain damage reduction 5/adamantine for 1 round."
+  },
+  {
+    "Key": "ChargingMinotaur.Name",
+    "ProcessTemplates": false,
+    "enGB": "Charging Minotaur"
+  },
+  {
+    "Key": "ChargingMinotaur.Desc",
+    "enGB": "Discipline: Stone Dragon\nManeuver Type: Strike\nRequired Initiator Level: Warblade 1, Swordsage 1\nAs part of this maneuver, you make a bull rush attack as part of a charge. Neither the movement nor the bull rush attack provokes attacks of opportunity. Resolve the bull rush attempt normally. If your Strength check exceeds the opponents result, you deal bludgeoning damage equal to 2d6 + your Str modifier in addition to pushing the target back as normal. Assuming your Strength check is high enough, you can push your target back more than 5 feet (as normal for a bull rush, but without having to follow)."
+  },
+  {
+    "Key": "SteelyStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Steely Strike"
+  },
+  {
+    "Key": "SteelyStrike.Desc",
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Strike\nRequired Initiater Level: Warblade 1\nYou make a single melee attack as part of this strike. You gain a +4 bonus on the attack roll. All opponents other than the one you attacked gain a +4 bonus on attack rolls against you for 1 round."
+  },
+  {
+    "Key": "SapphireNightmareBlade.Name",
+    "ProcessTemplates": false,
+    "enGB": "Sapphire Nightmare Blade"
+  },
+  {
+    "Key": "SapphireNightmareBlade.Desc",
+    "enGB": "Discipline: Diamond Mind\nManeuver Type: Strike\nRequired Initiater Level: Warblade 1, Swordsage 1\nYou attempt a Perception check as part of this maneuver, using the target creatures AC as the DC of the check. You then make a single melee attack against your target. The attack is also part of this maneuver. If your Perception check succeeds,  you deal an extra 1d6 points of damage. If your check fails, your attack is made with a -2 penalty and deals normal damage."
+  },
+  {
+    "Key": "BolsteringVoice.Name",
+    "ProcessTemplates": false,
+    "enGB": "Bolstering Voice"
+  },
+  {
+    "Key": "BolsteringVoice.Desc",
+    "enGB": "Discipline: White Raven\nRequired Initiator Level: Warblade 1\nWhile you are in this stance, all allies within range who can hear you gain a +2 morale bonus on Will saves, and an additional +2 morale bonus on Will saves against fear effects."
+  },
+  {
+    "Key": "BolsteringVoice.BuffDesc",
+    "enGB": "While your ally is in this stance, you gain a +2 morale bonus on Will saves, and an additional +2 morale bonus on Will saves against fear effects."
+  },
+  {
+    "Key": "LeadingTheAttack.Name",
+    "ProcessTemplates": false,
+    "enGB": "Leading the Attack"
+  },
+  {
+    "Key": "LeadingTheAttack.Desc",
+    "enGB": "Discipline: White Raven\nManeuver Type: Strike\nRequired Initiater Level: Warblade 1\nAs part of this maneuver, you make a single melee attack. If your attack is successful, your allies gain a +4 morale bonus on attack rolls for 1 round against the creature you hit."
+  },
+  {
+    "Key": "BattleLeadersCharge.Name",
+    "ProcessTemplates": false,
+    "enGB": "Battle Leaders Charge"
+  },
+  {
+    "Key": "BattleLeadersCharge.Desc",
+    "enGB": "Discipline: White Raven\nManeuver Type: Strike\nRequired Initiater Level: Warblade 3, Swordsage 3\nAs part of this maneuver, you charge an opponent. You do not provoke attacks of opportunity for moving as part of this charge. If your charge attack hits, it deals an extra 10 points of damage."
+  },
+  {
+    "Key": "ClawAtTheMoon.Name",
+    "ProcessTemplates": false,
+    "enGB": "Claw at the Moon"
+  },
+  {
+    "Key": "ClawAtTheMoon.Desc",
+    "enGB": "Discipline: Tiger Claw\nManeuver Type: Strike\nRequired Initiater Level: Warblade 3, Swordsage 3\nAs part of this maneuver, you attempt a Jump check to leap into the air and make a melee attack that targets your foe's upper body, face, and neck. The Jump check's DC is equal to your target's AC. If this check succeeds, your attack deals an extra 2d6 points of damage. If this attack threatens a critical hit, you gain a +4 bonus on your roll to confirm the critical hit. If your check fails, you can still attack, but you do not deal extra damage or gain a bonus on a roll to confirm a critical hit. The maneuver is still considered expended."
+  },
+  {
+    "Key": "DisarmingStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Disarming Strike"
+  },
+  {
+    "Key": "DisarmingStrike.Desc",
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Strike\nRequired Initiater Level: Warblade 3, Swordsage 3\nThis maneuver allows you to combine a disarm attempt with a normal attack. You make a single melee attack as part of this strike. If this attack hits and deals damage, you can also attempt to disarm your opponent (PH 155). This disarm attempt does not provoke attacks of opportunity, nor is there any risk that your foe can disarm you."
+  },
+  {
+    "Key": "EmeraldRazor.Name",
+    "ProcessTemplates": false,
+    "enGB": "Emerald Razor"
+  },
+  {
+    "Key": "EmeraldRazor.Desc",
+    "enGB": "Discipline: Diamond Mind\nManeuver Type: Strike\nRequired Initiater Level: Warblade 3, Swordsage 3\nRequired Maneuvers: 1 Diamond Mind\nMake a single touch attack against an opponent. If you hit, you deal normal melee weapon damage."
+  },
+  {
+    "Key": "MountainHammer.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mountain Hammer"
+  },
+  {
+    "Key": "MountainHammer.Desc",
+    "enGB": "Discipline: Stone Dragon\nManeuver Type: Strike\nRequired Initiater Level: Warblade 3, Swordsage 3\nAs part of this maneuver, you make a single melee attack. This attack deals an extra 2d6 points of damage and automatically overcomes damage reduction and hardness."
+  },
+  {
+    "Key": "RabidWolfStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Rabid Wolf Strike"
+  },
+  {
+    "Key": "RabidWolfStrike.Desc",
+    "enGB": "Discipline: Tiger Claw\nManeuver Type: Strike\nRequired Initiater Level: Warblade 3, Swordsage 3\nAs part of this maneuver, you make a single melee attack. You gain a +4 bonus on this attack roll and deal an extra 2d6 points of damage. You take a -4 penalty to AC until the start of your next turn."
+  },
+  {
+    "Key": "StoneVise.Name",
+    "ProcessTemplates": false,
+    "enGB": "Stone Vise"
+  },
+  {
+    "Key": "StoneVise.Desc",
+    "enGB": "Discipline: Stone Dragon\nManeuver Type: Strike\nRequired Initiater Level: Warblade 3, Swordsage 3\nAs part of this maneuver, you make a single melee attack. This attack deals an extra 1d6 points of damage. Your attack also drops the target's speed to 0 feet for 1 round. It can otherwise act normally. A successful Fortitude save (DC 12 + your Str modifier) by the creature struck negates the immobilization, but not the extra damage."
+  },
+  {
+    "Key": "StoneVise.TargetBuff",
+    "enGB": "Movement set to 0 by Stone Vise."
+  },
+  {
+    "Key": "AbsoluteSteel.Name",
+    "ProcessTemplates": false,
+    "enGB": "Absolute Steel"
+  },
+  {
+    "Key": "AbsoluteSteel.Desc",
+    "enGB": "Discipline: Iron Heart\nRequired Initiater Level: Warblade 5\nRequired Maneuvers: 1 Iron Heart\nWhile you are in this stance, you gain a +10-foot enhancement bonus to your speed. If you move at least 10 feet during your turn, you gain a +2 dodge bonus to AC until the beginning of your next turn."
+  },
+  {
+    "Key": "ExorcismOfSteel.Name",
+    "ProcessTemplates": false,
+    "enGB": "Exorcism of Steel"
+  },
+  {
+    "Key": "ExorcismOfSteel.Desc",
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Strike\nRequired Initiater Level: Warblade 5\nRequired Maneuvers: 1 Iron Heart\nWhen you initiate this maneuver, you attack your opponent's weapon. If you succeed, your foe takes a -4 penalty on melee damage rolls for 1 minute. The wielder of the weapon can attempt a Will save (DC 13 + your Str modifier) to halve this penalty."
+  },
+  {
+    "Key": "FleshRipper.Name",
+    "ProcessTemplates": false,
+    "enGB": "Flesh Ripper"
+  },
+  {
+    "Key": "FleshRipper.Desc",
+    "enGB": "Discipline: Tiger Claw\nManeuver Type: Strike\nRequired Initiater Level: Warblade 5, Swordsage 5\nRequired Maneuvers: 2 Tiger Claw\nAs part of this maneuver, you make a melee attack against a single opponent. If this attack hits, the target must make a successful Fortitude save (DC 13 + your Str modifier) or take a -4 penalty on attacks and to AC for 1 round. If your attack is a critical hit, these penalties last for a number of rounds equal to your weapon's critical multiplier. This maneuver functions only against creatures that are vulnerable to critical hits."
+  },
+  {
+    "Key": "LionsRoar.Name",
+    "ProcessTemplates": false,
+    "enGB": "Lion's Roar (bugged)"
+  },
+  {
+    "Key": "LionsRoar.Desc",
+    "enGB": "After you have reduced an opponent to fewer than 0 hit points. You and allies within 60 feet gain a +5 morale bonus on damage rolls for 1 round."
+  },
+  {
+    "Key": "BonesplittingStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Bonesplitting Strike"
+  },
+  {
+    "Key": "BonesplittingStrike.Desc",
+    "enGB": "Discipline: Stone Dragon\nManeuver Type: Strike\nRequired Initiater Level: Warblade 7, Swordsage 7\nRequired Maneuvers: 2 Stone Dragon\nAs part of this maneuver, you make a single melee attack. If your attack hits, the target takes normal damage as well as 2 points of Constitution damage."
+  },
+  {
+    "Key": "BoundingAssault.Name",
+    "ProcessTemplates": false,
+    "enGB": "Bounding Assault"
+  },
+  {
+    "Key": "BoundingAssault.Desc",
+    "enGB": "Discipline: Diamond Mind\nManeuver Type: Strike\nRequired Initiater Level: Warblade 7, Swordsage 7\nRequired Maneuvers: 2 Diamond Mind\nAs part of this maneuver, make a double move. After you move, you can also make a melee attack. You gain a +2 bonus on this attack."
+  },
+  {
+    "Key": "MindStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mind Strike"
+  },
+  {
+    "Key": "MindStrike.Desc",
+    "enGB": "Discipline: Diamond Mind\nManeuver Type: Strike\nRequired Initiater Level: Warblade 7, Swordsage 7\nRequired Maneuvers: 2 Diamond Mind\nAs part of this maneuver, make a melee attack. If this attack hits, your target must make a Will save (DC 14 + your Str modifier) or take 1d4 points of Wisdom damage."
+  },
+  {
+    "Key": "MithralTornado.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mithral Tornado"
+  },
+  {
+    "Key": "MithralTornado.Desc",
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Strike\nRequired Initiater Level: Warblade 7\nRequired Maneuvers: 2 Iron Heart\nWhen you initiate this strike, you make a melee attack against every opponent adjacent to you."
+  },
+  {
+    "Key": "OverwhelmingMountainStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Overwhelming Mountain Strike"
+  },
+  {
+    "Key": "OverwhelmingMountainStrike.Desc",
+    "enGB": "Discipline: Stone Dragon\nManeuver Type: Strike\nRequired Initiater Level: Warblade 7, Swordsage 7\nAs part of this maneuver, you make a melee attack. This attack deals an extra 2d6 points of damage. Your attack also staggers the target for 1 round unless it makes a successful Fortitude save (DC 14 + your Str modifier)."
+  },
+  {
+    "Key": "RubyNightmareBlade.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ruby Nightmare Blade"
+  },
+  {
+    "Key": "RubyNightmareBlade.Desc",
+    "enGB": "Discipline: Diamond Mind\nManeuver Type: Strike\nRequired Initiater Level: Warblade 7, Swordsage 7\nRequired Maneuvers: 2 Diamond Mind\nYou attempt a Perception check as part of this maneuver, using the target creatures AC as the DC of the check. You then make a single melee attack against your target. The attack is also part of this maneuver. If your Perception check succeeds,  you deal double damage. If your check fails, your attack is made with a -2 penalty and deals normal damage."
+  },
+  {
+    "Key": "WhiteRavenStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "White Raven Strike"
+  },
+  {
+    "Key": "WhiteRavenStrike.Desc",
+    "enGB": "Discipline: White Raven\nManeuver Type: Strike\nRequired Initiater Level: Warblade 7\nRequired Maneuvers: 1 White Raven\nAs part of this maneuver, you make a single melee attack. If it hits, you deal an extra 4d6 points of damage, and the target is considered flat-footed until the start of his next turn."
+  },
+  {
+    "Key": "DancingBladeForm.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dancing Blade Form (bugged)"
+  },
+  {
+    "Key": "DancingBladeForm.Desc",
+    "enGB": "Discipline: Iron Heart\nRequired Initiater Level: Warblade 9\nRequired Maneuvers: 2 Iron Heart\nDoubles your reach."
+  },
+  {
+    "Key": "DancingMongoose.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dancing Mongoose"
+  },
+  {
+    "Key": "DancingMongoose.Desc",
+    "enGB": "Discipline: Tiger Claw\nManeuver Type: Boost\nRequired Initiater Level: Warblade 9, Swordsage 9\nRequired Maneuvers: 2 Tiger Claw\nAfter initiating this boost, you can make one additional attack with each weapon you wield."
+  },
+  {
+    "Key": "DazingStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dazing Strike"
+  },
+  {
+    "Key": "DazingStrike.Desc",
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Strike\nRequired Initiater Level: Warblade 9\nRequired Maneuvers: 2 Iron Heart\nYou make a single melee attack as part of this strike. If this attack hits, the target must make a Fortitude save (DC 15 + your Str modifier) or be dazed for 1 round."
+  },
+  {
+    "Key": "DisruptingBlow.Name",
+    "ProcessTemplates": false,
+    "enGB": "Disrupting Blow"
+  },
+  {
+    "Key": "DisruptingBlow.Desc",
+    "enGB": "Discipline: Diamond Mind\nManeuver Type: Strike\nRequired Initiater Level: Warblade 9, Swordsage 9\nRequired Maneuvers: 2 Diamond Mind\nYou make a single melee attack as part of this strike. If this attack hits, the target must make a Will save (DC 15 + your Str modifier) or be stunned for 1 round."
+  },
+  {
+    "Key": "ElderMountainHammer.Name",
+    "ProcessTemplates": false,
+    "enGB": "ElderMountain Hammer"
+  },
+  {
+    "Key": "ElderMountainHammer.Desc",
+    "enGB": "Discipline: Stone Dragon\nManeuver Type: Strike\nRequired Initiater Level: Warblade 9, Swordsage 9\nRequired Maneuvers: 2 Stone Dragon\nAs part of this maneuver, you make a single melee attack. This attack deals an extra 6d6 points of damage and automatically overcomes damage reduction and hardness."
+  },
+  {
+    "Key": "GiantsStance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Giant's Stance"
+  },
+  {
+    "Key": "GiantsStance.Desc",
+    "enGB": "Discipline: Stone Dragon\nRequired Initiater Level: Warblade 9, Swordsage 9\nRequired Maneuvers: 2 Stone Dragon\nWhile you are in this stance, you deal damage as if you were one size larger than normal."
+  },
+  {
+    "Key": "HearingTheAir.Name",
+    "ProcessTemplates": false,
+    "enGB": "Hearing the Air"
+  },
+  {
+    "Key": "HearingTheAir.Desc",
+    "enGB": "Discipline: Diamond Mind\nRequired Initiater Level: Warblade 9, Swordsage 9\nRequired Maneuvers: 2 Diamond Mind\nWhile you are in this stance, you gain blindsense out to 30 feet and a +5 insight bonus on Perception checks."
+  },
+  {
+    "Key": "PouncingCharge.Name",
+    "ProcessTemplates": false,
+    "enGB": "Pouncing Charge"
+  },
+  {
+    "Key": "PouncingCharge.Desc",
+    "enGB": "Discipline: Tiger Claw\nManeuver Type: Strike\nRequired Initiater Level: Warblade 9, Swordsage 9\nRequired Maneuvers: 2 Tiger Claw\nAs part of initiating this maneuver, you make a charge attack. Instead of making a single attack at the end of your charge, you can make a full attack."
+  },
+  {
+    "Key": "CrushingVise.Name",
+    "ProcessTemplates": false,
+    "enGB": "Crushing Vise"
+  },
+  {
+    "Key": "CrushingVise.Desc",
+    "enGB": "Discipline: Stone Dragon\nManeuver Type: Strike \nRequired Initiater Level: Warblade 11, Swordsage 11\nAs part of this maneuver, you make a melee attack. This attack deals an extra 4d6 points of damage. Your attack also drops the target's speed to 0 feet for 1 round. It can act normally in all other ways."
+  },
+  {
+    "Key": "IronBones.Name",
+    "ProcessTemplates": false,
+    "enGB": "Iron Bones"
+  },
+  {
+    "Key": "IronBones.Desc",
+    "enGB": "Discipline: Stone Dragon\nManeuver Type: Strike\nRequired Initiater Level: Warblade 11, Swordsage 11\nRequired Maneuvers: 2 Stone Dragon\nWhen you use this maneuver, you make a single melee attack. If this attack hits, you gain damage reduction 10/adamantine for 1 round."
+  },
+  {
+    "Key": "IronHeartEndurance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Iron Heart Endurance"
+  },
+  {
+    "Key": "IronHeartEndurance.Desc",
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Boost\nRequired Initiater Level: Warblade 11\nRequired Maneuvers: 2 Iron Heart\nInitiate this maneuver to heal hit points equal to twice your level."
+  },
+  {
+    "Key": "IrresistibleMountainStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Irresistible Mountain Strike"
+  },
+  {
+    "Key": "IrresistibleMountainStrike.Desc",
+    "enGB": "Discipline: Stone Dragon\nManeuver Type: Strike\nRequired Initiater Level: Warblade 11, Swordsage 11\nAs part of this maneuver, you make a melee attack. This attack deals an extra 4d6 points of damage. Your attack also staggers the target for 1 round unless it makes a successful Fortitude save (DC 16 + your Str modifier)."
+  },
+  {
+    "Key": "RabidBearStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Rabid Bear Strike"
+  },
+  {
+    "Key": "RabidBearStrike.Desc",
+    "enGB": "Discipline: Tiger Claw\nManeuver Type: Strike\nRequired Initiater Level: Warblade 11, Swordsage 11\nRequired Maneuvers: 2 Tiger Claw\nAs part of this maneuver, you make a single melee attack. You gain a +4 bonus on this attack roll and deal an extra 10d6 points of damage. You take a -4 penalty to AC until the start of your next turn."
+  },
+  {
+    "Key": "WarLeadersCharge.Name",
+    "ProcessTemplates": false,
+    "enGB": "War Leader's Charge"
+  },
+  {
+    "Key": "WarLeadersCharge.Desc",
+    "enGB": "Discipline: White Raven\nManeuver Type: Strike\nRequired Initiater Level: Warblade 6\nRequired Maneuvers: 2 White Raven\nAs part of this maneuver, you charge an opponent. You do not provoke attacks of opportunity for moving as part of this charge. If your charge attack hits, it deals an extra 35 points of damage."
+  },
+  {
+    "Key": "AncientMountainHammer.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ancient Mountain Hammer"
+  },
+  {
+    "Key": "AncientMountainHammer.Desc",
+    "enGB": "Discipline: Stone Dragon\nManeuver Type: Strike\nRequired Initiater Level: Warblade 13, Swordsage 13\nRequired Maneuvers: 3 Stone Dragon\nAs part of this maneuver, you make a single melee attack. This attack deals an extra 12d6 points of damage and automatically overcomes damage reduction and hardness."
+  },
+  {
+    "Key": "AvalancheOfBlades.Name",
+    "ProcessTemplates": false,
+    "enGB": "Avalanche of Blades"
+  },
+  {
+    "Key": "AvalancheOfBlades.Desc",
+    "enGB": "Discipline: Diamond Mind\nManeuver Type: Strike\nRequired Initiater Level: Warblade 13\nRequired Maneuvers: 3 Diamond Mind\nAs part of this maneuver, you make a single melee attack against an opponent. If that attack hits, you can then make another attack against that foe with a -4 penalty on your attack roll. If that attack hits, you can make another attack against that opponent with a -8 penalty. You continue to make additional attacks, each one with an additional -4 penalty, until you miss."
+  },
+  {
+    "Key": "ColossusStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Colossus Strike"
+  },
+  {
+    "Key": "ColossusStrike.Desc",
+    "enGB": "Discipline: Stone Dragon\nManeuver Type: Strike\nRequired Initiater Level: Warblade 13\nRequired Maneuvers: 2 Stone Dragon\nAs part of this maneuver, you make a melee attack against your foe. This attack deals an extra 6d6 points of damage, and the creature struck must succeed on a Fortitude save (DC 17 + your Str modifier) or be hurled 1d4 squares away from you, falling prone in that square."
+  },
+  {
+    "Key": "FinishingMove.Name",
+    "ProcessTemplates": false,
+    "enGB": "Finishing Move"
+  },
+  {
+    "Key": "FinishingMove.Desc",
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Strike\nRequired Initiater Level: Warblade 13\nRequired Maneuvers: 3 Iron Heart\nAs part of this maneuver, you make a melee attack against a creature. This attack deals an extra 4d6 points of damage. If the target's current hit points are less than its full normal hit points, the attack instead deals an extra 6d6 points of damage. If its hit points are equal to or less than one-half its full normal hit points, the attack instead deals an extra 14d6 points of damage."
+  },
+  {
+    "Key": "HamstringAttack.Name",
+    "ProcessTemplates": false,
+    "enGB": "Hamstring Attack"
+  },
+  {
+    "Key": "HamstringAttack.Desc",
+    "enGB": "Discipline: Tiger Claw\nManeuver Type: Strike\nRequired Initiater Level: Warblade 13, Swordsage 13\nRequired Maneuvers: 3 Tiger Claw\nAs part of this maneuver, you make a single melee attack. If this attack hits, it deals damage as normal. In addition, the target takes 1d8 points of Dexterity damage and a -10-foot penalty to speed for 1 minute. A successful Fortitude save (DC 17 + your Str modifier) halves both the Dexterity damage and the speed penalty."
+  },
+  {
+    "Key": "ScythingBlade.Name",
+    "ProcessTemplates": false,
+    "enGB": "Scything Blade"
+  },
+  {
+    "Key": "ScythingBlade.Desc",
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Strike\nRequired Initiater Level: Warblade 13\nRequired Maneuvers: 3 Iron Heart\nMake an attack as a switft action."
+  }
+
+  {
+    "Key": "nam.Name",
+    "ProcessTemplates": false,
+    "enGB": ""
+  },
+  {
+    "Key": "desc.Desc",
+    "enGB": ""
+  }
+]
