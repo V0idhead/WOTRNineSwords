@@ -52,7 +52,7 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
         .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
         .AddInitiatorAttackRollTrigger(
           onlyHit: true,
-          action: ActionsBuilder.New().ApplyBuff(leadingTheAttackBuff, ContextDuration.Fixed(1, DurationRate.Rounds), toCaster: true))
+          action: ActionsBuilder.New().ApplyBuff(leadingTheAttackBuff, ContextDuration.Fixed(1, DurationRate.Rounds)))
         .Configure();
 
       var ability = AbilityConfigurator.New("LeadingTheAttackAbility", "561A0E99-F2B2-4D2C-AD9B-3E2657A20059")
@@ -70,7 +70,7 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction
         (
-          ActionsBuilder.New().ApplyBuff(triggerBuff, ContextDuration.Fixed(1)).MeleeAttack()
+          ActionsBuilder.New().ApplyBuff(triggerBuff, ContextDuration.Fixed(1), toCaster: true).MeleeAttack()
         )
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();

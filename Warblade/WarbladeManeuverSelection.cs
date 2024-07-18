@@ -67,7 +67,8 @@ namespace VoidHeadWOTRNineSwords.Warblade
           ColossusStrike.Guid,
           FinishingMove.Guid,
           HamstringAttack.Guid,
-          ScythingBlade.Guid
+          ScythingBlade.Guid,
+          AdamantineBones.Guid
         ).Configure();
 
       return warbladeManeuverSelection;

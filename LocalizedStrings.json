@@ -589,6 +589,15 @@
     "Key": "ScythingBlade.Desc",
     "enGB": "Discipline: Iron Heart\nManeuver Type: Strike\nRequired Initiater Level: Warblade 13\nRequired Maneuvers: 3 Iron Heart\nMake an attack as a switft action."
   },
+  {
+    "Key": "AdamantineBones.Name",
+    "ProcessTemplates": false,
+    "enGB": "Adamantine Bones"
+  },
+  {
+    "Key": "AdamantineBones.Desc",
+    "enGB": "As part of this maneuver, you make a single melee attack. If this attack hits, you gain damage reduction 20/adamantine for 1 round."
+  },
 
   {
     "Key": "nam.Name",

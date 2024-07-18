@@ -19,6 +19,11 @@ using VoidHeadWOTRNineSwords.StoneDragon;
 using VoidHeadWOTRNineSwords.Warblade;
 using BlueprintCore.Actions.Builder.ContextEx;
 using VoidHeadWOTRNineSwords.Common;
+using BlueprintCore.Utils.Types;
+using Kingmaker.ElementsSystem;
+using Kingmaker.UnitLogic.Buffs.Blueprints;
+using VoidHeadWOTRNineSwords.Components;
+using Kingmaker.UnitLogic.Buffs;
 
 namespace VoidHeadWOTRNineSwords.IronHeart
 {
@@ -43,14 +48,17 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .SetCanTargetEnemies()
         .SetCanTargetFriends(false)
         .SetCanTargetSelf(false)
-        .SetRange(AbilityRange.Weapon)
+        .SetRange(AbilityRange.Personal)
         .SetActionType(UnitCommand.CommandType.Standard)
         .SetShouldTurnToTarget()
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
-        .AddAbilityEffectRunAction(
-            actions: ActionsBuilder.New().CastSpell(AbilityRefs.CleaveAction.Reference.Get())
-         )
+      /*.AddAbilityEffectRunAction(
+          actions: ActionsBuilder.New().CastSpell(AbilityRefs.CleaveAction.Reference.Get())
+       )*/
+        .AddAbilityTargetsAround(radius: new Kingmaker.Utility.Feet(5))
+        //.AddAbilityEffectRunAction(RecurseAttack(10))
+        .AddAbilityEffectRunAction(ActionsBuilder.New().MeleeAttack())
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
@@ -66,6 +74,14 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .AddPrerequisiteFeaturesFromList(amount: 2, features: AllManeuversAndStances.IronHeartGuids.Except([Guid]).ToList())
 #endif
         .Configure();
+    }
+
+    private static ActionList RecurseAttack(int count)
+    {
+      if (--count >= 0)
+        return ActionsBuilder.New().Add<MeleeAttackExtended>(attack => { attack.OnHit = RecurseAttack(count); attack.SelectNewTarget = true; }).Build();
+      else
+        return ActionsBuilder.New().Build();
     }
   }
 }
