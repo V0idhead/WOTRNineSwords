@@ -27,7 +27,7 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = FeatureRefs.PrimalDruidEnlargeFeature.Reference.Get().Icon;
+      UnityEngine.Sprite icon = AbilityRefs.EnlargePerson.Reference.Get().Icon;
 
       var buff = BuffConfigurator.New("GiantsStanceBuff", "C7ECF16E-F69A-4743-B80E-A099A2E8A307")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)

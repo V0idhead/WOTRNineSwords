@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.DiamondMind;
 using VoidHeadWOTRNineSwords.IronHeart;
 using VoidHeadWOTRNineSwords.StoneDragon;
+using VoidHeadWOTRNineSwords.TigerClaw;
 using VoidHeadWOTRNineSwords.WhiteRaven;
 
 namespace VoidHeadWOTRNineSwords.Warblade
@@ -29,6 +30,7 @@ namespace VoidHeadWOTRNineSwords.Warblade
         .SetAllFeatures(
           PunishingStance.Guid,
           BolsteringVoice.Guid,
+          HuntersSense.Guid,
           AbsoluteSteel.Guid,
           DancingBladeForm.Guid,
           GiantsStance.Guid,

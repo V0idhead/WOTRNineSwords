@@ -30,7 +30,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
       var buff = BuffConfigurator.New("HearingTheAirBuff", "44A094FB-2C1F-42DF-9D12-E0729EE71D1E")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
         .AddNotDispelable()
-        .AddComponent(new Blindsense { Range=new Kingmaker.Utility.Feet(30), Blindsight=false})
+        .AddComponent(new Blindsense { Range=new Kingmaker.Utility.Feet(30), Blindsight=true})
         .AddBuffSkillBonus(Kingmaker.EntitySystem.Stats.StatType.SkillPerception, 5, Kingmaker.Enums.ModifierDescriptor.Insight)
         .Configure();
 

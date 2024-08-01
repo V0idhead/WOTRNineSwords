@@ -5,6 +5,7 @@ using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
+using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Enums;
 using Kingmaker.RuleSystem;
@@ -41,6 +42,7 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
         .AddAttackBonus(4)
         .AddACBonusAgainstAttacks(armorClassBonus: -4)
+        //.AddACBonusUnlessFactMultiple(bonus: -4, facts: new List<BlueprintCore.Utils.Blueprint<Kingmaker.Blueprints.BlueprintUnitFactReference>> { help})
         .Configure();
 
       var ability = AbilityConfigurator.New(name, "0171AB25-FB5C-4562-AC1C-74F5078E5B5F")

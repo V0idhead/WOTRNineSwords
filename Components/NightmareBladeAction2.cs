@@ -28,10 +28,10 @@ namespace VoidHeadWOTRNineSwords.Components
         var caster = Context.MaybeCaster;
         var target = Context.MainTarget.Unit;
 
-        Game.Instance.Rulebook.TriggerEvent<RuleSkillCheck>(new RuleSkillCheck(caster, Kingmaker.EntitySystem.Stats.StatType.SkillPerception, target.Stats.AC));
+        var check = Game.Instance.Rulebook.TriggerEvent<RuleSkillCheck>(new RuleSkillCheck(caster, Kingmaker.EntitySystem.Stats.StatType.SkillPerception, target.Stats.AC));
+        check.Calculate();
 
-        var skillCheck = AbilityContext.RulebookContext?.LastEvent<RuleSkillCheck>();
-        if (skillCheck.Success)
+        if (check.Success)
           OnHigh.Run();
         else
           OnLow.Run();

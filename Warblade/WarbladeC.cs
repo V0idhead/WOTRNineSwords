@@ -39,8 +39,8 @@ namespace VoidHeadWOTRNineSwords.Warblade
       log.Info($"{nameof(WarbladeC)} configuring resource");
       var warbladeManeuverResource = AbilityResourceConfigurator.New("WarbladeManeuvers.Resource", ManeuverResourceGuid)
       //.SetMaxAmount(new BlueprintAbilityResource.Amount { BaseValue=3, IncreasedByLevel=true, StartingLevel=0, LevelStep=4, PerStepIncrease=1 })
-      .SetMaxAmount(ResourceAmountBuilder.New(3).IncreaseByLevelStartPlusDivStep(levelsPerStep: 4, bonusPerStep: 1))
-      .SetUseMax()
+      .SetMaxAmount(ResourceAmountBuilder.New(3).IncreaseByLevelStartPlusDivStep(classes: new string[] { Guid }, startingLevel: 1, levelsPerStep: 4, bonusPerStep: 1))
+      //.SetUseMax()
       //.AddPlayerLeaveCombatTrigger(ActionsBuilder.New().RestoreResource(ManeuverResourceGuid, 3)) //doesn't seem to do anything, which is a shame because now I need an end combat trigger on every maneuver
       .Configure();
 
@@ -89,6 +89,7 @@ namespace VoidHeadWOTRNineSwords.Warblade
       var battleCunning = BattleCunning.Configure();
       var battleSkill = BattleSkill.Configure();
       var battleMastery = BattleMastery.Configure();
+      var stanceMastery = StanceMastery.Configure();
       var stanceSelector = WarbladeStanceSelection.Configure();
       var maneuverSelector = WarbladeManeuverSelection.Configure();
 
@@ -118,7 +119,7 @@ namespace VoidHeadWOTRNineSwords.Warblade
         .AddEntry(16, stanceSelector.AssetGuid)
         .AddEntry(17, bonusFeatSelector, maneuverSelector.AssetGuid, InitiatorLevels.Lvl9Guid)
         .AddEntry(19, maneuverSelector.AssetGuid)
-        .AddEntry(20); //TODO: Stance mastery: two stances at the same timme
+        .AddEntry(20, stanceMastery.AssetGuid);
 
       var progression = ProgressionConfigurator.New("WarbladeProgression", "5BD44661-AEF3-48E1-8B11-3740A0BA9A31")
         .SetRanks(1)

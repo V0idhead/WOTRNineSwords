@@ -91,6 +91,16 @@
     "enGB": "Recover one expended Maneuver."
   },
   {
+    "Key": "ManeuverFocus.Name",
+    "ProcessTemplates": false,
+    "enGB": "Maneuver Focus"
+  },
+  {
+    "Key": "ManeuverFocus.Desc",
+    "enGB": "Your maneuvers are particualarly hard to resist.\nBenefit: Add +1 to the Difficulty Class for all saving throws against your maneuvers."
+  },
+
+  {
     "Key": "WarbladeC.Name",
     "ProcessTemplates": false,
     "enGB": "Warblade"
@@ -170,6 +180,15 @@
   {
     "Key": "BattleMastery.Desc",
     "enGB": "You gain an insight bonus equal to your Intelligence bonus on melee attack rolls and melee damage rolls made whenever you make an attack of opportunity."
+  },
+  {
+    "Key": "StanceMastery.Name",
+    "ProcessTemplates": false,
+    "enGB": "Stance Mastery"
+  },
+  {
+    "Key": "StanceMastery.Desc",
+    "enGB": "At 20th level, you can have two stances active simultaneously."
   },
 
   {
@@ -470,7 +489,7 @@
   },
   {
     "Key": "HearingTheAir.Desc",
-    "enGB": "Discipline: Diamond Mind\nRequired Initiater Level: Warblade 9, Swordsage 9\nRequired Maneuvers: 2 Diamond Mind\nWhile you are in this stance, you gain blindsense out to 30 feet and a +5 insight bonus on Perception checks."
+    "enGB": "Discipline: Diamond Mind\nRequired Initiater Level: Warblade 9, Swordsage 9\nRequired Maneuvers: 2 Diamond Mind\nWhile you are in this stance, you gain blindsight out to 30 feet and a +5 insight bonus on Perception checks."
   },
   {
     "Key": "PouncingCharge.Name",
@@ -596,13 +615,22 @@
   },
   {
     "Key": "AdamantineBones.Desc",
-    "enGB": "As part of this maneuver, you make a single melee attack. If this attack hits, you gain damage reduction 20/adamantine for 1 round."
+    "enGB": "Discipline: Stone Dragon\nManeuver Type: Strike\nRequired Initiater Level: Warblade 15, Swordsage 15\nRequired Maneuvers: 3 Stone Dragon\nAs part of this maneuver, you make a single melee attack. If this attack hits, you gain damage reduction 20/adamantine for 1 round."
+  },
+  {
+    "Key": "HuntersSense.Name",
+    "ProcessTemplates": false,
+    "enGB": "Hunters Sense"
+  },
+  {
+    "Key": "HuntersSense.Desc",
+    "enGB": "Discipline: Tiger Claw\nRequired Initiater Level: Warblade 1, Swordsage 1\nAs long as you are in this stance, you gain Blindsense up to 30ft."
   },
 
   {
     "Key": "nam.Name",
     "ProcessTemplates": false,
-    "enGB": ""
+    "enGB": "identifier"
   },
   {
     "Key": "desc.Desc",

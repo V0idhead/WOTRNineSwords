@@ -21,6 +21,8 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Utils.Types;
 using VoidHeadWOTRNineSwords.Common;
+using Kingmaker.UnitLogic.Buffs;
+using VoidHeadWOTRNineSwords.Components;
 
 namespace VoidHeadWOTRNineSwords.IronHeart
 {
@@ -58,9 +60,13 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .SetShouldTurnToTarget()
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
-        .AddAbilityEffectRunAction(
-            actions: ActionsBuilder.New().ApplyBuff(triggerBuff, ContextDuration.Fixed(1)).MeleeAttack()
-         )
+      /*.AddAbilityEffectRunAction(
+          actions: ActionsBuilder.New().ApplyBuff(triggerBuff, ContextDuration.Fixed(1)).MeleeAttack()
+       )*/
+        .AddAbilityEffectRunAction
+      (
+          ActionsBuilder.New().Add<MeleeAttackExtended>(attack => { attack.OnHit = ActionsBuilder.New().CombatManeuver(ActionsBuilder.New(), Kingmaker.RuleSystem.Rules.CombatManeuver.Disarm, newStat: Kingmaker.EntitySystem.Stats.StatType.Strength).Build(); })
+        )
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 

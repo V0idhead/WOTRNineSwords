@@ -4,6 +4,7 @@ using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
+using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Enums;
@@ -48,7 +49,7 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .SetDescription(desc)
         .SetIcon(icon)
         .AddInitiatorAttackRollTrigger(onlyHit: true,
-          action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value= 12, Property = Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength, ValueType = ContextValueType.CasterProperty},
+          action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 12 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
             onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(targetBuff, ContextDuration.Fixed(1))
             )
           )

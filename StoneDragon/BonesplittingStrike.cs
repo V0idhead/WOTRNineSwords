@@ -16,6 +16,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Warblade;
 using VoidHeadWOTRNineSwords.WhiteRaven;
 
@@ -41,13 +42,6 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .AddStatBonus(Kingmaker.Enums.ModifierDescriptor.StatDamage, stat: Kingmaker.EntitySystem.Stats.StatType.Constitution, value: -2)
         .Configure();
 
-      var triggerBuff = BuffConfigurator.New("BonesplittingStrikeTriggerBuff", "B5C0F836-B660-42C7-907F-A9106FA0A157")
-        .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-        .AddInitiatorAttackRollTrigger(
-          onlyHit: true,
-          action: ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(4, DurationRate.Hours)))
-        .Configure();
-
       var ability = AbilityConfigurator.New("BonesplittingStrikeAbility", "A0CBA7B9-3DEA-45E1-A91F-EF37E5D8891B")
         .SetDisplayName(name)
         .SetDescription(desc)
@@ -63,7 +57,7 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction
         (
-          ActionsBuilder.New().ApplyBuff(triggerBuff, ContextDuration.Fixed(1)).MeleeAttack()
+          ActionsBuilder.New().Add<MeleeAttackExtended>(attack => { attack.OnHit = ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(4, DurationRate.Hours)).Build(); })
         )
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();

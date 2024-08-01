@@ -38,6 +38,11 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
 
       log.Info($"Configuring {nameof(ChargingMinotaur)}");
 
+      var buff = BuffConfigurator.New("ChargingMinotaurBuff", "B2AE1B4A-712A-4B25-AFF7-265E39A31E73")
+        .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+        .AddACBonusAgainstAttackOfOpportunity(new ContextValue { Value = 50 }) //not quite the same as not provoking attacks of opportunity since the enemies attack of opportunity will be wasted, but good enough
+        .Configure();
+
       var ability = AbilityConfigurator.New("ChargingMinotaurAbility", "A1529257-E0AF-4D6E-B4A3-5816D7A0E18C")
         .SetDisplayName(name)
         .SetDescription("ChargingMinotaur.Desc")
@@ -46,13 +51,13 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .SetCanTargetEnemies()
         .SetCanTargetFriends(false)
         .SetCanTargetSelf(false)
-        .SetRange(AbilityRange.Touch)
+        .SetRange(AbilityRange.DoubleMove)
         .SetActionType(UnitCommand.CommandType.Standard)
         .SetShouldTurnToTarget()
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction(
-            actions: ActionsBuilder.New().CombatManeuver(type: Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush,
+            actions: ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).CastSpell(AbilityRefs.ChargeAbility.ToString()).CombatManeuver(type: Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush,
               onSuccess: ActionsBuilder.New().DealDamage(new DamageTypeDescription { Physical = new DamageTypeDescription.PhysicalData { Form=PhysicalDamageForm.Bludgeoning } }, new ContextDiceValue { DiceType = Kingmaker.RuleSystem.DiceType.D6, DiceCountValue = 2, BonusValue = new ContextValue { Property = UnitProperty.StatBonusStrength } })
             )
          )
