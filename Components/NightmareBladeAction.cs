@@ -1,19 +1,18 @@
 ﻿using BlueprintCore.Utils;
+using Kingmaker;
 using Kingmaker.ElementsSystem;
+using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace VoidHeadWOTRNineSwords.Components
 {
-  public class NightmareBladeAction : ContextAction
+  public class NightmareBladeAction : ContextActionSavingThrow
   {
-    Random r = new Random();
-
     public ActionList OnHigh = Constants.Empty.Actions;
     public ActionList OnLow = Constants.Empty.Actions;
 
@@ -29,8 +28,11 @@ namespace VoidHeadWOTRNineSwords.Components
         var caster = Context.MaybeCaster;
         var target = Context.MainTarget.Unit;
 
-        int rollVal = r.Next(1, 20); //TODO: replace with Pathfinder-Roll?
-        if (rollVal + caster.Stats.SkillPerception.ModifiedValue >= target.Stats.AC)
+        var check = Game.Instance.Rulebook.TriggerEvent<RuleSkillCheck>(new RuleSkillCheck(caster, Kingmaker.EntitySystem.Stats.StatType.SkillPerception, target.Stats.AC));
+        //check.Calculate();
+        check.RollD20();
+
+        if (check.Success)
           OnHigh.Run();
         else
           OnLow.Run();

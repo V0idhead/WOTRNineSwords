@@ -20,6 +20,7 @@ using VoidHeadWOTRNineSwords.Warblade;
 using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.UnitLogic.Buffs;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 
 namespace VoidHeadWOTRNineSwords.IronHeart
 {
@@ -55,13 +56,13 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
         .AddInitiatorAttackRollTrigger(
           onlyHit: true,
-          action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Will, customDC: new ContextValue { Value = 13, m_AbilityParameter = AbilityParameterType.CasterStatBonus, Property = Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength, ValueType = ContextValueType.CasterProperty })
-            .ConditionalSaved
-            (
-              failed: ActionsBuilder.New().ApplyBuff(buffSaveFailed, ContextDuration.Fixed(1, DurationRate.Minutes)),
-              succeed: ActionsBuilder.New().ApplyBuff(buffSaveSucced, ContextDuration.Fixed(1, DurationRate.Minutes))
-            )
-        )
+          action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Will, customDC: new ContextValue { Value = 13 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
+            onResult: ActionsBuilder.New().ConditionalSaved
+              (
+                failed: ActionsBuilder.New().ApplyBuff(buffSaveFailed, ContextDuration.Fixed(1, DurationRate.Minutes)),
+                succeed: ActionsBuilder.New().ApplyBuff(buffSaveSucced, ContextDuration.Fixed(1, DurationRate.Minutes))
+              )
+          ))
         .Configure();
 
       var ability = AbilityConfigurator.New("ExorcismOfSteelAbility", "D1DA7EF9-0854-492F-A7D2-64BF45AC889A")

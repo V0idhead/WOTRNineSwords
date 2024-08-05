@@ -19,6 +19,7 @@ using VoidHeadWOTRNineSwords.Warblade;
 using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.Settings;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 
 namespace VoidHeadWOTRNineSwords.TigerClaw
 {
@@ -44,23 +45,12 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
 
       var triggerBuff = BuffConfigurator.New("FleshRipperTriggerBuff", "3F78B37E-C8E4-4793-A4A8-87EA64943CBB")
         .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-        .AddInitiatorAttackRollTrigger(
-          onlyHit: true,
-          criticalHit: true,
-          action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 13, m_AbilityParameter = AbilityParameterType.CasterStatBonus, Property = Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength, ValueType = ContextValueType.CasterProperty })
-            .ConditionalSaved
-            (
-              failed: ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1, DurationRate.Minutes))
-            )
-        )
-        .AddInitiatorAttackRollTrigger(
-          onlyHit: true,
-          action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 13, m_AbilityParameter = AbilityParameterType.CasterStatBonus, Property = Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength, ValueType = ContextValueType.CasterProperty })
-            .ConditionalSaved
-            (
-              failed: ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1, DurationRate.Rounds))
-            )
-        )
+        .AddInitiatorAttackRollTrigger(onlyHit: true, criticalHit: true,
+          action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 13 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
+            onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1, DurationRate.Minutes)))))
+        .AddInitiatorAttackRollTrigger(onlyHit: true, criticalHit: true,
+          action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 13 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
+            onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1, DurationRate.Rounds)))))
         .Configure();
 
       var ability = AbilityConfigurator.New("FleshRipperAbility", "40970405-6389-476A-888B-E620F2184943")

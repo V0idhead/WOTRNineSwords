@@ -58,10 +58,8 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
         .SetDescription(desc)
         .SetIcon(icon)
         .AddInitiatorAttackRollTrigger(onlyHit: true,
-          action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 17, Property = Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength, ValueType = ContextValueType.CasterProperty },
-            onResult: ActionsBuilder.New().ConditionalSaved(
-              failed: ActionsBuilder.New().ApplyBuff(targetBuff, ContextDuration.Fixed(1))
-            )
+          action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 17 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
+            onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(targetBuff, ContextDuration.Fixed(1)))
           )
         )
         .Configure();

@@ -56,8 +56,9 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .SetShouldTurnToTarget()
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
+        .AddAbilityCustomCharge()
         .AddAbilityEffectRunAction(
-            actions: ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).CastSpell(AbilityRefs.ChargeAbility.ToString()).CombatManeuver(type: Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush,
+            actions: ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).CombatManeuver(type: Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush,
               onSuccess: ActionsBuilder.New().DealDamage(new DamageTypeDescription { Physical = new DamageTypeDescription.PhysicalData { Form=PhysicalDamageForm.Bludgeoning } }, new ContextDiceValue { DiceType = Kingmaker.RuleSystem.DiceType.D6, DiceCountValue = 2, BonusValue = new ContextValue { Property = UnitProperty.StatBonusStrength } })
             )
          )

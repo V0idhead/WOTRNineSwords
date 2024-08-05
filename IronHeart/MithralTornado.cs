@@ -48,7 +48,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .SetCanTargetEnemies()
         .SetCanTargetFriends(false)
         .SetCanTargetSelf(false)
-        .SetRange(AbilityRange.Personal)
+        //.SetRange(AbilityRange.Personal)
         .SetActionType(UnitCommand.CommandType.Standard)
         .SetShouldTurnToTarget()
         .SetType(AbilityType.CombatManeuver)
@@ -56,7 +56,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
       /*.AddAbilityEffectRunAction(
           actions: ActionsBuilder.New().CastSpell(AbilityRefs.CleaveAction.Reference.Get())
        )*/
-        .AddAbilityTargetsAround(radius: new Kingmaker.Utility.Feet(5))
+        .AddAbilityTargetsAround(radius: new Kingmaker.Utility.Feet(20))
         //.AddAbilityEffectRunAction(RecurseAttack(10))
         .AddAbilityEffectRunAction(ActionsBuilder.New().MeleeAttack())
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)

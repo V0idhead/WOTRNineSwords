@@ -39,7 +39,7 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
       var buff = BuffConfigurator.New("ColossusStrikeBuff", "D9FD5342-B628-4458-92E3-91D34CF88E44")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
         .AddInitiatorAttackRollTrigger(onlyHit: true,
-          action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 17, Property = Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength, ValueType = ContextValueType.CasterProperty },
+          action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 17 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
             onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(BuffRefs.Prone.Reference.Get(), ContextDuration.Fixed(1)).Add<PushTargetAction>(pta => { pta.CalcDistance = () => { Random r = new Random(); return new Kingmaker.Utility.Feet(r.Next(1, 4)); }; })
             )
           )

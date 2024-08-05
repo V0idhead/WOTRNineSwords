@@ -16,6 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.IronHeart;
 using VoidHeadWOTRNineSwords.Warblade;
 
@@ -39,7 +40,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .SetDescription(desc)
         .SetIcon(icon)
         .AddInitiatorAttackRollTrigger(onlyHit: true,
-          action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Will, customDC: new ContextValue { Value = 15, Property = Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength, ValueType = ContextValueType.CasterProperty },
+          action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Will, customDC: new ContextValue { Value = 15}, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
             onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(BuffRefs.Stunned.Reference.Get(), ContextDuration.Fixed(1))
             )
           )

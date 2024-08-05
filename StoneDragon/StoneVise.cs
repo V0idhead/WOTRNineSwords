@@ -41,7 +41,7 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .SetDisplayName(name)
         .SetDescription("StoneVise.TargetBuff")
         .SetIcon(icon)
-        .AddBuffMovementSpeed(value: -1000)
+        .AddBuffMovementSpeed(value: -200)
         .Configure();
 
       var buff = BuffConfigurator.New("StoneViseBuff", "3AE23D95-EF16-4912-903F-AD5652BADE91")

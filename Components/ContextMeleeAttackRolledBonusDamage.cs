@@ -9,12 +9,15 @@ using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
+using Kingmaker.ElementsSystem;
+using BlueprintCore.Utils;
 
 namespace VoidHeadWOTRNineSwords.Components
 {
   public class ContextMeleeAttackRolledBonusDamage : ContextActionMeleeAttack //TODO: convert all instances of averaged damage to instances of a class like this
   {
     public DiceFormula ExtraDamage;
+    internal ActionList OnHit = Constants.Empty.Actions;
 
     public override string GetCaption()
     {
@@ -31,7 +34,10 @@ namespace VoidHeadWOTRNineSwords.Components
         base.RunAction();
         var attack = AbilityContext.RulebookContext?.LastEvent<RuleAttackWithWeapon>();
         if (attack != null && attack.AttackRoll.IsHit)
+        {
           Game.Instance.Rulebook.TriggerEvent<RuleDealDamage>(new RuleDealDamage(attack.Initiator, attack.Target, new DirectDamage(ExtraDamage)));
+          OnHit?.Run();
+        }
       }
       catch (Exception e)
       {

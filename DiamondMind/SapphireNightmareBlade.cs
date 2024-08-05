@@ -57,7 +57,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .SetShouldTurnToTarget()
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
-        /*.AddAbilityEffectRunAction
+        .AddAbilityEffectRunAction
         (
           ActionsBuilder.New()
           .Add<NightmareBladeAction>(a =>
@@ -65,24 +65,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
             a.OnLow = ActionsBuilder.New().ApplyBuff(failBuff, ContextDuration.Fixed(1), toCaster: true).MeleeAttack().Build();
             a.OnHigh = ActionsBuilder.New().Add<ContextMeleeAttackRolledBonusDamage>(bd => { bd.ExtraDamage = new DiceFormula(1, DiceType.D6); }).Build();
           })
-          .MeleeAttack()
-        )*/
-        .AddAbilityEffectRunAction
-        (
-          ActionsBuilder.New()
-          .Add<NightmareBladeAction2>(a =>
-          {
-            a.OnLow = ActionsBuilder.New().ApplyBuff(failBuff, ContextDuration.Fixed(1), toCaster: true).MeleeAttack().Build();
-            a.OnHigh = ActionsBuilder.New().Add<ContextMeleeAttackRolledBonusDamage>(bd => { bd.ExtraDamage = new DiceFormula(1, DiceType.D6); }).Build();
-          })
         )
-        /*.AddAbilityEffectRunAction
-        (
-          ActionsBuilder.New()
-          .SkillCheck(Kingmaker.EntitySystem.Stats.StatType.SkillPerception, checkForCaster: true, customDC: new ContextValue { Property = Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.AC },
-            failure: ActionsBuilder.New().ApplyBuff(failBuff, ContextDuration.Fixed(1), toCaster: true).MeleeAttack(),
-            success: ActionsBuilder.New().Add<ContextMeleeAttackRolledBonusDamage>(bd => { bd.ExtraDamage = new DiceFormula(1, DiceType.D6); }))
-        )*/
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
