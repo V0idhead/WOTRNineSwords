@@ -35,19 +35,6 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
 
       Main.Logger.Info($"Configuring {nameof(IrresistibleMountainStrike)}");
 
-      /*var buff = BuffConfigurator.New("IrresistibleMountainStrikeBuff", "D9F5A13E-786C-4A8D-B4CA-00CAD149C06C")
-        .SetDisplayName(name)
-        .SetDescription(desc)
-        .SetIcon(icon)
-        .AddDamageBonusConditional(bonus: new ContextValue { Value = 16 }, descriptor: ModifierDescriptor.UntypedStackable) //TODO: damage bonus should be 2d6
-        .AddInitiatorAttackRollTrigger(onlyHit: true,
-          action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 16 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
-            onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(BuffRefs.Staggered.Reference.Get(), ContextDuration.Fixed(1))
-            )
-          )
-        )
-        .Configure();
-      */
       var ability = AbilityConfigurator.New("IrresistibleMountainStrikeAbility", "E91C09B7-F875-461D-9134-0C9F1A6442B0")
         .SetDisplayName(name)
         .SetDescription(desc)
@@ -64,11 +51,13 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction(
-          ActionsBuilder.New().Add<ContextMeleeAttackRolledBonusDamage>(attack => { attack.OnHit = ActionsBuilder.New().ApplyBuff(BuffRefs.Staggered.Reference.Get(), ContextDuration.Fixed(1)).Build(); attack.ExtraDamage = new DiceFormula(2, DiceType.D6); })
+          ActionsBuilder.New().Add<ContextMeleeAttackRolledBonusDamage>(attack =>
+          {
+            attack.ExtraDamage = new DiceFormula(4, DiceType.D6); attack.OnHit =
+            ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 16 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
+              onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(BuffRefs.Staggered.Reference.Get(), ContextDuration.Fixed(1)))).Build();
+          })
         )
-        /*.AddAbilityEffectRunAction(
-          actions: ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).MeleeAttack()
-         )*/
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 

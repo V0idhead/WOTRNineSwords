@@ -1,46 +1,36 @@
 ﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.References;
-using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Enums.Damage;
-using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics.Properties;
-using Kingmaker.UnitLogic.Mechanics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VoidHeadWOTRNineSwords.StoneDragon;
-using VoidHeadWOTRNineSwords.Warblade;
-using BlueprintCore.Actions.Builder.ContextEx;
 using VoidHeadWOTRNineSwords.Common;
-using BlueprintCore.Utils.Types;
-using Kingmaker.ElementsSystem;
-using Kingmaker.UnitLogic.Buffs.Blueprints;
 using VoidHeadWOTRNineSwords.Components;
-using Kingmaker.UnitLogic.Buffs;
+using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.IronHeart
 {
-  //https://dndtools.net/spells/tome-of-battle-the-book-of-nine-swords--88/mithral-tornado--3654/
-  static class MithralTornado
+  //https://dndtools.net/spells/tome-of-battle-the-book-of-nine-swords--88/steel-wind--3657/
+  static class SteelWind
   {
-    public const string Guid = "BEE3B93B-58D4-4385-A06C-9A4086CBBAF4";
-    const string name = "MithralTornado.Name";
-    const string desc = "MithralTornado.Desc";
+    public const string Guid = "8C0A55FE-5D4D-478C-86B8-F93899A9CE63";
+    const string name = "SteelWind.Name";
+    const string desc = "SteelWind.Desc";
 
     public static void Configure()
     {
       UnityEngine.Sprite icon = AbilityRefs.BladeBarrier.Reference.Get().Icon;
 
-      Main.Logger.Info($"Configuring {nameof(MithralTornado)}");
+      Main.Logger.Info($"Configuring {nameof(SteelWind)}");
 
-      var ability = AbilityConfigurator.New("MithralTornadoAbility", "D5F9844C-647C-44F5-AC8C-F840A577B63C")
+      var ability = AbilityConfigurator.New("SteelWindAbility", "E374DECE-726B-4386-87D1-3E52C36388E6")
         .SetDisplayName(name)
         .SetDescription(desc)
         .SetIcon(icon)
@@ -53,22 +43,18 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .SetShouldTurnToTarget()
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
-        .AddAbilityTargetsAround(radius: new Kingmaker.Utility.Feet(5))
-        .AddAbilityEffectRunAction(ActionsBuilder.New().MeleeAttack())
+        //.AddAbilityTargetsAround(radius: new Kingmaker.Utility.Feet(5))
+        .AddAbilityEffectRunAction(ActionsBuilder.New().Add<MeleeAttackTargetsAround>(mata => { mata.TargetLimit = 2; mata.Range = new Kingmaker.Utility.Feet(5); }))
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
-      var spell = FeatureConfigurator.New("MithralTornado", Guid, AllManeuversAndStances.featureGroup)
+      var spell = FeatureConfigurator.New("SteelWind", Guid, AllManeuversAndStances.featureGroup)
         .SetDisplayName(name)
         .SetDescription(desc)
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { ability })
         .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
-#if !DEBUG
-        .AddPrerequisiteFeature(InitiatorLevels.Lvl4Guid)
-        .AddPrerequisiteFeaturesFromList(amount: 2, features: AllManeuversAndStances.IronHeartGuids.Except([Guid]).ToList())
-#endif
         .Configure();
     }
   }

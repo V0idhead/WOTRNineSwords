@@ -220,7 +220,7 @@
   },
   {
     "Key": "ChargingMinotaur.Desc",
-    "enGB": "Discipline: Stone Dragon\nManeuver Type: Strike\nRequired Initiator Level: Warblade 1, Swordsage 1\nAs part of this maneuver, you make a bull rush attack as part of a charge. Neither the movement nor the bull rush attack provokes attacks of opportunity. Resolve the bull rush attempt normally. If your Strength check exceeds the opponents result, you deal bludgeoning damage equal to 2d6 + your Str modifier in addition to pushing the target back as normal. Assuming your Strength check is high enough, you can push your target back more than 5 feet (as normal for a bull rush, but without having to follow)."
+    "enGB": "Discipline: Stone Dragon\nManeuver Type: Boost\nRequired Initiator Level: Warblade 1, Swordsage 1\nThis boost enables you to make a bull rush attack as part of a charge. Neither the movement nor the bull rush attack provokes attacks of opportunity. Resolve the bull rush attempt normally. If your Strength check exceeds the opponents result, you deal bludgeoning damage equal to 2d6 + your Str modifier in addition to pushing the target back as normal. Assuming your Strength check is high enough, you can push your target back more than 5 feet (as normal for a bull rush, but without having to follow)."
   },
   {
     "Key": "SteelyStrike.Name",
@@ -625,6 +625,24 @@
   {
     "Key": "HuntersSense.Desc",
     "enGB": "Discipline: Tiger Claw\nRequired Initiater Level: Warblade 1, Swordsage 1\nAs long as you are in this stance, you gain Blindsense up to 30ft."
+  },
+  {
+    "Key": "SteelWind.Name",
+    "ProcessTemplates": false,
+    "enGB": "Steel Wind"
+  },
+  {
+    "Key": "SteelWind.Desc",
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Strike\nRequired Initiater Level: Warblade 1, Swordsage 1\nAs you initiate this strike, you make two melee attacks, each against a different foe that you threaten."
+  },
+  {
+    "Key": "AdamantineHurricane.Name",
+    "ProcessTemplates": false,
+    "enGB": "Adamantine Hurricane"
+  },
+  {
+    "Key": "AdamantineHurricane.Desc",
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Strike\nRequired Initiater Level: Warblade 15\nRequired Maneuvers: 3 Iron Heart\nYou make two melee attacks against each adjacent opponent you threaten when you initiate this maneuver. You receive a +4 bonus on each of these attacks, which are otherwise made with your highest attack bonus."
   },
 
   {

@@ -7,6 +7,7 @@ using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Enums;
+using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
@@ -34,19 +35,6 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
 
       Main.Logger.Info($"Configuring {nameof(OverwhelmingMountainStrike)}");
 
-      var buff = BuffConfigurator.New("OverwhelmingMountainStrikeBuff", "5CDC8654-F15E-40A9-8794-95D166CFA559")
-        .SetDisplayName(name)
-        .SetDescription(desc)
-        .SetIcon(icon)
-        .AddDamageBonusConditional(bonus: new ContextValue { Value = 8 }, descriptor: ModifierDescriptor.UntypedStackable) //TODO: damage bonus should be 2d6
-        .AddInitiatorAttackRollTrigger(onlyHit: true,
-          action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 14 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
-            onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(BuffRefs.Staggered.Reference.Get(), ContextDuration.Fixed(1))
-            )
-          )
-        )
-        .Configure();
-
       var ability = AbilityConfigurator.New("OverwhelmingMountainStrikeAbility", "97851D37-F1AD-4826-A342-035C8A19B8E3")
         .SetDisplayName(name)
         .SetDescription(desc)
@@ -63,8 +51,13 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction(
-          actions: ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).MeleeAttack()
-         )
+          ActionsBuilder.New().Add<ContextMeleeAttackRolledBonusDamage>(attack =>
+          {
+            attack.ExtraDamage = new DiceFormula(2, DiceType.D6); attack.OnHit =
+            ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 14 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
+              onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(BuffRefs.Staggered.Reference.Get(), ContextDuration.Fixed(1)))).Build();
+          })
+        )
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
