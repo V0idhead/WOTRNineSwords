@@ -137,6 +137,15 @@
     "enGB": " You begin with knowledge of one 1st level stance from any discipline open to warblades. At 4th, 10th, and 16th level, you can choose additional stances. Unlike maneuvers, stances are not expended, and you do not have to ready them. All the stances you know are available to you at all times, and you can change the stance you are currently using as a swift action. A stance is an extraordinary ability unless otherwise stated in the stance description."
   },
   {
+    "Key": "WeaponAptitude.Name",
+    "ProcessTemplates": false,
+    "enGB": "Weapon Aptitude"
+  },
+  {
+    "Key": "WeaponAptitude.Desc",
+    "enGB": "A Warblade counts his total Warblade level -2 as his fighter levels for the purpose of qualifying for {g|Encyclopedia:Feat}feats{/g}. If he has levels in fighter, these levels stack."
+  },
+  {
     "Key": "BattleClarityReflex.Name",
     "ProcessTemplates": false,
     "enGB": "Battle Clarity (Reflex)"
@@ -417,7 +426,7 @@
   },
   {
     "Key": "RubyNightmareBlade.Desc",
-    "enGB": "Discipline: Diamond Mind\nManeuver Type: Strike\nRequired Initiater Level: Warblade 7, Swordsage 7\nRequired Maneuvers: 2 Diamond Mind\nYou attempt a Perception check as part of this maneuver, using the target creatures AC as the DC of the check. You then make a single melee attack against your target. The attack is also part of this maneuver. If your Perception check succeeds,  you deal double damage. If your check fails, your attack is made with a -2 penalty and deals normal damage."
+    "enGB": "Discipline: Diamond Mind\nManeuver Type: Strike\nRequired Initiater Level: Warblade 7, Swordsage 7\nRequired Maneuvers: 2 Diamond Mind\nYou attempt a Perception check as part of this maneuver, using the target creatures AC as the DC of the check. You then make a single melee attack against your target. The attack is also part of this maneuver. If your Perception check succeeds, you deal double damage. If your check fails, your attack is made with a -2 penalty and deals normal damage."
   },
   {
     "Key": "WhiteRavenStrike.Name",
@@ -643,6 +652,128 @@
   {
     "Key": "AdamantineHurricane.Desc",
     "enGB": "Discipline: Iron Heart\nManeuver Type: Strike\nRequired Initiater Level: Warblade 15\nRequired Maneuvers: 3 Iron Heart\nYou make two melee attacks against each adjacent opponent you threaten when you initiate this maneuver. You receive a +4 bonus on each of these attacks, which are otherwise made with your highest attack bonus."
+  },
+  {
+    "Key": "DiamondNightmareBlade.Name",
+    "ProcessTemplates": false,
+    "enGB": "Diamond Nightmare Blade"
+  },
+  {
+    "Key": "DiamondNightmareBlade.Desc",
+    "enGB": "Discipline: Diamond Mind\nManeuver Type: Strike\nRequired Initiater Level: Warblade 15, Swordsage 15\nRequired Maneuvers: 3 Diamond Mind\nYou attempt a Perception check as part of this maneuver, using the target creatures AC as the DC of the check. You then make a single melee attack against your target. The attack is also part of this maneuver. If your Perception check succeeds, you deal four times damage. If your check fails, your attack is made with a -2 penalty and deals normal damage."
+  },
+  {
+    "Key": "EarthstrikeQuake.Name",
+    "ProcessTemplates": false,
+    "enGB": "Earthstrike Quake"
+  },
+  {
+    "Key": "EarthstrikeQuake.Desc",
+    "enGB": "Discipline: Stone Dragon\nManeuver Type: Strike\nRequired Initiater Level: Warblade 15, Swordsage 15\nRequired Maneuvers: 2 Stone Dragon\nYou channel ki into the earth with your mighty strike, causing the ground to rumble and shake briefly. Anyone in a 20 feet area must make a successful Reflex save (DC 18 + your Str modifier) or be knocked prone."
+  },
+  {
+    "Key": "BoomerangThrow.Name",
+    "ProcessTemplates": false,
+    "enGB": "Boomerang Throw"
+  },
+  {
+    "Key": "BoomerangThrow.Desc",
+    "enGB": "Discipline: Iron Heart\nRequired Initiater Level: Warblade 1\nThrow your weapon at target enemy in close range. You deal normal weapon damage. After the attack the weapon returns to your hand."
+  },
+
+  {
+    "Key": "ViciousThrow.Name",
+    "ProcessTemplates": false,
+    "enGB": "Vicious Throw"
+  },
+  {
+    "Key": "ViciousThrow.Desc",
+    "enGB": "Discipline: Iron Heart\nRequired Initiater Level: Warblade 5\nRequired Maneuvers: 1 Iron Heart\nThrow your weapon at target enemy in medium range. You deal 2d8 extra damage. After the attack the weapon returns to your hand."
+  },
+  {
+    "Key": "LightningThrow.Name",
+    "ProcessTemplates": false,
+    "enGB": "Lightning Throw"
+  },
+  {
+    "Key": "LightningThrow.Desc",
+    "enGB": "Discipline: Iron Heart\nRequired Initiater Level: Warblade 15\nRequired Maneuvers: 2 Iron Heart\nWhen you use this strike, you make a single melee attack. You deal damage to each creature in a 30 foot line equal to your normal melee damage, plus an extra 12d6 points of damage. Each creature in the attack's area can make a Reflex save with a DC equal to the result of your attack roll. A successful save halves the damage dealt."
+  },
+  {
+    "Key": "StrengthOfStone.Name",
+    "ProcessTemplates": false,
+    "enGB": "Strength of Stone"
+  },
+  {
+    "Key": "StrengthOfStone.Desc",
+    "enGB": "Discipline: Stone Dragon\nRequired Initiater Level: Warblade 15, Swordsage 15\nRequired Maneuvers: 3 Stone Dragon\nWhile you are in this stance you are immune to critical hits."
+  },
+  {
+    "Key": "SupremeBladeParry.Name",
+    "ProcessTemplates": false,
+    "enGB": "Supreme Blade Parry"
+  },
+  {
+    "Key": "SupremeBladeParry.Desc",
+    "enGB": "Discipline: Iron Heart\nRequired Initiater Level: Warblade 15\nRequired Maneuvers: 3 Iron Heart\nWhile you are in this stance, you gain damage reduction 5/-."
+  },
+  {
+    "Key": "SwarmTactics.Name",
+    "ProcessTemplates": false,
+    "enGB": "Swarm Tactics"
+  },
+  {
+    "Key": "SwarmTactics.Desc",
+    "enGB": "Discipline: White Raven\nRequired Initiater Level: Warblade 15\nRequired Maneuvers: 1 White Raven\nWhile you are in this stance adjacent enemies gain -5 to AC."
+  },
+  {
+    "Key": "SwarmTactics.BuffDesc",
+    "enGB": "Getting -5 to AC."
+  },
+  {
+    "Key": "WhiteRavenHammer.Name",
+    "ProcessTemplates": false,
+    "enGB": "White Raven Hammer"
+  },
+  {
+    "Key": "WhiteRavenHammer.Desc",
+    "enGB": "Discipline: White Raven\nManeuver Type: Strike\nRequired Initiater Level: Warblade 15\nRequired Maneuvers: 3 White Raven\nAs part of this maneuver, you make a single, devastating strike against an opponent. The raw force of this blow knocks him senseless. Your attack deals an extra 6d6 points of damage and stuns your opponent for 1 round."
+  },
+  {
+    "Key": "FeralDeathBlow.Name",
+    "ProcessTemplates": false,
+    "enGB": "Feral Death Blow"
+  },
+  {
+    "Key": "FeralDeathBlow.Desc",
+    "enGB": "Discipline: Tiger Claw\nManeuver Type: Strike\nRequired Initiater Level: Warblade 17, Swordsage 17\nRequired Maneuvers: 4 Tiger Claw\nAs part of this maneuver, make a Athletics check with a DC equal to your opponent's AC. If the check succeeds, you can then make a single melee attack against your foe, also as part of this maneuver. The target is considered flat-footed against this attack. If your attack deals damage, your target must attempt a Fortitude save (DC 19 + your Str modifier). If this save fails, your target is instantly slain. If the save is successful, you deal an extra 20d6 points of damage to the target in addition to your normal weapon damage. Creatures immune to critical hits are immune to the death effect of this strike."
+  },
+  {
+    "Key": "MountainTombstoneStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mountain Tombstone Strike"
+  },
+  {
+    "Key": "MountainTombstoneStrike.Desc",
+    "enGB": "Discipline: Stone Dragon\nManeuver Type: Strike\nRequired Initiater Level: Warblade 17, Swordsage 17\nAs part of this maneuver, you make a single melee attack. If this attack hits, you deal 2d6 points of Constitution damage in addition to your normal damage."
+  },
+  {
+    "Key": "StrikeOfPerfectClarity.Name",
+    "ProcessTemplates": false,
+    "enGB": "Strike of Perfect Clarity"
+  },
+  {
+    "Key": "StrikeOfPerfectClarity.Desc",
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Strike\nRequired Initiater Level: Warblade 17\nRequired Maneuvers: 4 Iron Heart\nYou make a single melee attack as part of this strike. If your attack hits, it deals an extra 100 points of damage."
+  },
+  {
+    "Key": "TimeStandsStill.Name",
+    "ProcessTemplates": false,
+    "enGB": "Time Stands Still"
+  },
+  {
+    "Key": "TimeStandsStill.Desc",
+    "enGB": "Discipline: Diamond Mind\nManeuver Type: Strike\nRequired Initiater Level: Warblade 17\nRequired Maneuvers: 4 Diamond Mind\nYou make two Full Attacks in a row."
   },
 
   {

@@ -26,17 +26,18 @@ namespace VoidHeadWOTRNineSwords.Components
 
     public override void RunAction()
     {
+      int limit = TargetLimit ?? 99; //even though the game creates a new instance of this class, somehow the TargetLimit is cached, causing the Steel Wind ability to do nothing after using it the first time
       var caster = Context.MaybeCaster;
       var targets = GameHelper.GetTargetsAround(caster.Position, Range).Where(unit => unit.IsEnemy(caster));
 
       foreach (var target in targets)
       {
-        if(TargetLimit is null || TargetLimit.Value > 0)
+        if(limit > 0)
         {
           var attack = new RuleAttackWithWeapon(caster, target, caster.GetFirstWeapon(), 0);
           Context.TriggerRule(attack);
 
-          if (TargetLimit is not null) TargetLimit--;
+          limit--;
         }
       }
     }

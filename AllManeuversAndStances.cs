@@ -17,11 +17,11 @@ namespace VoidHeadWOTRNineSwords
   internal static class AllManeuversAndStances
   {
     public static readonly FeatureGroup featureGroup = (Kingmaker.Blueprints.Classes.FeatureGroup)100; //None == Background :(
-    public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> DiamondMindGuids = [SapphireNightmareBlade.Guid, EmeraldRazor.Guid, BoundingAssault.Guid, MindStrike.Guid, RubyNightmareBlade.Guid, DisruptingBlow.Guid, AvalancheOfBlades.Guid, HearingTheAir.Guid];
-    public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> IronHeartGuids = [SteelyStrike.Guid, DisarmingStrike.Guid, ExorcismOfSteel.Guid, PunishingStance.Guid, AbsoluteSteel.Guid, MithralTornado.Guid, DazingStrike.Guid, IronHeartEndurance.Guid, FinishingMove.Guid, DancingBladeForm.Guid, ScythingBlade.Guid, SteelWind.Guid, AdamantineHurricane.Guid];
-    public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> StoneDragonGuids = [StoneBones.Guid, ChargingMinotaur.Guid, MountainHammer.Guid, StoneVise.Guid, BonesplittingStrike.Guid, OverwhelmingMountainStrike.Guid, ElderMountainHammer.Guid, CrushingVise.Guid, IronBones.Guid, IrresistibleMountainStrike.Guid, AncientMountainHammer.Guid, ColossusStrike.Guid, GiantsStance.Guid, AdamantineBones.Guid];
-    public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> TigerClawGuids = [HuntersSense.Guid, ClawAtTheMoon.Guid, RabidWolfStrike.Guid, FleshRipper.Guid, DancingMongoose.Guid, PouncingCharge.Guid, RabidBearStrike.Guid, HamstringAttack.Guid];
-    public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> WhiteRavenGuids = [LeadingTheAttack.Guid, BattleLeadersCharge.Guid, LionsRoar.Guid, WhiteRavenStrike.Guid, WarLeadersCharge.Guid, BolsteringVoice.Guid];
+    public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> DiamondMindGuids = [SapphireNightmareBlade.Guid, EmeraldRazor.Guid, BoundingAssault.Guid, MindStrike.Guid, RubyNightmareBlade.Guid, DisruptingBlow.Guid, AvalancheOfBlades.Guid, HearingTheAir.Guid, DiamondNightmareBlade.Guid, TimeStandsStill.Guid];
+    public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> IronHeartGuids = [SteelyStrike.Guid, DisarmingStrike.Guid, ExorcismOfSteel.Guid, PunishingStance.Guid, AbsoluteSteel.Guid, MithralTornado.Guid, DazingStrike.Guid, IronHeartEndurance.Guid, FinishingMove.Guid, DancingBladeForm.Guid, ScythingBlade.Guid, SteelWind.Guid, AdamantineHurricane.Guid, BoomerangThrow.Guid, ViciousThrow.Guid, LightningThrow.Guid, SupremeBladeParry.Guid, StrikeOfPerfectClarity.Guid];
+    public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> StoneDragonGuids = [StoneBones.Guid, ChargingMinotaur.Guid, MountainHammer.Guid, StoneVise.Guid, BonesplittingStrike.Guid, OverwhelmingMountainStrike.Guid, ElderMountainHammer.Guid, CrushingVise.Guid, IronBones.Guid, IrresistibleMountainStrike.Guid, AncientMountainHammer.Guid, ColossusStrike.Guid, GiantsStance.Guid, AdamantineBones.Guid, EarthstrikeQuake.Guid, StrengthOfStone.Guid, MountainTombstoneStrike.Guid];
+    public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> TigerClawGuids = [HuntersSense.Guid, ClawAtTheMoon.Guid, RabidWolfStrike.Guid, FleshRipper.Guid, DancingMongoose.Guid, PouncingCharge.Guid, RabidBearStrike.Guid, HamstringAttack.Guid, FeralDeathBlow.Guid];
+    public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> WhiteRavenGuids = [LeadingTheAttack.Guid, BattleLeadersCharge.Guid, LionsRoar.Guid, WhiteRavenStrike.Guid, WarLeadersCharge.Guid, BolsteringVoice.Guid, SwarmTactics.Guid, WhiteRavenHammer.Guid];
 
     public static void Configure()
     {
@@ -39,6 +39,10 @@ namespace VoidHeadWOTRNineSwords
       DisruptingBlow.Configure();
       //Lvl7
       AvalancheOfBlades.Configure();
+      //Lvl8
+      DiamondNightmareBlade.Configure();
+      //Lvl9
+      TimeStandsStill.Configure();
       //--Stances--
       HearingTheAir.Configure();
       #endregion
@@ -47,10 +51,12 @@ namespace VoidHeadWOTRNineSwords
       //Lvl1
       SteelyStrike.Configure();
       SteelWind.Configure();
+      BoomerangThrow.Configure();
       //Lvl2
       DisarmingStrike.Configure();
       //Lvl3
       ExorcismOfSteel.Configure();
+      ViciousThrow.Configure();
       //Lvl4
       MithralTornado.Configure();
       //Lvl5
@@ -62,6 +68,9 @@ namespace VoidHeadWOTRNineSwords
       ScythingBlade.Configure();
       //Lvl8
       AdamantineHurricane.Configure();
+      LightningThrow.Configure();
+      //Lvl9
+      StrikeOfPerfectClarity.Configure();
       //Stances
       //Lvl1
       PunishingStance.Configure();
@@ -69,6 +78,8 @@ namespace VoidHeadWOTRNineSwords
       AbsoluteSteel.Configure();
       //Lvl5
       DancingBladeForm.Configure();
+      //Lvl8
+      SupremeBladeParry.Configure();
       #endregion
       #region Stone Dragon
       //--Maneuvers--
@@ -92,8 +103,13 @@ namespace VoidHeadWOTRNineSwords
       ColossusStrike.Configure();
       //Lvl8
       AdamantineBones.Configure();
+      EarthstrikeQuake.Configure();
+      //Lvl9
+      MountainTombstoneStrike.Configure();
       //--Stances--
       GiantsStance.Configure();
+      //Lvl8
+      StrengthOfStone.Configure();
       #endregion
       #region Tiger Claw
       //--Maneuvers--
@@ -109,6 +125,8 @@ namespace VoidHeadWOTRNineSwords
       RabidBearStrike.Configure();
       //Lvl7
       HamstringAttack.Configure();
+      //Lvl9
+      FeralDeathBlow.Configure();
       //--Stances
       //Lvl1
       HuntersSense.Configure();
@@ -125,9 +143,13 @@ namespace VoidHeadWOTRNineSwords
       WhiteRavenStrike.Configure();
       //Lvl6
       WarLeadersCharge.Configure();
+      //Lvl8
+      WhiteRavenHammer.Configure();
       //--Stances--
       //Lvl1
       BolsteringVoice.Configure();
+      //Lvl8
+      SwarmTactics.Configure();
       #endregion
     }
   }

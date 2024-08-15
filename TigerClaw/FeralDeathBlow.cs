@@ -1,10 +1,12 @@
 ﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Enums;
+using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
@@ -14,36 +16,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static VoidHeadWOTRNineSwords.DiamondMind.SapphireNightmareBlade;
-using VoidHeadWOTRNineSwords.DiamondMind;
-using VoidHeadWOTRNineSwords.Warblade;
-using VoidHeadWOTRNineSwords.Components;
-using BlueprintCore.Actions.Builder.ContextEx;
-using BlueprintCore.Utils.Types;
-using Kingmaker.RuleSystem;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
+using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.TigerClaw
 {
-  //https://dndtools.net/spells/tome-of-battle-the-book-of-nine-swords--88/claw-moon--3732/
-  internal class ClawAtTheMoon
+  //https://dndtools.net/spells/tome-of-battle-the-book-of-nine-swords--88/feral-death-blow--3735/
+  static class FeralDeathBlow
   {
-    public const string Guid = "1F7823C2-B34A-4E6F-AED7-AE979E530C9D";
-    const string name = "ClawAtTheMoon.Name";
-    const string desc = "ClawAtTheMoon.Desc";
+    public const string Guid = "811C70F5-60EE-4646-AF72-2F6758BBDB24";
+    const string name = "FeralDeathBlow.Name";
+    const string desc = "FeralDeathBlow.Desc";
 
     public static void Configure()
     {
-      Main.Logger.Info($"Configuring {nameof(ClawAtTheMoon)}");
+      Main.Logger.Info($"Configuring {nameof(FeralDeathBlow)}");
 
       UnityEngine.Sprite icon = AbilityRefs.BeastShapeIII.Reference.Get().Icon;
 
-      var successBuff = BuffConfigurator.New("ClawAtTheMoonSuccessBuff", "CBB1732A-6564-4C90-A1A2-84EBEF62F93C")
+      var successBuff = BuffConfigurator.New("FeralDeathBlowSuccessBuff", "E4B13234-1239-43D4-860A-DEE2F9C90396")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
         .AddCriticalConfirmationBonus(4)
+        .AddOutflankAttackBonus(4)
         .Configure();
 
-      var ability = AbilityConfigurator.New(name, "08B0338B-7491-4443-B4D9-C1A98B15E515")
+      var ability = AbilityConfigurator.New(name, "39010FB4-0102-43D8-9969-EA669024665B")
         .SetDisplayName(name)
         .SetDescription(desc)
         .SetIcon(icon)
@@ -63,14 +61,19 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
           {
             a.Stat = Kingmaker.EntitySystem.Stats.StatType.SkillAthletics;
             a.TargetValue = t => t.Stats.AC;
-            a.Success = ActionsBuilder.New().ApplyBuff(successBuff, ContextDuration.Fixed(1), toCaster: true).Add<ContextMeleeAttackRolledBonusDamage>(bd => bd.ExtraDamage = new DiceFormula(2, DiceType.D6)).Build();
+            a.Success = ActionsBuilder.New().ApplyBuff(successBuff, ContextDuration.Fixed(1), toCaster: true).Add<ContextMeleeAttackRolledBonusDamage>(bd =>
+            {
+              bd.ExtraDamage = new DiceFormula(20, DiceType.D6);
+              bd.OnHit = ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 19 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
+                onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().Kill(Kingmaker.UnitLogic.UnitState.DismemberType.LimbsApart))).Build();
+            }).Build();
             a.Failure = ActionsBuilder.New().MeleeAttack().Build();
           })
         )
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
-      var spell = FeatureConfigurator.New("ClawAtTheMoon", Guid, AllManeuversAndStances.featureGroup)
+      var spell = FeatureConfigurator.New("FeralDeathBlow", Guid, AllManeuversAndStances.featureGroup)
         .SetDisplayName(name)
         .SetDescription(desc)
         .SetIcon(icon)
@@ -78,7 +81,8 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
         .AddFacts(new() { ability })
         .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
 #if !DEBUG
-        .AddPrerequisiteFeature(InitiatorLevels.Lvl2Guid)
+        .AddPrerequisiteFeature(InitiatorLevels.Lvl9Guid)
+        .AddPrerequisiteFeaturesFromList(amount: 4, features: AllManeuversAndStances.TigerClawGuids.Except([Guid]).ToList())
 #endif
         .Configure();
     }

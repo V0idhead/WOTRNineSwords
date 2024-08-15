@@ -84,6 +84,7 @@ namespace VoidHeadWOTRNineSwords.Warblade
     {
       WarbladeRecoverManeuvers.Configure();
       InitiatorLevels.Configure();
+      var weaponAptitude = WeaponAptitude.Configure();
       var battleClarity = BattleClarityReflex.Configure();
       var battleArdor = BattleArdor.Configure();
       var battleCunning = BattleCunning.Configure();
@@ -104,7 +105,7 @@ namespace VoidHeadWOTRNineSwords.Warblade
       var bonusFeatSelector = FeatureSelectionRefs.FighterFeatSelection.Reference.Guid; //RAW Bonus Feat selection is pathetic, using fighter list instead
 
       var entries = LevelEntryBuilder.New()
-        .AddEntry(1, warbladeProficiencies.AssetGuid, WarbladeRecoverManeuvers.Guid, battleClarity.AssetGuid, stanceSelector.AssetGuid, maneuverSelector.AssetGuid, maneuverSelector.AssetGuid, maneuverSelector.AssetGuid, InitiatorLevels.Lvl1Guid) //3 maneuvers, 1 stance; Weapon Aptitude not implemented
+        .AddEntry(1, warbladeProficiencies.AssetGuid, WarbladeRecoverManeuvers.Guid, weaponAptitude.AssetGuid, battleClarity.AssetGuid, stanceSelector.AssetGuid, maneuverSelector.AssetGuid, maneuverSelector.AssetGuid, maneuverSelector.AssetGuid, InitiatorLevels.Lvl1Guid) //3 maneuvers, 1 stance; Weapon Aptitude not implemented
         .AddEntry(2, FeatureRefs.UncannyDodge.Reference.Guid, maneuverSelector.AssetGuid)
         .AddEntry(3, battleArdor.AssetGuid, maneuverSelector.AssetGuid, InitiatorLevels.Lvl2Guid) //implementing Weapon Aptitude would be a lot of work for the relatively small benefit of allowing selection of Greater Weapon Focus, Weapon Sepcialization and Greater Shield Focus
         .AddEntry(4, stanceSelector.AssetGuid)

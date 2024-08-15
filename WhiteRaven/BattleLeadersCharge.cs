@@ -40,7 +40,8 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
       var damageBuff = BuffConfigurator.New("BattleLeadersChargeBuff", "FB066522-0C78-407B-84CB-25F84C633E03")
         .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
         .AddDamageBonusConditional(new ContextValue { Value = 10 }, descriptor: Kingmaker.Enums.ModifierDescriptor.UntypedStackable)
-        .AddACBonusAgainstAttackOfOpportunity(new ContextValue { Value = 50}) //not quite the same as not provoking attacks of opportunity since the enemies attack of opportunity will be wasted, but good enough
+        //.AddACBonusAgainstAttackOfOpportunity(new ContextValue { Value = 50}) //not quite the same as not provoking attacks of opportunity since the enemies attack of opportunity will be wasted, but good enough
+        .AddMechanicsFeature(Kingmaker.UnitLogic.FactLogic.AddMechanicsFeature.MechanicsFeatureType.DisengageWithoutAttackOfOpportunity)
         .Configure();
 
       var ability = AbilityConfigurator.New("BattleLeadersChargeAbility", "{E1B12C94-2094-4666-9534-759957AC2B0B}")

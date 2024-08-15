@@ -13,42 +13,42 @@ using System.Text;
 using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
+using VoidHeadWOTRNineSwords.DiamondMind;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.IronHeart
 {
-  //https://dndtools.net/spells/tome-of-battle-the-book-of-nine-swords--88/steel-wind--3657/
-  static class SteelWind
+  //Throw your weapon at target enemy in close range. You deal normal weapon damage.
+  static class BoomerangThrow
   {
-    public const string Guid = "8C0A55FE-5D4D-478C-86B8-F93899A9CE63";
-    const string name = "SteelWind.Name";
-    const string desc = "SteelWind.Desc";
+    public const string Guid = "272FD08F-88C1-46B7-AC3A-F0DCB8142B5E";
+    const string name = "BoomerangThrow.Name";
+    const string desc = "BoomerangThrow.Desc";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.BladeBarrier.Reference.Get().Icon;
+      Main.Logger.Info($"Configuring {nameof(BoomerangThrow)}");
 
-      Main.Logger.Info($"Configuring {nameof(SteelWind)}");
+      UnityEngine.Sprite icon = AbilityRefs.SilverDarts.Reference.Get().Icon;
 
-      var ability = AbilityConfigurator.New("SteelWindAbility", "E374DECE-726B-4386-87D1-3E52C36388E6")
+      var ability = AbilityConfigurator.New("BoomerangThrowAbility", "178A4F0A-5C10-4A06-97C9-C605F87720B8")
         .SetDisplayName(name)
         .SetDescription(desc)
         .SetIcon(icon)
         .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Special)
         .SetCanTargetEnemies()
         .SetCanTargetFriends(false)
-        .SetCanTargetSelf(true)
-        .SetRange(AbilityRange.Personal)
+        .SetCanTargetSelf(false)
+        .SetRange(AbilityRange.Close)
         .SetActionType(UnitCommand.CommandType.Standard)
         .SetShouldTurnToTarget()
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
-        //.AddAbilityTargetsAround(radius: new Kingmaker.Utility.Feet(5))
-        .AddAbilityEffectRunAction(ActionsBuilder.New().Add<MeleeAttackTargetsAround>(mata => { mata.TargetLimit = 2; mata.Range = new Kingmaker.Utility.Feet(10); }))
+        .AddAbilityEffectRunAction(ActionsBuilder.New().MeleeAttack())
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
-      var spell = FeatureConfigurator.New("SteelWind", Guid, AllManeuversAndStances.featureGroup)
+      var spell = FeatureConfigurator.New("BoomerangThrow", Guid, AllManeuversAndStances.featureGroup)
         .SetDisplayName(name)
         .SetDescription(desc)
         .SetIcon(icon)

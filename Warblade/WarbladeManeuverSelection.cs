@@ -70,7 +70,17 @@ namespace VoidHeadWOTRNineSwords.Warblade
           ScythingBlade.Guid,
           AdamantineBones.Guid,
           SteelWind.Guid,
-          AdamantineHurricane.Guid
+          AdamantineHurricane.Guid,
+          DiamondNightmareBlade.Guid,
+          EarthstrikeQuake.Guid,
+          BoomerangThrow.Guid,
+          ViciousThrow.Guid,
+          LightningThrow.Guid,
+          WhiteRavenHammer.Guid,
+          FeralDeathBlow.Guid,
+          MountainTombstoneStrike.Guid,
+          StrikeOfPerfectClarity.Guid,
+          TimeStandsStill.Guid
         ).Configure();
 
       return warbladeManeuverSelection;

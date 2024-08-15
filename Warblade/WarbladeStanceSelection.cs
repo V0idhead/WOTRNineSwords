@@ -34,7 +34,10 @@ namespace VoidHeadWOTRNineSwords.Warblade
           AbsoluteSteel.Guid,
           DancingBladeForm.Guid,
           GiantsStance.Guid,
-          HearingTheAir.Guid
+          HearingTheAir.Guid,
+          StrengthOfStone.Guid,
+          SupremeBladeParry.Guid,
+          SwarmTactics.Guid
         ).Configure();
 
       return warbladeManeuverSelection;

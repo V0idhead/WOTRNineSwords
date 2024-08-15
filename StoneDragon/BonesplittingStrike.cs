@@ -1,4 +1,5 @@
 ﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.BasicEx;
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
@@ -18,7 +19,6 @@ using UnityEngine;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Warblade;
-using VoidHeadWOTRNineSwords.WhiteRaven;
 
 namespace VoidHeadWOTRNineSwords.StoneDragon
 {
@@ -35,13 +35,6 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
 
       Sprite icon = AbilityRefs.Boneshaker.Reference.Get().Icon;
 
-      var buff = BuffConfigurator.New("BonesplittingStrikeBuff", "EDCAC8F2-4331-4F98-A7C4-00B07ED3E67D")
-        .SetDisplayName(name)
-        .SetDescription("BonesplittingStrike.Desc")
-        .SetIcon(icon)
-        .AddStatBonus(Kingmaker.Enums.ModifierDescriptor.StatDamage, stat: Kingmaker.EntitySystem.Stats.StatType.Constitution, value: -2)
-        .Configure();
-
       var ability = AbilityConfigurator.New("BonesplittingStrikeAbility", "A0CBA7B9-3DEA-45E1-A91F-EF37E5D8891B")
         .SetDisplayName(name)
         .SetDescription(desc)
@@ -57,7 +50,7 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction
         (
-          ActionsBuilder.New().Add<MeleeAttackExtended>(attack => { attack.OnHit = ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(4, DurationRate.Hours)).Build(); })
+          ActionsBuilder.New().Add<MeleeAttackWithStatDamage>(mawsd => { mawsd.statType = Kingmaker.EntitySystem.Stats.StatType.Constitution; mawsd.damageAmount = new Kingmaker.RuleSystem.DiceFormula(2, Kingmaker.RuleSystem.DiceType.One); })
         )
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
