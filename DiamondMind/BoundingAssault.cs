@@ -10,6 +10,7 @@ using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
+using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics;
 using System;
 using System.Collections.Generic;
@@ -45,17 +46,13 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .SetDescription(desc)
         .SetIcon(icon)
         .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Special)
-        .SetCanTargetEnemies(false)
-        .SetCanTargetFriends(false)
-        .SetCanTargetSelf(true)
-        .SetRange(AbilityRange.Personal)
+        .SetRange(AbilityRange.DoubleMove)
+        .SetCanTargetEnemies()
+        .AddLineOfSightIgnorance()
         .SetActionType(UnitCommand.CommandType.Free)
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
-        .AddAbilityEffectRunAction
-        (
-          ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true)
-        )
+        .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).CastSpell(AbilityRefs.DimensionDoorCasterOnly.Reference.Guid))
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 

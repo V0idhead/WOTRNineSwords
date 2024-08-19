@@ -36,16 +36,6 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
 
       UnityEngine.Sprite icon = AbilityRefs.LegendaryProportions.Reference.Get().Icon;
 
-      var buff = BuffConfigurator.New("ColossusStrikeBuff", "D9FD5342-B628-4458-92E3-91D34CF88E44")
-        .SetFlags(BlueprintBuff.Flags.HiddenInUi)
-        .AddInitiatorAttackRollTrigger(onlyHit: true,
-          action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 17 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
-            onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(BuffRefs.Prone.Reference.Get(), ContextDuration.Fixed(1)).Add<PushTargetAction>(pta => { pta.CalcDistance = () => { Random r = new Random(); return new Kingmaker.Utility.Feet(r.Next(1, 4)); }; })
-            )
-          )
-        )
-        .Configure();
-
       var ability = AbilityConfigurator.New(name, "938A43D0-9041-4A5C-9983-6227650A3CDB")
         .SetDisplayName(name)
         .SetDescription(desc)
@@ -61,8 +51,13 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction
         (
-          ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).Add<ContextMeleeAttackRolledBonusDamage>(bd => bd.ExtraDamage = new DiceFormula(6, DiceType.D6))
-        )
+          ActionsBuilder.New().Add<ContextMeleeAttackRolledBonusDamage>(bd => 
+          {
+            bd.ExtraDamage = new DiceFormula(6, DiceType.D6);
+            bd.OnHit = ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 17 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
+              onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(BuffRefs.Prone.Reference.Get(), ContextDuration.Fixed(1)).Add<PushTargetAction>(pta => { pta.CalcDistance = () => { Random r = new Random(); return new Kingmaker.Utility.Feet(r.Next(5, 20)); }; }))
+            ).Build(); }
+        ))
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 

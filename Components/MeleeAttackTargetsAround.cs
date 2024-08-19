@@ -26,7 +26,7 @@ namespace VoidHeadWOTRNineSwords.Components
 
     public override void RunAction()
     {
-      int limit = TargetLimit ?? 99; //even though the game creates a new instance of this class, somehow the TargetLimit is cached, causing the Steel Wind ability to do nothing after using it the first time
+      int limit = TargetLimit ?? 99; //even though the game creates a new instance of this class, somehow the TargetLimit is cached, causing the Steel Wind ability to do nothing after using it the first time; capturing this locally fixes the problem
       var caster = Context.MaybeCaster;
       var targets = GameHelper.GetTargetsAround(caster.Position, Range).Where(unit => unit.IsEnemy(caster));
 
