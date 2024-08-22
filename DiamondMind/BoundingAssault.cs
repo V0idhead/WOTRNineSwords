@@ -49,7 +49,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .SetRange(AbilityRange.DoubleMove)
         .SetCanTargetEnemies()
         .AddLineOfSightIgnorance()
-        .SetActionType(UnitCommand.CommandType.Free)
+        .SetActionType(UnitCommand.CommandType.Swift)
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).CastSpell(AbilityRefs.DimensionDoorCasterOnly.Reference.Guid))

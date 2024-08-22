@@ -3,6 +3,8 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.References;
+using BlueprintCore.Conditions.Builder;
+using BlueprintCore.Conditions.Builder.ContextEx;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Enums.Damage;
@@ -51,12 +53,12 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .SetActionType(UnitCommand.CommandType.Standard)
         .SetShouldTurnToTarget()
         .SetType(AbilityType.CombatManeuver)
-        .AddAbilityDeliverProjectile(attackRollBonusStat: Kingmaker.EntitySystem.Stats.StatType.Strength, length: new Kingmaker.Utility.Feet(60), lineWidth: new Kingmaker.Utility.Feet(2), type: Kingmaker.UnitLogic.Abilities.Components.AbilityProjectileType.Line)
+        .AddAbilityDeliverProjectile(attackRollBonusStat: Kingmaker.EntitySystem.Stats.StatType.Strength, length: new Kingmaker.Utility.Feet(60), lineWidth: new Kingmaker.Utility.Feet(2), type: Kingmaker.UnitLogic.Abilities.Components.AbilityProjectileType.Line, projectiles: new List<BlueprintCore.Utils.Blueprint<Kingmaker.Blueprints.BlueprintProjectileReference>> { ProjectileRefs.Kinetic_AirBlastLine00.Reference.Guid })
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
-        .AddAbilityEffectRunAction(ActionsBuilder.New()
-          .SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Reflex,
-            onResult: ActionsBuilder.New()
-            .Add<SavingThrowAgainstAttackRoll>(staar => { staar.Type = Kingmaker.EntitySystem.Stats.SavingThrowType.Reflex; staar.Actions = ActionsBuilder.New().DealDamage(DamageTypes.Direct(), new ContextDiceValue { DiceCountValue = 12, DiceType = DiceType.D6}, addFavoredEnemyDamage: true, halfIfSaved: true, isAoE: true).MeleeAttack(Kingmaker.Visual.Animation.Kingmaker.UnitAnimationType.None, autoHit: true).Build(); })
+        .AddAbilityEffectRunAction(ActionsBuilder.New().Conditional(ConditionsBuilder.New().IsEnemy(), ifTrue: ActionsBuilder.New()
+          .Add<SavingThrowAgainstAttackRoll>(staar => { staar.Type = Kingmaker.EntitySystem.Stats.SavingThrowType.Reflex; staar.Actions = ActionsBuilder.New()
+            .DealDamage(DamageTypes.Direct(), ContextDice.Value(DiceType.D6, 12), addFavoredEnemyDamage: true, halfIfSaved: true).Build(); })
+          .MeleeAttack(Kingmaker.Visual.Animation.Kingmaker.UnitAnimationType.None, autoHit: true)
          ))
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
