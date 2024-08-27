@@ -21,6 +21,7 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Utils.Types;
 using VoidHeadWOTRNineSwords.Common;
+using Kingmaker.UnitLogic.Buffs;
 
 namespace VoidHeadWOTRNineSwords.WhiteRaven
 {
@@ -37,29 +38,30 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
 
       Main.Logger.Info($"Configuring {nameof(BattleLeadersCharge)}");
 
-      var damageBuff = BuffConfigurator.New("BattleLeadersChargeBuff", "FB066522-0C78-407B-84CB-25F84C633E03")
+      var buff = BuffConfigurator.New("BattleLeadersBuff", "FB066522-0C78-407B-84CB-25F84C633E03")
         .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
         .AddDamageBonusConditional(new ContextValue { Value = 10 }, descriptor: Kingmaker.Enums.ModifierDescriptor.UntypedStackable)
-        //.AddACBonusAgainstAttackOfOpportunity(new ContextValue { Value = 50}) //not quite the same as not provoking attacks of opportunity since the enemies attack of opportunity will be wasted, but good enough
         .AddMechanicsFeature(Kingmaker.UnitLogic.FactLogic.AddMechanicsFeature.MechanicsFeatureType.DisengageWithoutAttackOfOpportunity)
         .Configure();
 
-      var ability = AbilityConfigurator.New("BattleLeadersChargeAbility", "{E1B12C94-2094-4666-9534-759957AC2B0B}")
+      var chargeBuff = BuffConfigurator.New("BattleLeadersChargeBuff", "EB47386F-F01C-4375-9440-29C8B712E7D3")
+        .SetDisplayName(name)
+        .SetDescription(desc)
+        .AddBuffExtraEffects(BuffRefs.ChargeBuff.Reference.Guid, extraEffectBuff: buff)
+        .Configure();
+
+      var ability = AbilityConfigurator.New("BattleLeadersChargeAbility", "E1B12C94-2094-4666-9534-759957AC2B0B")
         .SetDisplayName(name)
         .SetDescription(desc)
         .SetIcon(icon)
-        .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
-        .SetCanTargetEnemies()
+        .SetCanTargetEnemies(false)
         .SetCanTargetFriends(false)
-        .SetCanTargetSelf(false)
-        .SetRange(AbilityRange.DoubleMove)
-        .SetActionType(UnitCommand.CommandType.Standard)
-        .SetShouldTurnToTarget()
+        .SetCanTargetSelf()
+        .SetRange(AbilityRange.Personal)
+        .SetActionType(UnitCommand.CommandType.Free)
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
-        .AddAbilityEffectRunAction(
-            actions: ActionsBuilder.New().ApplyBuff(damageBuff, ContextDuration.Fixed(1), toCaster: true).CastSpell(AbilityRefs.ChargeAbility.ToString())
-         )
+        .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(chargeBuff, ContextDuration.Fixed(1), toCaster: true))
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 

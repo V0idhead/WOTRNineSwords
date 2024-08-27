@@ -35,23 +35,6 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
 
       Sprite icon = AbilityRefs.PredictionOfFailure.Reference.Get().Icon;
 
-      var buff = BuffConfigurator.New("MindStrikeBuff", "DA1676AF-9D47-4FFE-B2F2-DBDDC6F264A0")
-        .SetDisplayName(name)
-        .SetDescription("MindStrike.Desc")
-        .SetIcon(icon)
-        .AddStatBonus(Kingmaker.Enums.ModifierDescriptor.StatDamage, stat: Kingmaker.EntitySystem.Stats.StatType.Wisdom, value: -4)
-        .Configure();
-
-      var triggerBuff = BuffConfigurator.New("MindStrikeTriggerBuff", "B5BD2306-418C-4F56-8FAB-BE766E73B85B")
-        .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-        .AddInitiatorAttackRollTrigger(
-          onlyHit: true,
-          action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Will, customDC: new ContextValue { Value = 14 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
-            onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(4, DurationRate.Minutes)))
-          )
-        )
-        .Configure();
-
       var ability = AbilityConfigurator.New("MindStrikeAbility", "93A7C909-E17C-45F5-988A-85C07BA003F3")
         .SetDisplayName(name)
         .SetDescription(desc)
@@ -67,7 +50,10 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction
         (
-          ActionsBuilder.New().ApplyBuff(triggerBuff, ContextDuration.Fixed(1)).MeleeAttack()
+          ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Will, customDC: new ContextValue { Value = 14 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
+            onResult: ActionsBuilder.New().ConditionalSaved(
+              failed: ActionsBuilder.New().Add<MeleeAttackWithStatDamage>(mawsd => { mawsd.statType = Kingmaker.EntitySystem.Stats.StatType.Wisdom; mawsd.damageAmount = new Kingmaker.RuleSystem.DiceFormula(1, Kingmaker.RuleSystem.DiceType.D4); }),
+              succeed: ActionsBuilder.New().MeleeAttack()))
         )
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();

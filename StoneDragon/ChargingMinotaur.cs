@@ -41,7 +41,6 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
 
       var buff = BuffConfigurator.New("ChargingMinotaurBuff", "B2AE1B4A-712A-4B25-AFF7-265E39A31E73")
         .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-        //.AddACBonusAgainstAttackOfOpportunity(new ContextValue { Value = 50 }) //not quite the same as not provoking attacks of opportunity since the enemies attack of opportunity will be wasted, but good enough
         .AddMechanicsFeature(Kingmaker.UnitLogic.FactLogic.AddMechanicsFeature.MechanicsFeatureType.DisengageWithoutAttackOfOpportunity)
         .AddInitiatorAttackRollTrigger(onlyHit: true,
           action: ActionsBuilder.New().CombatManeuver(type: Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush,
@@ -89,15 +88,6 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();*/
 
-      /*var spell = FeatureConfigurator.New("ChargingMinotaur", Guid, AllManeuversAndStances.featureGroup)
-        .SetDisplayName(name)
-        .SetDescription("ChargingMinotaur.Desc")
-        .SetIcon(icon)
-        .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
-        .AddFacts(new() { ability })
-        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
-        .Configure();*/
-
       var chargeBuff = BuffConfigurator.New("ChargingMinotaurChargeBuff", "8BF0ABBB-6187-4898-A335-586DB998C47D")
         .SetDisplayName(name)
         .SetDescription(desc)
@@ -112,7 +102,7 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .SetCanTargetFriends(false)
         .SetCanTargetSelf()
         .SetRange(AbilityRange.Personal)
-        .SetActionType(UnitCommand.CommandType.Swift)
+        .SetActionType(UnitCommand.CommandType.Free)
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(chargeBuff, ContextDuration.Fixed(1), toCaster: true))

@@ -51,7 +51,7 @@ namespace VoidHeadWOTRNineSwords.Warblade
           OverwhelmingMountainStrike.Guid,
           RubyNightmareBlade.Guid,
           WhiteRavenStrike.Guid,
-          DancingMongoose.Guid,
+          //DancingMongoose.Guid,
           DazingStrike.Guid,
           DisruptingBlow.Guid,
           ElderMountainHammer.Guid,

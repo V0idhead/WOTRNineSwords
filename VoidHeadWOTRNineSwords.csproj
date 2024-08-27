@@ -22,6 +22,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="TigerClaw\PouncingCharge - Copy.cs" />
+    <Compile Remove="WhiteRaven\BattleLeadersCharge - Copy.cs" />
+    <Compile Remove="WhiteRaven\BattleLeadersCharge_old.cs" />
+    <Compile Remove="WhiteRaven\WarLeadersCharge - Copy.cs" />
+    <Compile Remove="WhiteRaven\WarLeadersCharge_old.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="TigerClaw\PouncingCharge.cs.old" />
+    <None Remove="WhiteRaven\BattleLeadersCharge.cs.new" />
+    <None Remove="WhiteRaven\BattleLeadersCharge.cs.old" />
+    <None Remove="WhiteRaven\WarLeadersCharge.cs.new" />
+    <None Remove="WhiteRaven\WarLeadersCharge.cs.old" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AssemblyPublicizer" Version="*">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

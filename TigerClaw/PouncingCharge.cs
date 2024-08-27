@@ -34,22 +34,29 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
 
       Main.Logger.Info($"Configuring {nameof(PouncingCharge)}");
 
+      var buff = BuffConfigurator.New("PouncingChargeBuff", "3D27D176-E98B-4DCE-8976-2C5ABAA3E481")
+        .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+        .AddInitiatorAttackRollTrigger(ActionsBuilder.New().MeleeAttack(fullAttack: true, selectNewTarget: true))
+        .Configure();
+
+      var chargeBuff = BuffConfigurator.New("PouncingChargeChargeBuff", "BE1EEB3A-3D68-4403-B345-C8DC05C66E68")
+        .SetDisplayName(name)
+        .SetDescription(desc)
+        .AddBuffExtraEffects(BuffRefs.ChargeBuff.Reference.Guid, extraEffectBuff: buff)
+        .Configure();
+
       var ability = AbilityConfigurator.New("PouncingChargeAbility", "A0542B19-E1FE-4271-80C6-0D34FB2FB3D4")
         .SetDisplayName(name)
         .SetDescription(desc)
         .SetIcon(icon)
-        .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
-        .SetCanTargetEnemies()
+        .SetCanTargetEnemies(false)
         .SetCanTargetFriends(false)
-        .SetCanTargetSelf(false)
-        .SetRange(AbilityRange.DoubleMove)
-        .SetActionType(UnitCommand.CommandType.Standard)
-        .SetShouldTurnToTarget()
+        .SetCanTargetSelf()
+        .SetRange(AbilityRange.Personal)
+        .SetActionType(UnitCommand.CommandType.Free)
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
-        .AddAbilityEffectRunAction(
-            actions: ActionsBuilder.New().CastSpell(AbilityRefs.ChargeAbility.ToString()).MeleeAttack(fullAttack: true)
-         )
+        .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(chargeBuff, ContextDuration.Fixed(1), toCaster: true))
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 

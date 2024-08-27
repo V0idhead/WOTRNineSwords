@@ -38,7 +38,7 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
 
       var buff = BuffConfigurator.New("AncientMountainHammerBuff", "27B8F5A3-C892-4D1E-9C4E-8ADD26EDB976")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
-        .AddIgnoreDamageReductionOnAttack(onlyOnFirstAttack: true)
+        .AddIgnoreDamageReductionOnAttack(/*onlyOnFirstAttack: true*/)
         .Configure();
 
       var ability = AbilityConfigurator.New(name, "2ABB6CB5-8E9B-4FB4-AD02-384E7D8A28E2")

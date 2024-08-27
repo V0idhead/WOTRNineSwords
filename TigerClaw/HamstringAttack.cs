@@ -35,7 +35,7 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
 
       Main.Logger.Info($"Configuring {nameof(HamstringAttack)}");
 
-      var targetBuff = BuffConfigurator.New("HamstringAttackTargetBuff", "84E070B9-00B1-4504-AA1B-C660356054AA")
+      /*var targetBuff = BuffConfigurator.New("HamstringAttackTargetBuff", "84E070B9-00B1-4504-AA1B-C660356054AA")
         .SetDisplayName(name)
         .SetDescription("HamstringAttack.TargetBuff")
         .SetIcon(icon)
@@ -62,6 +62,20 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
             onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(targetBuff, ContextDuration.Fixed(1)))
           )
         )
+        .Configure();*/
+
+      var moveDebuffSaved = BuffConfigurator.New("HamstringMoveDebuffSaved", "84E070B9-00B1-4504-AA1B-C660356054AA")
+        .SetDisplayName(name)
+        .SetDescription("HamstringAttack.TargetBuff")
+        .SetIcon(icon)
+        .AddBuffMovementSpeed(value: -5)
+        .Configure();
+
+      var moveDebuff = BuffConfigurator.New("HamstringMoveDebuff", "84E070B9-00B1-4504-AA1B-C660356054AB")
+        .SetDisplayName(name)
+        .SetDescription("HamstringAttack.TargetBuff")
+        .SetIcon(icon)
+        .AddBuffMovementSpeed(value: -10)
         .Configure();
 
       var ability = AbilityConfigurator.New("HamstringAttackAbility", "B9C00737-A3D7-472B-AA4D-4805CF9139B9")
@@ -80,8 +94,14 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction(
-          actions: ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).MeleeAttack()
-         )
+          //actions: ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).MeleeAttack()
+          actions: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 17 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
+            onResult: ActionsBuilder.New().ConditionalSaved(
+              succeed: ActionsBuilder.New().Add<MeleeAttackWithStatDamage>(mawsd => { mawsd.statType = Kingmaker.EntitySystem.Stats.StatType.Dexterity; mawsd.damageAmount = new DiceFormula(1, DiceType.D4); }).ApplyBuff(moveDebuffSaved, ContextDuration.Fixed(1, DurationRate.Minutes)),
+              failed: ActionsBuilder.New().Add<MeleeAttackWithStatDamage>(mawsd => { mawsd.statType = Kingmaker.EntitySystem.Stats.StatType.Dexterity; mawsd.damageAmount = new DiceFormula(1, DiceType.D8); }).ApplyBuff(moveDebuff, ContextDuration.Fixed(1, DurationRate.Minutes))
+            )
+          )
+        )
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 

@@ -8,6 +8,7 @@ using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.ElementsSystem;
 using Kingmaker.Enums;
+using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
@@ -18,6 +19,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.StoneDragon;
 using VoidHeadWOTRNineSwords.Warblade;
 
@@ -36,17 +38,17 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
 
       UnityEngine.Sprite icon = AbilityRefs.Eaglesoul.Reference.Get().Icon;
 
-      var targetBuff = BuffConfigurator.New("WhiteRavenStrikeTargetBuff", "421E37AA-E477-49FD-8901-13D823C01AD1")
+      var buff = BuffConfigurator.New("WhiteRavenStrikeTargetBuff", "421E37AA-E477-49FD-8901-13D823C01AD1")
         .AddCondition(Kingmaker.UnitLogic.UnitCondition.LoseDexterityToAC)
         .Configure();
 
-      var buff = BuffConfigurator.New("WhiteRavenStrikeBuff", "B1BCB605-A65D-4426-AB47-ECFB67204964")
+      /*var buff = BuffConfigurator.New("WhiteRavenStrikeBuff", "B1BCB605-A65D-4426-AB47-ECFB67204964")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
         .AddDamageBonusConditional(bonus: new ContextValue { Value = 16 }, descriptor: ModifierDescriptor.UntypedStackable) //TODO: damage bonus should be 4d6; also should flat-foot the enemy
         .AddInitiatorAttackRollTrigger(onlyHit: true,
           action: ActionsBuilder.New().ApplyBuff(targetBuff, ContextDuration.Fixed(1))
         )
-        .Configure();
+        .Configure();*/
 
       var ability = AbilityConfigurator.New(name, "130E3211-E6F8-4CC6-9F6B-FDC0CFD63F64")
         .SetDisplayName(name)
@@ -63,7 +65,7 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction
         (
-          ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).MeleeAttack()
+          ActionsBuilder.New().Add<ContextMeleeAttackRolledBonusDamage>(marb => { marb.ExtraDamage = new DiceFormula(4, DiceType.D6); marb.OnHit = ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1)).Build(); })
         )
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();

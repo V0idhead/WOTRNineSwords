@@ -35,18 +35,6 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
 
       Main.Logger.Info($"Configuring {nameof(DisruptingBlow)}");
 
-      var buff = BuffConfigurator.New("DisruptingBlowBuff", "C54A69F2-B6EA-4899-BEBF-38C13FAF8AEB")
-        .SetDisplayName(name)
-        .SetDescription(desc)
-        .SetIcon(icon)
-        .AddInitiatorAttackRollTrigger(onlyHit: true,
-          action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Will, customDC: new ContextValue { Value = 15}, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
-            onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(BuffRefs.Stunned.Reference.Get(), ContextDuration.Fixed(1))
-            )
-          )
-        )
-        .Configure();
-
       var ability = AbilityConfigurator.New("DisruptingBlowAbility", "92EA1684-0100-408D-9DF7-7DDA01B6AEC0")
         .SetDisplayName(name)
         .SetDescription(desc)
@@ -63,8 +51,10 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction(
-          actions: ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).MeleeAttack()
-         )
+          actions: ActionsBuilder.New().Add<MeleeAttackExtended>(mae =>
+            mae.OnHit = ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Will, customDC: new ContextValue { Value = 15 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
+              onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(BuffRefs.Stunned.Reference.Get(), ContextDuration.Fixed(1)))).Build()
+         ))
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 

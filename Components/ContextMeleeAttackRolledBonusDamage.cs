@@ -28,7 +28,7 @@ namespace VoidHeadWOTRNineSwords.Components
     {
       try
       {
-        //realistically I'd need to convert the DamageType of the main weapon to Physical Damage Form. But I'd rather err on the side of making this too powerful, so I'm using DirectDamage
+        //realistically I'd need to convert the DamageType of the main weapon to Physical Damage Form (see DoubleDamageDiceOnAttack for how this might work). But I'd rather err on the side of making this too powerful, so I'm using DirectDamage
         //Game.Instance.Rulebook.TriggerEvent<RuleDealDamage>(new RuleDealDamage(caster, target, new PhysicalDamage(new ModifiableDiceFormula(dmg), 0, caster.GetFirstWeapon().Blueprint.DamageType.Type.)));
 
         base.RunAction();

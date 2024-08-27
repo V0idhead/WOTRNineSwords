@@ -39,11 +39,6 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
 
       UnityEngine.Sprite icon = AbilityRefs.DisruptingWeapon.Reference.Get().Icon;
 
-      var successBuff = BuffConfigurator.New("DiamondNightmareBladeSuccessBuff", "98FD18CB-AF07-4FCF-A462-84407FA67326")
-        .SetFlags(BlueprintBuff.Flags.HiddenInUi)
-        .AddDoubleDamageDiceOnAttack()
-        .Configure();
-
       var failBuff = BuffConfigurator.New("DiamondNightmareBladeFailBuff", "86202258-AE7E-43B3-B57B-7C3B34ECD9AA")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
         .AddAttackBonus(-2)
@@ -67,8 +62,8 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
           ActionsBuilder.New()
           .Add<NightmareBladeAction>(a =>
           {
-            a.OnLow = ActionsBuilder.New().ApplyBuff(failBuff, ContextDuration.Fixed(1), toCaster: true).MeleeAttack(autoCritConfirmation: true, autoCritThreat: true).Build();
-            a.OnHigh = ActionsBuilder.New().ApplyBuff(successBuff, ContextDuration.Fixed(1), toCaster: true).MeleeAttack().Build();
+            a.OnLow = ActionsBuilder.New().ApplyBuff(failBuff, ContextDuration.Fixed(1), toCaster: true).MeleeAttack().Build();
+            a.OnHigh = ActionsBuilder.New().Add<MeleeAttackMultiplyDamage>(mamd => mamd.Multiplicator = 4).Build();
           })
         )
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)

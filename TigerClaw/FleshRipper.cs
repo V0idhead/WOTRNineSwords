@@ -48,7 +48,7 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
         .AddInitiatorAttackRollTrigger(onlyHit: true, criticalHit: true,
           action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 13 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
             onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1, DurationRate.Minutes)))))
-        .AddInitiatorAttackRollTrigger(onlyHit: true, criticalHit: true,
+        .AddInitiatorAttackRollTrigger(onlyHit: true, criticalHit: false,
           action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 13 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
             onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1, DurationRate.Rounds)))))
         .Configure();

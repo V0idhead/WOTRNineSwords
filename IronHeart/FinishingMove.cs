@@ -79,7 +79,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
     }
   }
 
-  public class FinishingMoveAttack : ContextActionMeleeAttack //TODO: convert all instances of averaged damage to instances of a class like this
+  public class FinishingMoveAttack : ContextActionMeleeAttack
   {
     public override string GetCaption()
     {
