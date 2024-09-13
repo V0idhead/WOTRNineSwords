@@ -36,7 +36,8 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
 
       var buff = BuffConfigurator.New("PouncingChargeBuff", "3D27D176-E98B-4DCE-8976-2C5ABAA3E481")
         .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-        .AddInitiatorAttackRollTrigger(ActionsBuilder.New().MeleeAttack(fullAttack: true, selectNewTarget: true))
+        //.AddInitiatorAttackRollTrigger(ActionsBuilder.New().MeleeAttack(fullAttack: true))
+        .AddMechanicsFeature(Kingmaker.UnitLogic.FactLogic.AddMechanicsFeature.MechanicsFeatureType.Pounce)
         .Configure();
 
       var chargeBuff = BuffConfigurator.New("PouncingChargeChargeBuff", "BE1EEB3A-3D68-4403-B345-C8DC05C66E68")

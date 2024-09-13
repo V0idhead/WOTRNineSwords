@@ -1,28 +1,16 @@
 ﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
+using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Enums.Damage;
-using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics.Properties;
-using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VoidHeadWOTRNineSwords.StoneDragon;
-using VoidHeadWOTRNineSwords.Warblade;
-using BlueprintCore.Actions.Builder.ContextEx;
-using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Utils.Types;
 using VoidHeadWOTRNineSwords.Common;
-using Kingmaker.UnitLogic.Buffs;
 using VoidHeadWOTRNineSwords.Components;
+using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.IronHeart
 {
@@ -36,7 +24,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.DisarmAction.Reference.Get().Icon;
+      UnityEngine.Sprite icon = AbilityRefs.BlessingOfCourageAndLife.Reference.Get().Icon;
 
       log.Info($"Configuring {nameof(DisarmingStrike)}");
 
@@ -60,9 +48,6 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .SetShouldTurnToTarget()
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
-      /*.AddAbilityEffectRunAction(
-          actions: ActionsBuilder.New().ApplyBuff(triggerBuff, ContextDuration.Fixed(1)).MeleeAttack()
-       )*/
         .AddAbilityEffectRunAction
       (
           ActionsBuilder.New().Add<MeleeAttackExtended>(attack => { attack.OnHit = ActionsBuilder.New().CombatManeuver(ActionsBuilder.New(), Kingmaker.RuleSystem.Rules.CombatManeuver.Disarm, newStat: Kingmaker.EntitySystem.Stats.StatType.Strength).Build(); })

@@ -32,8 +32,9 @@ namespace VoidHeadWOTRNineSwords.IronHeart
       var buff = BuffConfigurator.New("DancingBladeFormBuff", "185FFE35-7837-4BBC-BED9-652EC68D4657")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
         .AddNotDispelable()
+        .AddStatBonus(ModifierDescriptor.UntypedStackable, stat: Kingmaker.EntitySystem.Stats.StatType.Reach, value: 5)
         .AddBuffMovementSpeed(value: 10)
-        .AddReachMultiplicator(ModifierDescriptor.Competence, multiplicator: 5) //TODO: doesn't seem to do anything
+        //.AddReachMultiplicator(ModifierDescriptor.Competence, multiplicator: 5) //TODO: doesn't seem to do anything
         .Configure();
 
       var activatable = ActivatableAbilityConfigurator.New("DancingBladeFormActivatable", "1B6A50ED-6BD0-4A7E-9231-3B54F90B1F34")

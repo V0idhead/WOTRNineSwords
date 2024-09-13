@@ -58,7 +58,7 @@ namespace VoidHeadWOTRNineSwords.Warblade
           PouncingCharge.Guid,
           CrushingVise.Guid,
           IronBones.Guid,
-          IronHeartEndurance.Guid,
+          //IronHeartEndurance.Guid,
           IrresistibleMountainStrike.Guid,
           RabidBearStrike.Guid,
           WarLeadersCharge.Guid,

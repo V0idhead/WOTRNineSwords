@@ -31,7 +31,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.StunningFistAbility.Reference.Get().Icon;
+      UnityEngine.Sprite icon = AbilityRefs.EqualForce.Reference.Get().Icon;
 
       Main.Logger.Info($"Configuring {nameof(DisruptingBlow)}");
 

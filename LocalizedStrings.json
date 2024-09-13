@@ -368,11 +368,11 @@
   {
     "Key": "LionsRoar.Name",
     "ProcessTemplates": false,
-    "enGB": "Lion's Roar (bugged)"
+    "enGB": "Lion's Roar"
   },
   {
     "Key": "LionsRoar.Desc",
-    "enGB": "After you have reduced an opponent to fewer than 0 hit points. You and allies within 60 feet gain a +5 morale bonus on damage rolls for 1 round."
+    "enGB": "Discipline: Tiger Claw\nManeuver Type: Boost\nRequired Initiater Level: Warblade 5\nRequired Maneuvers: 2 Tiger Claw\nYou and allies within 60 feet gain a +5 morale bonus on damage rolls for 1 round."
   },
   {
     "Key": "BonesplittingStrike.Name",
@@ -440,11 +440,11 @@
   {
     "Key": "DancingBladeForm.Name",
     "ProcessTemplates": false,
-    "enGB": "Dancing Blade Form (bugged)"
+    "enGB": "Dancing Blade Form"
   },
   {
     "Key": "DancingBladeForm.Desc",
-    "enGB": "Discipline: Iron Heart\nRequired Initiater Level: Warblade 9\nRequired Maneuvers: 2 Iron Heart\nDoubles your reach."
+    "enGB": "Discipline: Iron Heart\nRequired Initiater Level: Warblade 9\nRequired Maneuvers: 2 Iron Heart\nIncreases your reach by 5 feet."
   },
   {
     "Key": "DancingMongoose.Name",

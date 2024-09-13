@@ -16,8 +16,10 @@ using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UnitLogic;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
+using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.Utility;
 using System;
@@ -25,6 +27,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.WhiteRaven
@@ -59,25 +62,19 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
         .AddAreaEffect(area)
         .Configure();
 
-      var triggerBuff = BuffConfigurator.New("LionsRoarTriggerBuff", "43A5521D-ADB6-4BFE-BAA8-60A6930E3CA6")
-        .SetFlags(BlueprintBuff.Flags.HiddenInUi)
-        .AddNotDispelable()
-        .AddUnitDeathTrigger(radiusInMeters: 10,
-          actions: ActionsBuilder.New().ApplyBuff(selfBuff, durationValue: ContextDuration.Fixed(1)).ContextSpendResource(WarbladeC.ManeuverResourceGuid, new ContextValue {Value = 1}))
-        .Configure();
-
-      var activatable = ActivatableAbilityConfigurator.New("LionsRoarActivatable", "AA7ED274-B82E-47AF-90F5-64DA82302F4E")
+      var ability = AbilityConfigurator.New("LionsRoarAbility", "09365084-D3CA-420A-A901-5D1575483C21")
         .SetDisplayName(name)
         .SetDescription(desc)
         .SetIcon(icon)
-        //.AddComponent(new AbilityCasterHasWeaponSubcategory(WeaponSubCategory.Melee)) // doesn't work
-        .SetActivationType(AbilityActivationType.Immediately)
-        .SetBuff(triggerBuff)
-        .SetDeactivateIfOwnerDisabled()
-        .SetDeactivateIfOwnerUnconscious()
-        .SetDoNotTurnOffOnRest()
-        .SetGroup(ActivatableAbilityGroup.None)
-        .SetWeightInGroup(1)
+        .SetCanTargetEnemies(false)
+        .SetCanTargetFriends(false)
+        .SetCanTargetSelf()
+        .SetRange(AbilityRange.Personal)
+        .SetActionType(UnitCommand.CommandType.Move)
+        .SetType(AbilityType.CombatManeuver)
+        .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
+        .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(selfBuff, ContextDuration.Fixed(1), toCaster: true))
+        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
       FeatureConfigurator.New("LionsRoarFeat", Guid, AllManeuversAndStances.featureGroup)
@@ -85,23 +82,13 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
         .SetDescription(desc)
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
-        .SetRanks(1)
-        .AddPrerequisiteClassLevel(WarbladeC.Guid, 1, hideInUI: true)
-        .AddFacts(new() { activatable })
+        .AddFacts(new() { ability })
+        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
+#if !DEBUG
+        .AddPrerequisiteFeature(InitiatorLevels.Lvl3Guid)
+        .AddPrerequisiteFeaturesFromList(amount: 2, features: AllManeuversAndStances.TigerClawGuids.Except([Guid]).ToList())
+#endif
         .Configure();
-    }
-
-    class ResourceLogic : EntityFactComponentDelegate, ITargetRulebookHandler<RuleDealDamage>
-    {
-      public void OnEventAboutToTrigger(RuleDealDamage evt)
-      { }
-
-      public void OnEventDidTrigger(RuleDealDamage evt)
-      {
-        Main.Logger.Error("damge trigger: " + evt.Target.CharacterName + ": " + evt.Result + "/" + evt.Target.HPLeft);
-        evt.Initiator.AddBuff(BuffRefs.AasimarHaloBuff.Reference, evt.Initiator, new TimeSpan(0,1,0));
-        evt.Target.AddBuff(BuffRefs.BlessBuff.Reference, null, new TimeSpan(0,1,0));
-      }
     }
   }
 }
