@@ -125,6 +125,7 @@ namespace VoidHeadWOTRNineSwords.Warblade
       var progression = ProgressionConfigurator.New("WarbladeProgression", "5BD44661-AEF3-48E1-8B11-3740A0BA9A31")
         .SetRanks(1)
         .SetLevelEntries(entries)
+        .SetClasses(Guid)
         .Configure();
 
       return progression;
