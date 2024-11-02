@@ -11,6 +11,7 @@ namespace VoidHeadWOTRNineSwords.Feats
     public static void Configure()
     {
       ManeuverFocus.Configure();
+      MythicManeuverFocus.Configure();
     }
   }
 }

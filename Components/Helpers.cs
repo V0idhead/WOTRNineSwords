@@ -17,7 +17,8 @@ namespace VoidHeadWOTRNineSwords.Components
       return new List<(ConditionsBuilder conditions, ContextValue modifier)>
       {
         (ConditionsBuilder.New().AddTrue(), new ContextValue { Property = property, ValueType = ContextValueType.CasterProperty }),
-        (ConditionsBuilder.New().CasterHasFact(ManeuverFocus.Guid), new ContextValue{Value = 1})
+        (ConditionsBuilder.New().CasterHasFact(ManeuverFocus.Guid), new ContextValue{Value = 1}),
+        (ConditionsBuilder.New().CasterHasFact(MythicManeuverFocus.Guid), new ContextValue{Property = Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.MythicLevel, ValueType = ContextValueType.CasterProperty})
       };
     }
   }

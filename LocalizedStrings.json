@@ -99,6 +99,15 @@
     "Key": "ManeuverFocus.Desc",
     "enGB": "Your maneuvers are particualarly hard to resist.\nBenefit: Add +1 to the Difficulty Class for all saving throws against your maneuvers."
   },
+  {
+    "Key": "MythicManeuverFocus.Name",
+    "ProcessTemplates": false,
+    "enGB": "Maneuver Focus (Mythic)"
+  },
+  {
+    "Key": "MythicManeuverFocus.Desc",
+    "enGB": "Your mythic power makes your maneuvers harder to resist.\nBenefit: Increase the Difficulty Class for resisting your maneuvers by your Mythic Rank."
+  },
 
   {
     "Key": "WarbladeC.Name",
