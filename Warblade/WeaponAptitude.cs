@@ -24,7 +24,7 @@ namespace VoidHeadWOTRNineSwords.Warblade
         .SetDisplayName(name)
         .SetDescription(desc)
         .SetIsClassFeature()
-        .AddClassLevelsForPrerequisites(WarbladeC.Guid, CharacterClassRefs.FighterClass.Reference.Guid, FeatureSelectionRefs.BasicFeatSelection.Reference.Guid, summand: -2)
+        .AddClassLevelsForPrerequisites(WarbladeC.Guid, CharacterClassRefs.FighterClass.Reference.Guid, FeatureSelectionRefs.BasicFeatSelection.Reference.Guid, modifier: 1, summand: -2)
         .Configure();
 
       return weaponAptitude;

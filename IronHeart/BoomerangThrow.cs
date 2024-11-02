@@ -44,7 +44,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .SetShouldTurnToTarget()
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
-        .AddAbilityEffectRunAction(ActionsBuilder.New().MeleeAttack())
+        .AddAbilityEffectRunAction(ActionsBuilder.New().MeleeAttack()) //switch to how "Hand of the Apprentice" (Universalist Wizard Lvl0) works?
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
