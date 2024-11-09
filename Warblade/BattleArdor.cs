@@ -26,7 +26,7 @@ namespace VoidHeadWOTRNineSwords.Warblade
         .SetDescription(desc)
         .SetIsClassFeature()
         .AddRecalculateOnStatChange(stat: Kingmaker.EntitySystem.Stats.StatType.Intelligence)
-        .AddCriticalConfirmationBonus(type: Kingmaker.Enums.WeaponRangeType.Melee, value: new Kingmaker.UnitLogic.Mechanics.ContextValue { m_AbilityParameter = Kingmaker.UnitLogic.Mechanics.AbilityParameterType.CasterStatBonus, Property = Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatIntelligence})
+        .AddCriticalConfirmationBonus(onlyPositiveValue: true, type: Kingmaker.Enums.WeaponRangeType.Melee, value: ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusIntelligence))
         .Configure();
 
       return battleArdor;
