@@ -108,6 +108,37 @@
     "Key": "MythicManeuverFocus.Desc",
     "enGB": "Your mythic power makes your maneuvers harder to resist.\nBenefit: Increase the Difficulty Class for resisting your maneuvers by your Mythic Rank."
   },
+  {
+    "Key": "UnnervingCalm.Name",
+    "ProcessTemplates": false,
+    "enGB": "Unnerving Calm"
+  },
+  {
+    "Key": "UnnervingCalm.Desc",
+    "enGB": "When you hit with a Diamond Mind strike you regain the use of that strike. In addition you add +1 to the Difficulty Class for all saving throws against your Diamond Mind maneuvers."
+  },
+  {
+    "Key": "IronHeartAura.Name",
+    "ProcessTemplates": false,
+    "enGB": "Iron Heart Aura"
+  },
+  {
+    "Key": "IronHeartAura.Desc",
+    "enGB": "Your strength of spirit and martial training inspires those around you.\nBenefit: While you are in any Iron Heart stance, allies (not yourself) in a 20ft-circle around you gain +2 morale bonus to saving throws. In addition you add +1 to the Difficulty Class for all saving throws against your Iron Heart maneuvers."
+  },
+  {
+    "Key": "IronHeartAuraEffect.Desc",
+    "enGB": "+2 morale bonus to saving throws."
+  },
+  {
+    "Key": "EnduranceOfStone.Name",
+    "ProcessTemplates": false,
+    "enGB": "Stone Power"
+  },
+  {
+    "Key": "EnduranceOfStone.Desc",
+    "enGB": "When you hit with a Stone Dragon strike you heal _specify_. In addition you add +1 to the Difficulty Class for all saving throws against your Stone Dragon maneuvers."
+  },
 
   {
     "Key": "WarbladeC.Name",

@@ -62,7 +62,7 @@ namespace VoidHeadWOTRNineSwords
       //Lvl5
       DazingStrike.Configure();
       //Lvl6
-      IronHeartEndurance.Configure();
+      //IronHeartEndurance.Configure();
       //Lvl7
       FinishingMove.Configure();
       ScythingBlade.Configure();

@@ -21,6 +21,7 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.UnitLogic.Buffs;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
+using VoidHeadWOTRNineSwords.Feats;
 
 namespace VoidHeadWOTRNineSwords.IronHeart
 {
@@ -56,7 +57,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
         .AddInitiatorAttackRollTrigger(
           onlyHit: true,
-          action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Will, customDC: new ContextValue { Value = 13 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
+          action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Will, customDC: new ContextValue { Value = 13 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength, IronHeartAura.IronHeartFocusFactGuid),
             onResult: ActionsBuilder.New().ConditionalSaved
               (
                 failed: ActionsBuilder.New().ApplyBuff(buffSaveFailed, ContextDuration.Fixed(1, DurationRate.Minutes)),

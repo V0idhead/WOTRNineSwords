@@ -1,4 +1,6 @@
-﻿using Kingmaker.EntitySystem.Stats;
+﻿using BlueprintCore.Utils;
+using Kingmaker.ElementsSystem;
+using Kingmaker.EntitySystem.Stats;
 using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic.Mechanics.Actions;
@@ -10,6 +12,7 @@ namespace VoidHeadWOTRNineSwords.Components
   {
     public StatType statType;
     public DiceFormula damageAmount;
+    public ActionList OnHit = Constants.Empty.Actions;
 
     public override void RunAction()
     {
@@ -25,7 +28,10 @@ namespace VoidHeadWOTRNineSwords.Components
 
         Main.Logger.Verbose($"MeleeAttackExtended.RunAction Result: {attack.AttackRoll.IsHit}");
         if (attack.AttackRoll.IsHit)
+        {
           Context.TriggerRule<RuleDealStatDamage>(new(Context.MaybeCaster, Context.MainTarget.Unit, statType, damageAmount, 0));
+          OnHit.Run();
+        }
       }
       catch (Exception e)
       {

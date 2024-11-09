@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Kingmaker.Items.Slots;
 using Kingmaker.UnitLogic;
+using VoidHeadWOTRNineSwords.Feats;
 
 namespace VoidHeadWOTRNineSwords.Components
 {
@@ -37,6 +38,7 @@ namespace VoidHeadWOTRNineSwords.Components
       if (unitEntityData != null)
       {
         int attackPenalty = 0;
+        bool unnervingCalmApplied = false;
 
         while (true)
         {
@@ -44,6 +46,8 @@ namespace VoidHeadWOTRNineSwords.Components
           var attack = AbilityContext.RulebookContext?.LastEvent<RuleAttackWithWeapon>();
           if (attack == null || !attack.AttackRoll.IsHit)
             break;
+          if (!unnervingCalmApplied)
+            UnnervingCalm.GetEffectAction().Run();
           attackPenalty += 4;
         }
       }

@@ -16,6 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Components;
+using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.IronHeart
@@ -41,6 +42,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .AddDamageBonusConditional(bonus: new ContextValue {Value = 4 }, descriptor: ModifierDescriptor.UntypedStackable) //TODO: damage bonus should be 1d6 ?AdditionalDiceOnDamage?
         //.AddDamageBonusConditional(bonus: ContextValue., descriptor: ModifierDescriptor.UntypedStackable) //TODO: damage bonus should be 1d6
         .AddACBonusAgainstAttacks(armorClassBonus: -2)
+        .AddAreaEffect(IronHeartAura.IronHeartAuraArea)
         .Configure();
 
       var punishingStanceActivatable = ActivatableAbilityConfigurator.New("PunishingStanceActivatable", "7990BAB5-27BC-4422-829F-8D9B411A691C")

@@ -11,6 +11,7 @@ using Kingmaker.UnitLogic.Commands.Base;
 using System.Collections.Generic;
 using System.Linq;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.DiamondMind
@@ -44,7 +45,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .AddAbilityDeliverTouch(touchWeapon: ItemWeaponRefs.TouchItem.ToString())
         .AddAbilityEffectRunAction
         (
-          ActionsBuilder.New().MeleeAttack(autoHit: true)
+          ActionsBuilder.New().MeleeAttack(autoHit: true).AddAll(UnnervingCalm.GetEffectAction())
         )
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();

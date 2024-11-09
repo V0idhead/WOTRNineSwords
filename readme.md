@@ -25,8 +25,12 @@ Both changes where made to balance maneuver recovery, as written Swordsage recov
  - Overwhelming Mountain Strike and Irresistible Mountain Strike: staggers target instead of disabling move action
  - Hearing the Air: giving blindsight to distinguish it more from the lvl1 Hunter's Sense
  - Scything Blade: doesn't require having made a successful attack
- - All charge related to charge do not directly cause you to charge a target, instead they give you a buff that modifies your charge. This is rather annoying but I didn't find a way to make it work properly otherwise
+ - All maneuvers related to charging do not directly cause you to charge a target, instead they give you a buff that modifies your charge. This is rather annoying but I didn't find a way to make it work properly otherwise
  - Lions Roar triggers directly when used, but requires a move action
+
+### Homebrew
+ - Boomerang Throw and Lightning Vicious Throw as lower level options for the level 8 Lightning Throw
+ - Maneuver Focus and Maneuver Focus (Mythic) feats to raise the DC for your strikes
 
 ## Roadmap
  - Swordsage class

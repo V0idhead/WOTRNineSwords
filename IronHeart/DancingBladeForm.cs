@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.IronHeart
@@ -35,6 +36,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .AddStatBonus(ModifierDescriptor.UntypedStackable, stat: Kingmaker.EntitySystem.Stats.StatType.Reach, value: 5)
         .AddBuffMovementSpeed(value: 10)
         //.AddReachMultiplicator(ModifierDescriptor.Competence, multiplicator: 5) //TODO: doesn't seem to do anything
+        .AddAreaEffect(IronHeartAura.IronHeartAuraArea)
         .Configure();
 
       var activatable = ActivatableAbilityConfigurator.New("DancingBladeFormActivatable", "1B6A50ED-6BD0-4A7E-9231-3B54F90B1F34")

@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.IronHeart
@@ -31,6 +32,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
         .AddNotDispelable()
         .AddDamageResistancePhysical(bypassedByMaterial: true, material: PhysicalDamageMaterial.Adamantite, value: 5)
+        .AddAreaEffect(IronHeartAura.IronHeartAuraArea)
         .Configure();
 
       var activatable = ActivatableAbilityConfigurator.New("SupremeBladeParryActivatable", "257A9F54-6D60-44BE-8617-50302324AD8D")
