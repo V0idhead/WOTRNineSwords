@@ -28,8 +28,7 @@ namespace VoidHeadWOTRNineSwords.Warblade
         .SetIsClassFeature()
         .SetReapplyOnLevelUp()
         .AddRecalculateOnStatChange(stat: Kingmaker.EntitySystem.Stats.StatType.Intelligence)
-        .AddContextCalculateAbilityParamsBasedOnClass(WarbladeC.Guid, statType: Kingmaker.EntitySystem.Stats.StatType.Intelligence)
-        .AddContextStatBonus(Kingmaker.EntitySystem.Stats.StatType.SaveReflex, ContextValues.Rank(Kingmaker.Enums.AbilityRankType.StatBonus), Kingmaker.Enums.ModifierDescriptor.UntypedStackable)
+        .AddContextStatBonus(Kingmaker.EntitySystem.Stats.StatType.SaveReflex, ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusIntelligence), Kingmaker.Enums.ModifierDescriptor.Insight)
         .Configure();
 
       return battleClarityReflex;

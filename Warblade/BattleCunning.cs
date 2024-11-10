@@ -13,6 +13,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Kingmaker.RuleSystem.Rules.Damage;
+using Kingmaker.UnitLogic.Mechanics;
+using BlueprintCore.Conditions.Builder;
+using BlueprintCore.Conditions.Builder.ContextEx;
+using BlueprintCore.Utils.Types;
+using Kingmaker.UnitLogic.Mechanics.Properties;
 
 namespace VoidHeadWOTRNineSwords.Warblade
 {
@@ -31,32 +37,10 @@ namespace VoidHeadWOTRNineSwords.Warblade
         .SetDescription(desc)
         .SetIsClassFeature()
         .AddRecalculateOnStatChange(stat: Kingmaker.EntitySystem.Stats.StatType.Intelligence)
-        //.AddFlankedAttackBonus() //only allows flat bonus
-        .AddComponent(new IntelligenceFlankedAttackBonus { Descriptor = ModifierDescriptor.Insight})
+        .AddDamageBonusConditional(ContextValues.Property(UnitProperty.StatBonusIntelligence, toCaster: true), false, ConditionsBuilder.New().UseOr().IsFlanked().IsFlatFooted(), ModifierDescriptor.Insight, true)
         .Configure();
 
       return battleCunning;
     }
-  }
-
-  [ComponentName("Intelligence-based Bonus to attack against flanked opponents")]
-  [AllowedOn(typeof(BlueprintUnitFact), false)]
-  [AllowMultipleComponents]
-  [TypeId("089B032C-7916-4E54-AC33-E0B4DCEA1D67")]
-  public class IntelligenceFlankedAttackBonus : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleCalculateAttackBonus>, IRulebookHandler<RuleCalculateAttackBonus>, ISubscriber, IInitiatorRulebookSubscriber
-  {
-    public ModifierDescriptor Descriptor = ModifierDescriptor.UntypedStackable;
-
-    public void OnEventAboutToTrigger(RuleCalculateAttackBonus evt)
-    {
-      bool isFlatFooted = Rulebook.Trigger(new RuleCheckTargetFlatFooted(evt.Initiator, evt.Target)).IsFlatFooted;
-      if (evt.Target.CombatState.IsFlanked || isFlatFooted || evt.TargetIsFlanked)
-      {
-        evt.AddModifier(Math.Max(0, evt.Initiator.Stats.Intelligence.Bonus), base.Fact, Descriptor);
-      }
-    }
-
-    public void OnEventDidTrigger(RuleCalculateAttackBonus evt)
-    { }
   }
 }
