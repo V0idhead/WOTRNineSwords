@@ -27,10 +27,10 @@ namespace VoidHeadWOTRNineSwords.Feats
 
       var diamondMindFocusFact = UnitFactConfigurator.New("DiamondMindFocusFact", DiamondFocusFactGuid)
         .Configure();
-      var UnnervingCalm = FeatureConfigurator.New("UnnervingCalm", UnnervingCalmGuid)
+      var UnnervingCalm = FeatureConfigurator.New("UnnervingCalm", UnnervingCalmGuid, Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
         .SetDisplayName("UnnervingCalm.Name")
         .SetDescription("UnnervingCalm.Desc")
-        .SetIcon(FeatureRefs.SpellFocusAbjuration.Reference.Get().Icon)
+        .SetIcon(FeatureRefs.SpellFocusDivination.Reference.Get().Icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { diamondMindFocusFact })
         .AddPrerequisiteFeaturesFromList(amount: 1, features: AllManeuversAndStances.DiamondMindGuids.ToList())
@@ -39,7 +39,7 @@ namespace VoidHeadWOTRNineSwords.Feats
 
     public static ActionList GetEffectAction()
     {
-      return ActionsBuilder.New().Conditional(ConditionsBuilder.New().CasterHasFact(DiamondFocusFactGuid), ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid, value: 1)).Build();
+      return ActionsBuilder.New().OnContextCaster(ActionsBuilder.New().Conditional(ConditionsBuilder.New().CasterHasFact(DiamondFocusFactGuid), ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid, value: 1))).Build();
     }
   }
 }

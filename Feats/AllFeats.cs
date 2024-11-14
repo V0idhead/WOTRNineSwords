@@ -15,6 +15,8 @@ namespace VoidHeadWOTRNineSwords.Feats
       UnnervingCalm.Configure();
       IronHeartAura.Configure();
       EnduranceOfStone.Configure();
+      TigerBlooded.Configure();
+      WhiteRavenDefense.Configure();
     }
   }
 }

@@ -18,6 +18,7 @@ using System.Text;
 using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
+using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.WhiteRaven
@@ -50,7 +51,7 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction
         (
-          ActionsBuilder.New().Add<ContextMeleeAttackRolledBonusDamage>(marb => { marb.ExtraDamage = new Kingmaker.RuleSystem.DiceFormula(6, Kingmaker.RuleSystem.DiceType.D6); marb.OnHit = ActionsBuilder.New().ApplyBuff(BuffRefs.Stunned.Reference.Guid, ContextDuration.Fixed(1)).Build(); })
+          ActionsBuilder.New().Add<ContextMeleeAttackRolledBonusDamage>(marb => { marb.ExtraDamage = new Kingmaker.RuleSystem.DiceFormula(6, Kingmaker.RuleSystem.DiceType.D6); marb.OnHit = ActionsBuilder.New().ApplyBuff(BuffRefs.Stunned.Reference.Guid, ContextDuration.Fixed(1)).AddAll(WhiteRavenDefense.GetEffectAction()).Build(); })
         )
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();

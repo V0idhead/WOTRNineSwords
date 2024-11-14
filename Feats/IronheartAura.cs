@@ -45,7 +45,7 @@ namespace VoidHeadWOTRNineSwords.Feats
       var ironHeartFocusFact = UnitFactConfigurator.New("IronHeartFocusFactGuid", IronHeartFocusFactGuid)
         .Configure();
 
-      var ironHeart = FeatureConfigurator.New("IronHeartAura", IronHeartAuraGuid)
+      var ironHeart = FeatureConfigurator.New("IronHeartAura", IronHeartAuraGuid, Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
         .SetDisplayName("IronHeartAura.Name")
         .SetDescription("IronHeartAura.Desc")
         .SetIcon(FeatureRefs.SpellFocusTransmutation.Reference.Get().Icon)

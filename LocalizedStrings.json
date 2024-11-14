@@ -133,11 +133,29 @@
   {
     "Key": "EnduranceOfStone.Name",
     "ProcessTemplates": false,
-    "enGB": "Stone Power"
+    "enGB": "Endurance of Stone"
   },
   {
     "Key": "EnduranceOfStone.Desc",
-    "enGB": "When you hit with a Stone Dragon strike you heal _specify_. In addition you add +1 to the Difficulty Class for all saving throws against your Stone Dragon maneuvers."
+    "enGB": "When you hit with a Stone Dragon strike you heal for 1d6. In addition you add +1 to the Difficulty Class for all saving throws against your Stone Dragon maneuvers."
+  },
+  {
+    "Key": "TigerBlooded.Name",
+    "ProcessTemplates": false,
+    "enGB": "Tiger Blooded"
+  },
+  {
+    "Key": "TigerBlooded.Desc",
+    "enGB": "Increase your attack bonus by 3 when using Tiger Claw strikes. In addition you add +1 to the Difficulty Class for all saving throws against your Tiger Claw maneuvers."
+  },
+  {
+    "Key": "WhiteRavenDefense.Name",
+    "ProcessTemplates": false,
+    "enGB": "White Raven Defense"
+  },
+  {
+    "Key": "WhiteRavenDefense.Desc",
+    "enGB": "On hitting with a White Raven strike removes the stunned, staggered, confused, compulsion, fear, shaken and dazed conditions from allies in a 30 feet radius. In addition you add +1 to the Difficulty Class for all saving throws against your White Raven maneuvers. [Currently no White Raven strike allows a saving throw]"
   },
 
   {

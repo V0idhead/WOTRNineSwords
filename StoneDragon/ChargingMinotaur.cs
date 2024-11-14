@@ -21,6 +21,7 @@ using BlueprintCore.Actions.Builder.BasicEx;
 using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UnitLogic.Mechanics.Properties;
 using VoidHeadWOTRNineSwords.Warblade;
+using VoidHeadWOTRNineSwords.Feats;
 
 namespace VoidHeadWOTRNineSwords.StoneDragon
 {
@@ -43,7 +44,7 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
         .AddMechanicsFeature(Kingmaker.UnitLogic.FactLogic.AddMechanicsFeature.MechanicsFeatureType.DisengageWithoutAttackOfOpportunity)
         .AddInitiatorAttackRollTrigger(onlyHit: true,
-          action: ActionsBuilder.New().CombatManeuver(type: Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush,
+          action: ActionsBuilder.New().AddAll(EnduranceOfStone.GetEffectAction()).CombatManeuver(type: Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush,
               onSuccess: ActionsBuilder.New().DealDamage(new DamageTypeDescription { Physical = new DamageTypeDescription.PhysicalData { Form = PhysicalDamageForm.Bludgeoning } }, new ContextDiceValue { DiceType = Kingmaker.RuleSystem.DiceType.D6, DiceCountValue = 2, BonusValue = new ContextValue { Property = UnitProperty.StatBonusStrength } })
           )
         )
