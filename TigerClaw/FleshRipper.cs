@@ -69,7 +69,7 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction(
-          actions: ActionsBuilder.New().ApplyBuff(TigerBlooded.TigerBloodedBuff, ContextDuration.Fixed(1), toCaster: true).ApplyBuff(triggerBuff, ContextDuration.Fixed(1), toCaster: true).MeleeAttack()
+          actions: ActionsBuilder.New().AddAll(TigerBlooded.GetEffectAction()).ApplyBuff(triggerBuff, ContextDuration.Fixed(1), toCaster: true).MeleeAttack()
         )
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();

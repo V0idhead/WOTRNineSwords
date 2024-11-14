@@ -1,12 +1,16 @@
-﻿using BlueprintCore.Blueprints.Configurators.Facts;
+﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Blueprints.Configurators.Facts;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Conditions.Builder.BasicEx;
+using BlueprintCore.Conditions.Builder.ContextEx;
 using BlueprintCore.Utils.Types;
 using Epic.OnlineServices;
 using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.ElementsSystem;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using System;
@@ -23,15 +27,19 @@ namespace VoidHeadWOTRNineSwords.Feats
     public const string TigerClawFocusFactGuid = "69DC31E3-78F9-4FBA-AB65-8850D15B00CA";
 
     private static BlueprintBuff _tigerBloodedBuff;
-    public static BlueprintBuff TigerBloodedBuff
+    private static BlueprintBuff TigerBloodedBuff
     {
       get
       {
         if (_tigerBloodedBuff == null)
         {
           _tigerBloodedBuff = BuffConfigurator.New("TigerBloodedBuff", "2F478E0B-1111-4658-93E3-92420A1E3889")
-          .SetFlags(BlueprintBuff.Flags.HiddenInUi)
-          .AddAttackBonusConditional(ContextValues.Constant(3), true, ConditionsBuilder.New().HasFact(TigerClawFocusFactGuid), ModifierDescriptor.UntypedStackable)
+          //.SetFlags(BlueprintBuff.Flags.HiddenInUi)
+          .SetIcon(AbilityRefs.BeastShapeIII.Reference.Get().Icon)
+          .SetDisplayName("TigerBlooded.Name")
+          .SetDescription("TigerBlooded.Desc")
+          //.AddAttackBonusConditional(ContextValues.Constant(53), false, ConditionsBuilder.New().HasFact(TigerClawFocusFactGuid), ModifierDescriptor.UntypedStackable)
+          .AddAttackBonus(3)
           .Configure();
         }
         return _tigerBloodedBuff;
@@ -50,6 +58,11 @@ namespace VoidHeadWOTRNineSwords.Feats
         .AddFacts(new() { tigerClawFocusFact })
         .AddPrerequisiteFeaturesFromList(amount: 1, features: AllManeuversAndStances.TigerClawGuids.ToList())
         .Configure();
+    }
+
+    public static ActionList GetEffectAction()
+    {
+      return ActionsBuilder.New().Conditional(ConditionsBuilder.New().CasterHasFact(TigerBlooded.TigerClawFocusFactGuid), ActionsBuilder.New().ApplyBuff(TigerBloodedBuff, ContextDuration.Fixed(1), toCaster: true)).Build();
     }
   }
 }

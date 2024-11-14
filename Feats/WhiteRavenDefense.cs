@@ -49,12 +49,12 @@ namespace VoidHeadWOTRNineSwords.Feats
         .AddAbilityTargetsAround(radius: new Feet(30), targetType: Kingmaker.UnitLogic.Abilities.Components.TargetType.Ally)
         .AddAbilityEffectRunAction(ActionsBuilder.New()
           .RemoveBuffsByDescriptor(new SpellDescriptorWrapper(SpellDescriptor.Confusion))
-          .RemoveBuffsByDescriptor(new SpellDescriptorWrapper(SpellDescriptor.Stun))
           .RemoveBuffsByDescriptor(new SpellDescriptorWrapper(SpellDescriptor.Fear))
+          .RemoveBuffsByDescriptor(new SpellDescriptorWrapper(SpellDescriptor.Frightened))
           .RemoveBuffsByDescriptor(new SpellDescriptorWrapper(SpellDescriptor.Compulsion))
-          .RemoveBuffsByDescriptor(new SpellDescriptorWrapper(SpellDescriptor.Daze))
           .RemoveBuffsByDescriptor(new SpellDescriptorWrapper(SpellDescriptor.Shaken))
-          .RemoveBuffsByDescriptor(new SpellDescriptorWrapper(SpellDescriptor.Staggered))
+          .RemoveBuffsByDescriptor(new SpellDescriptorWrapper(SpellDescriptor.MindAffecting))
+          .RemoveBuffsByDescriptor(new SpellDescriptorWrapper(SpellDescriptor.NegativeEmotion))
         ).Configure();
     }
 

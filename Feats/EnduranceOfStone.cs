@@ -1,4 +1,5 @@
 ﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.AVEx;
 using BlueprintCore.Actions.Builder.BasicEx;
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.Configurators.Facts;
@@ -41,7 +42,13 @@ namespace VoidHeadWOTRNineSwords.Feats
 
     public static ActionList GetEffectAction()
     {
-      return ActionsBuilder.New().Conditional(ConditionsBuilder.New().CasterHasFact(StoneDragonFocusFactGuid), ActionsBuilder.New().OnContextCaster(ActionsBuilder.New().HealTarget(new ContextDiceValue { DiceType = DiceType.D6, DiceCountValue = ContextValues.Constant(1) }))).Build();
+      return ActionsBuilder.New().Conditional(
+        ConditionsBuilder.New().CasterHasFact(StoneDragonFocusFactGuid),
+          ActionsBuilder.New().OnContextCaster(
+            ActionsBuilder.New().HealTarget(new ContextDiceValue { DiceType = DiceType.D6, DiceCountValue = ContextValues.Constant(1), BonusValue = ContextValues.Constant(0) }), true
+          )
+
+        ).Build();
     }
   }
 }

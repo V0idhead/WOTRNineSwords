@@ -58,7 +58,7 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
         .AddAbilityEffectRunAction
         (
           ActionsBuilder.New()
-          .ApplyBuff(TigerBlooded.TigerBloodedBuff, ContextDuration.Fixed(1), toCaster: true)
+          .AddAll(TigerBlooded.GetEffectAction())
           .Add<OpposedSkillCheck>(a =>
           {
             a.Stat = Kingmaker.EntitySystem.Stats.StatType.SkillAthletics;

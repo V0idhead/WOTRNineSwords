@@ -63,7 +63,7 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction
         (
-          ActionsBuilder.New().ApplyBuff(TigerBlooded.TigerBloodedBuff, ContextDuration.Fixed(1), toCaster: true).Conditional(ConditionsBuilder.New().CasterWeaponInTwoHands(), //TODO: true for Two-Handed-Weapons and even wielding a single One-Handed-Weapons in two hands. There doesn't seem to be a way to check if there are two weapons equiped
+          ActionsBuilder.New().AddAll(TigerBlooded.GetEffectAction()).Conditional(ConditionsBuilder.New().CasterWeaponInTwoHands(), //TODO: true for Two-Handed-Weapons and even wielding a single One-Handed-Weapons in two hands. There doesn't seem to be a way to check if there are two weapons equiped
             ifTrue: ActionsBuilder.New().ApplyBuff(twoBuff, ContextDuration.Fixed(1), toCaster: true),
             ifFalse: ActionsBuilder.New().ApplyBuff(oneBuff, ContextDuration.Fixed(1), toCaster: true)
           )

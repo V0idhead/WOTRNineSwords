@@ -23,6 +23,8 @@ using BlueprintCore.Utils.Types;
 using Kingmaker.RuleSystem;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Feats;
+using BlueprintCore.Conditions.Builder;
+using BlueprintCore.Conditions.Builder.ContextEx;
 
 namespace VoidHeadWOTRNineSwords.TigerClaw
 {
@@ -60,7 +62,7 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
         .AddAbilityEffectRunAction
         (
           ActionsBuilder.New()
-          .ApplyBuff(TigerBlooded.TigerBloodedBuff, ContextDuration.Fixed(1), toCaster: true)
+          .AddAll(TigerBlooded.GetEffectAction())
           .Add<OpposedSkillCheck>(a =>
           {
             a.Stat = Kingmaker.EntitySystem.Stats.StatType.SkillAthletics;
