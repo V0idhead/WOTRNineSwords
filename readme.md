@@ -30,7 +30,7 @@ Both changes where made to balance maneuver recovery, as written Swordsage recov
 
 ### Homebrew
  - Boomerang Throw and Lightning Vicious Throw as lower level options for the level 8 Lightning Throw
- - Maneuver Focus and Maneuver Focus (Mythic) feats to raise the DC for your strikes
+ - Several feats including Maneuver Focus, Maneuver Focus (Mythic) and a specific feat for each discipline with unique effects
 
 ## Roadmap
  - Swordsage class
@@ -41,7 +41,7 @@ Both changes where made to balance maneuver recovery, as written Swordsage recov
 
 # Contributing
 This is my first mod and I learned a lot while working on it, but I'm sure there is a lot that could be improved.
-If you have any suggestions for improvements please feel free to create a pull request or an issue on github.
+If you have any suggestions for improvements please feel free to open a discussion thread or an issue on github.
 
 # Special Thanks
 to WittleWolfie for the excellent https://github.com/WittleWolfie/WW-Blueprint-Core
