@@ -108,6 +108,55 @@
     "Key": "MythicManeuverFocus.Desc",
     "enGB": "Your mythic power makes your maneuvers harder to resist.\nBenefit: Increase the Difficulty Class for resisting your maneuvers by your Mythic Rank."
   },
+  {
+    "Key": "UnnervingCalm.Name",
+    "ProcessTemplates": false,
+    "enGB": "Unnerving Calm"
+  },
+  {
+    "Key": "UnnervingCalm.Desc",
+    "enGB": "When you hit with a Diamond Mind strike you regain the use of that strike. In addition you add +1 to the Difficulty Class for all saving throws against your Diamond Mind maneuvers."
+  },
+  {
+    "Key": "IronHeartAura.Name",
+    "ProcessTemplates": false,
+    "enGB": "Iron Heart Aura"
+  },
+  {
+    "Key": "IronHeartAura.Desc",
+    "enGB": "Your strength of spirit and martial training inspires those around you.\nBenefit: While you are in any Iron Heart stance, allies (not yourself) in a 20ft-circle around you gain +2 morale bonus to saving throws. In addition you add +1 to the Difficulty Class for all saving throws against your Iron Heart maneuvers."
+  },
+  {
+    "Key": "IronHeartAuraEffect.Desc",
+    "enGB": "+2 morale bonus to saving throws."
+  },
+  {
+    "Key": "EnduranceOfStone.Name",
+    "ProcessTemplates": false,
+    "enGB": "Endurance of Stone"
+  },
+  {
+    "Key": "EnduranceOfStone.Desc",
+    "enGB": "When you hit with a Stone Dragon strike you heal for 1d6. In addition you add +1 to the Difficulty Class for all saving throws against your Stone Dragon maneuvers."
+  },
+  {
+    "Key": "TigerBlooded.Name",
+    "ProcessTemplates": false,
+    "enGB": "Tiger Blooded"
+  },
+  {
+    "Key": "TigerBlooded.Desc",
+    "enGB": "Increase your attack bonus by 3 when using Tiger Claw strikes. In addition you add +1 to the Difficulty Class for all saving throws against your Tiger Claw maneuvers."
+  },
+  {
+    "Key": "WhiteRavenDefense.Name",
+    "ProcessTemplates": false,
+    "enGB": "White Raven Defense"
+  },
+  {
+    "Key": "WhiteRavenDefense.Desc",
+    "enGB": "On hitting with a White Raven strike removes the confused, compulsion, emotion, fear, shaken and mind affecting conditions from allies in a 30 feet radius. In addition you add +1 to the Difficulty Class for all saving throws against your White Raven maneuvers. [Currently no White Raven strike allows a saving throw]"
+  },
 
   {
     "Key": "WarbladeC.Name",
@@ -216,11 +265,11 @@
   },
   {
     "Key": "PunishingStanceBuff.Description",
-    "enGB": "Discipline: Iron Heart\nRequired Initiater Level: Warblade 1\nYou deal an extra 1d6 points of damage with all melee attacks and take a -2 penalty to AC."
+    "enGB": "You deal an extra 1d6 points of damage with all melee attacks and take a -2 penalty to AC."
   },
   {
     "Key": "PunishingStance.Description",
-    "enGB": "You chop down violently with your weapon, lending extra force to your blows. These attacks come at a cost, as your enemies slash at your undefended legs and flanks. While you are in this stance, you deal an extra 1d6 points of damage with all melee attacks. You also take a -2 penalty to AC, because this fighting stance emphasizes power over a defensive posture."
+    "enGB": "Discipline: Iron Heart\nRequired Initiater Level: Warblade 1\nYou chop down violently with your weapon, lending extra force to your blows. These attacks come at a cost, as your enemies slash at your undefended legs and flanks. While you are in this stance, you deal an extra 1d6 points of damage with all melee attacks. You also take a -2 penalty to AC, because this fighting stance emphasizes power over a defensive posture."
   },
   {
     "Key": "StoneBones.Name",

@@ -17,6 +17,7 @@ using System.Text;
 using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
+using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.StoneDragon;
 using VoidHeadWOTRNineSwords.Warblade;
 
@@ -95,7 +96,7 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction(
           //actions: ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).MeleeAttack()
-          actions: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 17 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
+          actions: ActionsBuilder.New().AddAll(TigerBlooded.GetEffectAction()).SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 17 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength, TigerBlooded.TigerClawFocusFactGuid),
             onResult: ActionsBuilder.New().ConditionalSaved(
               succeed: ActionsBuilder.New().Add<MeleeAttackWithStatDamage>(mawsd => { mawsd.statType = Kingmaker.EntitySystem.Stats.StatType.Dexterity; mawsd.damageAmount = new DiceFormula(1, DiceType.D4); }).ApplyBuff(moveDebuffSaved, ContextDuration.Fixed(1, DurationRate.Minutes)),
               failed: ActionsBuilder.New().Add<MeleeAttackWithStatDamage>(mawsd => { mawsd.statType = Kingmaker.EntitySystem.Stats.StatType.Dexterity; mawsd.damageAmount = new DiceFormula(1, DiceType.D8); }).ApplyBuff(moveDebuff, ContextDuration.Fixed(1, DurationRate.Minutes))

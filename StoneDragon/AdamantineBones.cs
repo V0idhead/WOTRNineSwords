@@ -19,6 +19,7 @@ using VoidHeadWOTRNineSwords.Warblade;
 using BlueprintCore.Actions.Builder.ContextEx;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Feats;
 
 namespace VoidHeadWOTRNineSwords.StoneDragon
 {
@@ -59,7 +60,7 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction(
-          actions: ActionsBuilder.New().Add<MeleeAttackExtended>(attack => { attack.OnHit = ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).Build(); })
+          actions: ActionsBuilder.New().Add<MeleeAttackExtended>(attack => { attack.OnHit = ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).AddAll(EnduranceOfStone.GetEffectAction()).Build(); })
         )
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();

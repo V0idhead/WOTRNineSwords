@@ -12,12 +12,13 @@ namespace VoidHeadWOTRNineSwords.Components
 {
   static class Helpers
   {
-    public static List<(ConditionsBuilder conditions, ContextValue modifier)> GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty property)
+    public static List<(ConditionsBuilder conditions, ContextValue modifier)> GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty property, string disciplineFocusGuid)
     {
       return new List<(ConditionsBuilder conditions, ContextValue modifier)>
       {
         (ConditionsBuilder.New().AddTrue(), new ContextValue { Property = property, ValueType = ContextValueType.CasterProperty }),
         (ConditionsBuilder.New().CasterHasFact(ManeuverFocus.Guid), new ContextValue{Value = 1}),
+        (ConditionsBuilder.New().CasterHasFact(disciplineFocusGuid), new ContextValue{Value = 1}),
         (ConditionsBuilder.New().CasterHasFact(MythicManeuverFocus.Guid), new ContextValue{Property = Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.MythicLevel, ValueType = ContextValueType.CasterProperty})
       };
     }

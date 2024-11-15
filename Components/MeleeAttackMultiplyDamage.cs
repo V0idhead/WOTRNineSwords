@@ -1,4 +1,6 @@
-﻿using Kingmaker.Designers;
+﻿using BlueprintCore.Utils;
+using Kingmaker.Designers;
+using Kingmaker.ElementsSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UnitLogic.Mechanics.Actions;
@@ -14,6 +16,7 @@ namespace VoidHeadWOTRNineSwords.Components
   internal class MeleeAttackMultiplyDamage : ContextActionMeleeAttack
   {
     public int Multiplicator = 2;
+    public ActionList OnHit = Constants.Empty.Actions;
 
     public override void RunAction()
     {
@@ -29,7 +32,10 @@ namespace VoidHeadWOTRNineSwords.Components
 
         Main.Logger.Verbose($"MeleeAttackExtended.RunAction Result: {attack.AttackRoll.IsHit}");
         if (attack.AttackRoll.IsHit)
-          GameHelper.DealDirectDamage(AbilityContext.Caster, AbilityContext.MainTarget.Unit, attack.MeleeDamage.DamageWithoutReduction * (Multiplicator-1));
+        {
+          GameHelper.DealDirectDamage(AbilityContext.Caster, AbilityContext.MainTarget.Unit, attack.MeleeDamage.DamageWithoutReduction * (Multiplicator - 1));
+          OnHit.Run();
+        }
       }
       catch (Exception e)
       {

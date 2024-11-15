@@ -76,6 +76,8 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .AddPrerequisiteFeaturesFromList(amount: 3, features: AllManeuversAndStances.IronHeartGuids.Except([Guid]).ToList())
 #endif
         .Configure();
+
+      Main.Logger.Info($"{nameof(AdamantineHurricane)} done");
     }
   }
 }

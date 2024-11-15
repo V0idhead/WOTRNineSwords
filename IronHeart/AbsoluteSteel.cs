@@ -18,6 +18,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.IronHeart
@@ -47,6 +48,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .AddMovementDistanceTrigger(distanceInFeet: 10,
           action: ActionsBuilder.New().ApplyBuff(triggeredBuff, ContextDuration.Fixed(1), toCaster: true)
         )
+        .AddAreaEffect(IronHeartAura.IronHeartAuraArea)
         .Configure();
 
       var activatable = ActivatableAbilityConfigurator.New("AbsoluteSteelActivatable", "215664FE-47B9-40F1-B763-9416BC79C549")

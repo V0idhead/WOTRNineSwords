@@ -3,6 +3,7 @@ using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
+using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Enums;
 using Kingmaker.RuleSystem;
@@ -16,6 +17,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Components;
+using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.IronHeart
@@ -37,10 +39,12 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .AddNotDispelable()
         //.SetDisplayName(name)
         //.SetIcon(icon)
-        //.AdditionalDiceOnDamage(diceValue: new ContextDiceValue { DiceType = DiceType.D6, DiceCountValue = 1 }) //does nothing
+        //.AdditionalDiceOnDamage(diceValue: new ContextDiceValue { DiceType = DiceType.D6, DiceCountValue = 1 }, damageTypeDescription: DamageTypes.Direct(), checkAbilityType: false, checkDamageDealt: false, checkEnergyDamageType: false, checkSpellDescriptor: false, checkSpellParent: false, checkWeaponType: false) //does nothing
         .AddDamageBonusConditional(bonus: new ContextValue {Value = 4 }, descriptor: ModifierDescriptor.UntypedStackable) //TODO: damage bonus should be 1d6 ?AdditionalDiceOnDamage?
-        //.AddDamageBonusConditional(bonus: ContextValue., descriptor: ModifierDescriptor.UntypedStackable) //TODO: damage bonus should be 1d6
+        //.AddDamageBonusConditional(bonus: ContextValues., descriptor: ModifierDescriptor.UntypedStackable) //TODO: damage bonus should be 1d6
+        //.AdditionalDamageOnHit(energyDamageDice: new DiceFormula(1, DiceType.D6), onlyMelee: true, element: Kingmaker.Enums.Damage.DamageEnergyType.Magic)
         .AddACBonusAgainstAttacks(armorClassBonus: -2)
+        .AddAreaEffect(IronHeartAura.IronHeartAuraArea)
         .Configure();
 
       var punishingStanceActivatable = ActivatableAbilityConfigurator.New("PunishingStanceActivatable", "7990BAB5-27BC-4422-829F-8D9B411A691C")

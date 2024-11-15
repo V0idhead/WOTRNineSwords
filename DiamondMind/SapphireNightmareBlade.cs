@@ -22,6 +22,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Components;
+using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.DiamondMind
@@ -63,7 +64,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
           .Add<NightmareBladeAction>(a =>
           {
             a.OnLow = ActionsBuilder.New().ApplyBuff(failBuff, ContextDuration.Fixed(1), toCaster: true).MeleeAttack().Build();
-            a.OnHigh = ActionsBuilder.New().Add<ContextMeleeAttackRolledBonusDamage>(bd => { bd.ExtraDamage = new DiceFormula(1, DiceType.D6); }).Build();
+            a.OnHigh = ActionsBuilder.New().Add<ContextMeleeAttackRolledBonusDamage>(bd => { bd.ExtraDamage = new DiceFormula(1, DiceType.D6); bd.OnHit = UnnervingCalm.GetEffectAction(); }).Build();
           })
         )
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)

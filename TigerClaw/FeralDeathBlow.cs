@@ -18,6 +18,7 @@ using System.Text;
 using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
+using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.TigerClaw
@@ -57,6 +58,7 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
         .AddAbilityEffectRunAction
         (
           ActionsBuilder.New()
+          .AddAll(TigerBlooded.GetEffectAction())
           .Add<OpposedSkillCheck>(a =>
           {
             a.Stat = Kingmaker.EntitySystem.Stats.StatType.SkillAthletics;
@@ -64,7 +66,7 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
             a.Success = ActionsBuilder.New().ApplyBuff(successBuff, ContextDuration.Fixed(1), toCaster: true).Add<ContextMeleeAttackRolledBonusDamage>(bd =>
             {
               bd.ExtraDamage = new DiceFormula(20, DiceType.D6);
-              bd.OnHit = ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 19 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
+              bd.OnHit = ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 19 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength, TigerBlooded.TigerClawFocusFactGuid),
                 onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().Kill(Kingmaker.UnitLogic.UnitState.DismemberType.LimbsApart))).Build();
             }).Build();
             a.Failure = ActionsBuilder.New().MeleeAttack().Build();

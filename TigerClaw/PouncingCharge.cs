@@ -18,6 +18,7 @@ using VoidHeadWOTRNineSwords.Warblade;
 using VoidHeadWOTRNineSwords.WhiteRaven;
 using BlueprintCore.Actions.Builder.ContextEx;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Feats;
 
 namespace VoidHeadWOTRNineSwords.TigerClaw
 {
@@ -57,7 +58,7 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
         .SetActionType(UnitCommand.CommandType.Free)
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
-        .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(chargeBuff, ContextDuration.Fixed(1), toCaster: true))
+        .AddAbilityEffectRunAction(ActionsBuilder.New().AddAll(TigerBlooded.GetEffectAction()).ApplyBuff(chargeBuff, ContextDuration.Fixed(1), toCaster: true))
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 

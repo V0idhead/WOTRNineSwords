@@ -12,6 +12,11 @@ namespace VoidHeadWOTRNineSwords.Feats
     {
       ManeuverFocus.Configure();
       MythicManeuverFocus.Configure();
+      UnnervingCalm.Configure();
+      IronHeartAura.Configure();
+      EnduranceOfStone.Configure();
+      TigerBlooded.Configure();
+      WhiteRavenDefense.Configure();
     }
   }
 }

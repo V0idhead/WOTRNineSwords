@@ -18,6 +18,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
+using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.StoneDragon
@@ -50,7 +51,7 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction
         (
-          ActionsBuilder.New().Add<MeleeAttackWithStatDamage>(mawsd => { mawsd.statType = Kingmaker.EntitySystem.Stats.StatType.Constitution; mawsd.damageAmount = new Kingmaker.RuleSystem.DiceFormula(2, Kingmaker.RuleSystem.DiceType.One); })
+          ActionsBuilder.New().Add<MeleeAttackWithStatDamage>(mawsd => { mawsd.statType = Kingmaker.EntitySystem.Stats.StatType.Constitution; mawsd.damageAmount = new Kingmaker.RuleSystem.DiceFormula(2, Kingmaker.RuleSystem.DiceType.One); mawsd.OnHit = EnduranceOfStone.GetEffectAction(); })
         )
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();

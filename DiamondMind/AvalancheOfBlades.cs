@@ -37,16 +37,13 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
 
       UnityEngine.Sprite icon = AbilityRefs.TricksterRayOfHalberds.Reference.Get().Icon;
 
-      var buff = BuffConfigurator.New("AvalancheOfBladesBuff", "DF324072-D04C-47C5-A289-022B5B203144")
-        //.SetFlags(BlueprintBuff.Flags.HiddenInUi)
+      /*var buff = BuffConfigurator.New("AvalancheOfBladesBuff", "DF324072-D04C-47C5-A289-022B5B203144")
         .SetDisplayName(name)
         .SetDescription(desc)
-        //.AddAttackBonus(-4)
-        //.AddAttackBonusAgainstFactOwner(bonus: new ContextValue { Value = -4, ValueType = ContextValueType.Shared})
         .AddInitiatorAttackRollTrigger(
           onlyHit: true,
           action: ActionsBuilder.New().BuffActionAddStatBonus(ModifierDescriptor.UntypedStackable, Kingmaker.EntitySystem.Stats.StatType.AdditionalAttackBonus, new ContextValue { Value = -4 }))
-        .Configure();
+        .Configure();*/
 
       var ability = AbilityConfigurator.New(name, "6F55DCF7-6E10-494B-BF5F-9A882B1D52A1")
         .SetDisplayName(name)
@@ -61,7 +58,6 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .SetShouldTurnToTarget()
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
-        //.AddAbilityEffectRunAction(RecurseAttack(10, buff))
         .AddAbilityEffectRunAction(ActionsBuilder.New().Add<MeleeAttackAvalanche>())
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
@@ -78,14 +74,6 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .AddPrerequisiteFeaturesFromList(amount: 3, features: AllManeuversAndStances.DiamondMindGuids.Except([Guid]).ToList())
 #endif
         .Configure();
-    }
-
-    private static ActionList RecurseAttack(int count, BlueprintBuff buff)
-    {
-      if (--count >= 0)
-        return ActionsBuilder.New().Add<MeleeAttackExtended>(attack => { attack.OnHit = RecurseAttack(count, buff); attack.SelectNewTarget = false; }).ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).Build();
-      else
-        return ActionsBuilder.New().Build();
     }
   }
 }
