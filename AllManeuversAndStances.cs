@@ -80,6 +80,9 @@ namespace VoidHeadWOTRNineSwords
       DancingBladeForm.Configure();
       //Lvl8
       SupremeBladeParry.Configure();
+      //Counters
+      //Lvl2
+      WallOfBlades.Configure();
       #endregion
       #region Stone Dragon
       //--Maneuvers--

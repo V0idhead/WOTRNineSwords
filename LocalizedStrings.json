@@ -833,6 +833,20 @@
     "Key": "TimeStandsStill.Desc",
     "enGB": "Discipline: Diamond Mind\nManeuver Type: Strike\nRequired Initiater Level: Warblade 17\nRequired Maneuvers: 4 Diamond Mind\nYou make two Full Attacks in a row."
   },
+  {
+    "Key": "WallOfBlades.Name",
+    "ProcessTemplates": false,
+    "enGB": "Wall of Blades"
+  },
+  {
+    "Key": "WallOfBlades.Desc",
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Counter\nRequired Initiater Level: Warblade 3\nWhile this counter is active you can oppose an incoming hit with an attack roll with your current weapon, if your result is higher that attack misses."
+  },
+  {
+    "Key": "WallOfBladesBuff.Desc",
+    "enGB": "Wall of Blades active"
+  },
+
 
   {
     "Key": "nam.Name",
