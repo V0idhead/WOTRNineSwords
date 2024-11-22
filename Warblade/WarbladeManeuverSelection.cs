@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.DiamondMind;
 using VoidHeadWOTRNineSwords.IronHeart;
 using VoidHeadWOTRNineSwords.StoneDragon;
@@ -27,7 +28,7 @@ namespace VoidHeadWOTRNineSwords.Warblade
         .SetDescription("WarbladeManeuverSelection.Desc")
         .SetIsClassFeature()
         .SetMode(SelectionMode.OnlyNew)
-        .AddFacts([WarbladeC.ManeuverResourceFactGuid])
+        .AddFacts([ManeuverResources.ManeuverResourceFactGuid])
         .SetAllFeatures(
           StoneBones.Guid,
           ChargingMinotaur.Guid,

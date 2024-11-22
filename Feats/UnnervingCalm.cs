@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.Feats
@@ -39,7 +40,7 @@ namespace VoidHeadWOTRNineSwords.Feats
 
     public static ActionList GetEffectAction()
     {
-      return ActionsBuilder.New().OnContextCaster(ActionsBuilder.New().Conditional(ConditionsBuilder.New().CasterHasFact(DiamondFocusFactGuid), ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid, value: 1))).Build();
+      return ActionsBuilder.New().OnContextCaster(ActionsBuilder.New().Conditional(ConditionsBuilder.New().CasterHasFact(DiamondFocusFactGuid), ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid, value: 1))).Build();
     }
   }
 }

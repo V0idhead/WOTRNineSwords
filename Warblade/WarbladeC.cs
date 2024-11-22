@@ -29,25 +29,11 @@ namespace VoidHeadWOTRNineSwords.Warblade
   public static class WarbladeC
   {
     public const string Guid = "9FD9151C-B985-4B70-81BF-D8D9C4D21E15";
-    public const string ManeuverResourceGuid = "06B1EFA3-CF54-47EA-9BA8-D788F239FE1C";
-    public const string ManeuverResourceFactGuid = "B77E4216-1AC6-4E58-92E7-0550C8ACA4EE";
 
     private static readonly LogWrapper log = LogWrapper.Get("VoidHeadWOTRNineSwords");
 
     public static void ConfigureClass()
     {
-      log.Info($"{nameof(WarbladeC)} configuring resource");
-      var warbladeManeuverResource = AbilityResourceConfigurator.New("WarbladeManeuvers.Resource", ManeuverResourceGuid)
-      //.SetMaxAmount(new BlueprintAbilityResource.Amount { BaseValue=3, IncreasedByLevel=true, StartingLevel=0, LevelStep=4, PerStepIncrease=1 })
-      .SetMaxAmount(ResourceAmountBuilder.New(3).IncreaseByLevelStartPlusDivStep(classes: new string[] { Guid }, startingLevel: 1, levelsPerStep: 4, bonusPerStep: 1))
-      //.SetUseMax()
-      //.AddPlayerLeaveCombatTrigger(ActionsBuilder.New().RestoreResource(ManeuverResourceGuid, 3)) //doesn't seem to do anything, which is a shame because now I need an end combat trigger on every maneuver
-      .Configure();
-
-      var manResFact = UnitFactConfigurator.New("WarbladeManeuvers.Resource.Fact", ManeuverResourceFactGuid)
-        .AddAbilityResources(resource: warbladeManeuverResource, restoreAmount: true)
-        .Configure();
-
       log.Info($"{nameof(WarbladeC)} configuring");
       BlueprintProgression progression = ConfigureProgression();
 
@@ -108,19 +94,19 @@ namespace VoidHeadWOTRNineSwords.Warblade
         .AddEntry(1, warbladeProficiencies.AssetGuid, WarbladeRecoverManeuvers.Guid, weaponAptitude.AssetGuid, battleClarity.AssetGuid, stanceSelector.AssetGuid, maneuverSelector.AssetGuid, maneuverSelector.AssetGuid, maneuverSelector.AssetGuid, InitiatorLevels.Lvl1Guid) //3 maneuvers, 1 stance
         .AddEntry(2, FeatureRefs.UncannyDodge.Reference.Guid, maneuverSelector.AssetGuid)
         .AddEntry(3, battleArdor.AssetGuid, maneuverSelector.AssetGuid, InitiatorLevels.Lvl2Guid)
-        .AddEntry(4, stanceSelector.AssetGuid)
+        .AddEntry(4, stanceSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid)
         .AddEntry(5, bonusFeatSelector, maneuverSelector, InitiatorLevels.Lvl3Guid)
         .AddEntry(6, FeatureRefs.ImprovedUncannyDodge.Reference.Guid)
         .AddEntry(7, battleCunning.AssetGuid, maneuverSelector.AssetGuid, InitiatorLevels.Lvl4Guid)
         .AddEntry(9, bonusFeatSelector, maneuverSelector, InitiatorLevels.Lvl5Guid)
-        .AddEntry(10, stanceSelector.AssetGuid)
+        .AddEntry(10, stanceSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid)
         .AddEntry(11, battleSkill.AssetGuid, maneuverSelector.AssetGuid, InitiatorLevels.Lvl6Guid)
         .AddEntry(13, bonusFeatSelector, maneuverSelector.AssetGuid, InitiatorLevels.Lvl7Guid)
-        .AddEntry(15, battleMastery.AssetGuid, maneuverSelector.AssetGuid, InitiatorLevels.Lvl8Guid)
+        .AddEntry(15, battleMastery.AssetGuid, maneuverSelector.AssetGuid, InitiatorLevels.Lvl8Guid, ManeuverResources.IncreaseManeuverUsesGuid)
         .AddEntry(16, stanceSelector.AssetGuid)
         .AddEntry(17, bonusFeatSelector, maneuverSelector.AssetGuid, InitiatorLevels.Lvl9Guid)
         .AddEntry(19, maneuverSelector.AssetGuid)
-        .AddEntry(20, stanceMastery.AssetGuid);
+        .AddEntry(20, stanceMastery.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid);
 
       var progression = ProgressionConfigurator.New("WarbladeProgression", "5BD44661-AEF3-48E1-8B11-3740A0BA9A31")
         .SetRanks(1)

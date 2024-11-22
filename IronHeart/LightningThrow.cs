@@ -60,7 +60,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
             .DealDamage(DamageTypes.Direct(), ContextDice.Value(DiceType.D6, 12), addFavoredEnemyDamage: true, halfIfSaved: true).Build(); })
           .MeleeAttack(Kingmaker.Visual.Animation.Kingmaker.UnitAnimationType.None, autoHit: true)
          ))
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
       var spell = FeatureConfigurator.New("LightningThrow", Guid, AllManeuversAndStances.featureGroup)
@@ -69,7 +69,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { ability })
-        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
+        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
 #if !DEBUG
         .AddPrerequisiteFeature(InitiatorLevels.Lvl8Guid)
         .AddPrerequisiteFeaturesFromList(amount: 2, features: AllManeuversAndStances.IronHeartGuids.Except([Guid]).ToList())

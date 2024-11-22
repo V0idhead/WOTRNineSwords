@@ -62,7 +62,7 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .AddAbilityEffectRunAction(
           actions: ActionsBuilder.New().Add<MeleeAttackExtended>(attack => { attack.OnHit = ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).AddAll(EnduranceOfStone.GetEffectAction()).Build(); })
         )
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
       var spell = FeatureConfigurator.New("AdamantineBones", Guid, AllManeuversAndStances.featureGroup)
@@ -71,7 +71,7 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { ability })
-        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
+        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
 #if !DEBUG
         .AddPrerequisiteFeature(InitiatorLevels.Lvl8Guid)
         .AddPrerequisiteFeaturesFromList(amount: 3, features: AllManeuversAndStances.StoneDragonGuids.Except([Guid]).ToList())

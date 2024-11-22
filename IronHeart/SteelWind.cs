@@ -45,7 +45,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         //.AddAbilityTargetsAround(radius: new Kingmaker.Utility.Feet(5))
         .AddAbilityEffectRunAction(ActionsBuilder.New().Add<MeleeAttackTargetsAround>(mata => { mata.TargetLimit = 2; mata.Range = new Kingmaker.Utility.Feet(10); }))
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
       var spell = FeatureConfigurator.New("SteelWind", Guid, AllManeuversAndStances.featureGroup)
@@ -54,7 +54,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { ability })
-        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
+        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
         .Configure();
     }
   }

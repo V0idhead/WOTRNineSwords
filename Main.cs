@@ -5,6 +5,7 @@ using Kingmaker.Blueprints.JsonSystem;
 using Owlcat.Runtime.Core.Logging;
 using System;
 using UnityModManagerNet;
+using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade;
 
@@ -58,6 +59,7 @@ namespace VoidHeadWOTRNineSwords
 
           Logger.Info("Configuring blueprints.");
 
+          ManeuverResources.Configure();
           AllManeuversAndStances.Configure();
           WarbladeC.ConfigureClass();
           AllFeats.Configure();

@@ -49,7 +49,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         (
           ActionsBuilder.New().Add<ContextMeleeAttackRolledBonusDamage>(marb => { marb.ExtraDamage = new Kingmaker.RuleSystem.DiceFormula(100, Kingmaker.RuleSystem.DiceType.One); })
         )
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
       var maneuver = FeatureConfigurator.New("StrikeOfPerfectClarity", Guid)
@@ -58,7 +58,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { ability })
-        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
+        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
 #if !DEBUG
         .AddPrerequisiteFeature(InitiatorLevels.Lvl9Guid)
         .AddPrerequisiteFeaturesFromList(amount: 4, features: AllManeuversAndStances.IronHeartGuids.Except([Guid]).ToList())

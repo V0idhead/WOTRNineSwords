@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.StoneDragon;
 using VoidHeadWOTRNineSwords.Warblade;
 
@@ -69,7 +70,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .AddAbilityEffectRunAction(
           actions: ActionsBuilder.New().ApplyBuff(attackBuff, ContextDuration.Fixed(1), toCaster: true).MeleeAttack().ApplyBuff(targetBuff, ContextDuration.Fixed(1, DurationRate.Rounds)).ApplyBuff(buff, ContextDuration.Fixed(1, DurationRate.Rounds), toCaster: true)
          )
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
       var spell = FeatureConfigurator.New("SteelyStrike", Guid, AllManeuversAndStances.featureGroup)
@@ -78,7 +79,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { ability })
-        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
+        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
         .Configure();
     }
   }

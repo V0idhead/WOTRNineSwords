@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade;
@@ -67,7 +68,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
             a.OnHigh = ActionsBuilder.New().Add<ContextMeleeAttackRolledBonusDamage>(bd => { bd.ExtraDamage = new DiceFormula(1, DiceType.D6); bd.OnHit = UnnervingCalm.GetEffectAction(); }).Build();
           })
         )
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
       var spell = FeatureConfigurator.New("SapphireNightmareBlade", Guid, AllManeuversAndStances.featureGroup)
@@ -76,7 +77,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { ability })
-        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
+        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
         .Configure();
     }
   }

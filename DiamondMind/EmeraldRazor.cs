@@ -47,7 +47,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         (
           ActionsBuilder.New().MeleeAttack(autoHit: true).AddAll(UnnervingCalm.GetEffectAction())
         )
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
       var spell = FeatureConfigurator.New("EmeraldRazor", Guid, AllManeuversAndStances.featureGroup)
@@ -56,7 +56,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { ability })
-        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
+        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
 #if !DEBUG
         .AddPrerequisiteFeature(InitiatorLevels.Lvl2Guid)
         .AddPrerequisiteFeaturesFromList(amount: 1, features: AllManeuversAndStances.DiamondMindGuids.Except([Guid]).ToList())

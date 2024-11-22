@@ -67,7 +67,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
             a.OnHigh = ActionsBuilder.New().Add<MeleeAttackMultiplyDamage>(mamd => { mamd.Multiplicator = 4; mamd.OnHit = UnnervingCalm.GetEffectAction(); }).Build();
           })
         )
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
       var spell = FeatureConfigurator.New("DiamondNightmareBlade", Guid, AllManeuversAndStances.featureGroup)
@@ -76,7 +76,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { ability })
-        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
+        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
 #if !DEBUG
         .AddPrerequisiteFeature(InitiatorLevels.Lvl8Guid)
         .AddPrerequisiteFeaturesFromList(amount: 3, features: AllManeuversAndStances.DiamondMindGuids.Except([Guid]).ToList())

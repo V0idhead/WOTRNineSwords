@@ -45,7 +45,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .AddAbilityEffectRunAction(
           actions: ActionsBuilder.New().MeleeAttack(fullAttack: true).MeleeAttack(fullAttack: true)
         )
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
       var spell = FeatureConfigurator.New("TimeStandsStill", Guid, AllManeuversAndStances.featureGroup)
@@ -54,7 +54,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { ability })
-        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
+        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
 #if !DEBUG
         .AddPrerequisiteFeature(InitiatorLevels.Lvl9Guid)
         .AddPrerequisiteFeaturesFromList(amount: 4, features: AllManeuversAndStances.DiamondMindGuids.Except([Guid]).ToList())

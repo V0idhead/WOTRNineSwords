@@ -49,7 +49,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
               failed: ActionsBuilder.New().Add<MeleeAttackWithStatDamage>(mawsd => { mawsd.statType = Kingmaker.EntitySystem.Stats.StatType.Wisdom; mawsd.damageAmount = new Kingmaker.RuleSystem.DiceFormula(1, Kingmaker.RuleSystem.DiceType.D4); mawsd.OnHit = UnnervingCalm.GetEffectAction(); }),
               succeed: ActionsBuilder.New().MeleeAttack()))
         )
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
       var maneuver = FeatureConfigurator.New("MindStrike", Guid)
@@ -58,7 +58,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { ability })
-        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
+        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
 #if !DEBUG
         .AddPrerequisiteFeature(InitiatorLevels.Lvl4Guid)
         .AddPrerequisiteFeaturesFromList(amount: 2, features: AllManeuversAndStances.DiamondMindGuids.Except([Guid]).ToList())

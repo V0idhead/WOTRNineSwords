@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.IronHeart;
 
@@ -33,7 +34,7 @@ namespace VoidHeadWOTRNineSwords.Warblade
         .SetCanTargetEnemies()
         .SetRange(Kingmaker.UnitLogic.Abilities.Blueprints.AbilityRange.Weapon)
         .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move)
-        .AddAbilityEffectRunAction(ActionsBuilder.New().Add<MeleeAttackExtended>(mae => mae.OnHit = ActionsBuilder.New().OnContextCaster(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid, value: 2)).Build()))
+        .AddAbilityEffectRunAction(ActionsBuilder.New().Add<MeleeAttackExtended>(mae => mae.OnHit = ActionsBuilder.New().OnContextCaster(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid, value: 2)).Build()))
         .Configure();
 
       var feature = FeatureConfigurator.New("RecoverManeuvers", Guid)
