@@ -34,7 +34,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.BladeBarrier.Reference.Get().Icon;
+      UnityEngine.Sprite icon = FeatureRefs.SpellStrikeFeature.Reference.Get().Icon;
 
       log.Info($"Configuring {nameof(WallOfBlades)}");
 

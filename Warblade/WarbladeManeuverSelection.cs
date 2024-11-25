@@ -81,7 +81,8 @@ namespace VoidHeadWOTRNineSwords.Warblade
           MountainTombstoneStrike.Guid,
           StrikeOfPerfectClarity.Guid,
           TimeStandsStill.Guid,
-          WallOfBlades.Guid
+          WallOfBlades.Guid,
+          LightningRecovery.Guid
         ).Configure();
 
       return warbladeManeuverSelection;

@@ -1,17 +1,9 @@
-﻿using BlueprintCore.Blueprints.CustomConfigurators;
-using BlueprintCore.Utils;
+﻿using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
 using Kingmaker.PubSubSystem;
-using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
-using Kingmaker.UnitLogic.Buffs.Actions;
-using Kingmaker.UnitLogic.Buffs.Blueprints;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.IronHeart;
 using VoidHeadWOTRNineSwords.Warblade;
 
@@ -23,30 +15,75 @@ namespace VoidHeadWOTRNineSwords.Counters
 
     public void OnEventAboutToTrigger(RuleAttackRoll evt)
     {
-      log.Info("WallOfBlades AboutTo");
+      #if DEBUG
+        log.Info("WallOfBlades: check Flat Footed");
+      #endif
+      if (evt.IsTargetFlatFooted)
+        return;
 
+      #if DEBUG
+      log.Info("WallOfBlades: check is already active");
+      #endif
       if (!Owner.HasFact(WallOfBlades.Fact))
       {
-        log.Info("WallOfBlades fact not found");
+
+        #if DEBUG
+        log.Info("WallOfBlades: check resource");
+        #endif
         Blueprint<BlueprintAbilityResourceReference> maneuverResource = WarbladeC.ManeuverResourceGuid;
         if (Owner.Resources.HasEnoughResource(maneuverResource.Reference, 1)) //TODO: switch Resource implementation
         {
           Blueprint<BlueprintBuffReference> wallOfBladesBuff = WallOfBlades.ActiveBuffGuid;
           Owner.AddBuff(wallOfBladesBuff.Reference, Owner, new TimeSpan(0, 0, 6));
           Owner.Resources.Spend(maneuverResource.Reference, 1);
-          log.Info("WallOfBlades resource spent");
         }
         else
         {
-          log.Info("WallOfBlades resource ran out");
           return;
         }
       }
-      log.Info("Parrying");
+      #if DEBUG
+      log.Info("WallOfBlades: try parry");
+      #endif
       evt.TryParry(Owner, Owner.Body.PrimaryHand.Weapon, 0);
     }
 
     public void OnEventDidTrigger(RuleAttackRoll evt)
-    { }
+    {
+      /*log.Info("WallOfBlades: check Flat Footed");
+      if (evt.IsTargetFlatFooted)
+        return;
+
+      log.Info("WallOfBlades: check is already active");
+      if (!Owner.HasFact(WallOfBlades.Fact))
+      {
+        log.Info("WallOfBlades: check resource");
+        Blueprint<BlueprintAbilityResourceReference> maneuverResource = WarbladeC.ManeuverResourceGuid;
+        if (Owner.Resources.HasEnoughResource(maneuverResource.Reference, 1)) //TODO: switch Resource implementation
+        {
+          Blueprint<BlueprintBuffReference> wallOfBladesBuff = WallOfBlades.ActiveBuffGuid;
+          Owner.AddBuff(wallOfBladesBuff.Reference, Owner, new TimeSpan(0, 0, 6));
+          Owner.Resources.Spend(maneuverResource.Reference, 1);
+        }
+        else
+        {
+          return;
+        }
+      }
+
+      int target = evt.AttackBonusRule.Result + evt.D20.Result;
+      log.Info($"WallOfBlades: target: {target} = {evt.AttackBonusRule.Result} + {evt.D20.Result}");
+
+      var bonus = new RuleCalculateAttackBonusWithoutTarget(Owner, Owner.Body.PrimaryHand.Weapon, 0);
+      Context.TriggerRule(bonus);
+      var roll = new RuleRollD20(Owner);
+      roll.Roll();
+
+      int attempt = bonus.TotalBonusValue + roll.Result;
+      log.Info($"WallOfBlades: attempt: {attempt} = {bonus.TotalBonusValue} + {roll}");
+
+      if (attempt > target)
+        evt.Result = AttackResult.Parried;*/
+    }
   }
 }

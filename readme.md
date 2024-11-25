@@ -4,7 +4,7 @@ There were some changes necessary both to adapt to the Pathfinder ruleset as wel
 
 ## Contents
  - Warblade class
- - 50 Maneuvers (including a tiny number of Boosts) and 10 Stances from the Diamond Mind, Iron Heart, Stone Dragon, Tiger Claw and White Raven disciplines
+ - 50+ Maneuvers (including a tiny number of Boosts and Counters) and 10 Stances from the Diamond Mind, Iron Heart, Stone Dragon, Tiger Claw and White Raven disciplines
 
 ## Deviations from Rules as Written
 ### Spontaneous preparation
@@ -27,6 +27,11 @@ Both changes where made to balance maneuver recovery, as written Swordsage recov
  - Scything Blade: doesn't require having made a successful attack
  - All maneuvers related to charging do not directly cause you to charge a target, instead they give you a buff that modifies your charge. This is rather annoying but I didn't find a way to make it work properly otherwise
  - Lions Roar triggers directly when used, but requires a move action
+ 
+### Counters
+Counters had to be changed to a simple on/off toggle to compensate for the fact that I can't interrupt events to ask the player if a counter should be used. Additionally:
+
+ - Wall of Blades triggers on being attacked, costs 1 maneuver point and tries to parry all attacks for 1 round
 
 ### Homebrew
  - Boomerang Throw and Lightning Vicious Throw as lower level options for the level 8 Lightning Throw
