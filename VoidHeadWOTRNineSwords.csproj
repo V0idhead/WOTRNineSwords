@@ -58,6 +58,9 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>lib\Assembly-CSharp.dll</HintPath>
     </Reference>
+    <Reference Include="BlueprintCore">
+      <HintPath>..\..\_BlueprintCore_2.8.4\BlueprintCore.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>$(WrathPath)\Wrath_Data\Managed\Newtonsoft.Json.dll</HintPath>
     </Reference>

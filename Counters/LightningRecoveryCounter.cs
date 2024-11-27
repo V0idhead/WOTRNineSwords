@@ -7,9 +7,10 @@ using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.Counters
 {
-  internal class LightningRecoveryCounter : UnitFactComponentDelegate, ITargetRulebookHandler<RuleAttackRoll>, ITargetRulebookSubscriber
+  //TODO: switch to IronHeartFocus implementation to work properly with maneuver. Current implementation just makes a new normal attack
+  internal class LightningRecoveryCounter : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleAttackRoll>, IInitiatorRulebookSubscriber
   {
-    static bool active = false; //blocks trigger during the processing for the re-roll. I don't think we need a more complicated semaphore because AFAIK it's not possible for another creatures attack to interrupt our sequence of events
+    static bool active = false; //blocks trigger during the processing for the re-roll. I don't think we need a more complicated semaphore because AFAIK it's not possible for another creatures attack to interrupt our sequence of events (including two warblades in real-time mode)
 
     public void OnEventAboutToTrigger(RuleAttackRoll evt)
     { }

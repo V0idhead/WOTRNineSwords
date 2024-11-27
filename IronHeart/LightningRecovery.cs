@@ -24,9 +24,9 @@ namespace VoidHeadWOTRNineSwords.IronHeart
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.DivineFavor.Reference.Get().Icon;
+      UnityEngine.Sprite icon = AbilityRefs.TrueStrike.Reference.Get().Icon;
 
-      log.Info($"Configuring {nameof(LightningRecovery)}");
+      Main.Log($"Configuring {nameof(LightningRecovery)}");
 
       var toggleBuff = BuffConfigurator.New("LightningRecoveryOn", "046586FD-E970-43D5-8448-F6A8C44C433B")
         .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)

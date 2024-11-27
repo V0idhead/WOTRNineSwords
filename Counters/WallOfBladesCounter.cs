@@ -11,53 +11,42 @@ namespace VoidHeadWOTRNineSwords.Counters
 {
   internal class WallOfBladesCounter : UnitFactComponentDelegate, ITargetRulebookHandler<RuleAttackRoll>, ITargetRulebookSubscriber
   {
-    private static readonly LogWrapper log = LogWrapper.Get("VoidHeadWOTRNineSwords");
-
     public void OnEventAboutToTrigger(RuleAttackRoll evt)
     {
-      #if DEBUG
-        log.Info("WallOfBlades: check Flat Footed");
-      #endif
+      Main.Log("WallOfBlades: check Flat Footed");
       if (evt.IsTargetFlatFooted)
         return;
 
-      #if DEBUG
-      log.Info("WallOfBlades: check is already active");
-      #endif
+      Main.Log("WallOfBlades: check is already active");
       if (!Owner.HasFact(WallOfBlades.Fact))
       {
-
-        #if DEBUG
-        log.Info("WallOfBlades: check resource");
-        #endif
+        Main.Log("WallOfBlades: check resource");
         Blueprint<BlueprintAbilityResourceReference> maneuverResource = WarbladeC.ManeuverResourceGuid;
-        if (Owner.Resources.HasEnoughResource(maneuverResource.Reference, 1)) //TODO: switch Resource implementation
+        if (Owner.Resources.HasEnoughResource(maneuverResource.Reference, 2)) //TODO: switch Resource implementation
         {
           Blueprint<BlueprintBuffReference> wallOfBladesBuff = WallOfBlades.ActiveBuffGuid;
           Owner.AddBuff(wallOfBladesBuff.Reference, Owner, new TimeSpan(0, 0, 6));
-          Owner.Resources.Spend(maneuverResource.Reference, 1);
+          Owner.Resources.Spend(maneuverResource.Reference, 2);
         }
         else
         {
           return;
         }
       }
-      #if DEBUG
-      log.Info("WallOfBlades: try parry");
-      #endif
+      Main.Log("WallOfBlades: try parry");
       evt.TryParry(Owner, Owner.Body.PrimaryHand.Weapon, 0);
     }
 
     public void OnEventDidTrigger(RuleAttackRoll evt)
     {
-      /*log.Info("WallOfBlades: check Flat Footed");
+      /*Main.Log("WallOfBlades: check Flat Footed");
       if (evt.IsTargetFlatFooted)
         return;
 
-      log.Info("WallOfBlades: check is already active");
+      Main.Log("WallOfBlades: check is already active");
       if (!Owner.HasFact(WallOfBlades.Fact))
       {
-        log.Info("WallOfBlades: check resource");
+        Main.Log("WallOfBlades: check resource");
         Blueprint<BlueprintAbilityResourceReference> maneuverResource = WarbladeC.ManeuverResourceGuid;
         if (Owner.Resources.HasEnoughResource(maneuverResource.Reference, 1)) //TODO: switch Resource implementation
         {
@@ -72,7 +61,7 @@ namespace VoidHeadWOTRNineSwords.Counters
       }
 
       int target = evt.AttackBonusRule.Result + evt.D20.Result;
-      log.Info($"WallOfBlades: target: {target} = {evt.AttackBonusRule.Result} + {evt.D20.Result}");
+      Main.Log($"WallOfBlades: target: {target} = {evt.AttackBonusRule.Result} + {evt.D20.Result}");
 
       var bonus = new RuleCalculateAttackBonusWithoutTarget(Owner, Owner.Body.PrimaryHand.Weapon, 0);
       Context.TriggerRule(bonus);
@@ -80,7 +69,7 @@ namespace VoidHeadWOTRNineSwords.Counters
       roll.Roll();
 
       int attempt = bonus.TotalBonusValue + roll.Result;
-      log.Info($"WallOfBlades: attempt: {attempt} = {bonus.TotalBonusValue} + {roll}");
+      Main.Log($"WallOfBlades: attempt: {attempt} = {bonus.TotalBonusValue} + {roll}");
 
       if (attempt > target)
         evt.Result = AttackResult.Parried;*/

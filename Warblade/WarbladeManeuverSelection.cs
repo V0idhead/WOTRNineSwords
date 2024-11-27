@@ -82,7 +82,8 @@ namespace VoidHeadWOTRNineSwords.Warblade
           StrikeOfPerfectClarity.Guid,
           TimeStandsStill.Guid,
           WallOfBlades.Guid,
-          LightningRecovery.Guid
+          LightningRecovery.Guid,
+          IronHeartFocus.Guid
         ).Configure();
 
       return warbladeManeuverSelection;
