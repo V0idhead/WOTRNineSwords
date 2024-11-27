@@ -83,7 +83,8 @@ namespace VoidHeadWOTRNineSwords.Warblade
           TimeStandsStill.Guid,
           WallOfBlades.Guid,
           LightningRecovery.Guid,
-          IronHeartFocus.Guid
+          IronHeartFocus.Guid,
+          RapidCounter.Guid
         ).Configure();
 
       return warbladeManeuverSelection;
