@@ -840,7 +840,7 @@
   },
   {
     "Key": "WallOfBlades.Desc",
-    "enGB": "Discipline: Iron Heart\nManeuver Type: Counter\nRequired Initiater Level: Warblade 3\nWhile this counter is active you can oppose an incoming hit with an attack roll with your current weapon, if your result is higher that attack misses. Uses two maneuver points when you are being attacked for the first time in a round."
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Counter\nRequired Initiater Level: Warblade 3\nWhile this counter is active you attempt to parry incoming attacks. Uses two maneuver points when you are being attacked for the first time in a round."
   },
   {
     "Key": "WallOfBladesBuff.Desc",
@@ -849,7 +849,7 @@
   {
     "Key": "LightningRecovery.Name",
     "ProcessTemplates": false,
-    "enGB": "LightningRecovery"
+    "enGB": "Lightning Recovery"
   },
   {
     "Key": "LightningRecovery.Desc",
@@ -875,11 +875,33 @@
   },
   {
     "Key": "RapidCounter.Desc",
-    "enGB": "Discipline: Miamond Mind\nManeuver Type: Counter\nRequired Initiater Level: Warblade 9, Swordsage 9\nWhile this counter is active you can make an unlimited amount of attacks of opportunity in a round. Uses a maneuver point when you would run out of attacks of opportunity for the first time in a round."
+    "enGB": "Discipline: Diamond Mind\nManeuver Type: Counter\nRequired Initiater Level: Warblade 9, Swordsage 9\nWhile this counter is active you can make an unlimited amount of attacks of opportunity in a round. Uses a maneuver point when you would run out of attacks of opportunity for the first time in a round."
   },
   {
     "Key": "RapidCounterBuff.Desc",
     "enGB": "Rapid Counter active"
+  },
+  {
+    "Key": "ManticoreParry.Name",
+    "ProcessTemplates": false,
+    "enGB": "Manticore Parry"
+  },
+  {
+    "Key": "ManticoreParry.Desc",
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Counter\nRequired Initiater Level: Warblade 11\nRequired Maneuvers: 2 Iron Heart\nWhile this counter is active you attempt to parry incoming attacks with melee weapon attacks, if your parry succeeds the attacks hits an adjacent enemy instead. Uses two maneuver points when you are being attacked for the first time in a round."
+  },
+  {
+    "Key": "ManticoreParryBuff.Desc",
+    "enGB": "Manticore Parry active"
+  },
+  {
+    "Key": "DiamondDefense.Name",
+    "ProcessTemplates": false,
+    "enGB": "Diamond Defense"
+  },
+  {
+    "Key": "DiamondDefense.Desc",
+    "enGB": "Discipline: Diamond Mind\nManeuver Type: Special\nRequired Initiater Level: Warblade 15, Swordsage 15\ntbd"
   },
 
 
