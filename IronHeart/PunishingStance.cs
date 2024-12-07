@@ -3,20 +3,11 @@ using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
-using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Enums;
-using Kingmaker.RuleSystem;
-using Kingmaker.UI.MVVM._VM.ServiceWindows.MythicInfo;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade;
 
@@ -49,7 +40,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
 
       var punishingStanceActivatable = ActivatableAbilityConfigurator.New("PunishingStanceActivatable", "7990BAB5-27BC-4422-829F-8D9B411A691C")
         .SetDisplayName(name)
-        .SetDescription("PunishingStanceBuff.Description")
+        .SetDescription("PunishingStance.Description")
         .SetIcon(icon)
         //.AddComponent(new AbilityCasterHasWeaponSubcategory(WeaponSubCategory.Melee)) // doesn't work
         .SetActivationType(AbilityActivationType.Immediately)

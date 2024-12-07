@@ -80,6 +80,15 @@
     "Key": "InitiatorLevel9.Desc",
     "enGB": "Can learn Maneuvers and Stances of Level 9"
   },
+  {
+    "Key": "ParryActive.Name",
+    "ProcessTemplates": false,
+    "enGB": "Actively Parrying"
+  },
+  {
+    "Key": "ParryActive.Desc",
+    "enGB": "Your guard is up."
+  },
 
   {
     "Key": "RecoverManeuvers.Name",
@@ -269,7 +278,7 @@
   },
   {
     "Key": "PunishingStance.Description",
-    "enGB": "Discipline: Iron Heart\nRequired Initiater Level: Warblade 1\nYou chop down violently with your weapon, lending extra force to your blows. These attacks come at a cost, as your enemies slash at your undefended legs and flanks. While you are in this stance, you deal an extra 1d6 points of damage with all melee attacks. You also take a -2 penalty to AC, because this fighting stance emphasizes power over a defensive posture."
+    "enGB": "Discipline: Iron Heart\nRequired Initiatewr Level: Warblade 1\nYou chop down violently with your weapon, lending extra force to your blows. These attacks come at a cost, as your enemies slash at your undefended legs and flanks. While you are in this stance, you deal an extra 1d6 points of damage with all melee attacks. You also take a -2 penalty to AC, because this fighting stance emphasizes power over a defensive posture."
   },
   {
     "Key": "StoneBones.Name",
@@ -831,8 +840,95 @@
   },
   {
     "Key": "TimeStandsStill.Desc",
-    "enGB": "Discipline: Diamond Mind\nManeuver Type: Strike\nRequired Initiater Level: Warblade 17\nRequired Maneuvers: 4 Diamond Mind\nYou make two Full Attacks in a row."
+    "enGB": "Discipline: Diamond Mind\nManeuver Type: Strike\nRequired Initiater Level: Warblade 17, Swordsage 17\nRequired Maneuvers: 4 Diamond Mind\nYou make two Full Attacks in a row."
   },
+  {
+    "Key": "WallOfBlades.Name",
+    "ProcessTemplates": false,
+    "enGB": "Wall of Blades"
+  },
+  {
+    "Key": "WallOfBlades.Desc",
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Counter\nRequired Initiater Level: Warblade 3\nWhile this counter is active you attempt to parry incoming attacks. Uses two maneuver points when you are being attacked for the first time in a round."
+  },
+  {
+    "Key": "WallOfBladesBuff.Desc",
+    "enGB": "Wall of Blades active"
+  },
+  {
+    "Key": "WallOfBlades.LogMsg",
+    "enGB": "Spent 2 maneuver points on Wall of Blades"
+  },
+  {
+    "Key": "LightningRecovery.Name",
+    "ProcessTemplates": false,
+    "enGB": "Lightning Recovery"
+  },
+  {
+    "Key": "LightningRecovery.Desc",
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Counter\nRequired Initiater Level: Warblade 7\nRequired Maneuvers: 2 Iron Heart\nIf one of your melee attacks misses, you can initiate this maneuver to reroll that attack roll with a +2 bonus. Uses a maneuver point whenever you miss an attack."
+  },
+  {
+    "Key": "LightningRecovery.LogMsg",
+    "enGB": "Spent 1 maneuver point on Lightning Recovery"
+  },
+  {
+    "Key": "IronHeartFocus.Name",
+    "ProcessTemplates": false,
+    "enGB": "Iron Heart Focus"
+  },
+  {
+    "Key": "IronHeartFocus.Desc",
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Counter\nRequired Initiater Level: Warblade 9\nRequired Maneuvers: 2 Iron Heart\nWhile this counter is active you can retry any saving throw once. Uses two maneuver points when you fail a saving throw for the first time in a round."
+  },
+  {
+    "Key": "IronHeartFocusBuff.Desc",
+    "enGB": "Iron Heart Focus active"
+  },
+  {
+    "Key": "IronHeartFocus.LogMsg",
+    "enGB": "Spent 2 maneuver points on Iron Heart Focus"
+  },
+  {
+    "Key": "RapidCounter.Name",
+    "ProcessTemplates": false,
+    "enGB": "Rapid Counter"
+  },
+  {
+    "Key": "RapidCounter.Desc",
+    "enGB": "Discipline: Diamond Mind\nManeuver Type: Counter\nRequired Initiater Level: Warblade 9, Swordsage 9\nWhile this counter is active you can make an unlimited amount of attacks of opportunity in a round. Uses a maneuver point when you would run out of attacks of opportunity for the first time in a round."
+  },
+  {
+    "Key": "RapidCounterBuff.Desc",
+    "enGB": "Rapid Counter active"
+  },
+  {
+    "Key": "RapidCounter.LogMsg",
+    "enGB": "Spent 1 maneuver points on Rapid Counter"
+  },
+  {
+    "Key": "ManticoreParry.Name",
+    "ProcessTemplates": false,
+    "enGB": "Manticore Parry"
+  },
+  {
+    "Key": "ManticoreParry.Desc",
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Counter\nRequired Initiater Level: Warblade 11\nRequired Maneuvers: 2 Iron Heart\nWhile this counter is active you attempt to parry incoming attacks with melee weapon attacks, if your parry succeeds the attacks hits an adjacent enemy instead. Uses two maneuver points when you are being attacked for the first time in a round."
+  },
+  {
+    "Key": "ManticoreParry.LogMsg",
+    "enGB": "Spent 2 maneuver points on Manticore Parry"
+  },
+  {
+    "Key": "DiamondDefense.Name",
+    "ProcessTemplates": false,
+    "enGB": "Diamond Defense"
+  },
+  {
+    "Key": "DiamondDefense.Desc",
+    "enGB": "Discipline: Diamond Mind\nManeuver Type: Special\nRequired Initiater Level: Warblade 15, Swordsage 15\nWhile this counter is active you gain +9 on all saves. Uses one maneuver point per round."
+  },
+
 
   {
     "Key": "nam.Name",
