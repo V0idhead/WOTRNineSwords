@@ -14,12 +14,12 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
   {
     public const string Guid = "1DB045E7-2C60-44AD-8A51-40130DCDEB00";
     public const string ActiveBuffGuid = "302D1897-7423-42AB-A0B7-C37903212BF8";
-    const string name = "IronHeartFocus.Name";
-    const string desc = "IronHeartFocus.Desc";
+    const string name = "DiamondDefense.Name";
+    const string desc = "DiamondDefense.Desc";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.DiamondSkin.Reference.Get().Icon;
+      UnityEngine.Sprite icon = FeatureRefs.KiDiamondBodyFeature.Reference.Get().Icon;
 
       Main.Log($"Configuring {nameof(DiamondDefense)}");
 
@@ -35,7 +35,8 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .SetActivationType(AbilityActivationType.Immediately)
         .SetDeactivateIfOwnerDisabled()
         .SetDeactivateIfOwnerUnconscious()
-        .SetDoNotTurnOffOnRest()
+        .SetDeactivateIfCombatEnded()
+        .SetOnlyInCombat()
         .SetBuff(selfBuff)
         .AddActivatableAbilityResourceLogic(requiredResource: WarbladeC.ManeuverResourceGuid, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound)
         .Configure();

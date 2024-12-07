@@ -4,7 +4,7 @@ There were some changes necessary both to adapt to the Pathfinder ruleset as wel
 
 ## Contents
  - Warblade class
- - 50+ Maneuvers (including a tiny number of Boosts and Counters) and 10 Stances from the Diamond Mind, Iron Heart, Stone Dragon, Tiger Claw and White Raven disciplines
+ - 60+ Maneuvers (including a tiny number of Boosts and 6 Counters) and 10 Stances from the Diamond Mind, Iron Heart, Stone Dragon, Tiger Claw and White Raven disciplines
 
 ## Deviations from Rules as Written
 ### Spontaneous preparation
@@ -12,7 +12,7 @@ Instead of having to prepare maneuvers ahead of time as a wizard would, all clas
 
 ### Recovering Maneuvers
 Warblades recover maneuvers with a move action ability that HAS to hit an enemy and recovers two uses of maneuvers.
-Swordsages recover all their maneuvers by spending a single full round actions.
+Swordsages recover all their maneuvers by spending a single full round action.
 Both changes where made to balance maneuver recovery, as written Swordsage recovery was comically bad
 
 ### Individual Maneuvers
@@ -31,10 +31,13 @@ Both changes where made to balance maneuver recovery, as written Swordsage recov
 ### Counters
 Counters had to be changed to a simple on/off toggle to compensate for the fact that I can't interrupt events to ask the player if a counter should be used. Additionally:
 
- - Wall of Blades triggers on being attacked, costs 1 maneuver point and tries to parry all attacks for 1 round
+ - Wall of Blades and Manticore Parry triggers on being attacked, costs at most 2 maneuver points per round and tries to parry all attacks for 1 round, if maneuver points where spent on Wall of Blades Manticore Parry will be free and vice versa
+ - Iron Heart Focus triggers on failing a save and costs at most 2 maneuver points per round and retries all failed saves for 1 round
+ - Lightning Recovery triggers on failing an attack roll and retries them at a cost of 1 maneuver point per fail
+ - Diamond Defense was changed to a simple toggle and gives a +9 bonus to all saves at a cost of 1 maneuver point per round
 
 ### Homebrew
- - Boomerang Throw and Lightning Vicious Throw as lower level options for the level 8 Lightning Throw
+ - Boomerang Throw and Vicious Throw as lower level options for the level 8 Lightning Throw
  - Several feats including Maneuver Focus, Maneuver Focus (Mythic) and a specific feat for each discipline with unique effects
 
 ## Roadmap

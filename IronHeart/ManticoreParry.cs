@@ -7,6 +7,7 @@ using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Facts;
 using Kingmaker.UnitLogic.ActivatableAbilities;
+using System.Collections.Generic;
 using System.Linq;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Counters;
@@ -19,8 +20,10 @@ namespace VoidHeadWOTRNineSwords.IronHeart
   {
     public const string Guid = "605A4C0D-AE90-44D6-AC4F-781C0DE20A7B";
     public const string ActiveBuffGuid = "4D09B867-9CF1-479A-9AB0-3EEBA06315C4";
-    const string FactGuid = "F257A392-6FB1-4DF7-93B0-51A25E7C701C";
-    public static BlueprintUnitFact Fact { get; private set; }
+    const string ActiveFactGuid = "F257A392-6FB1-4DF7-93B0-51A25E7C701C";
+    public static BlueprintUnitFact ActiveFact { get; private set; }
+    const string OnFactGuid = "4BE82298-30A3-4169-94C1-21C6AA0570F6";
+    public static BlueprintUnitFact OnFact { get; private set; }
     public static BlueprintActivatableAbility Activatable { get; private set; }
     const string name = "ManticoreParry.Name";
     const string desc = "ManticoreParry.Desc";
@@ -33,11 +36,11 @@ namespace VoidHeadWOTRNineSwords.IronHeart
 
       log.Info($"Configuring {nameof(ManticoreParry)}");
 
-      Fact = UnitFactConfigurator.New("ManticoreParryActiveFact", FactGuid)
-        .Configure();
+      ActiveFact = UnitFactConfigurator.New("ManticoreParryActiveFact", ActiveFactGuid).Configure();
+      OnFact = UnitFactConfigurator.New("MaticoreParryOnFact", OnFactGuid) .Configure();
 
       var activeBuff = BuffConfigurator.New("ManticoreParryActiveBuff", ActiveBuffGuid)
-        .AddFacts(new() { Fact })
+        .AddFacts(new() { ActiveFact })
         .SetDisplayName(name)
         .SetDescription("ManticoreParryBuff.Desc")
         .SetIcon(icon)
@@ -45,7 +48,8 @@ namespace VoidHeadWOTRNineSwords.IronHeart
 
       var toggleBuff = BuffConfigurator.New("ManticoreParryOn", "2E106DCE-4B2F-4BCA-B69B-9B0E056D4DB7")
         .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-        .AddComponent<WallOfBladesCounter>()
+        .AddComponent<UnifiedParryCounter>()
+        .AddFacts(new List<Blueprint<Kingmaker.Blueprints.BlueprintUnitFactReference>> { OnFact })
         .Configure();
 
       Activatable = ActivatableAbilityConfigurator.New("ManticoreParryActivatable", "8427162E-BFBB-4576-9948-D7C3FDA4868B")

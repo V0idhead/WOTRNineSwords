@@ -1,9 +1,11 @@
 ﻿using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Root.Strings.GameLog;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
 using System;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.IronHeart;
 using VoidHeadWOTRNineSwords.Warblade;
 
@@ -29,6 +31,7 @@ namespace VoidHeadWOTRNineSwords.Counters
           {
             Blueprint<BlueprintBuffReference> ironHeartFocusBuff = IronHeartFocus.ActiveBuffGuid;
             Owner.AddBuff(ironHeartFocusBuff.Reference, Owner, new TimeSpan(0, 0, 6)); //give ourselves the one round buff
+            Helpers.WriteCombatLogMessage("IronHeartFocus.LogMsg", GameLogStrings.Instance.DefaultColor, Owner);
             Owner.Resources.Spend(maneuverResource.Reference, 2); //and spend our resource
           }
           active = false;

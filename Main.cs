@@ -64,6 +64,7 @@ namespace VoidHeadWOTRNineSwords
 
           Logger.Info("Configuring blueprints.");
 
+          Common.Common.Configure();
           AllManeuversAndStances.Configure();
           WarbladeC.ConfigureClass();
           AllFeats.Configure();
