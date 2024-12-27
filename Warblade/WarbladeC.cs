@@ -56,6 +56,7 @@ namespace VoidHeadWOTRNineSwords.Warblade
       .SetLocalizedDescription("WarbladeC.Desc")
       .SetSkillPoints(3)
       .SetHitDie(DiceType.D12)
+      .SetIsArcaneCaster(false).SetIsDivineCaster(false)
       .SetBaseAttackBonus(StatProgressionRefs.BABFull.Reference.Get())
       .SetFortitudeSave(StatProgressionRefs.SavesHigh.Reference.Get())
       .SetReflexSave(StatProgressionRefs.SavesLow.Reference.Get())
