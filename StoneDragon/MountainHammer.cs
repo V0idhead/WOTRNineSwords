@@ -31,12 +31,13 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
     public const string Guid = "0197D57F-E670-4042-8437-2DBE06A271B5";
     const string name = "MountainHammer.Name";
     const string desc = "MountainHammer.Desc";
+    const string icon = Helpers.IconPrefix + "mountainhammer.png";
 
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(MountainHammer)}");
 
-      UnityEngine.Sprite icon = AbilityRefs.ChallengeEvil.Reference.Get().Icon;
+      //UnityEngine.Sprite icon = AbilityRefs.ChallengeEvil.Reference.Get().Icon;
 
       var buff = BuffConfigurator.New("MountainHammerBuff", "AFA88986-91D1-4608-A062-7B7043FAC946")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)

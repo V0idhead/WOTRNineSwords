@@ -37,14 +37,15 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
   {
     public const string Guid = "6B21AE73-E0B8-4889-A930-575893AA8DCB";
     const string name = "StoneBones.Name";
+    const string icon = Helpers.IconPrefix + "stonebones.png";
 
     private static readonly LogWrapper log = LogWrapper.Get("VoidHeadWOTRNineSwords");
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.StonestrikeAbility.Reference.Get().Icon;
+      //UnityEngine.Sprite icon = AbilityRefs.StonestrikeAbility.Reference.Get().Icon;
 
-      log.Info($"Configuring {nameof(StoneBones)}");
+    log.Info($"Configuring {nameof(StoneBones)}");
 
       var buff = BuffConfigurator.New("StoneBonesBuff", "3E19D1E7-1396-4F55-AA0F-32492F733E21")
         .SetDisplayName(name)

@@ -18,6 +18,8 @@ namespace VoidHeadWOTRNineSwords.Components
 {
   static class Helpers
   {
+    public const string IconPrefix = "assets/icons/";
+
     public static List<(ConditionsBuilder conditions, ContextValue modifier)> GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty property, string disciplineFocusGuid)
     {
       return new List<(ConditionsBuilder conditions, ContextValue modifier)>
