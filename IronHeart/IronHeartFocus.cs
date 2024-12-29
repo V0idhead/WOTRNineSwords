@@ -2,17 +2,12 @@
 using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
-using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Facts;
 using Kingmaker.UnitLogic.ActivatableAbilities;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Counters;
 using VoidHeadWOTRNineSwords.Warblade;
 
@@ -28,11 +23,10 @@ namespace VoidHeadWOTRNineSwords.IronHeart
     public static BlueprintActivatableAbility Activatable { get; private set; }
     const string name = "IronHeartFocus.Name";
     const string desc = "IronHeartFocus.Desc";
+    const string icon = Helpers.IconPrefix + "ironheartfocus.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.DeathWard.Reference.Get().Icon;
-
       Main.Log($"Configuring {nameof(IronHeartFocus)}");
 
       Fact = UnitFactConfigurator.New("IronHeartFocusActiveFact", FactGuid)

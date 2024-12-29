@@ -3,25 +3,15 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.ElementsSystem;
-using Kingmaker.Enums;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
-using VoidHeadWOTRNineSwords.StoneDragon;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.WhiteRaven
@@ -32,12 +22,11 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
     public const string Guid = "B1BCB605-A65D-4426-AB47-ECFB67204963";
     const string name = "WhiteRavenStrike.Name";
     const string desc = "WhiteRavenStrike.Desc";
+    const string icon = Helpers.IconPrefix + "whiteravenstrike.png";
 
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(WhiteRavenStrike)}");
-
-      UnityEngine.Sprite icon = AbilityRefs.Eaglesoul.Reference.Get().Icon;
 
       var buff = BuffConfigurator.New("WhiteRavenStrikeTargetBuff", "421E37AA-E477-49FD-8901-13D823C01AD1")
         .AddCondition(Kingmaker.UnitLogic.UnitCondition.LoseDexterityToAC)

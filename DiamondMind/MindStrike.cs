@@ -2,13 +2,11 @@
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
-using BlueprintCore.Blueprints.References;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
 using System.Linq;
-using UnityEngine;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
@@ -22,12 +20,11 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
     public const string Guid = "D4E572BB-DF94-458C-9052-B6BAC5EBDB66";
     const string name = "MindStrike.Name";
     const string desc = "MindStrike.Desc";
+    const string icon = Helpers.IconPrefix + "mindstrike.png";
 
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(MindStrike)}");
-
-      Sprite icon = AbilityRefs.PredictionOfFailure.Reference.Get().Icon;
 
       var ability = AbilityConfigurator.New("MindStrikeAbility", "93A7C909-E17C-45F5-988A-85C07BA003F3")
         .SetDisplayName(name)

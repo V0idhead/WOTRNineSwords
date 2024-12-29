@@ -3,28 +3,12 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
-using BlueprintCore.Conditions.Builder;
-using BlueprintCore.Conditions.Builder.ContextEx;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Blueprints.Classes.Spells;
-using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.Buffs;
-using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
-using Kingmaker.Utility;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
 using VoidHeadWOTRNineSwords.Components;
-using VoidHeadWOTRNineSwords.DiamondMind;
 using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade;
 
@@ -36,12 +20,11 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
     public const string Guid = "0A97D978-182E-47BB-8919-00BA43A783D0";
     const string name = "LeadingTheAttack.Name";
     const string desc = "LeadingTheAttack.Desc";
+    const string icon = Helpers.IconPrefix + "leadingtheattack.png";
 
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(LeadingTheAttack)}");
-
-      Sprite icon = AbilityRefs.Command.Reference.Get().Icon;
 
       var leadingTheAttackBuff = BuffConfigurator.New("LeadingTheAttackBuff", "6629AAE6-77F8-420F-91D2-D776EDA8BD91")
         .SetDisplayName(name)

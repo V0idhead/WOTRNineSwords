@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.DiamondMind
@@ -22,11 +23,10 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
     public const string Guid = "3737CB58-3622-48A9-9C88-D3A2557E3E9E";
     const string name = "HearingTheAir.Name";
     const string desc = "HearingTheAir.Desc";
+    const string icon = Helpers.IconPrefix + "hearingtheair.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.Echolocation.Reference.Get().Icon;
-
       var buff = BuffConfigurator.New("HearingTheAirBuff", "44A094FB-2C1F-42DF-9D12-E0729EE71D1E")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
         .AddNotDispelable()

@@ -30,12 +30,11 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
     public const string Guid = "74C4B005-F777-4D9C-8C65-E9F31201F4FD";
     const string name = "AvalancheOfBlades.Name";
     const string desc = "AvalancheOfBlades.Desc";
+    const string icon = Helpers.IconPrefix + "avalancheofblades.png";
 
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(AvalancheOfBlades)}");
-
-      UnityEngine.Sprite icon = AbilityRefs.TricksterRayOfHalberds.Reference.Get().Icon;
 
       /*var buff = BuffConfigurator.New("AvalancheOfBladesBuff", "DF324072-D04C-47C5-A289-022B5B203144")
         .SetDisplayName(name)

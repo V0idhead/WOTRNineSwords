@@ -3,24 +3,14 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
-using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Enums;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
-using VoidHeadWOTRNineSwords.DiamondMind;
 using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade;
 
@@ -32,12 +22,11 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
     public const string Guid = "11401E81-9C91-4A1C-B93F-8FFA16424350";
     const string name = "RabidWolfStrike.Name";
     const string desc = "RabidWolfStrike.Desc";
+    const string icon = Helpers.IconPrefix + "rabidwolfstrike.png";
 
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(RabidWolfStrike)}");
-
-      UnityEngine.Sprite icon = AbilityRefs.AspectOfTheWolf.Reference.Get().Icon;
 
       var buff = BuffConfigurator.New("RabidWolfStrikeBuff", "DCA00E50-1EF7-4C22-A28E-16C1E77D24BC")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)

@@ -1,13 +1,13 @@
 ﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using System.Linq;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Counters;
 using VoidHeadWOTRNineSwords.Warblade;
 
@@ -20,6 +20,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
     public static BlueprintActivatableAbility Activatable { get; private set; }
     const string name = "LightningRecovery.Name";
     const string desc = "LightningRecovery.Desc";
+    const string icon = Helpers.IconPrefix + "lightningrecovery.png";
 
     public static BlueprintBuff AttackBuff;
 
@@ -27,8 +28,6 @@ namespace VoidHeadWOTRNineSwords.IronHeart
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.TrueStrike.Reference.Get().Icon;
-
       Main.Log($"Configuring {nameof(LightningRecovery)}");
 
       AttackBuff = BuffConfigurator.New("LightningRecoveryAttackBuff", "2D96D2BF-A1A5-46D2-9184-879931B5824D")

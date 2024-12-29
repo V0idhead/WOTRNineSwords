@@ -2,22 +2,15 @@
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Conditions.Builder.ContextEx;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Blueprints.Classes.Spells;
-using Kingmaker.Enums;
-using Kingmaker.Enums.Damage;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.Utility;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.WhiteRaven
@@ -28,11 +21,10 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
     public const string Guid = "F5793148-0E96-457F-A84D-7053D832CAAD";
     const string name = "SwarmTactics.Name";
     const string desc = "SwarmTactics.Desc";
+    const string icon = Helpers.IconPrefix + "swarmtactics.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.ReducePersonMass.Reference.Get().Icon;
-
       var buff = BuffConfigurator.New("SwarmTacticsBuff", "6D75350C-DF32-4115-8BE5-B819725BBF5D")
         .SetDisplayName(name)
         .SetDescription("SwarmTactics.BuffDesc")

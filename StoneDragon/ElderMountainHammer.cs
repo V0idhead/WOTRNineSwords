@@ -3,20 +3,13 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Enums;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
@@ -30,12 +23,11 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
     public const string Guid = "19E1A4DD-C1E6-4845-BBBA-B04C20CFF7F9";
     const string name = "ElderMountainHammer.Name";
     const string desc = "ElderMountainHammer.Desc";
+    const string icon = Helpers.IconPrefix + "eldermountainhammer.png";
 
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(MountainHammer)}");
-
-      UnityEngine.Sprite icon = AbilityRefs.ChallengeEvil.Reference.Get().Icon;
 
       var buff = BuffConfigurator.New("ElderMountainHammerBuff", "8B4E56C1-DAB9-4553-8069-4127AC52C4D7")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
