@@ -97,7 +97,7 @@
   },
   {
     "Key": "RecoverManeuvers.Desc",
-    "enGB": "Recover one expended Maneuver."
+    "enGB": "Attacks an enemy, if the attack hits restores 2 maneuver points."
   },
   {
     "Key": "ManeuverFocus.Name",
@@ -174,7 +174,7 @@
   },
   {
     "Key": "WarbladeC.Desc",
-    "enGB": "The warblade was born for conflict. Swift, strong, enduring, and utterly confident in his martial skills, he seeks to test himself against worthy foes."
+    "enGB": "The warblade was born for conflict. Swift, strong, enduring, and utterly confident in his martial skills, he seeks to test himself against worthy foes. Battle is beautiful to him - a perfect moment in which life hangs suspended on the bright edge of a sword.\n\nIn addition to normal weapon attacks available to all martial classes warblades can perform maneuvers and counters as well as enter stances. Maneuvers are special weapon attack that rival magic in effect.\nCounters are similar but react to specific conditions or actions performed by enemies.\n\nAt level one 3 maneuvers can be performed per battle, this number increases as more warblades levels are taken. During battle the number of available maneuvers can be restored using the Recover Maneuvers ability."
   },
   {
     "Key": "WarbladeProficiencies.Name",
