@@ -1,17 +1,13 @@
 ﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Enums.Damage;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade;
 
@@ -23,11 +19,10 @@ namespace VoidHeadWOTRNineSwords.IronHeart
     public const string Guid = "04BA699C-F2C7-4D29-946E-34EBFC3EA0DF";
     const string name = "SupremeBladeParry.Name";
     const string desc = "SupremeBladeParry.Desc";
+    const string icon = Helpers.IconPrefix + "supremebladeparry.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = ActivatableAbilityRefs.FightDefensivelyToggleAbility.Reference.Get().Icon;
-
       var buff = BuffConfigurator.New("SupremeBladeParryBuff", "3A201493-D880-4458-8D5B-1D614DF423C3")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
         .AddNotDispelable()

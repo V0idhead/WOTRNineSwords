@@ -3,7 +3,6 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.RuleSystem;
@@ -11,11 +10,7 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
@@ -29,12 +24,11 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
     public const string Guid = "811C70F5-60EE-4646-AF72-2F6758BBDB24";
     const string name = "FeralDeathBlow.Name";
     const string desc = "FeralDeathBlow.Desc";
+    const string icon = Helpers.IconPrefix + "feraldeathblow.png";
 
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(FeralDeathBlow)}");
-
-      UnityEngine.Sprite icon = AbilityRefs.BeastShapeIII.Reference.Get().Icon;
 
       var successBuff = BuffConfigurator.New("FeralDeathBlowSuccessBuff", "E4B13234-1239-43D4-860A-DEE2F9C90396")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)

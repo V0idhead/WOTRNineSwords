@@ -1,14 +1,8 @@
 ﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using Kingmaker.UnitLogic.ActivatableAbilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.TigerClaw
@@ -19,11 +13,10 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
     public const string Guid = "89E9000F-0175-4BBA-82E2-42C0A1BDEA07";
     const string name = "HuntersSense.Name";
     const string desc = "HuntersSense.Desc";
+    const string icon = Helpers.IconPrefix + "hunterssense.png";
 
     public static void Configure()
     {
-      Sprite icon = FeatureRefs.ScentFeature.Reference.Get().Icon;
-
       var buff = BuffConfigurator.New("HuntersSenseBuff", "6E232DBE-C965-422A-A0D7-E632EDA4915E")
         .SetDisplayName(name)
         .SetDescription(desc)

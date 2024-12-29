@@ -1,23 +1,16 @@
 ﻿using BlueprintCore.Actions.Builder;
 using BlueprintCore.Actions.Builder.ContextEx;
-using BlueprintCore.Actions.Builder.KingdomEx;
 using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
-using BlueprintCore.Utils;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
-using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade;
 
@@ -29,11 +22,10 @@ namespace VoidHeadWOTRNineSwords.IronHeart
     public const string Guid = "435ED43C-7A2C-49F6-B0C6-774B779F6D48";
     const string name = "AbsoluteSteel.Name";
     const string desc = "AbsoluteSteel.Desc";
+    const string icon = Helpers.IconPrefix + "absolutesteel.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = FeatureRefs.FastMovement.Reference.Get().Icon;
-
       var triggeredBuff = BuffConfigurator.New("AbsoluteSteelMoveBuff", "68EBC7FD-C250-4DC7-B2AD-B5A4562D469B")
         .SetDisplayName(name)
         .SetDescription(desc)

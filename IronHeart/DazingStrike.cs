@@ -4,22 +4,15 @@ using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
-using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
-using VoidHeadWOTRNineSwords.StoneDragon;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.IronHeart
@@ -30,11 +23,10 @@ namespace VoidHeadWOTRNineSwords.IronHeart
     public const string Guid = "6D8B73F9-A494-4AF9-B02C-3E75D62E80F6";
     const string name = "DazingStrike.Name";
     const string desc = "DazingStrike.Desc";
+    const string icon = Helpers.IconPrefix + "dazingstrike.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.Daze.Reference.Get().Icon;
-
       Main.Logger.Info($"Configuring {nameof(DazingStrike)}");
 
       var buff = BuffConfigurator.New("DazingStrikeBuff", "6A7729FA-8458-4E0E-BD2F-A1590E49C08E")

@@ -1,33 +1,21 @@
 ﻿using BlueprintCore.Actions.Builder;
 using BlueprintCore.Actions.Builder.ContextEx;
-using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Conditions.Builder.ContextEx;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Designers.Mechanics.Facts;
-using Kingmaker.EntitySystem;
 using Kingmaker.Enums;
-using Kingmaker.PubSubSystem;
-using Kingmaker.RuleSystem.Rules;
-using Kingmaker.RuleSystem.Rules.Damage;
-using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.Utility;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.WhiteRaven
@@ -38,11 +26,10 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
     public const string Guid = "363B6079-339D-499E-86BE-13A26A743639";
     const string name = "LionsRoar.Name";
     const string desc = "LionsRoar.Desc";
+    const string icon = Helpers.IconPrefix + "lionsroar.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.ShifterWildShapeWereTigerAbillity.Reference.Get().Icon;
-
       var buff = BuffConfigurator.New("LionsRoarBuff", "08518743-F415-4367-89FD-B582456BABE4")
         .SetDisplayName(name)
         .SetDescription(desc)

@@ -1,32 +1,19 @@
 ﻿using BlueprintCore.Actions.Builder;
 using BlueprintCore.Actions.Builder.ContextEx;
-using BlueprintCore.Blueprints.Configurators.AI;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
-using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
-using BlueprintCore.Utils.Types;
 using Kingmaker;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Enums;
-using Kingmaker.Enums.Damage;
 using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.RuleSystem.Rules.Damage;
-using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
-using VoidHeadWOTRNineSwords.StoneDragon;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.IronHeart
@@ -37,12 +24,11 @@ namespace VoidHeadWOTRNineSwords.IronHeart
     public const string Guid = "A0945E6D-388D-42F0-9C47-819AF03D9646";
     const string name = "FinishingMove.Name";
     const string desc = "FinishingMove.Desc";
+    const string icon = Helpers.IconPrefix + "finishingmove.png";
 
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(FinishingMove)}");
-
-      UnityEngine.Sprite icon = AbilityRefs.HolySmite.Reference.Get().Icon;
 
       var ability = AbilityConfigurator.New(name, "37518CBF-613F-4F01-B5EF-57AA1B9E5E16")
         .SetDisplayName(name)

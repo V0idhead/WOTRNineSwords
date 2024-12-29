@@ -1,30 +1,17 @@
 ﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
-using BlueprintCore.Blueprints.References;
-using BlueprintCore.Utils;
-using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Enums.Damage;
-using Kingmaker.RuleSystem.Rules.Damage;
-using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics.Properties;
-using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VoidHeadWOTRNineSwords.StoneDragon;
-using VoidHeadWOTRNineSwords.Warblade;
-using BlueprintCore.Actions.Builder.ContextEx;
-using VoidHeadWOTRNineSwords.Common;
-using BlueprintCore.Utils.Types;
-using Kingmaker.ElementsSystem;
-using Kingmaker.UnitLogic.Buffs.Blueprints;
-using VoidHeadWOTRNineSwords.Components;
-using Kingmaker.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
+using BlueprintCore.Utils.Types;
+using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.UnitLogic.Buffs.Blueprints;
+using Kingmaker.UnitLogic.Commands.Base;
+using System.Linq;
+using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
+using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.IronHeart
 {
@@ -34,11 +21,10 @@ namespace VoidHeadWOTRNineSwords.IronHeart
     public const string Guid = "7C5FBB19-264B-419C-9F4A-06AF3856A525";
     const string name = "AdamantineHurricane.Name";
     const string desc = "AdamantineHurricane.Desc";
+    const string icon = Helpers.IconPrefix + "adamantinehurricane.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.BladeBarrier.Reference.Get().Icon;
-
       Main.Logger.Info($"Configuring {nameof(AdamantineHurricane)}");
 
       var buff = BuffConfigurator.New("AdamantineHurricaneBuff", "BE5D11B9-EEC8-40AA-8B2B-A62F1625FFE5")

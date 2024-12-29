@@ -1,29 +1,14 @@
 ﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
-using BlueprintCore.Blueprints.References;
-using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Enums.Damage;
-using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics.Properties;
-using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VoidHeadWOTRNineSwords.StoneDragon;
-using VoidHeadWOTRNineSwords.Warblade;
-using BlueprintCore.Actions.Builder.ContextEx;
 using VoidHeadWOTRNineSwords.Common;
-using BlueprintCore.Utils.Types;
-using Kingmaker.ElementsSystem;
-using Kingmaker.UnitLogic.Buffs.Blueprints;
 using VoidHeadWOTRNineSwords.Components;
-using Kingmaker.UnitLogic.Buffs;
+using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.IronHeart
 {
@@ -33,11 +18,10 @@ namespace VoidHeadWOTRNineSwords.IronHeart
     public const string Guid = "BEE3B93B-58D4-4385-A06C-9A4086CBBAF4";
     const string name = "MithralTornado.Name";
     const string desc = "MithralTornado.Desc";
+    const string icon = Helpers.IconPrefix + "mithraltornado.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.BladeBarrier.Reference.Get().Icon;
-
       Main.Logger.Info($"Configuring {nameof(MithralTornado)}");
 
       var ability = AbilityConfigurator.New("MithralTornadoAbility", "D5F9844C-647C-44F5-AC8C-F840A577B63C")

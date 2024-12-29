@@ -3,19 +3,12 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Enums.Damage;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VoidHeadWOTRNineSwords.StoneDragon;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.IronHeart
@@ -26,11 +19,10 @@ namespace VoidHeadWOTRNineSwords.IronHeart
     public const string Guid = "818A1166-1940-402C-91ED-1C079B84DA06";
     const string name = "SteelyStrike.Name";
     const string desc = "SteelyStrike.Desc";
+    const string icon = Helpers.IconPrefix + "steelystrike.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.MagicWeapon.Reference.Get().Icon;
-
       Main.Logger.Info($"Configuring {nameof(SteelyStrike)}");
 
       var targetBuff = BuffConfigurator.New("SteelyStrikeTargetBuff", "0A4BA9E4-5B12-45D2-BD9E-9A2C50050C5E")

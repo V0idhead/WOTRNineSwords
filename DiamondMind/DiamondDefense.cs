@@ -5,6 +5,7 @@ using BlueprintCore.Blueprints.References;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.DiamondMind
@@ -16,11 +17,10 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
     public const string ActiveBuffGuid = "302D1897-7423-42AB-A0B7-C37903212BF8";
     const string name = "DiamondDefense.Name";
     const string desc = "DiamondDefense.Desc";
+    const string icon = Helpers.IconPrefix + "diamonddefense.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = FeatureRefs.KiDiamondBodyFeature.Reference.Get().Icon;
-
       Main.Log($"Configuring {nameof(DiamondDefense)}");
 
       var selfBuff = BuffConfigurator.New("DiamondDefenseBuff", "1B68A9CB-3F63-4AE3-97DB-D0BE16176A9B")

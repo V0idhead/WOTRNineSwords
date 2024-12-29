@@ -3,23 +3,12 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
-using BlueprintCore.Conditions.Builder;
-using BlueprintCore.Utils;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.ElementsSystem;
-using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics;
-using Kingmaker.UnitLogic.Mechanics.Actions;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
@@ -33,12 +22,11 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
     public const string Guid = "2322ACE6-FAF3-4CB6-B9FD-34E955EACE61";
     const string name = "RubyNightmareBlade.Name";
     const string desc = "RubyNightmareBlade.Desc";
+    const string icon = Helpers.IconPrefix + "rubynightmareblade.png";
 
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(RubyNightmareBlade)}");
-
-      UnityEngine.Sprite icon = AbilityRefs.DivineFavor.Reference.Get().Icon;
 
       var failBuff = BuffConfigurator.New("RubyNightmareBladeFailBuff", "FC9787EB-0741-40A5-A74A-E60ABFEAB427")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)

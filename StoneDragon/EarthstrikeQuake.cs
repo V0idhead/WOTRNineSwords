@@ -2,22 +2,15 @@
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
-using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
-using VoidHeadWOTRNineSwords.DiamondMind;
 using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade;
 
@@ -29,12 +22,11 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
     public const string Guid = "13E13BA3-FCE5-43D6-863E-810064782415";
     const string name = "EarthstrikeQuake.Name";
     const string desc = "EarthstrikeQuake.Desc";
+    const string icon = Helpers.IconPrefix + "earthstrikequake.png";
 
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(EarthstrikeQuake)}");
-
-      UnityEngine.Sprite icon = AbilityRefs.SlowMud.Reference.Get().Icon;
 
       var ability = AbilityConfigurator.New(name, "6FBAA642-4044-4EF1-A476-96FCF115AE18")
       .SetDisplayName(name)

@@ -11,6 +11,7 @@ using Kingmaker.UnitLogic.Commands.Base;
 using System.Collections.Generic;
 using System.Linq;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade;
 
@@ -22,12 +23,11 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
     public const string Guid = "4AF3AF01-80B7-4D4D-AEF7-9D9601C8F54D";
     const string name = "EmeraldRazor.Name";
     const string desc = "EmeraldRazor.Desc";
+    const string icon = Helpers.IconPrefix + "emeraldrazor.png";
 
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(EmeraldRazor)}");
-
-      UnityEngine.Sprite icon = AbilityRefs.TrueForm.Reference.Get().Icon;
 
       var ability = AbilityConfigurator.New(name, "FBC07D62-E4B0-43D9-AF46-6EFD1C185B61")
         .SetDisplayName(name)

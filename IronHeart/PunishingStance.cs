@@ -1,13 +1,13 @@
 ﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Mechanics;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade;
 
@@ -20,11 +20,10 @@ namespace VoidHeadWOTRNineSwords.IronHeart
 
     public const string Guid = "5708B72C-77AB-4D01-B6FA-6C3C80F3A9BD";
     const string name = "PunishingStance.Name";
+    const string icon = Helpers.IconPrefix + "punishingstance.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = FeatureRefs.DamageReduction.Reference.Get().Icon;
-
       var punishingStanceBuff = BuffConfigurator.New("PunishingStanceBuff", "58BBA9F5-13B5-4878-8C67-D31608AF58BE")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
         .AddNotDispelable()

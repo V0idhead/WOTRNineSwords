@@ -7,6 +7,7 @@ using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Facts;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Counters;
 using VoidHeadWOTRNineSwords.Warblade;
 
@@ -22,11 +23,10 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
     public static BlueprintActivatableAbility Activatable { get; private set; }
     const string name = "RapidCounter.Name";
     const string desc = "RapidCounter.Desc";
+    const string icon = Helpers.IconPrefix + "rapidcounter.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.DivineFavor.Reference.Get().Icon;
-
       Main.Log($"Configuring {nameof(RapidCounter)}");
 
       Fact = UnitFactConfigurator.New("RapidCounterActiveFact", FactGuid)

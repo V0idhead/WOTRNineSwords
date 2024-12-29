@@ -1,19 +1,13 @@
-﻿using BlueprintCore.Actions.Builder;
-using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
-using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade;
 
@@ -25,11 +19,10 @@ namespace VoidHeadWOTRNineSwords.IronHeart
     public const string Guid = "626C3691-D976-4D2B-AAB3-7E8C3AEB33C9";
     const string name = "DancingBladeForm.Name";
     const string desc = "DancingBladeForm.Desc";
+    const string icon = Helpers.IconPrefix + "dancingbladeform.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.TricksterRayOfHalberds.Reference.Get().Icon;
-
       var buff = BuffConfigurator.New("DancingBladeFormBuff", "185FFE35-7837-4BBC-BED9-652EC68D4657")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
         .AddNotDispelable()

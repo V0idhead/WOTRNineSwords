@@ -2,19 +2,13 @@
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
-using BlueprintCore.Blueprints.References;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
-using VoidHeadWOTRNineSwords.DiamondMind;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.IronHeart
@@ -25,12 +19,11 @@ namespace VoidHeadWOTRNineSwords.IronHeart
     public const string Guid = "4F32668F-D5AB-4564-AA09-191EF2868B7D";
     const string name = "ViciousThrow.Name";
     const string desc = "ViciousThrow.Desc";
+    const string icon = Helpers.IconPrefix + "viciousthrow.png";
 
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(ViciousThrow)}");
-
-      UnityEngine.Sprite icon = AbilityRefs.SilverDarts.Reference.Get().Icon;
 
       var ability = AbilityConfigurator.New("ViciousThrowAbility", "06302867-28E8-4488-8A23-2C76AD8EA330")
         .SetDisplayName(name)

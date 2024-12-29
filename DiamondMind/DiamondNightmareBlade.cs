@@ -33,12 +33,11 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
     public const string Guid = "5F00B778-8261-4A88-9FB4-B6A045EAC841";
     const string name = "DiamondNightmareBlade.Name";
     const string desc = "DiamondNightmareBlade.Desc";
+    const string icon = Helpers.IconPrefix + "diamondnightmareblade.png";
 
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(DiamondNightmareBlade)}");
-
-      UnityEngine.Sprite icon = AbilityRefs.DisruptingWeapon.Reference.Get().Icon;
 
       var failBuff = BuffConfigurator.New("DiamondNightmareBladeFailBuff", "86202258-AE7E-43B3-B57B-7C3B34ECD9AA")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
