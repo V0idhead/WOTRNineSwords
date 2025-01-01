@@ -928,6 +928,19 @@
     "Key": "DiamondDefense.Desc",
     "enGB": "Discipline: Diamond Mind\nManeuver Type: Special\nRequired Initiater Level: Warblade 15, Swordsage 15\nWhile this counter is active you gain +9 on all saves. Uses one maneuver point per round."
   },
+  {
+    "Key": "WhiteRavenCall.Name",
+    "ProcessTemplates": false,
+    "enGB": "White Raven Call"
+  },
+  {
+    "Key": "WhiteRavenCall.Desc",
+    "enGB": "Discipline: White Raven\nManeuver Type: Boost\nRequired Initiater Level: Warblade 17\nYou and allies within 60 feet gain a +5 morale bonus on attack rolls, damage rolls, armor class, saves and Combat Maneuver Defense for 1 round."
+  },
+  {
+    "Key": "WhiteRavenCall.BuffDesc",
+    "enGB": "+5 morale bonus on attack rolls, damage rolls, armor class, saves and Combat Maneuver Defense."
+  },
 
 
   {
