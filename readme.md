@@ -38,6 +38,7 @@ Counters had to be changed to a simple on/off toggle to compensate for the fact 
 
 ### Homebrew
  - Boomerang Throw and Vicious Throw as lower level options for the level 8 Lightning Throw
+ - White Raven Call as a replacement for the level 9 White Raven maneuver that cannot be implemented into WOTR; White Raven Call gives massive bonuses to self and allies for 1 round
  - Several feats including Maneuver Focus, Maneuver Focus (Mythic) and a specific feat for each discipline with unique effects
 
 ## Roadmap
