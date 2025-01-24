@@ -2,6 +2,7 @@
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Root.Strings.GameLog;
 using Kingmaker.Designers;
+using Kingmaker.Designers.EventConditionActionSystem.Events;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.RuleSystem.Rules.Damage;
@@ -14,8 +15,20 @@ using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.Counters
 {
-    internal class UnifiedParryCounter : UnitFactComponentDelegate, ITargetRulebookHandler<RuleAttackRoll>, ITargetRulebookSubscriber
+  internal class UnifiedParryCounter : UnitFactComponentDelegate, ITargetRulebookHandler<RuleAttackRoll>, ITargetRulebookSubscriber
   {
+    static int accumulatedPenalty = 0;
+
+    static UnifiedParryCounter()
+    {
+      Singleton = new UnifiedParryCounter();
+    }
+
+    static RuleAttackRoll lastTriggerPre;
+    static RuleAttackRoll lastTriggerPost;
+
+    public static UnifiedParryCounter Singleton { get; private set; }
+
     private enum Mode
     {
       WallOfBlades,
@@ -25,6 +38,10 @@ namespace VoidHeadWOTRNineSwords.Counters
     Mode? mode;
     public void OnEventAboutToTrigger(RuleAttackRoll evt)
     {
+      if (lastTriggerPre == evt)
+        return;
+      lastTriggerPre = evt;
+
       try
       {
         if (evt.IsTargetFlatFooted)
@@ -42,6 +59,7 @@ namespace VoidHeadWOTRNineSwords.Counters
             Blueprint<BlueprintBuffReference> parryBuff = Common.Common.ParryActiveBuffGuid;
             Owner.AddBuff(parryBuff.Reference, Owner, new TimeSpan(0, 0, 6));
             Owner.Resources.Spend(maneuverResource.Reference, 2);
+            accumulatedPenalty = 0;
             Helpers.WriteCombatLogMessage("ManticoreParry.LogMsg", GameLogStrings.Instance.DefaultColor, Owner);
             mode = Mode.ManticoreParry;
           }
@@ -57,15 +75,16 @@ namespace VoidHeadWOTRNineSwords.Counters
             Blueprint<BlueprintBuffReference> parryBuff = Common.Common.ParryActiveBuffGuid;
             Owner.AddBuff(parryBuff.Reference, Owner, new TimeSpan(0, 0, 6));
             Owner.Resources.Spend(maneuverResource.Reference, 2);
+            accumulatedPenalty = 0;
             Helpers.WriteCombatLogMessage("WallOfBlades.LogMsg", GameLogStrings.Instance.DefaultColor, Owner);
             mode = Mode.WallOfBlades;
           }
         }
 
-        //attempt parry if eny parry ability was activated
+        //attempt parry if any parry ability was activated
         if (mode != null)
         {
-          evt.TryParry(Owner, Owner.Body.PrimaryHand.Weapon, 0);
+          evt.TryParry(Owner, Owner.Body.PrimaryHand.Weapon, accumulatedPenalty);
         }
       }
       catch (Exception e)
@@ -76,29 +95,38 @@ namespace VoidHeadWOTRNineSwords.Counters
 
     public void OnEventDidTrigger(RuleAttackRoll evt)
     {
+      if (lastTriggerPost == evt)
+        return;
+      lastTriggerPost = evt;
+
       try
       {
-        //deal damage if ManticoreParry was triggered
-        if (mode == Mode.ManticoreParry && evt.Result == AttackResult.Parried)
+        if (evt.Result == AttackResult.Parried)
         {
+          ++accumulatedPenalty;
 
-          var target = GameHelper.GetTargetsAround(evt.Initiator.Position, evt.Weapon.AttackRange*2).Where(unit => unit.IsEnemy(Owner) && unit != evt.Initiator).FirstOrDefault(); //double range to improve chances to actually hit things
-          /*var allTargets = GameHelper.GetTargetsAround(evt.Initiator.Position, evt.Weapon.AttackRange*2);
-          Main.Log($"UnifiedParryCounter: {allTargets.Count()} targets in {evt.Weapon.AttackRange} range");
-          var enemyTargets = allTargets.Where(unit => unit.IsEnemy(Owner));
-          Main.Log($"UnifiedParryCounter: {enemyTargets.Count()} enemy targets");
-          var targets = enemyTargets.Where(unit => unit != evt.Initiator);
-          Main.Log($"UnifiedParryCounter: {targets.Count()} that are not attacker");
-          var target = targets.FirstOrDefault();
-          Main.Log($"UnifiedParryCounter: selected one target: {target.CharacterName}");*/
-          if (target != null)
+          //deal damage if ManticoreParry was triggered
+          if (mode == Mode.ManticoreParry)
           {
-            var damage = new RuleDealDamage(evt.Initiator, target, evt.RuleAttackWithWeapon.CreateDamage(true));
-            Context.TriggerRule(damage);
-          }
-        }
 
-        mode = null; //reset state
+            var target = GameHelper.GetTargetsAround(evt.Initiator.Position, evt.Weapon.AttackRange * 2).Where(unit => unit.IsEnemy(Owner) && unit != evt.Initiator).FirstOrDefault(); //double range to improve chances to actually hit things
+            /*var allTargets = GameHelper.GetTargetsAround(evt.Initiator.Position, evt.Weapon.AttackRange*2);
+            Main.Log($"UnifiedParryCounter: {allTargets.Count()} targets in {evt.Weapon.AttackRange} range");
+            var enemyTargets = allTargets.Where(unit => unit.IsEnemy(Owner));
+            Main.Log($"UnifiedParryCounter: {enemyTargets.Count()} enemy targets");
+            var targets = enemyTargets.Where(unit => unit != evt.Initiator);
+            Main.Log($"UnifiedParryCounter: {targets.Count()} that are not attacker");
+            var target = targets.FirstOrDefault();
+            Main.Log($"UnifiedParryCounter: selected one target: {target.CharacterName}");*/
+            if (target != null)
+            {
+              var damage = new RuleDealDamage(evt.Initiator, target, evt.RuleAttackWithWeapon.CreateDamage(true));
+              Context.TriggerRule(damage);
+            }
+          }
+
+          mode = null; //reset state
+        }
       }
       catch (Exception e)
       {
