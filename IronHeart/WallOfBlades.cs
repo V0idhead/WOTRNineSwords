@@ -46,7 +46,9 @@ namespace VoidHeadWOTRNineSwords.IronHeart
 
       var toggleBuff = BuffConfigurator.New("WallOfBladesOn", "64C038CE-61B4-4762-9F77-7623C863CC62")
         .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-        .AddComponent<UnifiedParryCounter>()
+        //.AddComponent<UnifiedParryCounter>()
+        .AddComponent(UnifiedParryCounter.Singleton)
+        //.AddUniqueComponent(UnifiedParryCounter.Singleton, BlueprintCore.Blueprints.CustomConfigurators.ComponentMerge.Fail)
         .AddFacts(new List<Blueprint<Kingmaker.Blueprints.BlueprintUnitFactReference>> { OnFact })
         .Configure();
 

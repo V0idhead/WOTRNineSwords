@@ -31,7 +31,7 @@ Both changes where made to balance maneuver recovery, as written Swordsage recov
 ### Counters
 Counters had to be changed to a simple on/off toggle to compensate for the fact that I can't interrupt events to ask the player if a counter should be used. Additionally:
 
- - Wall of Blades and Manticore Parry triggers on being attacked, costs at most 2 maneuver points per round and tries to parry all attacks for 1 round, if maneuver points where spent on Wall of Blades Manticore Parry will be free and vice versa
+ - Wall of Blades and Manticore Parry triggers on being attacked, costs at most 2 maneuver points per round and tries to parry all attacks for 1 round, each successful parry adds a -1 penalty to subsequent parries in the same round. If maneuver points where spent on Wall of Blades Manticore Parry will be free and vice versa
  - Iron Heart Focus triggers on failing a save and costs at most 2 maneuver points per round and retries all failed saves for 1 round
  - Lightning Recovery triggers on failing an attack roll and retries them at a cost of 1 maneuver point per fail
  - Diamond Defense was changed to a simple toggle and gives a +9 bonus to all saves at a cost of 1 maneuver point per round
