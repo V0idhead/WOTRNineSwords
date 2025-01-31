@@ -65,6 +65,7 @@ namespace VoidHeadWOTRNineSwords.Warblade
       .SetProgression(progression)
       .AddToRecommendedAttributes(StatType.Strength, StatType.Constitution, StatType.Intelligence)
       .AddToNotRecommendedAttributes(StatType.Wisdom, StatType.Charisma)
+      .AddPrerequisiteIsPet(not: true)
       .SetStartingGold(200)
       .SetStartingItems(ItemWeaponRefs.ColdIronBattleaxe.Reference.Get(), ItemArmorRefs.ScalemailStandard.Reference.Get(), ItemEquipmentUsableRefs.PotionOfCureLightWounds.Reference.Get())
       .SetPrimaryColor(11)
