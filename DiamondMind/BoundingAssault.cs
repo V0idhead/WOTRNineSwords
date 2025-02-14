@@ -37,7 +37,6 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
 
       var buff = BuffConfigurator.New("BoundingAssaultBuff", "8F7C4BDA-C7AE-4CE9-AA0B-2858E4D460F4")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
-        .AddBuffMovementSpeed(value: 40)
         .AddAttackBonus(2)
         .Configure();
 
@@ -49,10 +48,10 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .SetRange(AbilityRange.DoubleMove)
         .SetCanTargetEnemies()
         .AddLineOfSightIgnorance()
-        .SetActionType(UnitCommand.CommandType.Swift)
+        .SetActionType(UnitCommand.CommandType.Move)
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
-        .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).CastSpell(AbilityRefs.DimensionDoorCasterOnly.Reference.Guid))
+        .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).CastSpell(AbilityRefs.MantisZealotTeleportToEnemyAbility.Reference.Guid))
         .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 

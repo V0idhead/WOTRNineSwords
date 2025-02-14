@@ -457,7 +457,7 @@
   },
   {
     "Key": "BoundingAssault.Desc",
-    "enGB": "Discipline: Diamond Mind\nManeuver Type: Strike\nRequired Initiater Level: Warblade 7, Swordsage 7\nRequired Maneuvers: 2 Diamond Mind\nAs part of this maneuver, make a double move. After you move, you can also make a melee attack. You gain a +2 bonus on this attack."
+    "enGB": "Discipline: Diamond Mind\nManeuver Type: Strike\nRequired Initiater Level: Warblade 7, Swordsage 7\nRequired Maneuvers: 2 Diamond Mind\nYou teleport next to your target and make an attack with a +2 bonus."
   },
   {
     "Key": "MindStrike.Name",
