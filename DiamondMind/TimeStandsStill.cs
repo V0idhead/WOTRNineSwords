@@ -2,13 +2,13 @@
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using System.Linq;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.DiamondMind
@@ -19,13 +19,12 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
     public const string Guid = "9B04BE05-15E0-4CFC-A584-17C48F6D24AF";
     const string name = "TimeStandsStill.Name";
     const string desc = "TimeStandsStill.Desc";
+    const string icon = Helpers.IconPrefix + "timestandsstill.png";
 
     private static readonly LogWrapper log = LogWrapper.Get("VoidHeadWOTRNineSwords");
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.IronBody.Reference.Get().Icon;
-
       log.Info($"Configuring {nameof(TimeStandsStill)}");
 
       var ability = AbilityConfigurator.New("TimeStandsStillAbility", "7BD1E120-4082-423F-A4D5-5A6BC0E699AA")

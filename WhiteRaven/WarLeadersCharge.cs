@@ -7,15 +7,11 @@ using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.Buffs;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.WhiteRaven
@@ -26,11 +22,10 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
     public const string Guid = "1BE7B81B-1586-4791-89F8-A073C039100D";
     const string name = "WarLeadersCharge.Name";
     const string desc = "WarLeadersCharge.Desc";
+    const string icon = Helpers.IconPrefix + "warleaderscharge.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.ArmyChargeAbility.Reference.Get().Icon;
-
       Main.Logger.Info($"Configuring {nameof(WarLeadersCharge)}");
 
       var buff = BuffConfigurator.New("WarLeadersChargeBuff", "4379D511-9550-466D-B26F-523D201322F8")

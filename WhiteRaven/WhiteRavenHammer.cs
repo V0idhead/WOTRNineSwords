@@ -2,20 +2,12 @@
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
-using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
@@ -29,12 +21,11 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
     public const string Guid = "022457B2-27A3-4F8E-BF99-356017858E7B";
     const string name = "WhiteRavenHammer.Name";
     const string desc = "WhiteRavenHammer.Desc";
+    const string icon = Helpers.IconPrefix + "whiteravenhammer.png";
 
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(WhiteRavenHammer)}");
-
-      UnityEngine.Sprite icon = AbilityRefs.Heroism.Reference.Get().Icon;
 
       var ability = AbilityConfigurator.New(name, "E0CC2722-F732-49AF-8E3B-AF6801301E2E")
         .SetDisplayName(name)

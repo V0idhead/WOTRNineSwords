@@ -34,17 +34,17 @@ namespace VoidHeadWOTRNineSwords.Components
         return;
       }
 
-      UnitEntityData unitEntityData = SelectTarget(base.Context.MaybeCaster, threatHandMelee.Weapon.AttackRange.Meters, SelectNewTarget, base.Target?.Unit);
-      if (unitEntityData != null)
+      UnitEntityData target = SelectTarget(base.Context.MaybeCaster, threatHandMelee.Weapon.AttackRange.Meters, SelectNewTarget, base.Target?.Unit);
+      if (target != null)
       {
         int attackPenalty = 0;
         bool unnervingCalmApplied = false;
 
         while (true)
         {
-          RunAttackRule(maybeCaster, unitEntityData, threatHandMelee, attackPenalty);
+          RunAttackRule(maybeCaster, target, threatHandMelee, attackPenalty);
           var attack = AbilityContext.RulebookContext?.LastEvent<RuleAttackWithWeapon>();
-          if (attack == null || !attack.AttackRoll.IsHit)
+          if (attack == null || !attack.AttackRoll.IsHit || attack.Target.HPLeft < 1)
             break;
           if (!unnervingCalmApplied)
             UnnervingCalm.GetEffectAction().Run();

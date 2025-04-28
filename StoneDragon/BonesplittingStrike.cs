@@ -1,21 +1,11 @@
 ﻿using BlueprintCore.Actions.Builder;
-using BlueprintCore.Actions.Builder.BasicEx;
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
-using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
-using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
@@ -29,12 +19,11 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
     public const string Guid = "07F4E91F-9953-4A47-982B-850A1373C477";
     const string name = "BonesplittingStrike.Name";
     const string desc = "BonesplittingStrike.Desc";
+    const string icon = Helpers.IconPrefix + "bonesplittingstrike.png";
 
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(BonesplittingStrike)}");
-
-      Sprite icon = AbilityRefs.Boneshaker.Reference.Get().Icon;
 
       var ability = AbilityConfigurator.New("BonesplittingStrikeAbility", "A0CBA7B9-3DEA-45E1-A91F-EF37E5D8891B")
         .SetDisplayName(name)

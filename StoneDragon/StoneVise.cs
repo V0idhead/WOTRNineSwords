@@ -3,24 +3,15 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
-using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Enums;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
-using VoidHeadWOTRNineSwords.IronHeart;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.StoneDragon
@@ -31,11 +22,10 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
     public const string Guid = "480A4CEF-54A6-4822-B499-1164C3F8C6CF";
     const string name = "StoneVise.Name";
     const string desc = "StoneVise.Desc";
+    const string icon = Helpers.IconPrefix + "stonevise.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.TarPool.Reference.Get().Icon;
-
       Main.Logger.Info($"Configuring {nameof(StoneVise)}");
 
       var targetBuff = BuffConfigurator.New("StoneViseTargetBuff", "0A551C24-33DE-4DCA-B3E3-F2C4DB8979D7")

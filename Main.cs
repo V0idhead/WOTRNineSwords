@@ -14,8 +14,14 @@ namespace VoidHeadWOTRNineSwords
   public static class Main
   {
     public static bool Enabled;
+
     public static readonly LogWrapper Logger = LogWrapper.Get("VoidHeadWOTRNineSwords");
-    //public static readonly Logger Logger = new Logger { Enabled = true };
+    public static void Log(string message)
+    {
+#if DEBUG
+      Logger.Info(message);
+#endif
+    }
 
     public static bool Load(UnityModManager.ModEntry modEntry)
     {
@@ -59,7 +65,11 @@ namespace VoidHeadWOTRNineSwords
 
           Logger.Info("Configuring blueprints.");
 
+//<<<<<<< ManeuverResource
           ManeuverResources.Configure();
+//=======
+          Common.Common.Configure();
+//>>>>>>> Swordsage
           AllManeuversAndStances.Configure();
           WarbladeC.ConfigureClass();
           AllFeats.Configure();

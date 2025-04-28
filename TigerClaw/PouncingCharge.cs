@@ -1,24 +1,18 @@
 ﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
-using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VoidHeadWOTRNineSwords.Warblade;
-using VoidHeadWOTRNineSwords.WhiteRaven;
-using BlueprintCore.Actions.Builder.ContextEx;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
+using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.TigerClaw
 {
@@ -28,11 +22,10 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
     public const string Guid = "AEFE94E9-A497-44C6-9864-65ADA5B55446";
     const string name = "PouncingCharge.Name";
     const string desc = "PouncingCharge.Desc";
+    const string icon = Helpers.IconPrefix + "pouncingcharge.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.ArmyChargeAbility.Reference.Get().Icon;
-
       Main.Logger.Info($"Configuring {nameof(PouncingCharge)}");
 
       var buff = BuffConfigurator.New("PouncingChargeBuff", "3D27D176-E98B-4DCE-8976-2C5ABAA3E481")

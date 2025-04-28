@@ -3,7 +3,6 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
@@ -19,13 +18,12 @@ namespace VoidHeadWOTRNineSwords.IronHeart
   {
     public const string Guid = "9EF4F66E-DA00-4ED7-A6FF-EBA2B34D0E5B";
     const string name = "DisarmingStrike.Name";
+    const string icon = Helpers.IconPrefix + "disarmingstrike.png";
 
     private static readonly LogWrapper log = LogWrapper.Get("VoidHeadWOTRNineSwords");
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.BlessingOfCourageAndLife.Reference.Get().Icon;
-
       log.Info($"Configuring {nameof(DisarmingStrike)}");
 
       var triggerBuff = BuffConfigurator.New("DisarmingStrikeTriggerBuff", "CC2107FB-4BCE-45E7-B607-719D7EF1D149")

@@ -24,12 +24,11 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
     public const string Guid = "F9FFD3DB-B446-4D9E-9E9D-7755E5FC2D50";
     const string name = "ColossusStrike.Name";
     const string desc = "ColossusStrike.Desc";
+    const string icon = Helpers.IconPrefix + "colossusstrike.png";
 
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(ColossusStrike)}");
-
-      UnityEngine.Sprite icon = AbilityRefs.LegendaryProportions.Reference.Get().Icon;
 
       var ability = AbilityConfigurator.New(name, "938A43D0-9041-4A5C-9983-6227650A3CDB")
         .SetDisplayName(name)

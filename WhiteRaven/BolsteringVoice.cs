@@ -2,26 +2,14 @@
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Conditions.Builder.ContextEx;
-using BlueprintCore.Utils;
-using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Enums;
-using Kingmaker.UnitLogic.Abilities.Components.AreaEffects;
 using Kingmaker.UnitLogic.ActivatableAbilities;
-using Kingmaker.UnitLogic.Buffs;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
-using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.Utility;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Warblade;
 
@@ -32,11 +20,10 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
   {
     public const string Guid = "7B7E2BE8-7AF7-48C7-A29F-6DEC77DA5C3F";
     const string name = "BolsteringVoice.Name";
+    const string icon = Helpers.IconPrefix + "bolsteringvoice.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = FeatureRefs.MercyDazed.Reference.Get().Icon;
-
       var bolsteringVoiceBuff = BuffConfigurator.New("BolsteringVoiceBuff", "E17D69EE-3DAA-4FC9-83A2-BA4AE33AAD59")
         .SetDisplayName(name)
         .SetDescription("BolsteringVoice.BuffDesc")

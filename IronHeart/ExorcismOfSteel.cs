@@ -1,27 +1,19 @@
 ﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
-using BlueprintCore.Utils.Types;
 using BlueprintCore.Utils;
+using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Enums.Damage;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VoidHeadWOTRNineSwords.StoneDragon;
-using VoidHeadWOTRNineSwords.Warblade;
-using BlueprintCore.Actions.Builder.ContextEx;
-using Kingmaker.UnitLogic.Buffs;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
+using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.IronHeart
 {
@@ -30,13 +22,12 @@ namespace VoidHeadWOTRNineSwords.IronHeart
   {
     public const string Guid = "DE327BA3-B409-45EC-96DC-5C58EC4F1CEF";
     const string name = "ExorcismOfSteel.Name";
+    const string icon = Helpers.IconPrefix + "exorcismofsteel.png";
 
     private static readonly LogWrapper log = LogWrapper.Get("VoidHeadWOTRNineSwords");
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.ChaosHammer.Reference.Get().Icon;
-
       log.Info($"Configuring {nameof(ExorcismOfSteel)}");
 
       var buffSaveFailed = BuffConfigurator.New("ExorcismOfSteelBuffSaveFailed", "63798F63-90B2-4B4E-92AE-1E7A937BFB50")

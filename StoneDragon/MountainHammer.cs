@@ -1,27 +1,18 @@
 ﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Enums;
+using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VoidHeadWOTRNineSwords.DiamondMind;
-using VoidHeadWOTRNineSwords.Warblade;
-using BlueprintCore.Actions.Builder.ContextEx;
-using BlueprintCore.Utils.Types;
-using VoidHeadWOTRNineSwords.Components;
-using Kingmaker.RuleSystem;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
+using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.StoneDragon
 {
@@ -31,12 +22,13 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
     public const string Guid = "0197D57F-E670-4042-8437-2DBE06A271B5";
     const string name = "MountainHammer.Name";
     const string desc = "MountainHammer.Desc";
+    const string icon = Helpers.IconPrefix + "mountainhammer.png";
 
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(MountainHammer)}");
 
-      UnityEngine.Sprite icon = AbilityRefs.ChallengeEvil.Reference.Get().Icon;
+      //UnityEngine.Sprite icon = AbilityRefs.ChallengeEvil.Reference.Get().Icon;
 
       var buff = BuffConfigurator.New("MountainHammerBuff", "AFA88986-91D1-4608-A062-7B7043FAC946")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)

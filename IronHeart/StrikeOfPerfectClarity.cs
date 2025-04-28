@@ -2,19 +2,12 @@
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
-using BlueprintCore.Blueprints.References;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
-using VoidHeadWOTRNineSwords.StoneDragon;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.IronHeart
@@ -25,12 +18,11 @@ namespace VoidHeadWOTRNineSwords.IronHeart
     public const string Guid = "6AB6337F-0D78-4861-8B3D-8BCE0CABC063";
     const string name = "StrikeOfPerfectClarity.Name";
     const string desc = "StrikeOfPerfectClarity.Desc";
+    const string icon = Helpers.IconPrefix + "strikeofperfectclarity.png";
 
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(StrikeOfPerfectClarity)}");
-
-      Sprite icon = AbilityRefs.CrystalMind.Reference.Get().Icon;
 
       var ability = AbilityConfigurator.New("StrikeOfPerfectClarityAbility", "64CE6D26-E404-4F5E-A0EA-4D59741E9089")
         .SetDisplayName(name)

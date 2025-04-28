@@ -1,30 +1,18 @@
 ﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Enums;
+using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static VoidHeadWOTRNineSwords.DiamondMind.SapphireNightmareBlade;
-using VoidHeadWOTRNineSwords.DiamondMind;
-using VoidHeadWOTRNineSwords.Warblade;
-using VoidHeadWOTRNineSwords.Components;
-using BlueprintCore.Actions.Builder.ContextEx;
-using BlueprintCore.Utils.Types;
-using Kingmaker.RuleSystem;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
-using BlueprintCore.Conditions.Builder;
-using BlueprintCore.Conditions.Builder.ContextEx;
+using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.TigerClaw
 {
@@ -34,12 +22,11 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
     public const string Guid = "1F7823C2-B34A-4E6F-AED7-AE979E530C9D";
     const string name = "ClawAtTheMoon.Name";
     const string desc = "ClawAtTheMoon.Desc";
+    const string icon = Helpers.IconPrefix + "clawatthemoon.png";
 
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(ClawAtTheMoon)}");
-
-      UnityEngine.Sprite icon = AbilityRefs.BeastShapeIII.Reference.Get().Icon;
 
       var successBuff = BuffConfigurator.New("ClawAtTheMoonSuccessBuff", "CBB1732A-6564-4C90-A1A2-84EBEF62F93C")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)

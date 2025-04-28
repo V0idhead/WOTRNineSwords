@@ -1,27 +1,17 @@
 ﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
+using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
-using BlueprintCore.Utils;
+using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Enums.Damage;
-using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics.Properties;
 using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VoidHeadWOTRNineSwords.StoneDragon;
-using VoidHeadWOTRNineSwords.Warblade;
-using BlueprintCore.Actions.Builder.ContextEx;
-using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Utils.Types;
 using VoidHeadWOTRNineSwords.Common;
-using Kingmaker.UnitLogic.Buffs;
+using VoidHeadWOTRNineSwords.Components;
+using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.WhiteRaven
 {
@@ -31,11 +21,10 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
     public const string Guid = "FE5069CE-1F4D-4DFB-9058-2B7A5A310A84";
     const string name = "BattleLeadersCharge.Name";
     const string desc = "BattleLeadersCharge.Desc";
+    const string icon = Helpers.IconPrefix + "battleleaderscharge.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.ArmyChargeAbility.Reference.Get().Icon;
-
       Main.Logger.Info($"Configuring {nameof(BattleLeadersCharge)}");
 
       var buff = BuffConfigurator.New("BattleLeadersBuff", "FB066522-0C78-407B-84CB-25F84C633E03")

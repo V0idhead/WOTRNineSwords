@@ -2,16 +2,9 @@
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
-using BlueprintCore.Blueprints.References;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Warblade;
 
@@ -23,11 +16,10 @@ namespace VoidHeadWOTRNineSwords.IronHeart
     public const string Guid = "8C0A55FE-5D4D-478C-86B8-F93899A9CE63";
     const string name = "SteelWind.Name";
     const string desc = "SteelWind.Desc";
+    const string icon = Helpers.IconPrefix + "steelwind.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.BladeBarrier.Reference.Get().Icon;
-
       Main.Logger.Info($"Configuring {nameof(SteelWind)}");
 
       var ability = AbilityConfigurator.New("SteelWindAbility", "E374DECE-726B-4386-87D1-3E52C36388E6")

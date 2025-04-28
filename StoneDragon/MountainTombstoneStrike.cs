@@ -1,21 +1,10 @@
 ﻿using BlueprintCore.Actions.Builder;
-using BlueprintCore.Actions.Builder.BasicEx;
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
-using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
-using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Warblade;
@@ -28,12 +17,11 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
     public const string Guid = "D4483160-C20B-4739-A8F6-21D955B80D6C";
     const string name = "MountainTombstoneStrike.Name";
     const string desc = "MountainTombstoneStrike.Desc";
+    const string icon = Helpers.IconPrefix + "mountaintombstonestrike.png";
 
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(MountainTombstoneStrike)}");
-
-      Sprite icon = AbilityRefs.Boneshatter.Reference.Get().Icon;
 
       var ability = AbilityConfigurator.New("MountainTombstoneStrikeAbility", "27C2A08E-9DF6-4004-9F9A-243DE069FE74")
         .SetDisplayName(name)

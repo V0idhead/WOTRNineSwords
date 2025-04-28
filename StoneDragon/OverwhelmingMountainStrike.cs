@@ -2,20 +2,13 @@
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
-using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Enums;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
@@ -29,11 +22,10 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
     public const string Guid = "28A33ED1-D3D3-4953-8C0E-258C73F867B2";
     const string name = "OverwhelmingMountainStrike.Name";
     const string desc = "OverwhelmingMountainStrike.Desc";
+    const string icon = Helpers.IconPrefix + "overwhelmingmountainstrike.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.TarPool.Reference.Get().Icon;
-
       Main.Logger.Info($"Configuring {nameof(OverwhelmingMountainStrike)}");
 
       var ability = AbilityConfigurator.New("OverwhelmingMountainStrikeAbility", "97851D37-F1AD-4826-A342-035C8A19B8E3")

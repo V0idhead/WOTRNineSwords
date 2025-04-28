@@ -2,23 +2,16 @@
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
-using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
-using VoidHeadWOTRNineSwords.IronHeart;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.DiamondMind
@@ -29,11 +22,10 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
     public const string Guid = "D2BC0B6D-23B7-4D5A-A494-CADC42744408";
     const string name = "DisruptingBlow.Name";
     const string desc = "DisruptingBlow.Desc";
+    const string icon = Helpers.IconPrefix + "disruptingblow.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.EqualForce.Reference.Get().Icon;
-
       Main.Logger.Info($"Configuring {nameof(DisruptingBlow)}");
 
       var ability = AbilityConfigurator.New("DisruptingBlowAbility", "92EA1684-0100-408D-9DF7-7DDA01B6AEC0")

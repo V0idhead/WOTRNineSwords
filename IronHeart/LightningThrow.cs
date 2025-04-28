@@ -7,19 +7,13 @@ using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Conditions.Builder.ContextEx;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Enums.Damage;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
-using VoidHeadWOTRNineSwords.DiamondMind;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.IronHeart
@@ -30,12 +24,11 @@ namespace VoidHeadWOTRNineSwords.IronHeart
     public const string Guid = "D1037F44-3B30-46B7-8ADE-9ED1D517E4CA";
     const string name = "LightningThrow.Name";
     const string desc = "LightningThrow.Desc";
+    const string icon = Helpers.IconPrefix + "lightningthrow.png";
 
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(LightningThrow)}");
-
-      UnityEngine.Sprite icon = AbilityRefs.LightningBolt.Reference.Get().Icon;
 
       var ability = AbilityConfigurator.New("LightningThrowAbility", "8293DA51-9F9E-47FA-819D-88275D8341F6")
         .SetDisplayName(name)

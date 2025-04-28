@@ -29,13 +29,12 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
     public const string Guid = "E842CA48-D474-489C-BD7D-D1DC82EA475A";
     const string name = "AdamantineBones.Name";
     const string desc = "AdamantineBones.Desc";
+    const string icon = Helpers.IconPrefix + "adamantinebones.png";
 
     private static readonly LogWrapper log = LogWrapper.Get("VoidHeadWOTRNineSwords");
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.IronBody.Reference.Get().Icon;
-
       log.Info($"Configuring {nameof(AdamantineBones)}");
 
       var buff = BuffConfigurator.New("AdamantineBonesBuff", "54CAA099-27E7-44BD-A238-A59E3F5F5628")

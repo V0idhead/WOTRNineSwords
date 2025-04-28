@@ -1,26 +1,18 @@
 ﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
-using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VoidHeadWOTRNineSwords.IronHeart;
-using VoidHeadWOTRNineSwords.Warblade;
-using BlueprintCore.Actions.Builder.ContextEx;
-using Kingmaker.Settings;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
+using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.TigerClaw
 {
@@ -29,11 +21,10 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
   {
     public const string Guid = "CD68DB5B-23A3-40AF-B63C-1088424CFF65";
     const string name = "FleshRipper.Name";
+    const string icon = Helpers.IconPrefix + "fleshripper.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.InflictLightWounds.Reference.Get().Icon;
-
       Main.Logger.Info($"Configuring {nameof(FleshRipper)}");
 
       var buff = BuffConfigurator.New("FleshRipperBuffSaveFailed", "F1CE2884-33AE-4558-83AD-B12F5B2827F5")

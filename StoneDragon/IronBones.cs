@@ -1,25 +1,19 @@
 ﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
-using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Enums.Damage;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VoidHeadWOTRNineSwords.Warblade;
-using BlueprintCore.Actions.Builder.ContextEx;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
+using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.StoneDragon
 {
@@ -29,11 +23,10 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
     public const string Guid = "91D4E335-F250-45F9-B055-D8A77DDE9B68";
     const string name = "IronBones.Name";
     const string desc = "IronBones.Desc";
+    const string icon = Helpers.IconPrefix + "ironbones.png";
 
     public static void Configure()
     {
-      UnityEngine.Sprite icon = AbilityRefs.StonestrikeAbility.Reference.Get().Icon;
-
       Main.Logger.Info($"Configuring {nameof(IronBones)}");
 
       var buff = BuffConfigurator.New("IronBonesBuff", "36E99481-F26F-41D4-A566-01C671154097")

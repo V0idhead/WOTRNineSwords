@@ -81,7 +81,14 @@ namespace VoidHeadWOTRNineSwords.Warblade
           FeralDeathBlow.Guid,
           MountainTombstoneStrike.Guid,
           StrikeOfPerfectClarity.Guid,
-          TimeStandsStill.Guid
+          TimeStandsStill.Guid,
+          WallOfBlades.Guid,
+          LightningRecovery.Guid,
+          IronHeartFocus.Guid,
+          RapidCounter.Guid,
+          ManticoreParry.Guid,
+          DiamondDefense.Guid,
+          WhiteRavenCall.Guid
         ).Configure();
 
       return warbladeManeuverSelection;
