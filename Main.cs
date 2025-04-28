@@ -65,11 +65,8 @@ namespace VoidHeadWOTRNineSwords
 
           Logger.Info("Configuring blueprints.");
 
-//<<<<<<< ManeuverResource
           ManeuverResources.Configure();
-//=======
           Common.Common.Configure();
-//>>>>>>> Swordsage
           AllManeuversAndStances.Configure();
           WarbladeC.ConfigureClass();
           AllFeats.Configure();

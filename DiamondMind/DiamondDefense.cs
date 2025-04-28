@@ -1,7 +1,6 @@
 ﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using VoidHeadWOTRNineSwords.Common;
@@ -38,7 +37,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .SetDeactivateIfCombatEnded()
         .SetOnlyInCombat()
         .SetBuff(selfBuff)
-        .AddActivatableAbilityResourceLogic(requiredResource: WarbladeC.ManeuverResourceGuid, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound)
+        .AddActivatableAbilityResourceLogic(requiredResource: ManeuverResources.ManeuverResourceGuid, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound)
         .Configure();
 
       var feat = FeatureConfigurator.New("DiamondDefenseFeat", Guid, AllManeuversAndStances.featureGroup)

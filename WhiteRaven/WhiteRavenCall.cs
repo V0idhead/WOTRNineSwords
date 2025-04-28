@@ -64,7 +64,7 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buffSelf, ContextDuration.Fixed(1), toCaster: true))
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
       var whiteRavenCallFeat = FeatureConfigurator.New("WhiteRavenCallFeat", Guid, AllManeuversAndStances.featureGroup)

@@ -2,16 +2,15 @@
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Root.Strings.GameLog;
 using Kingmaker.Designers;
-using Kingmaker.Designers.EventConditionActionSystem.Events;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UnitLogic;
 using System;
 using System.Linq;
+using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.IronHeart;
-using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.Counters
 {
@@ -47,7 +46,7 @@ namespace VoidHeadWOTRNineSwords.Counters
         if (evt.IsTargetFlatFooted)
           return;
 
-        Blueprint<BlueprintAbilityResourceReference> maneuverResource = WarbladeC.ManeuverResourceGuid;
+        Blueprint<BlueprintAbilityResourceReference> maneuverResource = ManeuverResources.ManeuverResourceGuid;
 
         if (!evt.RuleAttackWithWeapon.Weapon.Blueprint.IsNatural && !evt.RuleAttackWithWeapon.Weapon.Blueprint.IsRanged && Owner.HasFact(ManticoreParry.OnFact))
         {

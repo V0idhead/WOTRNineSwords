@@ -5,9 +5,9 @@ using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
 using System;
+using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.DiamondMind;
-using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.Counters
 {
@@ -20,7 +20,7 @@ namespace VoidHeadWOTRNineSwords.Counters
     {
       if (evt.RuleAttackWithWeapon?.IsAttackOfOpportunity == true && Owner.CombatState.AttackOfOpportunityCount == 0)
       {
-        Blueprint<BlueprintAbilityResourceReference> maneuverResource = WarbladeC.ManeuverResourceGuid; //TODO: switch Resource implementation
+        Blueprint<BlueprintAbilityResourceReference> maneuverResource = ManeuverResources.ManeuverResourceGuid; //TODO: switch Resource implementation
         if (Owner.Resources.HasEnoughResource(maneuverResource.Reference, 1) || Owner.HasFact(RapidCounter.Fact))
         {
           if (!Owner.HasFact(RapidCounter.Fact))
