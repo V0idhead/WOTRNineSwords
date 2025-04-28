@@ -47,7 +47,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
           .HealTarget(new ContextDiceValue { BonusValue = new ContextValue { Property = UnitProperty.Level }, DiceType = Kingmaker.RuleSystem.DiceType.One, DiceCountValue = new ContextValue { Value = 1 } })
           .HealTarget(new ContextDiceValue { BonusValue = new ContextValue { Property = UnitProperty.Level }, DiceType = Kingmaker.RuleSystem.DiceType.One, DiceCountValue = new ContextValue { Value = 1 } })
         )
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
       var feature = FeatureConfigurator.New("IronHeartEndurance", Guid, AllManeuversAndStances.featureGroup)
@@ -56,7 +56,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { ability })
-        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
+        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
 #if !DEBUG
         .AddPrerequisiteFeature(InitiatorLevels.Lvl6Guid)
         .AddPrerequisiteFeaturesFromList(amount: 2, features: AllManeuversAndStances.IronHeartGuids.Except([Guid]).ToList())
