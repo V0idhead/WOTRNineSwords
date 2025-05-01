@@ -89,6 +89,15 @@
     "Key": "ParryActive.Desc",
     "enGB": "Your guard is up."
   },
+  {
+    "Key": "BonusWeaponFocus.Name",
+    "ProcessTemplates": false,
+    "enGB": "Bonus Weapon Focus"
+  },
+  {
+    "Key": "BonusWeaponFocus.Desc",
+    "enGB": "Specialise in the use of a weapon."
+  },
 
   {
     "Key": "RecoverManeuvers.Name",
@@ -201,7 +210,7 @@
   },
   {
     "Key": "WarbladeStanceSelection.Desc",
-    "enGB": " You begin with knowledge of one 1st level stance from any discipline open to warblades. At 4th, 10th, and 16th level, you can choose additional stances. Unlike maneuvers, stances are not expended, and you do not have to ready them. All the stances you know are available to you at all times, and you can change the stance you are currently using as a swift action. A stance is an extraordinary ability unless otherwise stated in the stance description."
+    "enGB": "You begin with knowledge of one 1st level stance from any discipline open to warblades. At 4th, 10th, and 16th level, you can choose additional stances. Unlike maneuvers, stances are not expended, and you do not have to ready them. All the stances you know are available to you at all times, and you can change the stance you are currently using as a swift action. A stance is an extraordinary ability unless otherwise stated in the stance description."
   },
   {
     "Key": "WeaponAptitude.Name",
@@ -265,6 +274,55 @@
   {
     "Key": "StanceMastery.Desc",
     "enGB": "At 20th level, you can have two stances active simultaneously."
+  },
+
+  {
+    "Key": "SwordsageC.Name",
+    "ProcessTemplates": false,
+    "enGB": "aaaSwordsage"
+  },
+  {
+    "Key": "SwordsageC.Desc",
+    "enGB": "A master of martial maneuvers, the sword sage is a physical adept — a blade wizard whose knowledge of the Sublime Way lets him unlock potent abilities, many of which are overtly supernatural or magical in nature. Depending on which disciplines he chooses to study, a swordsage might be capable of walking through walls, leaping dozens of feet into the air, shattering boulders with a single touch, or even mastering the elements of fire or shadow. Whatever his specific training, a swordsage blurs the line between martial prowess and magical skill."
+  },
+  {
+    "Key": "SwordsageProficiencies.Name",
+    "ProcessTemplates": false,
+    "enGB": "Swordsage proficiencies"
+  },
+  {
+    "Key": "SwordsageProficiencies.Desc",
+    "enGB": "You are proficient with simple, martial melee weapons (including those that can be used as thrown weapons) and light armor, but not shields."
+  },
+  {
+    "Key": "SwordsageRecoverManeuvers.Desc",
+    "enGB": "Meditate for a round to restores all maneuver points."
+  },
+  {
+    "Key": "SwordsageManeuverSelection.Name",
+    "ProcessTemplates": false,
+    "enGB": "Swordsage Maneuver Selection"
+  },
+  {
+    "Key": "SwordsageManeuverSelection.Desc",
+    "enGB": "You begin your career with knowledge of six martial maneuvers. The disciplines available to you are Desert Wind, Diamond Mind, Setting Sun, Shadow Hand, Stone Dragon and Tiger Claw."
+  },
+  {
+    "Key": "SwordsageStanceSelection.Name",
+    "ProcessTemplates": false,
+    "enGB": "Swordsage Stance Selection"
+  },
+  {
+    "Key": "WarbladeStanceSelection.Desc",
+    "enGB": "You begin with knowledge of one 1st level stance from any discipline open to swordsages. At 2nd, 5th, 9th, 14th, and 20th level, you can choose additional stances. Unlike maneuvers, stances are not expended, and you do not have to ready them. All the stances you know are available to you at all times, and you can change the stance you are currently using as a swift action. A stance is an extraordinary ability unless otherwise stated in the stance description."
+  },
+  {
+    "Key": "QuickToAct.Name",
+    "enGB": "Quick to Act"
+  },
+  {
+    "Key": "QuickToAct.Desc",
+    "enGB": "You gain a +1 bonus on initiative checks. This bonus increases by 1 at 5th, 10th, 15th, and 20th level."
   },
 
   {
