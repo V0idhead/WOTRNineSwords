@@ -69,6 +69,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .AddFacts(new() { ability })
         .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
 #if !DEBUG
+        .AddPrerequisiteFeature(DisciplineProficencies.DiamondMindProficencyGuid, hideInUI: true)
         .AddPrerequisiteFeature(InitiatorLevels.Lvl7Guid)
         .AddPrerequisiteFeaturesFromList(amount: 3, features: AllManeuversAndStances.DiamondMindGuids.Except([Guid]).ToList())
 #endif

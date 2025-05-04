@@ -76,6 +76,7 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
         .AddPrerequisiteClassLevel(WarbladeC.Guid, 1, hideInUI: true)
         .AddFacts(new() { ability })
 #if !DEBUG
+        .AddPrerequisiteFeature(DisciplineProficencies.TigerClawProficencyGuid, hideInUI: true)
         .AddPrerequisiteFeature(InitiatorLevels.Lvl9Guid)
         .AddPrerequisiteFeaturesFromList(amount: 4, features: AllManeuversAndStances.WhiteRavenGuids.Except([Guid]).ToList())
 #endif

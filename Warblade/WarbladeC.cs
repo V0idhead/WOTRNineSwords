@@ -22,6 +22,7 @@ using BlueprintCore.Actions.Builder;
 using Kingmaker.ElementsSystem;
 using BlueprintCore.Actions.Builder.ContextEx;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Swordsage;
 
 namespace VoidHeadWOTRNineSwords.Warblade
 {
@@ -52,6 +53,7 @@ namespace VoidHeadWOTRNineSwords.Warblade
       .AddToRecommendedAttributes(StatType.Strength, StatType.Constitution, StatType.Intelligence)
       .AddToNotRecommendedAttributes(StatType.Wisdom, StatType.Charisma)
       .AddPrerequisiteIsPet(not: true)
+      .AddPrerequisiteNoClassLevel(SwordsageC.Guid, hideInUI: true) //no multiclassing with swordsage
       .SetStartingGold(200)
       .SetStartingItems(ItemWeaponRefs.ColdIronBattleaxe.Reference.Get(), ItemArmorRefs.ScalemailStandard.Reference.Get(), ItemEquipmentUsableRefs.PotionOfCureLightWounds.Reference.Get())
       .SetPrimaryColor(11)
@@ -71,7 +73,6 @@ namespace VoidHeadWOTRNineSwords.Warblade
     public static BlueprintProgression ConfigureProgression()
     {
       WarbladeRecoverManeuvers.Configure();
-      InitiatorLevels.Configure();
       var weaponAptitude = WeaponAptitude.Configure();
       var battleClarity = BattleClarityReflex.Configure();
       var battleArdor = BattleArdor.Configure();
@@ -79,13 +80,13 @@ namespace VoidHeadWOTRNineSwords.Warblade
       var battleSkill = BattleSkill.Configure();
       var battleMastery = BattleMastery.Configure();
       var stanceMastery = StanceMastery.Configure();
-      var stanceSelector = WarbladeStanceSelection.Configure();
       var maneuverSelector = WarbladeManeuverSelection.Configure();
+      var stanceSelector = SwordsageStanceSelection.Configure();
 
       var warbladeProficiencies = FeatureConfigurator.New("WarbladeProficiencies", "A68BE9ED-C7D6-45CE-8334-7D0551D6F971")
         .SetDisplayName("WarbladeProficiencies.Name")
         .SetDescription("WarbladeProficiencies.Desc")
-        .AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.Reference.Get(), FeatureRefs.MartialWeaponProficiency.Reference.Get(), FeatureRefs.LightArmorProficiency.Reference.Get(), FeatureRefs.MediumArmorProficiency.Reference.Get(), FeatureRefs.ShieldsProficiency.Reference.Get() })
+        .AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.Reference.Get(), FeatureRefs.MartialWeaponProficiency.Reference.Get(), FeatureRefs.LightArmorProficiency.Reference.Get(), FeatureRefs.MediumArmorProficiency.Reference.Get(), FeatureRefs.ShieldsProficiency.Reference.Get(), DisciplineProficencies.DiamondMindProficencyGuid, DisciplineProficencies.IronHeartProficencyGuid, DisciplineProficencies.StoneDragonProficencyGuid, DisciplineProficencies.TigerClawProficencyGuid, DisciplineProficencies.WhiteRavenProficencyGuid })
         .SetIsClassFeature()
         .SetRanks(1)
         .Configure();

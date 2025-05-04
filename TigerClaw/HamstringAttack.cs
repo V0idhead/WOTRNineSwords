@@ -107,6 +107,7 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
         .AddFacts(new() { ability })
         .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
 #if !DEBUG
+        .AddPrerequisiteFeature(DisciplineProficencies.TigerClawProficencyGuid, hideInUI: true)
         .AddPrerequisiteFeature(InitiatorLevels.Lvl7Guid)
         .AddPrerequisiteFeaturesFromList(amount: 3, features: AllManeuversAndStances.TigerClawGuids.Except([Guid]).ToList())
 #endif

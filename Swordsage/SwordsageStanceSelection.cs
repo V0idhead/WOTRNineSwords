@@ -12,19 +12,19 @@ using VoidHeadWOTRNineSwords.StoneDragon;
 using VoidHeadWOTRNineSwords.TigerClaw;
 using VoidHeadWOTRNineSwords.WhiteRaven;
 
-namespace VoidHeadWOTRNineSwords.Warblade
+namespace VoidHeadWOTRNineSwords.Swordsage
 {
   static class SwordsageStanceSelection
   {
-    public const string Guid = "D4E1FCD7-E813-4099-846F-06692E23D475";
+    public const string Guid = "28A95960-AF4C-488F-9735-86FF592F07BF";
 
     private static readonly LogWrapper log = LogWrapper.Get("VoidHeadWOTRNineSwords");
 
     public static BlueprintFeatureSelection Configure()
     {
-      BlueprintFeatureSelection warbladeManeuverSelection = FeatureSelectionConfigurator.New("WarbladeStanceSelection", Guid)
-        .SetDisplayName("WarbladeStanceSelection.Name")
-        .SetDescription("WarbladeStanceSelection.Desc")
+      BlueprintFeatureSelection swordsageManeuverSelection = FeatureSelectionConfigurator.New("SwordsageStanceSelection", Guid)
+        .SetDisplayName("SwordsageStanceSelection.Name")
+        .SetDescription("SwordsageStanceSelection.Desc")
         .SetIsClassFeature()
         .SetMode(SelectionMode.OnlyNew)
         .SetAllFeatures(
@@ -40,7 +40,7 @@ namespace VoidHeadWOTRNineSwords.Warblade
           SwarmTactics.Guid
         ).Configure();
 
-      return warbladeManeuverSelection;
+      return swordsageManeuverSelection;
     }
   }
 }

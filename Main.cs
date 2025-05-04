@@ -7,6 +7,7 @@ using System;
 using UnityModManagerNet;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Feats;
+using VoidHeadWOTRNineSwords.Swordsage;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords
@@ -67,8 +68,11 @@ namespace VoidHeadWOTRNineSwords
 
           ManeuverResources.Configure();
           Common.Common.Configure();
+          DisciplineProficencies.Configure();
           AllManeuversAndStances.Configure();
+          InitiatorLevels.Configure();
           WarbladeC.ConfigureClass();
+          SwordsageC.ConfigureClass();
           AllFeats.Configure();
         }
         catch (Exception e)

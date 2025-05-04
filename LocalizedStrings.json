@@ -183,7 +183,7 @@
   },
   {
     "Key": "WarbladeC.Desc",
-    "enGB": "The warblade was born for conflict. Swift, strong, enduring, and utterly confident in his martial skills, he seeks to test himself against worthy foes. Battle is beautiful to him - a perfect moment in which life hangs suspended on the bright edge of a sword.\n\nIn addition to normal weapon attacks available to all martial classes warblades can perform maneuvers and counters as well as enter stances. Maneuvers are special weapon attack that rival magic in effect.\nCounters are similar but react to specific conditions or actions performed by enemies.\n\nAt level one 3 maneuvers can be performed per battle, this number increases as more warblades levels are taken. During battle the number of available maneuvers can be restored using the Recover Maneuvers ability."
+    "enGB": "The warblade was born for conflict. Swift, strong, enduring, and utterly confident in his martial skills, he seeks to test himself against worthy foes. Battle is beautiful to him - a perfect moment in which life hangs suspended on the bright edge of a sword.\n\nIn addition to normal weapon attacks available to all martial classes warblades can perform maneuvers and counters as well as enter stances. Maneuvers are special weapon attack that rival magic in effect.\nCounters are similar but react to specific conditions or actions performed by enemies.\n\nWarblades have access to maneuvers from the Diamond Mind, Iron Heart, Stone Dragon, Tiger Claw and White Raven disciplines.\nAt level one 3 maneuvers can be performed per battle, this number increases as more warblades levels are taken. During battle the number of available maneuvers can be restored using the Recover Maneuvers ability."
   },
   {
     "Key": "WarbladeProficiencies.Name",
@@ -192,7 +192,7 @@
   },
   {
     "Key": "WarbladeProficiencies.Desc",
-    "enGB": "You are proficient with simple and martial melee weapons (including those that can be used as thrown weapons), light and medium armor, and all shields except tower shields."
+    "enGB": "You are proficient with simple and martial melee weapons (including those that can be used as thrown weapons), light and medium armor, and all shields except tower shields. Warblades"
   },
   {
     "Key": "WarbladeManeuverSelection.Name",
@@ -313,8 +313,8 @@
     "enGB": "Swordsage Stance Selection"
   },
   {
-    "Key": "WarbladeStanceSelection.Desc",
-    "enGB": "You begin with knowledge of one 1st level stance from any discipline open to swordsages. At 2nd, 5th, 9th, 14th, and 20th level, you can choose additional stances. Unlike maneuvers, stances are not expended, and you do not have to ready them. All the stances you know are available to you at all times, and you can change the stance you are currently using as a swift action. A stance is an extraordinary ability unless otherwise stated in the stance description."
+    "Key": "SwordsageStanceSelection.Desc",
+    "enGB": "You begin with knowledge of one 1st level stance from any discipline open to swordsages. At 2nd, 5th, 9th, 14th, and 20th level, you can choose additional stances. Unlike maneuvers, stances are not expended, and you do not have to ready them. All the stances you know are available to you at all times, and you can change the stance you are currently using as a swift action. A stance is an extraordinary ability unless otherwise stated in the stance description.\n\nIn addition to normal weapon attacks available to all martial classes swordsages can perform maneuvers and counters as well as enter stances. Maneuvers are special weapon attack that rival magic in effect.\nCounters are similar but react to specific conditions or actions performed by enemies.\n\nSwordsages have access to maneuvers from the Desert Wind, Diamond Mind, Setting Sun, shadow Hand, Stone Dragon and Tiger Claw disciplines.\nAt level one 4 maneuvers can be performed per battle, this number increases as more swordsage levels are taken. During battle the number of available maneuvers can be restored using the Recover Maneuvers ability."
   },
   {
     "Key": "QuickToAct.Name",
