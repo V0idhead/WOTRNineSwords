@@ -73,7 +73,6 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Defense)
         .SetRanks(1)
-        .AddPrerequisiteClassLevel(WarbladeC.Guid, 1, hideInUI: true)
         .AddFacts(new() { ability })
 #if !DEBUG
         .AddPrerequisiteFeature(DisciplineProficencies.TigerClawProficencyGuid, hideInUI: true)

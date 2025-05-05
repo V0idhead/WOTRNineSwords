@@ -324,6 +324,24 @@
     "Key": "QuickToAct.Desc",
     "enGB": "You gain a +1 bonus on initiative checks. This bonus increases by 1 at 5th, 10th, 15th, and 20th level."
   },
+  {
+    "Key": "SwordsageACBonus.Name",
+    "ProcessTemplates": false,
+    "enGB": "Flowing Defense"
+  },
+  {
+    "Key": "SwordsageACBonus.Desc",
+    "enGB": "You can add your Wisdom modifier as a bonus to Armor Class, so long as you wear light armor and do not use a shield. This bonus to AC applies even against touch attacks or when you are flat-footed. However, you lose this bonus when you are immobilized or helpless."
+  },
+  {
+    "Key": "SwordsageDamageBonus.Name",
+    "ProcessTemplates": false,
+    "enGB": "Insightful Strikes"
+  },
+  {
+    "Key": "SwordsageDamageBonus.Desc",
+    "enGB": "You can add your Wisdom modifier as a bonus on damage rolls."
+  },
 
   {
     "Key": "PunishingStance.Name",

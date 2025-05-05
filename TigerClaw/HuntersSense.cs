@@ -43,7 +43,6 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
         .SetDescription(desc)
         .SetIcon(icon)
         .SetRanks(1)
-        .AddPrerequisiteClassLevel(WarbladeC.Guid, 1, hideInUI: true)
         .AddFacts(new() { activatable })
 #if !DEBUG
         .AddPrerequisiteFeature(DisciplineProficencies.TigerClawProficencyGuid, hideInUI: true)

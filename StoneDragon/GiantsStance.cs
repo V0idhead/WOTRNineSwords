@@ -47,7 +47,6 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .SetRanks(1)
-        .AddPrerequisiteClassLevel(WarbladeC.Guid, 1, hideInUI: true)
         .AddFacts(new() { activatable })
 #if !DEBUG
         .AddPrerequisiteFeature(DisciplineProficencies.StoneDragonProficencyGuid, hideInUI: true)

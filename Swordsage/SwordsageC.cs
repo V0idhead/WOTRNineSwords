@@ -67,8 +67,9 @@ namespace VoidHeadWOTRNineSwords.Swordsage
       SwordsageRecoverManeuvers.Configure();
       var quickToAct = QuickToAct.Configure();
       var bonusWeaponFocus = BonusWeaponFocus.Configure();
-      /*var battleArdor = BattleArdor.Configure(); //TODO: replace
-      var battleCunning = BattleCunning.Configure();
+      var swordsageACBonus = SwordsageACBonus.Configure();
+      var swordsageDamageBonus = SwordsageDamageBonus.Configure();
+      /*var battleCunning = BattleCunning.Configure();
       var battleSkill = BattleSkill.Configure();
       var battleMastery = BattleMastery.Configure();
       var stanceMastery = StanceMastery.Configure();*/
@@ -85,10 +86,10 @@ namespace VoidHeadWOTRNineSwords.Swordsage
 
       var entries = LevelEntryBuilder.New()
         .AddEntry(1, swordsageProficiencies.AssetGuid, SwordsageRecoverManeuvers.Guid, quickToAct.AssetGuid, bonusWeaponFocus.AssetGuid, maneuverSelector.AssetGuid, maneuverSelector.AssetGuid, maneuverSelector.AssetGuid, maneuverSelector.AssetGuid, maneuverSelector.AssetGuid, maneuverSelector.AssetGuid, stanceSelector.AssetGuid, InitiatorLevels.Lvl1Guid, ManeuverResources.IncreaseManeuverUsesGuid) //6 maneuvers, 1 stance
-        .AddEntry(2,  maneuverSelector.AssetGuid)
-        .AddEntry(3,  maneuverSelector.AssetGuid, InitiatorLevels.Lvl2Guid)
-        .AddEntry(4, stanceSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid)
-        .AddEntry(5, quickToAct.AssetGuid, maneuverSelector, InitiatorLevels.Lvl3Guid)
+        .AddEntry(2, swordsageACBonus.AssetGuid, maneuverSelector.AssetGuid, stanceSelector.AssetGuid)
+        .AddEntry(3, maneuverSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid, InitiatorLevels.Lvl2Guid)
+        .AddEntry(4, swordsageDamageBonus.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid)
+        .AddEntry(5, quickToAct.AssetGuid, maneuverSelector, InitiatorLevels.Lvl3Guid) //implement
         /*.AddEntry(6, )
         .AddEntry(7, , maneuverSelector.AssetGuid, InitiatorLevels.Lvl4Guid)
         .AddEntry(9, , maneuverSelector, InitiatorLevels.Lvl5Guid)
@@ -97,8 +98,8 @@ namespace VoidHeadWOTRNineSwords.Swordsage
         .AddEntry(13, , maneuverSelector.AssetGuid, InitiatorLevels.Lvl7Guid)
         .AddEntry(15, quickToAct.AssetGuid, maneuverSelector.AssetGuid, InitiatorLevels.Lvl8Guid, ManeuverResources.IncreaseManeuverUsesGuid)
         .AddEntry(16, stanceSelector.AssetGuid)
-        .AddEntry(17, , maneuverSelector.AssetGuid, InitiatorLevels.Lvl9Guid)*/
-        .AddEntry(19, maneuverSelector.AssetGuid)
+        .AddEntry(17, , maneuverSelector.AssetGuid, InitiatorLevels.Lvl9Guid)
+        .AddEntry(19, maneuverSelector.AssetGuid)*/
         .AddEntry(20, quickToAct.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid);
 
       var progression = ProgressionConfigurator.New("SwordsageProgression", "6AD2A307-54B1-4421-8C67-CF84F3B98B98")
