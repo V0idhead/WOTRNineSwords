@@ -1,16 +1,11 @@
 ﻿using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes.Selection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using VoidHeadWOTRNineSwords.DesertWind;
 using VoidHeadWOTRNineSwords.DiamondMind;
-using VoidHeadWOTRNineSwords.IronHeart;
+using VoidHeadWOTRNineSwords.ShadowHand;
 using VoidHeadWOTRNineSwords.StoneDragon;
 using VoidHeadWOTRNineSwords.TigerClaw;
-using VoidHeadWOTRNineSwords.WhiteRaven;
 
 namespace VoidHeadWOTRNineSwords.Swordsage
 {
@@ -28,16 +23,12 @@ namespace VoidHeadWOTRNineSwords.Swordsage
         .SetIsClassFeature()
         .SetMode(SelectionMode.OnlyNew)
         .SetAllFeatures(
-          PunishingStance.Guid,
-          BolsteringVoice.Guid,
           HuntersSense.Guid,
-          AbsoluteSteel.Guid,
-          DancingBladeForm.Guid,
           GiantsStance.Guid,
           HearingTheAir.Guid,
           StrengthOfStone.Guid,
-          SupremeBladeParry.Guid,
-          SwarmTactics.Guid
+          ChildOfShadow.Guid,
+          FlamesBlessing.Guid
         ).Configure();
 
       return swordsageManeuverSelection;
