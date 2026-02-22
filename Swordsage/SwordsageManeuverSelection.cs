@@ -73,7 +73,8 @@ namespace VoidHeadWOTRNineSwords.Swordsage
           ShadowBladeTechnique.Guid,
           CloakOfDeception.Guid,
           DrainVitality.Guid,
-          FireRiposte.Guid
+          FireRiposte.Guid,
+          WindStride.Guid
         ).Configure();
 
       return swordsageManeuverSelection;

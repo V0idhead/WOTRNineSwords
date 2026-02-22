@@ -1123,6 +1123,15 @@
     "Key": "FireRiposte.LogMsg",
     "enGB": "Spent 1 maneuver points on Fire Riposte"
   },
+  {
+    "Key": "WindStride.Name",
+    "ProcessTemplates": false,
+    "enGB": "Wind Stride"
+  },
+  {
+    "Key": "WindStride.Desc",
+    "enGB": "Discipline: Desert Wind\nManeuver Type: Boost\nRequired Initiator Level: Swordsage 1\nUntil the end of your turn, you gain a +20-foot enhancement bonus to your speed."
+  },
 
   {
     "Key": "nam.Name",

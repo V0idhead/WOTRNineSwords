@@ -14,7 +14,7 @@ namespace VoidHeadWOTRNineSwords.Feats
   {
     //TODO: add actual effects
     public const string DesertWindDodgeGuid = "C0E4F1A2-8D7B-4F5A-9D3C-6E5B2F1A0E7F";
-    public const string DesertWindFocusFactGuid = "A1B2C3D4-E5F6-7A8B-9C0D-E1F2G3H4I5J6";
+    public const string DesertWindFocusFactGuid = "272EF7E8-54E7-4681-BD33-64E7A7ECC242";
 
     public static void Configure()
     {

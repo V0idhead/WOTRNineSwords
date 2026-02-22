@@ -43,9 +43,10 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction
         (
-          ActionsBuilder.New().Add<MeleeAttackExtended>(mae => { mae.OnHit =
+          ActionsBuilder.New().Add<MeleeAttackExtended>(mae => {
+              mae.OnHit =
             ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: ContextValues.Constant(12), conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, ShadowPresence.ShadowHandFocusFactGuid),
-              onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().DealDamageToAbility(Kingmaker.EntitySystem.Stats.StatType.Constitution, ContextDice.Value(DiceType.One, 2), disableSneakDamage: true).DealDamageToAbility(Kingmaker.EntitySystem.Stats.StatType.Strength, ContextDice.Value(DiceType.One, 2), disableSneakDamage: true))).Build()
+              onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().DealDamageToAbility(Kingmaker.EntitySystem.Stats.StatType.Constitution, ContextDice.Value(DiceType.One, 2), disableSneakDamage: true).DealDamageToAbility(Kingmaker.EntitySystem.Stats.StatType.Strength, ContextDice.Value(DiceType.One, 2), disableSneakDamage: true))).Build();
             })
         )
         .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)

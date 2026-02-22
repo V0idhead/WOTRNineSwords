@@ -33,7 +33,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
     {
       Main.Logger.Info($"Configuring {nameof(BurningBlade)}");
 
-      var selfBuff = BuffConfigurator.New("BurningBladeBuff", "1B68A9CB-3F63-4AE3-97DB-D0BE16176A9B")
+      var selfBuff = BuffConfigurator.New("BurningBladeBuff", "4B6F7F9D-7235-48FB-98C7-2064B8E1FB95")
         .SetDisplayName(name)
         .SetDescription("BurningBladeBuff.Desc")
         .SetIcon(icon)

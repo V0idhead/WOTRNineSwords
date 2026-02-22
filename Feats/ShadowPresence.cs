@@ -14,7 +14,7 @@ namespace VoidHeadWOTRNineSwords.Feats
   {
     //TODO: add actual effects
     public const string ShadowPresenceGuid = "C0E4F1A2-8D7B-4F5A-9D3C-6E5B2F1A0E7F";
-    public const string ShadowHandFocusFactGuid = "A1B2C3D4-E5F6-7A8B-9C0D-E1F2G3H4I5J6";
+    public const string ShadowHandFocusFactGuid = "44B11E8F-31EE-45DF-A559-27CF59EEA9D7";
 
     public static void Configure()
     {
