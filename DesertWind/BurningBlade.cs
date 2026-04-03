@@ -8,9 +8,11 @@ using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Enums.Damage;
 using Kingmaker.RuleSystem;
+using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Commands.Base;
+using Kingmaker.UnitLogic.Mechanics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +29,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
     const string name = "BurningBlade.Name";
     const string desc = "BurningBlade.Desc";
     //const string icon = Helpers.IconPrefix + "burningblade.png";
-    static UnityEngine.Sprite icon = AbilityRefs.BlueFlameBlastBladeDamage.Reference.Get().Icon;
+    static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
     public static void Configure()
     {
@@ -37,8 +39,12 @@ namespace VoidHeadWOTRNineSwords.DesertWind
         .SetDisplayName(name)
         .SetDescription("BurningBladeBuff.Desc")
         .SetIcon(icon)
-        .AdditionalDamageOnHit(DamageEnergyType.Fire, new DiceFormula(1, DiceType.D6), onlyMelee: true)
-        .AdditionalDamageOnHit(DamageEnergyType.Fire, DiceFormula.One, onlyMelee: true) //TODO: should be 1 per initiator level
+        //.AddOutgoingDamageTriggerFixed
+        .AddInitiatorAttackRollTrigger(onlyHit: true, action:
+            ActionsBuilder.New().DealDamage(new DamageTypeDescription { Type = DamageType.Energy, Energy = DamageEnergyType.Fire}, new ContextDiceValue { DiceType = DiceType.D6, DiceCountValue = 1, BonusValue = 1 })
+            .Build())
+        //.AdditionalDamageOnHit(DamageEnergyType.Fire, new DiceFormula(1, DiceType.D6), onlyMelee: true)
+        //.AdditionalDamageOnHit(DamageEnergyType.Fire, DiceFormula.One, onlyMelee: true) //TODO: should be 1 per initiator level
         .Configure();
 
       var ability = AbilityConfigurator.New("BurningBladeAbility", "DAB777FC-2AEE-49AD-9C89-68F808AF743F")

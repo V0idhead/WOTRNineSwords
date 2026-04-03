@@ -33,7 +33,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
       BlueprintCharacterClass swordsageC = CharacterClassConfigurator.New("Swordsage", Guid)
       .SetLocalizedName("SwordsageC.Name")
       .SetLocalizedDescription("SwordsageC.Desc")
-      .SetSkillPoints(0) //should be 5, lowered to speed up char creation for testing
+      .SetSkillPoints(0) //TODO: should be 5, lowered to speed up char creation for testing
       .SetHitDie(DiceType.D8)
       .SetIsArcaneCaster(false).SetIsDivineCaster(false)
       .SetBaseAttackBonus(StatProgressionRefs.BABMedium.Reference.Get())
@@ -69,10 +69,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
       var bonusWeaponFocus = BonusWeaponFocus.Configure();
       var swordsageACBonus = SwordsageACBonus.Configure();
       var swordsageDamageBonus = SwordsageDamageBonus.Configure();
-      /*var battleCunning = BattleCunning.Configure();
-      var battleSkill = BattleSkill.Configure();
-      var battleMastery = BattleMastery.Configure();
-      var stanceMastery = StanceMastery.Configure();*/
+      var swordsageDefensiveStance = SwordsageDefensiveStance.Configure(); //TODO: implement
       var maneuverSelector = SwordsageManeuverSelection.Configure();
       var stanceSelector = SwordsageStanceSelection.Configure();
 
@@ -88,19 +85,23 @@ namespace VoidHeadWOTRNineSwords.Swordsage
         .AddEntry(1, swordsageProficiencies.AssetGuid, SwordsageRecoverManeuvers.Guid, quickToAct.AssetGuid, bonusWeaponFocus.AssetGuid, maneuverSelector.AssetGuid, maneuverSelector.AssetGuid, maneuverSelector.AssetGuid, maneuverSelector.AssetGuid, maneuverSelector.AssetGuid, maneuverSelector.AssetGuid, stanceSelector.AssetGuid, InitiatorLevels.Lvl1Guid, ManeuverResources.IncreaseManeuverUsesGuid) //6 maneuvers, 1 stance
         .AddEntry(2, swordsageACBonus.AssetGuid, maneuverSelector.AssetGuid, stanceSelector.AssetGuid)
         .AddEntry(3, maneuverSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid, InitiatorLevels.Lvl2Guid)
-        .AddEntry(4, swordsageDamageBonus.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid)
-        .AddEntry(5, quickToAct.AssetGuid, maneuverSelector, InitiatorLevels.Lvl3Guid) //implement
-        /*.AddEntry(6, )
-        .AddEntry(7, , maneuverSelector.AssetGuid, InitiatorLevels.Lvl4Guid)
-        .AddEntry(9, , maneuverSelector, InitiatorLevels.Lvl5Guid)
-        .AddEntry(10, quickToAct.AssetGuid, stanceSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid)
-        .AddEntry(11, , maneuverSelector.AssetGuid, InitiatorLevels.Lvl6Guid)
-        .AddEntry(13, , maneuverSelector.AssetGuid, InitiatorLevels.Lvl7Guid)
+        .AddEntry(4, swordsageDamageBonus.AssetGuid, maneuverSelector.AssetGuid) //Discipline Focus: replaced by ge´neral damage bonus
+        .AddEntry(5, quickToAct.AssetGuid, maneuverSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid, stanceSelector.AssetGuid, InitiatorLevels.Lvl3Guid)
+        .AddEntry(6, maneuverSelector.AssetGuid)
+        .AddEntry(7, maneuverSelector.AssetGuid, InitiatorLevels.Lvl4Guid)
+        .AddEntry(8, swordsageDefensiveStance.AssetGuid, maneuverSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid)
+        .AddEntry(9, FeatureRefs.Evasion.Reference.guid, maneuverSelector.AssetGuid, stanceSelector.AssetGuid, InitiatorLevels.Lvl5Guid)
+        .AddEntry(10, quickToAct.AssetGuid, maneuverSelector.AssetGuid, stanceSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid)
+        .AddEntry(11, maneuverSelector.AssetGuid, InitiatorLevels.Lvl6Guid)
+        .AddEntry(12, maneuverSelector.AssetGuid)
+        .AddEntry(13, maneuverSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid, InitiatorLevels.Lvl7Guid)
+        .AddEntry(14, maneuverSelector.AssetGuid, stanceSelector.AssetGuid)
         .AddEntry(15, quickToAct.AssetGuid, maneuverSelector.AssetGuid, InitiatorLevels.Lvl8Guid, ManeuverResources.IncreaseManeuverUsesGuid)
-        .AddEntry(16, stanceSelector.AssetGuid)
-        .AddEntry(17, , maneuverSelector.AssetGuid, InitiatorLevels.Lvl9Guid)
-        .AddEntry(19, maneuverSelector.AssetGuid)*/
-        .AddEntry(20, quickToAct.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid);
+        .AddEntry(16, maneuverSelector.AssetGuid)
+        .AddEntry(17, FeatureRefs.ImprovedEvasion.Reference.guid, maneuverSelector.AssetGuid, InitiatorLevels.Lvl9Guid)
+        .AddEntry(18, maneuverSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid)
+        .AddEntry(19, maneuverSelector.AssetGuid)
+        .AddEntry(20, quickToAct.AssetGuid, maneuverSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid, stanceSelector.AssetGuid);
 
       var progression = ProgressionConfigurator.New("SwordsageProgression", "6AD2A307-54B1-4421-8C67-CF84F3B98B98")
         .SetRanks(1)

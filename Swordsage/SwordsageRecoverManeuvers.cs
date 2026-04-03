@@ -26,7 +26,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
         .SetCanTargetSelf()
         .SetRange(Kingmaker.UnitLogic.Abilities.Blueprints.AbilityRange.Personal)
         .SetIsFullRoundAction(true)
-        .AddAbilityEffectRunAction(ActionsBuilder.New().OnContextCaster(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid)))
+        .AddAbilityEffectRunAction(ActionsBuilder.New().OnContextCaster(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid, value: 40)))
         .Configure();
 
       var feature = FeatureConfigurator.New("SwordsageRecoverManeuvers", Guid)

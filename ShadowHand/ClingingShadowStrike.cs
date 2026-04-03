@@ -22,7 +22,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
     const string desc = "ClingingShadowStrike.Desc";
     const string buffDesc = "ClingingShadowStrikeBuff.Desc";
     //const string icon = Helpers.IconPrefix + "burningblade.png";
-    static UnityEngine.Sprite icon = AbilityRefs.ShadowConjuration.Reference.Get().Icon;
+    static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
     public static void Configure()
     {

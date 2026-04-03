@@ -23,7 +23,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
     const string name = "BlisteringFlourish.Name";
     const string desc = "BlisteringFlourish.Desc";
     //const string icon = Helpers.IconPrefix + "blisteringflourish.png";
-    static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+    static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
     public static void Configure()
     {
@@ -33,10 +33,10 @@ namespace VoidHeadWOTRNineSwords.DesertWind
         .SetDisplayName(name)
         .SetDescription(desc)
         .SetIcon(icon)
-        .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Special)
-        .SetCanTargetEnemies()
-        .SetCanTargetFriends()
-        .SetCanTargetSelf(false)
+        .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Omni)
+        .SetCanTargetSelf(true)
+        .SetEffectOnAlly(AbilityEffectOnUnit.Harmful)
+        .SetEffectOnEnemy(AbilityEffectOnUnit.Harmful)
         .SetRange(AbilityRange.Personal)
         .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
         .SetType(AbilityType.CombatManeuver)

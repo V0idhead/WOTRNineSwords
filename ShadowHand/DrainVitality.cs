@@ -22,7 +22,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
     public const string Guid = "F5FFA51C-82C4-4DF4-B541-686E497007EE";
     const string name = "DrainVitality.Name";
     const string desc = "DrainVitality.Desc";
-    static UnityEngine.Sprite icon = AbilityRefs.Shades.Reference.Get().Icon;
+    static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
     public static void Configure()
     {

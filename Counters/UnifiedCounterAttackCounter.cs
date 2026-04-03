@@ -1,10 +1,12 @@
-﻿using BlueprintCore.Utils;
+﻿using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Root.Strings.GameLog;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UnitLogic;
+using Kingmaker.Utility;
 using System;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
@@ -15,6 +17,7 @@ namespace VoidHeadWOTRNineSwords.Counters
   internal class UnifiedCounterAttackCounter : UnitFactComponentDelegate, ITargetRulebookHandler<RuleAttackRoll>, ITargetRulebookSubscriber
   {
     static int accumulatedPenalty = 0;
+    static readonly Feet MeleeRange = new Feet(5);
 
     static UnifiedCounterAttackCounter()
     {
@@ -35,7 +38,7 @@ namespace VoidHeadWOTRNineSwords.Counters
 
     public void OnEventDidTrigger(RuleAttackRoll evt)
     {
-      if (evt.IsHit)
+      if (evt.IsHit && evt.Initiator.DistanceTo(Owner) <= MeleeRange.Meters)
       {
         Blueprint<BlueprintAbilityResourceReference> maneuverResource = ManeuverResources.ManeuverResourceGuid;
 
@@ -57,8 +60,8 @@ namespace VoidHeadWOTRNineSwords.Counters
         if (mode == Mode.FireRiposte)
         {
           accumulatedPenalty++;
-
           RuleAttackRoll counterAttack = new RuleAttackRoll(Owner, evt.Initiator, Owner.GetThreatHandMelee().Weapon, -accumulatedPenalty);
+          //RuleAttackRoll counterAttack = new RuleAttackRoll(Owner, evt.Initiator, , -accumulatedPenalty);
           counterAttack.ACRule = new RuleCalculateAC(Owner, evt.Initiator, Kingmaker.RuleSystem.AttackType.Touch);
           Context.TriggerRule<RuleAttackRoll>(counterAttack);
           

@@ -1,9 +1,14 @@
-﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Enums;
+using Kingmaker.Enums.Damage;
+using Kingmaker.RuleSystem;
+using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Mechanics;
@@ -31,7 +36,10 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         //.SetDisplayName(name)
         //.SetIcon(icon)
         //.AdditionalDiceOnDamage(diceValue: new ContextDiceValue { DiceType = DiceType.D6, DiceCountValue = 1 }, damageTypeDescription: DamageTypes.Direct(), checkAbilityType: false, checkDamageDealt: false, checkEnergyDamageType: false, checkSpellDescriptor: false, checkSpellParent: false, checkWeaponType: false) //does nothing
-        .AddDamageBonusConditional(bonus: new ContextValue {Value = 4 }, descriptor: ModifierDescriptor.UntypedStackable) //TODO: damage bonus should be 1d6 ?AdditionalDiceOnDamage?
+        //.AddDamageBonusConditional(bonus: new ContextValue {Value = 4 }, descriptor: ModifierDescriptor.UntypedStackable) //TODO: damage bonus should be 1d6 ?AdditionalDiceOnDamage?
+        .AddInitiatorAttackRollTrigger(onlyHit: true, action:
+            ActionsBuilder.New().DealDamage(new DamageTypeDescription { Type = DamageType.Untyped }, new ContextDiceValue { DiceType = DiceType.D6, DiceCountValue = 1 })
+            .Build())
         //.AddDamageBonusConditional(bonus: ContextValues., descriptor: ModifierDescriptor.UntypedStackable) //TODO: damage bonus should be 1d6
         //.AdditionalDamageOnHit(energyDamageDice: new DiceFormula(1, DiceType.D6), onlyMelee: true, element: Kingmaker.Enums.Damage.DamageEnergyType.Magic)
         .AddACBonusAgainstAttacks(armorClassBonus: -2)

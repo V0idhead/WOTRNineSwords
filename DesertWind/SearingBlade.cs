@@ -6,31 +6,45 @@ using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.Enums.Damage;
+using Kingmaker.RuleSystem;
+using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
+using Kingmaker.UnitLogic.Mechanics;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 
 namespace VoidHeadWOTRNineSwords.DesertWind
 {
-    static class WindStride
+    //https://dndtools.net/spells/tome-of-battle-the-book-of-nine-swords--88/searing-blade--3588/
+    static class SearingBlade
     {
-        public const string Guid = "E610DA1B-F49F-4F56-9CE8-E88FEE824BC0";
-        const string name = "WindStride.Name";
-        const string desc = "WindStride.Desc";
+        public const string Guid = "C9636F87-25ED-4D8D-895C-C380710DC7B9";
+        const string name = "SearingBlade.Name";
+        const string desc = "SearingBlade.Desc";
         //const string icon = Helpers.IconPrefix + "burningblade.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+
         public static void Configure()
         {
-            Main.Logger.Info($"Configuring {nameof(WindStride)}");
+            Main.Logger.Info($"Configuring {nameof(SearingBlade)}");
 
-            var selfBuff = BuffConfigurator.New("WindStrideBuff", "EA16FAC8-558C-4ADD-8990-43CC8FA5FD74")
+            var selfBuff = BuffConfigurator.New("SearingBladeBuff", "B6881604-54AD-4271-AD67-532B76610A84")
               .SetDisplayName(name)
-              .SetDescription("WindStrideBuff.Desc")
+              .SetDescription("SearingBladeBuff.Desc")
               .SetIcon(icon)
-              .AddBuffMovementSpeed(value: 20)
+              //.AddOutgoingDamageTriggerFixed
+              .AddInitiatorAttackRollTrigger(onlyHit: true, action:
+                  ActionsBuilder.New().DealDamage(new DamageTypeDescription { Type = DamageType.Energy, Energy = DamageEnergyType.Fire }, new ContextDiceValue { DiceType = DiceType.D6, DiceCountValue = 2, BonusValue = 4 })
+                  .Build())
               .Configure();
 
-            var ability = AbilityConfigurator.New("WindStrideAbility", "7FA67E37-FC7E-4A67-8EC3-5A3E9FC5B342")
+            var ability = AbilityConfigurator.New("SearingBladeAbility", "ED9D77B2-02D6-4E5B-AA60-8460415D6A71")
               .SetDisplayName(name)
               .SetDescription(desc)
               .SetIcon(icon)
@@ -45,16 +59,16 @@ namespace VoidHeadWOTRNineSwords.DesertWind
               .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
               .Configure();
 
-            var spell = FeatureConfigurator.New("WindStride", Guid, AllManeuversAndStances.featureGroup)
+            var spell = FeatureConfigurator.New("SearingBlade", Guid, AllManeuversAndStances.featureGroup)
               .SetDisplayName(name)
               .SetDescription(desc)
               .SetIcon(icon)
-              .AddFeatureTagsComponent(FeatureTag.Melee)
+              .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
               .AddFacts(new() { ability })
               .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
 #if !DEBUG
-        .AddPrerequisiteFeature(DisciplineProficencies.DesertWindProficencyGuid, hideInUI: true)
-        .AddPrerequisiteFeature(InitiatorLevels.Lvl1Guid)
+              .AddPrerequisiteFeature(DisciplineProficencies.DesertWindProficencyGuid, hideInUI: true)
+              .AddPrerequisiteFeature(InitiatorLevels.Lvl1Guid)
 #endif
               .Configure();
         }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Counters;
 using VoidHeadWOTRNineSwords.DesertWind;
 using VoidHeadWOTRNineSwords.DiamondMind;
 using VoidHeadWOTRNineSwords.IronHeart;
@@ -74,7 +75,25 @@ namespace VoidHeadWOTRNineSwords.Swordsage
           CloakOfDeception.Guid,
           DrainVitality.Guid,
           FireRiposte.Guid,
-          WindStride.Guid
+          WindStride.Guid,
+          FlashingSun.Guid,
+          ShadowJaunt.Guid,
+          HatchlingsFlame.Guid,
+          DeathMark.Guid,
+          FanTheFlames.Guid,
+          ShadowGarotte.Guid,
+          StrengthDrainingStrike.Guid,
+          ZephyrDance.Guid,
+          ObscuringShadowVeil.Guid,
+          SearingBlade.Guid,
+          SearingCharge.Guid,
+          BloodlettingStrike.Guid,
+          DragonsFlame.Guid,
+          LeapingFlame.Guid,
+          LingeringInferno.Guid,
+          ShadowStride.Guid,
+          InfernoBlade.Guid,
+          ShadowBlink.Guid
         ).Configure();
 
       return swordsageManeuverSelection;

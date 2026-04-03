@@ -18,7 +18,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
     public const string Guid = "91EECC6B-84A8-4624-8683-865F13BDB259";
     const string name = "ShadowBladeTechnique.Name";
     const string desc = "ShadowBladeTechnique.Desc";
-    static UnityEngine.Sprite icon = AbilityRefs.Shades.Reference.Get().Icon;
+    static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
     public static void Configure()
     {

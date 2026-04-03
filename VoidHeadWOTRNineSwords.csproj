@@ -37,7 +37,7 @@
 
     <!-- Wrath Assemblies -->
     <Reference Include="Assembly-CSharp-firstpass.dll">
-      <HintPath>$(WrathPath)\Wrath_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <HintPath>Z:\VoidHeadWOTRNineSwords\ref\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>lib\Assembly-CSharp.dll</HintPath>
@@ -46,33 +46,33 @@
       <HintPath>..\..\_BlueprintCore_2.8.4\BlueprintCore.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>$(WrathPath)\Wrath_Data\Managed\Newtonsoft.Json.dll</HintPath>
+      <HintPath>Z:\VoidHeadWOTRNineSwords\ref\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Owlcat.Runtime.Core">
-      <HintPath>$(WrathPath)\Wrath_Data\Managed\Owlcat.Runtime.Core.dll</HintPath>
+      <HintPath>Z:\VoidHeadWOTRNineSwords\ref\Owlcat.Runtime.Core.dll</HintPath>
     </Reference>
     <Reference Include="Owlcat.Runtime.UI">
-      <HintPath>$(WrathPath)\Wrath_Data\Managed\Owlcat.Runtime.UI.dll</HintPath>
+      <HintPath>Z:\VoidHeadWOTRNineSwords\ref\Owlcat.Runtime.UI.dll</HintPath>
     </Reference>
     <Reference Include="Owlcat.Runtime.Validation">
-      <HintPath>$(WrathPath)\Wrath_Data\Managed\Owlcat.Runtime.Validation.dll</HintPath>
+      <HintPath>Z:\VoidHeadWOTRNineSwords\ref\Owlcat.Runtime.Validation.dll</HintPath>
     </Reference>
     <Reference Include="Owlcat.Runtime.Visual">
-      <HintPath>$(WrathPath)\Wrath_Data\Managed\Owlcat.Runtime.Visual.dll</HintPath>
+      <HintPath>Z:\VoidHeadWOTRNineSwords\ref\Owlcat.Runtime.Visual.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>$(WrathPath)\Wrath_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>Z:\VoidHeadWOTRNineSwords\ref\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>$(WrathPath)\Wrath_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>Z:\VoidHeadWOTRNineSwords\ref\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
 
     <!-- UMM & Harmony -->
     <Reference Include="0Harmony">
-      <HintPath>$(WrathPath)\Wrath_Data\Managed\UnityModManager\0Harmony.dll</HintPath>
+      <HintPath>Z:\VoidHeadWOTRNineSwords\ref\UnityModManager\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="UnityModManager">
-      <HintPath>$(WrathPath)\Wrath_Data\Managed\UnityModManager\UnityModManager.dll</HintPath>
+      <HintPath>Z:\VoidHeadWOTRNineSwords\ref\UnityModManager\UnityModManager.dll</HintPath>
     </Reference>
   </ItemGroup>
 
