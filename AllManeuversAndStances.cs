@@ -16,9 +16,9 @@ namespace VoidHeadWOTRNineSwords
     {
         public static readonly FeatureGroup featureGroup = (Kingmaker.Blueprints.Classes.FeatureGroup)100; //None == Background :(
         public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> DiamondMindGuids = [SapphireNightmareBlade.Guid, EmeraldRazor.Guid, BoundingAssault.Guid, MindStrike.Guid, RubyNightmareBlade.Guid, DisruptingBlow.Guid, AvalancheOfBlades.Guid, HearingTheAir.Guid, DiamondNightmareBlade.Guid, TimeStandsStill.Guid, RapidCounter.Guid, DiamondDefense.Guid];
-        public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> DesertWindGuids = [BlisteringFlourish.Guid, BurningBlade.Guid, FlamesBlessing.Guid, FireRiposte.Guid, WindStride.Guid, FlashingSun.Guid, HatchlingsFlame.Guid, DeathMark.Guid, FanTheFlames.Guid, ZephyrDance.Guid, SearingBlade.Guid, SearingCharge.Guid, DragonsFlame.Guid, LeapingFlame.Guid, LingeringInferno.Guid, InfernoBlade.Guid];
+        public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> DesertWindGuids = [BlisteringFlourish.Guid, BurningBlade.Guid, FlamesBlessing.Guid, FireRiposte.Guid, WindStride.Guid, FlashingSun.Guid, HatchlingsFlame.Guid, DeathMark.Guid, FanTheFlames.Guid, ZephyrDance.Guid, SearingBlade.Guid, SearingCharge.Guid, DragonsFlame.Guid, LeapingFlame.Guid, LingeringInferno.Guid, InfernoBlade.Guid, WyrmsFlame.Guid, InfernoBlast.Guid];
         public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> IronHeartGuids = [SteelyStrike.Guid, DisarmingStrike.Guid, ExorcismOfSteel.Guid, PunishingStance.Guid, AbsoluteSteel.Guid, MithralTornado.Guid, DazingStrike.Guid, FinishingMove.Guid, DancingBladeForm.Guid, ScythingBlade.Guid, SteelWind.Guid, AdamantineHurricane.Guid, BoomerangThrow.Guid, ViciousThrow.Guid, LightningThrow.Guid, SupremeBladeParry.Guid, StrikeOfPerfectClarity.Guid, WallOfBlades.Guid, LightningRecovery.Guid, IronHeartFocus.Guid, ManticoreParry.Guid];
-        public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> ShadowHandGuids = [ChildOfShadow.Guid, ClingingShadowStrike.Guid, ShadowBladeTechnique.Guid, CloakOfDeception.Guid, DrainVitality.Guid, ShadowJaunt.Guid, ShadowGarotte.Guid, StrengthDrainingStrike.Guid, ObscuringShadowVeil.Guid, BloodlettingStrike.Guid, ShadowStride.Guid, ShadowBlink.Guid];
+        public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> ShadowHandGuids = [ChildOfShadow.Guid, ClingingShadowStrike.Guid, ShadowBladeTechnique.Guid, CloakOfDeception.Guid, DrainVitality.Guid, ShadowJaunt.Guid, ShadowGarotte.Guid, StrengthDrainingStrike.Guid, ObscuringShadowVeil.Guid, BloodlettingStrike.Guid, ShadowStride.Guid, ShadowBlink.Guid, EnervatingShadowStrike.Guid];
         public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> StoneDragonGuids = [StoneBones.Guid, ChargingMinotaur.Guid, MountainHammer.Guid, StoneVise.Guid, BonesplittingStrike.Guid, OverwhelmingMountainStrike.Guid, ElderMountainHammer.Guid, CrushingVise.Guid, IronBones.Guid, IrresistibleMountainStrike.Guid, AncientMountainHammer.Guid, ColossusStrike.Guid, GiantsStance.Guid, AdamantineBones.Guid, EarthstrikeQuake.Guid, StrengthOfStone.Guid, MountainTombstoneStrike.Guid];
         public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> TigerClawGuids = [HuntersSense.Guid, ClawAtTheMoon.Guid, RabidWolfStrike.Guid, FleshRipper.Guid, DancingMongoose.Guid, PouncingCharge.Guid, RabidBearStrike.Guid, HamstringAttack.Guid, FeralDeathBlow.Guid];
         public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> WhiteRavenGuids = [LeadingTheAttack.Guid, BattleLeadersCharge.Guid, LionsRoar.Guid, WhiteRavenStrike.Guid, WarLeadersCharge.Guid, BolsteringVoice.Guid, SwarmTactics.Guid, WhiteRavenHammer.Guid, WhiteRavenCall.Guid];
@@ -72,6 +72,10 @@ namespace VoidHeadWOTRNineSwords
             LingeringInferno.Configure();
             //Lvl7
             InfernoBlade.Configure();
+            //Lvl8
+            WyrmsFlame.Configure();
+            //Lvl9
+            InfernoBlast.Configure();
             //--Stances--
             //Lvl1
             FlamesBlessing.Configure();
@@ -144,6 +148,8 @@ namespace VoidHeadWOTRNineSwords
             ShadowStride.Configure();
             //Lvl7
             ShadowBlink.Configure();
+            //Lvl8
+            EnervatingShadowStrike.Configure();
             //--Stances--
             //Lvl1
             ChildOfShadow.Configure();

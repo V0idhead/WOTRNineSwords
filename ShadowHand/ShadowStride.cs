@@ -23,7 +23,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         {
             Main.Logger.Info($"Configuring {nameof(ShadowStride)}");
 
-            var ability = AbilityConfigurator.New(name, "33BCBC41-8D34-4C82-9F8A-E444720FFDA0")
+            var ability = AbilityConfigurator.New("ShadowStrideAbility", "33BCBC41-8D34-4C82-9F8A-E444720FFDA0")
               .SetDisplayName(name)
               .SetDescription(desc)
               .SetIcon(icon)
@@ -37,7 +37,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
               .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
               .Configure();
 
-            var spell = FeatureConfigurator.New("ShadowJaunt", Guid, AllManeuversAndStances.featureGroup)
+            var spell = FeatureConfigurator.New("ShadowStride", Guid, AllManeuversAndStances.featureGroup)
               .SetDisplayName(name)
               .SetDescription(desc)
               .SetIcon(icon)

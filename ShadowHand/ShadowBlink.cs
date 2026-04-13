@@ -23,7 +23,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         {
             Main.Logger.Info($"Configuring {nameof(ShadowBlink)}");
 
-            var ability = AbilityConfigurator.New(name, "82BCBBC9-7640-4557-B23A-29F2B7A244F7")
+            var ability = AbilityConfigurator.New("ShadowBlinkAbility", "82BCBBC9-7640-4557-B23A-29F2B7A244F7")
               .SetDisplayName(name)
               .SetDescription(desc)
               .SetIcon(icon)

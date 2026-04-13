@@ -1310,7 +1310,43 @@
   },
   {
     "Key": "ShadowBlink.Desc",
-    "enGB": "Discipline: Shadow Hand\nManeuver Type: Special\nRequired Initiator Level: Swordsage 9\nCasting Time: Free Action\nYou disappear in a cloud of darkness and teleport up to 50 feet away."
+    "enGB": "Discipline: Shadow Hand\nManeuver Type: Special\nRequired Initiator Level: Swordsage 13\nCasting Time: Free Action\nYou disappear in a cloud of darkness and teleport up to 50 feet away."
+  },
+  {
+    "Key": "EnervatingShadowStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Enervating Shadow Strike"
+  },
+  {
+    "Key": "EnervatingShadowStrike.Desc",
+    "enGB": "Discipline: Shadow Hand\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 15\nRequired Maneuvers: 3 Shadow Hand\nAs part of this maneuver, you make a single melee attack. If this attack hits, the target must make a successful Fortitude save (DC 18 + your Wis modifier) or gain 1d4 negative levels. You gain 5d4 temporary hit points."
+  },
+  {
+    "Key": "WyrmsFlame.Name",
+    "ProcessTemplates": false,
+    "enGB": "Wyrm's Flame"
+  },
+  {
+    "Key": "WyrmsFlame.Desc",
+    "enGB": "Discipline: Desert Wind\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 15\nhen you initiate this maneuver, you blast forth a 30ft cone of flame that deals 10d6 points of fire damage. Creatures in the area can attempt Reflex saves (DC 18 + your Wis modifier) for half damage."
+  },
+  {
+    "Key": "CreepingIceStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Five-Shadow Creeping Ice Enervating Strike"
+  },
+  {
+    "Key": "CreepingIceStrike.Desc",
+    "enGB": "Discipline: Shadow Hand\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 17\nRequired Maneuvers: 5 Shadow Hand\nYou make a single melee attack, if you hit, you deal normal melee damage plus an extra 15d6 points of damage, and a shadow spreads out from your enemy's heart, freezing the blood in his veins. Roll a d20 and refer to the information below to determine toward which point of his body the freezing shadow spreads.\nResult of 1-7: Spreads out to legs. Ability damage: 2d6 Dex. Special effect: Speed is reduced to 0 feet.\nResult of 8-14: Spreads out to arms. Ability damage: 2d6 Str. Special effect: -6 penalty on attack rolls.\nResult of 15-20: Struck in the heart. Ability damage: 2d6 Dex, 2d6 Str. Special effect: 2d6 points of Constitution damage.\nA foe struck by this attack must make a successful Fortitude save (DC 19 + your Wis modifier) to resist its effects. On a successful save, the target ignores any special effect from the attack and takes half the indicated ability damage (but still takes normal melee damage as well as the extra 15d6 points of damage)."
+  },
+  {
+    "Key": "InfernoBlast.Name",
+    "ProcessTemplates": false,
+    "enGB": "Inferno Blast"
+  },
+  {
+    "Key": "InfernoBlast.Desc",
+    "enGB": "Discipline: Desert Wind\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 17\nRequired Maneuvers: 5 Desert Wind\nYou deal 100 points of fire damage to all creatures in a 60-ft.-radius burst centered on you. You are not harmed by your own inferno blast."
   },
 
   {

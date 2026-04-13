@@ -93,7 +93,10 @@ namespace VoidHeadWOTRNineSwords.Swordsage
           LingeringInferno.Guid,
           ShadowStride.Guid,
           InfernoBlade.Guid,
-          ShadowBlink.Guid
+          ShadowBlink.Guid,
+          EnervatingShadowStrike.Guid,
+          WyrmsFlame.Guid,
+          InfernoBlast.Guid
         ).Configure();
 
       return swordsageManeuverSelection;

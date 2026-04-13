@@ -15,7 +15,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
     //https://dndtools.net/spells/tome-of-battle-the-book-of-nine-swords--88/shadow-jaunt--3701/
     static class ShadowJaunt
     {
-        public const string Guid = "BDA47FED-7930-4672-95AC-8C78F52F03AB";
+        public const string Guid = "221F8701-227D-4339-BD58-C0DC8AD87ACE";
         const string name = "ShadowJaunt.Name";
         const string desc = "ShadowJaunt.Desc";
         //const string icon = Helpers.IconPrefix + "shadowjaunt.png";
@@ -24,7 +24,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         {
             Main.Logger.Info($"Configuring {nameof(ShadowJaunt)}");
 
-            var ability = AbilityConfigurator.New(name, "8A1827EB-97C2-4619-9611-E119BEFE6006")
+            var ability = AbilityConfigurator.New("ShadowJauntAbility", "8A1827EB-97C2-4619-9611-E119BEFE6006")
               .SetDisplayName(name)
               .SetDescription(desc)
               .SetIcon(icon)

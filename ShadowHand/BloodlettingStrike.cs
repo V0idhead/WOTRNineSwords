@@ -25,7 +25,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         const string name = "BloodlettingStrike.Name";
         const string desc = "BloodlettingStrike.Desc";
         //const string icon = Helpers.IconPrefix + "bonesplittingstrike.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {
