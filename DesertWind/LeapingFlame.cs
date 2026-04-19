@@ -28,7 +28,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
         const string name = "LeapingFlame.Name";
         const string desc = "LeapingFlame.Desc";
         //const string icon = Helpers.IconPrefix + "manticoreparry.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         private static readonly LogWrapper log = LogWrapper.Get("VoidHeadWOTRNineSwords");
 

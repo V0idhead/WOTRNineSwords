@@ -1,12 +1,8 @@
 ﻿using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VoidHeadWOTRNineSwords.Swordsage
 {
@@ -23,6 +19,11 @@ namespace VoidHeadWOTRNineSwords.Swordsage
             BlueprintFeature swordsageDefensiveStance = FeatureConfigurator.New("SwordsageDefensiveStance", Guid)
               .SetDisplayName(name)
               .SetDescription(desc)
+              .AddContextRankConfig(ContextRankConfigs.StatBonus(StatType.Wisdom))
+              .AddContextStatBonus(StatType.SaveFortitude, ContextValues.Rank(), ModifierDescriptor.UntypedStackable)
+              .AddContextStatBonus(StatType.SaveReflex, ContextValues.Rank(), ModifierDescriptor.UntypedStackable)
+              .AddContextStatBonus(StatType.SaveWill, ContextValues.Rank(), ModifierDescriptor.UntypedStackable)
+              .AddRecalculateOnStatChange(stat: StatType.Wisdom)
               .Configure();
 
             return swordsageDefensiveStance;

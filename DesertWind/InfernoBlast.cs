@@ -3,6 +3,8 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.References;
+using BlueprintCore.Conditions.Builder;
+using BlueprintCore.Conditions.Builder.ContextEx;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes.Selection;
@@ -47,7 +49,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
               .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
               .SetType(AbilityType.CombatManeuver)
               .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
-              .AddAbilityTargetsAround(radius: new Kingmaker.Utility.Feet(30))
+              .AddAbilityTargetsAround(radius: new Kingmaker.Utility.Feet(30), targetType: Kingmaker.UnitLogic.Abilities.Components.TargetType.Any, condition: ConditionsBuilder.New().IsCaster(true).Build())
               .AddAbilitySpawnFx(AbilitySpawnFxAnchor.Caster, prefabLink: AbilityRefs.FlareBurst.Reference.Get().GetComponent<AbilitySpawnFx>().PrefabLink, time: AbilitySpawnFxTime.OnApplyEffect)
               .AddAbilityEffectRunAction
               (

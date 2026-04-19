@@ -184,6 +184,24 @@
     "Key": "WhiteRavenDefense.Desc",
     "enGB": "On hitting with a White Raven strike removes the confused, compulsion, emotion, fear, shaken and mind affecting conditions from allies in a 30 feet radius. In addition you add +1 to the Difficulty Class for all saving throws against your White Raven maneuvers. [Currently no White Raven strike allows a saving throw]"
   },
+  {
+    "Key": "ShadowPresence.Name",
+    "ProcessTemplates": false,
+    "enGB": "Shadow Presence"
+  },
+  {
+    "Key": "ShadowPresence.Desc",
+    "enGB": "While you are in a Shadow Hand stance you gain +2 AC. In addition you add +1 to the Difficulty Class for all saving throws against your Shadow Hand maneuvers."
+  },
+  {
+    "Key": "WhiteRavenDefense.Name",
+    "ProcessTemplates": false,
+    "enGB": "White Raven Defense"
+  },
+  {
+    "Key": "WhiteRavenDefense.Desc",
+    "enGB": "On hitting with a White Raven strike removes the confused, compulsion, emotion, fear, shaken and mind affecting conditions from allies in a 30 feet radius. In addition you add +1 to the Difficulty Class for all saving throws against your White Raven maneuvers. [Currently no White Raven strike allows a saving throw]"
+  },
 
   {
     "Key": "WarbladeC.Name",
@@ -324,6 +342,15 @@
   {
     "Key": "SwordsageStanceSelection.Desc",
     "enGB": "You begin with knowledge of one 1st level stance from any discipline open to swordsages. At 2nd, 5th, 9th, 14th, and 20th level, you can choose additional stances. Unlike maneuvers, stances are not expended, and you do not have to ready them. All the stances you know are available to you at all times, and you can change the stance you are currently using as a swift action. A stance is an extraordinary ability unless otherwise stated in the stance description.\n\nIn addition to normal weapon attacks available to all martial classes swordsages can perform maneuvers and counters as well as enter stances. Maneuvers are special weapon attack that rival magic in effect.\nCounters are similar but react to specific conditions or actions performed by enemies.\n\nSwordsages have access to maneuvers from the Desert Wind, Diamond Mind, Setting Sun, shadow Hand, Stone Dragon and Tiger Claw disciplines.\nAt level one 4 maneuvers can be performed per battle, this number increases as more swordsage levels are taken. During battle the number of available maneuvers can be restored using the Recover Maneuvers ability."
+  },
+  {
+    "Key": "SwordsageDisciplineFocusSelection.Name",
+    "ProcessTemplates": false,
+    "enGB": "Swordsage Discipline Focus Selection"
+  },
+  {
+    "Key": "SwordsageDisciplineFocusSelection.Desc",
+    "enGB": "At level 1 choose a discipline available to Swordsages. You gain the Focus feat for that discipline."
   },
   {
     "Key": "QuickToAct.Name",

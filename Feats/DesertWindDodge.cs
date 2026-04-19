@@ -26,6 +26,7 @@ namespace VoidHeadWOTRNineSwords.Feats
         .SetIcon(FeatureRefs.SpellFocusAbjuration.Reference.Get().Icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { desertWindFocusFact })
+        
         .AddPrerequisiteFeaturesFromList(amount: 1, features: AllManeuversAndStances.DesertWindGuids.ToList())
         .Configure();
     }

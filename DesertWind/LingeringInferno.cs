@@ -10,6 +10,7 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using System.Linq;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 
 namespace VoidHeadWOTRNineSwords.DesertWind
 {
@@ -28,6 +29,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
             var damageOverTime = BuffConfigurator.New("LingeringInfernoDeBuff", "7D912B6A-A407-4FFC-8C01-E696D86886F4")
               .SetDisplayName(name)
               .SetDescription(desc)
+              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.Harmful)
               .SetIcon(icon)
               .AddDamageOverTime(new Kingmaker.RuleSystem.DiceFormula(2, Kingmaker.RuleSystem.DiceType.D6), Kingmaker.Enums.Damage.DamageEnergyType.Fire, false)
               .Configure();
@@ -36,14 +38,10 @@ namespace VoidHeadWOTRNineSwords.DesertWind
               .SetDisplayName(name)
               .SetDescription(desc)
               .SetIcon(icon)
-              .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Directional)
-              .SetCanTargetPoint()
+              .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Special)
               .SetCanTargetEnemies()
               .SetEffectOnEnemy(AbilityEffectOnUnit.Harmful)
-              .SetCanTargetFriends()
-              .SetEffectOnAlly(AbilityEffectOnUnit.Harmful)
-              .SetCanTargetSelf()
-              .SetRange(AbilityRange.Projectile)
+              .SetRange(AbilityRange.Weapon)
               .SetUseCurrentWeaponAsReasonItem()
               .SetActionType(UnitCommand.CommandType.Standard)
               .SetShouldTurnToTarget()
@@ -51,9 +49,11 @@ namespace VoidHeadWOTRNineSwords.DesertWind
               .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
               .AddAbilityEffectRunAction
               (
-                  ActionsBuilder.New()
-                  .DealDamage(DamageTypes.Energy(Kingmaker.Enums.Damage.DamageEnergyType.Fire), ContextDice.Value(Kingmaker.RuleSystem.DiceType.D6, ContextValues.Constant(2)))
-                  .ApplyBuff(damageOverTime, ContextDuration.Fixed(3))
+                  ActionsBuilder.New().
+                    Add<MeleeAttackExtended>(mae => mae.OnHit = ActionsBuilder.New()
+                      .DealDamage(DamageTypes.Energy(Kingmaker.Enums.Damage.DamageEnergyType.Fire), ContextDice.Value(Kingmaker.RuleSystem.DiceType.D6, ContextValues.Constant(2)))
+                      .ApplyBuff(damageOverTime, ContextDuration.Fixed(3)).Build()
+                  )
               )
               .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
               .Configure();

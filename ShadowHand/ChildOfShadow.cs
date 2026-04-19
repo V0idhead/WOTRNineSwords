@@ -7,6 +7,7 @@ using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Feats;
 
 namespace VoidHeadWOTRNineSwords.ShadowHand
 {
@@ -27,6 +28,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         .SetDescription(buffDesc)
         .SetIcon(icon)
         .AddConcealment(concealment: Kingmaker.Enums.Concealment.Partial, descriptor: Kingmaker.Enums.ConcealmentDescriptor.Displacement)
+        .AddStatBonusIfHasFactFixed(new BlueprintCore.Blueprints.Components.Replacements.AddStatBonusIfHasFactFixed(Kingmaker.EntitySystem.Stats.StatType.AC, ContextValues.Constant(2), new System.Collections.Generic.List<BlueprintCore.Utils.Blueprint<Kingmaker.Blueprints.BlueprintUnitFactReference>> { ShadowPresence.ShadowHandFocusFactGuid }, descriptor: Kingmaker.Enums.ModifierDescriptor.UntypedStackable))
         .Configure();
 
       var triggerBuff = BuffConfigurator.New("ChildOfShadowTriggerBuff", "DA0BD533-B972-492A-9AD6-F06420C144DB")

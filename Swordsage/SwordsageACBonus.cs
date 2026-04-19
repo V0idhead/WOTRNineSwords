@@ -5,6 +5,8 @@ using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Buffs;
+using Kingmaker.Designers.Mechanics.Facts.Restrictions;
+using Kingmaker.UnitLogic.ActivatableAbilities.Restrictions;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using System;
@@ -26,18 +28,19 @@ namespace VoidHeadWOTRNineSwords.Swordsage
     {
       Main.Logger.Info($"Configuring {nameof(SwordsageACBonus)}");
 
+      var ACBonusBuff = BuffConfigurator.New("SwordsageACBonusBuff", "AECDE85F-4CC6-467C-9792-D0EE9AC277FC")
+        .SetDisplayName(name)
+        .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+        .AddContextStatBonus(Kingmaker.EntitySystem.Stats.StatType.AC, ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom))
+        .AddRecalculateOnStatChange(stat: Kingmaker.EntitySystem.Stats.StatType.Wisdom)
+        .Configure();
+
       BlueprintFeature swordsageACBonus = FeatureConfigurator.New("SwordsageACBonus", Guid)
-        .CopyFrom(FeatureRefs.ShifterACBonusUnlock.Reference.Get(), typeof(MonkNoArmorFeatureUnlock), typeof(HasArmorFeatureUnlock))
         .SetDisplayName(name)
         .SetDescription(desc)
-        .EditComponents<HasArmorFeatureUnlock>(
-          c => {
-            c.m_ArmorProficiencyGroupEntries = Kingmaker.Blueprints.Items.Armors.ArmorProficiencyGroupFlag.Light;
-            c.FilterByArmorProficiencyGroup = true;
-            c.FilterByBlueprintArmorTypes = false;
-            c.m_DisableWhenHasShield = true;
-          }, c => true
-        )
+        .SetIsClassFeature()
+        .AddRecalculateOnStatChange(stat: Kingmaker.EntitySystem.Stats.StatType.Wisdom)
+        .AddBuffOnLightOrNoArmor(ACBonusBuff)
         .Configure();
 
       return swordsageACBonus;

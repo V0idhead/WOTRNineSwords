@@ -23,7 +23,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
         const string name = "InfernoBlade.Name";
         const string desc = "InfernoBlade.Desc";
         //const string icon = Helpers.IconPrefix + "burningblade.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {
