@@ -18,7 +18,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         const string name = "ShadowBlink.Name";
         const string desc = "ShadowBlink.Desc";
         //const string icon = Helpers.IconPrefix + "shadowjaunt.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
         public static void Configure()
         {
             Main.Logger.Info($"Configuring {nameof(ShadowBlink)}");

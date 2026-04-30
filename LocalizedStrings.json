@@ -194,13 +194,21 @@
     "enGB": "While you are in a Shadow Hand stance you gain +2 AC. In addition you add +1 to the Difficulty Class for all saving throws against your Shadow Hand maneuvers."
   },
   {
-    "Key": "WhiteRavenDefense.Name",
+    "Key": "RelentlessSirocco.Name",
     "ProcessTemplates": false,
-    "enGB": "White Raven Defense"
+    "enGB": "Relentless Sirocco"
   },
   {
-    "Key": "WhiteRavenDefense.Desc",
-    "enGB": "On hitting with a White Raven strike removes the confused, compulsion, emotion, fear, shaken and mind affecting conditions from allies in a 30 feet radius. In addition you add +1 to the Difficulty Class for all saving throws against your White Raven maneuvers. [Currently no White Raven strike allows a saving throw]"
+    "Key": "RelentlessSirocco.Desc",
+    "enGB": "A creature struck by your weapon must make a will save (DC 17) or become vulnerable to fire for 10 rounds. In addition you add +1 to the Difficulty Class for all saving throws against your Desert Wind maneuvers."
+  },
+  {
+    "Key": "RelentlessSirocco.EnchantDesc",
+    "enGB": "A creature struck by your weapon must make a will save (DC 17) or become vulnerable to fire for 10 rounds."
+  },
+  {
+    "Key": "RelentlessSirocco.DeBuffDesc",
+    "enGB": "This creature is vulnerable to fire."
   },
 
   {
@@ -1176,7 +1184,7 @@
   },
   {
     "Key": "FlashingSun.Desc",
-    "enGB": "Discipline: Desert Wind\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 3\nRequired Maneuvers: 1 Desert Wind\nAs part of this maneuver you make a full attack with one additional attack against a single create. All your attacks this round are made with a -2 penalty."
+    "enGB": "Discipline: Desert Wind\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 3\nRequired Maneuvers: 1 Desert Wind\nAs part of this maneuver you make a full attack with one additional attack against a single create."
   },
   {
     "Key": "ShadowJaunt.Name",
@@ -1221,7 +1229,7 @@
   },
   {
     "Key": "ShadowGarotte.Desc",
-    "enGB": "Discipline: Shadow Hand\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 5\nYou create a strand of shadow that you hurl at an opponent. The strand wraps around the target's throat and chokes it. As part of this maneuver, you make a ranged touch attack against a creature within 60 ft. If your attack is successful, your opponent takes 5d6 points of damage. In addition, it must make a successful Fortitude save (DC 13 + your Wis modifier) or become flat-footed until the start of its next turn. This strike has no effect against nonliving creatures, such as constructs and undead."
+    "enGB": "Discipline: Shadow Hand\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 5\nYou create a strand of shadow that you hurl at an opponent. The strand wraps around the target's throat and chokes it. As part of this maneuver, you make a ranged touch attack against a creature within 60 ft. If your attack is successful, your opponent takes 5d6 points of damage. In addition, it must make a successful Fortitude save (DC 13 + your Wis modifier) or become staggered until the start of its next turn. This strike has no effect against nonliving creatures, such as constructs and undead."
   },
   {
     "Key": "StrengthDrainingStrike.Name",

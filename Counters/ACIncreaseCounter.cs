@@ -19,8 +19,9 @@ namespace VoidHeadWOTRNineSwords.Counters
         public void OnEventDidTrigger(RuleAttackRoll evt)
         {
             Helpers.WriteCombatLogMessage("--Zephyr Dance--", GameLogStrings.Instance.DefaultColor, Owner);
-            int atkRoll = (int)evt.Result;
-            Helpers.WriteCombatLogMessage("atk Roll: " + atkRoll + "; AC: " + evt.TargetAC, GameLogStrings.Instance.DefaultColor, Owner);
+            int atkRoll = evt.Roll;
+            int bonus = evt.TotalBonusValue;
+            Helpers.WriteCombatLogMessage("atk Roll: " + atkRoll + " + " + bonus + "; AC: " + evt.TargetAC, GameLogStrings.Instance.DefaultColor, Owner);
 
             if (evt.IsHit && atkRoll < evt.TargetAC + 4)
             {

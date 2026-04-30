@@ -21,7 +21,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         const string name = "ShadowGarotte.Name";
         const string desc = "ShadowGarotte.Desc";
         //const string icon = Helpers.IconPrefix + "burningblade.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {
@@ -45,7 +45,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
               .AddAbilityDeliverProjectile(needAttackRoll: true, weapon: ItemWeaponRefs.RayItem.Reference.Guid, type: Kingmaker.UnitLogic.Abilities.Components.AbilityProjectileType.Simple, lineWidth: new Kingmaker.Utility.Feet(5), projectiles: new() { ProjectileRefs.Enervation00.ToString() })
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New().
-                    DealDamage(DamageTypes.Direct(), new ContextDiceValue { DiceCountValue=5, DiceType=Kingmaker.RuleSystem.DiceType.D6}).
+                    DealDamage(DamageTypes.Direct(), ContextDice.Value(Kingmaker.RuleSystem.DiceType.D6, 5)).
                     SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 13 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, ShadowPresence.ShadowHandFocusFactGuid),
                         onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(BuffRefs.Staggered.Reference.Get(), ContextDuration.Fixed(1))))
                 )

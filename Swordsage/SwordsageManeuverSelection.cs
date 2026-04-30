@@ -1,16 +1,9 @@
 ﻿using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes.Selection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
-using VoidHeadWOTRNineSwords.Counters;
 using VoidHeadWOTRNineSwords.DesertWind;
 using VoidHeadWOTRNineSwords.DiamondMind;
-using VoidHeadWOTRNineSwords.IronHeart;
 using VoidHeadWOTRNineSwords.ShadowHand;
 using VoidHeadWOTRNineSwords.StoneDragon;
 using VoidHeadWOTRNineSwords.TigerClaw;
@@ -96,7 +89,8 @@ namespace VoidHeadWOTRNineSwords.Swordsage
           ShadowBlink.Guid,
           EnervatingShadowStrike.Guid,
           WyrmsFlame.Guid,
-          InfernoBlast.Guid
+          InfernoBlast.Guid,
+          CreepingIceStrike.Guid
         ).Configure();
 
       return swordsageManeuverSelection;

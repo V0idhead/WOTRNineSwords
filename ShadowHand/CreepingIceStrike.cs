@@ -11,7 +11,6 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using System;
-using System.Linq;
 using VoidHeadWOTRNineSwords.Common;
 
 namespace VoidHeadWOTRNineSwords.ShadowHand
@@ -25,7 +24,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         const string name = "CreepingIceStrike.Name";
         const string desc = "CreepingIceStrike.Desc";
         //const string icon = Helpers.IconPrefix + "rubynightmareblade.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {
@@ -93,35 +92,38 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
                 var caster = Context.MaybeCaster;
                 var target = Context.MainTarget.Unit;
 
-                RuleRollD20 roll = new RuleRollD20(caster);
-                Context.TriggerRule(roll);
-                int result = roll.Result;
-
                 RuleSavingThrow savingThrow = new RuleSavingThrow(target, Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, 19 + caster.Stats.Wisdom.Bonus);
                 Context.TriggerRule(savingThrow);
 
-                if(result < 8) //1 - 7
+                if (!savingThrow.IsPassed)
                 {
-                    RuleDealStatDamage dexDam = new RuleDealStatDamage(caster, target, Kingmaker.EntitySystem.Stats.StatType.Dexterity, new Kingmaker.RuleSystem.DiceFormula(2, Kingmaker.RuleSystem.DiceType.D6), 0);
-                    Context.TriggerRule(dexDam);
-                    if(savingThrow.Success == false)
-                        ActionsBuilder.New().ApplyBuff(CreepingIceStrike.LegsBuffGuid, ContextDuration.FixedDice(Kingmaker.RuleSystem.DiceType.D6, 2)).Build().Run();
-                }
-                else if(result < 15) //8 - 14
-                {
-                    RuleDealStatDamage strDam = new RuleDealStatDamage(caster, target, Kingmaker.EntitySystem.Stats.StatType.Strength, new Kingmaker.RuleSystem.DiceFormula(2, Kingmaker.RuleSystem.DiceType.D6), 0);
-                    Context.TriggerRule(strDam);
-                    if (savingThrow.Success == false)
-                        ActionsBuilder.New().ApplyBuff(CreepingIceStrike.ArmsBuffGuid, ContextDuration.FixedDice(Kingmaker.RuleSystem.DiceType.D6, 2)).Build().Run();
-                }
-                else //15 - 20
-                {
-                    RuleDealStatDamage dexDam = new RuleDealStatDamage(caster, target, Kingmaker.EntitySystem.Stats.StatType.Dexterity, new Kingmaker.RuleSystem.DiceFormula(2, Kingmaker.RuleSystem.DiceType.D6), 0);
-                    RuleDealStatDamage strDam = new RuleDealStatDamage(caster, target, Kingmaker.EntitySystem.Stats.StatType.Strength, new Kingmaker.RuleSystem.DiceFormula(2, Kingmaker.RuleSystem.DiceType.D6), 0);
-                    RuleDealStatDamage conDam = new RuleDealStatDamage(caster, target, Kingmaker.EntitySystem.Stats.StatType.Constitution, new Kingmaker.RuleSystem.DiceFormula(2, Kingmaker.RuleSystem.DiceType.D6), 0);
-                    Context.TriggerRule(dexDam);
-                    Context.TriggerRule(strDam);
-                    Context.TriggerRule(conDam);
+                    RuleRollD20 roll = new RuleRollD20(caster);
+                    Context.TriggerRule(roll);
+                    int result = roll.Result;
+
+                    if (result < 8) //1 - 7
+                    {
+                        RuleDealStatDamage dexDam = new RuleDealStatDamage(caster, target, Kingmaker.EntitySystem.Stats.StatType.Dexterity, new Kingmaker.RuleSystem.DiceFormula(2, Kingmaker.RuleSystem.DiceType.D6), 0);
+                        Context.TriggerRule(dexDam);
+                        if (savingThrow.Success == false)
+                            ActionsBuilder.New().ApplyBuff(CreepingIceStrike.LegsBuffGuid, ContextDuration.FixedDice(Kingmaker.RuleSystem.DiceType.D6, 2)).Build().Run();
+                    }
+                    else if (result < 15) //8 - 14
+                    {
+                        RuleDealStatDamage strDam = new RuleDealStatDamage(caster, target, Kingmaker.EntitySystem.Stats.StatType.Strength, new Kingmaker.RuleSystem.DiceFormula(2, Kingmaker.RuleSystem.DiceType.D6), 0);
+                        Context.TriggerRule(strDam);
+                        if (savingThrow.Success == false)
+                            ActionsBuilder.New().ApplyBuff(CreepingIceStrike.ArmsBuffGuid, ContextDuration.FixedDice(Kingmaker.RuleSystem.DiceType.D6, 2)).Build().Run();
+                    }
+                    else //15 - 20
+                    {
+                        RuleDealStatDamage dexDam = new RuleDealStatDamage(caster, target, Kingmaker.EntitySystem.Stats.StatType.Dexterity, new Kingmaker.RuleSystem.DiceFormula(2, Kingmaker.RuleSystem.DiceType.D6), 0);
+                        RuleDealStatDamage strDam = new RuleDealStatDamage(caster, target, Kingmaker.EntitySystem.Stats.StatType.Strength, new Kingmaker.RuleSystem.DiceFormula(2, Kingmaker.RuleSystem.DiceType.D6), 0);
+                        RuleDealStatDamage conDam = new RuleDealStatDamage(caster, target, Kingmaker.EntitySystem.Stats.StatType.Constitution, new Kingmaker.RuleSystem.DiceFormula(2, Kingmaker.RuleSystem.DiceType.D6), 0);
+                        Context.TriggerRule(dexDam);
+                        Context.TriggerRule(strDam);
+                        Context.TriggerRule(conDam);
+                    }
                 }
             }
             catch (Exception ex)

@@ -9,10 +9,8 @@ using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Enums.Damage;
 using Kingmaker.RuleSystem;
-using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics;
 using VoidHeadWOTRNineSwords.Common;
 
 namespace VoidHeadWOTRNineSwords.DesertWind
@@ -25,7 +23,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
         const string desc = "SearingCharge.Desc";
 
         //const string icon = Helpers.IconPrefix + "burningblade.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         private static readonly LogWrapper log = LogWrapper.Get("VoidHeadWOTRNineSwords");
 
@@ -37,8 +35,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddMechanicsFeature(Kingmaker.UnitLogic.FactLogic.AddMechanicsFeature.MechanicsFeatureType.DisengageWithoutAttackOfOpportunity)
               .AddInitiatorAttackRollTrigger(onlyHit: true, action:
-                  ActionsBuilder.New().DealDamage(new DamageTypeDescription { Type = DamageType.Energy, Energy = DamageEnergyType.Fire }, new ContextDiceValue { DiceType = DiceType.D6, DiceCountValue = 5 })
-                  .Build())
+                  ActionsBuilder.New().DealDamage(DamageTypes.Energy(DamageEnergyType.Fire), ContextDice.Value(DiceType.D6, ContextValues.Constant(5))))
               .Configure();
 
             var chargeBuff = BuffConfigurator.New("SearingChargeChargeBuff", "1D5777E0-8C6F-4078-A08B-48B41EFD1F58")

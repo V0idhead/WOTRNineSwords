@@ -9,15 +9,9 @@ using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.EntitySystem.Stats;
-using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
 using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
@@ -31,7 +25,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
         const string name = "InfernoBlast.Name";
         const string desc = "InfernoBlast.Desc";
         //const string icon = Helpers.IconPrefix + "blisteringflourish.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {
@@ -54,7 +48,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
               .AddAbilityEffectRunAction
               (
                 ActionsBuilder.New()
-                .SavingThrow(SavingThrowType.Reflex, customDC: new ContextValue { Value = 19 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, DesertWindDodge.DesertWindFocusFactGuid), //TODO: discipline Focus
+                .SavingThrow(SavingThrowType.Reflex, customDC: new ContextValue { Value = 19 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, RelentlessSirocco.DesertWindFocusFactGuid),
                 onResult: ActionsBuilder.New()
                   .ConditionalSaved
                   (

@@ -20,7 +20,7 @@ namespace VoidHeadWOTRNineSwords.Components
       if (attack.AttackRoll.IsHit && bonusAttack.IsHit) //both hit
         Context.TriggerRule(new RuleDealDamage(attack.Initiator, attack.Target, new DirectDamage(new DiceFormula(1, DiceType.D6))));
       //Game.Instance.Rulebook.TriggerEvent<RuleDealDamage>(new RuleDealDamage(attack.Initiator, attack.Target, new DirectDamage(new DiceFormula(1, DiceType.D6))));
-      else if (!attack.AttackRoll.IsHit && !bonusAttack.IsHit) //real attack didn't hit, but bonus one did, create the damage it would have dealt and apply
+      else if (!attack.AttackRoll.IsHit && bonusAttack.IsHit) //real attack didn't hit, but bonus one did, create the damage it would have dealt and apply
       {
         var damage = new RuleDealDamage(attack.Initiator, attack.Target, attack.CreateDamage(true));
         Context.TriggerRule(damage);

@@ -40,7 +40,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
               .AddAbilityTargetsAround(radius: new Kingmaker.Utility.Feet(20))
               .AddAbilitySpawnFx(AbilitySpawnFxAnchor.Caster, prefabLink: AbilityRefs.FlareBurst.Reference.Get().GetComponent<AbilitySpawnFx>().PrefabLink, time: AbilitySpawnFxTime.OnApplyEffect)
               .AddAbilityEffectRunAction(ActionsBuilder.New().
-                  SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Reflex, customDC: new ContextValue { Value = 13 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, DesertWindDodge.DesertWindFocusFactGuid),
+                  SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Reflex, customDC: new ContextValue { Value = 13 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, RelentlessSirocco.DesertWindFocusFactGuid),
                   onResult: ActionsBuilder.New()
                   .ConditionalSaved
                   (

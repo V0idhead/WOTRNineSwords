@@ -46,7 +46,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
         .AddAbilityEffectRunAction
         (
           ActionsBuilder.New()
-          .SavingThrow(SavingThrowType.Will, customDC: new ContextValue { Value = 11 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, DesertWindDodge.DesertWindFocusFactGuid), //TODO: discipline Focus
+          .SavingThrow(SavingThrowType.Will, customDC: new ContextValue { Value = 11 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, RelentlessSirocco.DesertWindFocusFactGuid),
           onResult: ActionsBuilder.New()
             .ConditionalSaved
             (

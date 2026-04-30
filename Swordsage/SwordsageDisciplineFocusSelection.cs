@@ -15,8 +15,9 @@ namespace VoidHeadWOTRNineSwords.Swordsage
               .SetDescription("SwordsageDisciplineFocusSelection.Desc")
               .SetIsClassFeature()
               .SetMode(SelectionMode.OnlyNew)
+              .SetIgnorePrerequisites()
               .SetAllFeatures(
-                DesertWindDodge.DesertWindDodgeGuid,
+                RelentlessSirocco.RelentlessSiroccoGuid,
                 UnnervingCalm.UnnervingCalmGuid,
                 ShadowPresence.ShadowPresenceGuid,
                 EnduranceOfStone.EnduranceOfStoneGuid,

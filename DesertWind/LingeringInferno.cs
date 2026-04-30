@@ -21,7 +21,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
         const string name = "LingeringInferno.Name";
         const string desc = "LingeringInferno.Desc";
         //const string icon = Helpers.IconPrefix + "burningblade.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
         public static void Configure()
         {
             Main.Logger.Info($"Configuring {nameof(LingeringInferno)}");

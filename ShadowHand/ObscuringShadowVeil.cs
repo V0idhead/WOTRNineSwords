@@ -7,11 +7,6 @@ using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
@@ -25,7 +20,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         const string name = "ObscuringShadowVeil.Name";
         const string desc = "ObscuringShadowVeil.Desc";
         //const string icon = Helpers.IconPrefix + "burningblade.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {
@@ -47,7 +42,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
               .AddAbilityEffectRunAction
             (
                 ActionsBuilder.New().Add<ContextMeleeAttackRolledBonusDamage>(marb => {
-                    marb.ExtraDamage = new Kingmaker.RuleSystem.DiceFormula(1, Kingmaker.RuleSystem.DiceType.D6);
+                    marb.ExtraDamage = new Kingmaker.RuleSystem.DiceFormula(5, Kingmaker.RuleSystem.DiceType.D6);
                     marb.OnHit = ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: ContextValues.Constant(14), conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, ShadowPresence.ShadowHandFocusFactGuid),
                     onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(BuffRefs.Blind.Reference.Guid, ContextDuration.Fixed(2))
                     )).Build();
