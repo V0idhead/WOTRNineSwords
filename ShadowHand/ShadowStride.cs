@@ -2,12 +2,12 @@
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
-using BlueprintCore.Blueprints.References;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.Utility;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 
 namespace VoidHeadWOTRNineSwords.ShadowHand
 {
@@ -17,8 +17,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         public const string Guid = "350E3744-11F0-4EF5-92F5-3F4E7FB1C45F";
         const string name = "ShadowStride.Name";
         const string desc = "ShadowStride.Desc";
-        //const string icon = Helpers.IconPrefix + "shadowjaunt.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "shadowstride.png";
         public static void Configure()
         {
             Main.Logger.Info($"Configuring {nameof(ShadowStride)}");

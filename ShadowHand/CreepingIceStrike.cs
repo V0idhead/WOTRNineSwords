@@ -3,7 +3,6 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.RuleSystem.Rules;
@@ -12,6 +11,7 @@ using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using System;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 
 namespace VoidHeadWOTRNineSwords.ShadowHand
 {
@@ -23,8 +23,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         public const string ArmsBuffGuid = "C3E21F39-A9ED-46B0-A174-700995C5A865";
         const string name = "CreepingIceStrike.Name";
         const string desc = "CreepingIceStrike.Desc";
-        //const string icon = Helpers.IconPrefix + "rubynightmareblade.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "creepingicestrike.png";
 
         public static void Configure()
         {

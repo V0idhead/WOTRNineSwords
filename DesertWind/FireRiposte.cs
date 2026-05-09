@@ -2,21 +2,13 @@
 using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Facts;
 using Kingmaker.UnitLogic.ActivatableAbilities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Counters;
-using VoidHeadWOTRNineSwords.DiamondMind;
-using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.DesertWind
 {
@@ -32,7 +24,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
     public static BlueprintActivatableAbility Activatable { get; private set; }
     const string name = "FireRiposte.Name";
     const string desc = "FireRiposte.Desc";
-    static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+    const string icon = Helpers.IconPrefix + "firereposte.png";
 
     public static void Configure()
     {

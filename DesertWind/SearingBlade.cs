@@ -3,7 +3,6 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Enums.Damage;
@@ -13,6 +12,7 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 
 namespace VoidHeadWOTRNineSwords.DesertWind
 {
@@ -22,8 +22,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
         public const string Guid = "C9636F87-25ED-4D8D-895C-C380710DC7B9";
         const string name = "SearingBlade.Name";
         const string desc = "SearingBlade.Desc";
-        //const string icon = Helpers.IconPrefix + "burningblade.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "searingblade.png";
 
         public static void Configure()
         {

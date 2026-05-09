@@ -20,9 +20,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
     public const string Guid = "52E99D3F-8A00-45C0-89A2-B72EB2899B8E";
     const string name = "ClingingShadowStrike.Name";
     const string desc = "ClingingShadowStrike.Desc";
-    const string buffDesc = "ClingingShadowStrikeBuff.Desc";
-    //const string icon = Helpers.IconPrefix + "burningblade.png";
-    static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+    const string icon = Helpers.IconPrefix + "clingingshadowstrike.png";
 
     public static void Configure()
     {

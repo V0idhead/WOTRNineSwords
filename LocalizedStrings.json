@@ -1112,10 +1112,6 @@
     "enGB": "Clinging Shadow Strike"
   },
   {
-    "Key": "ClingingShadowStrikeBuff.Desc",
-    "enGB": "20% miss chance on all melee and ranged attacks."
-  },
-  {
     "Key": "ClingingShadowStrike.Desc",
     "enGB": "Discipline: Shadow Hand\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 1\nYou make a single melee attack. If it hits, you deal an extra 1d6 points of damage, and your opponent must make a successful Fortitude save (DC 11 + your Wis modifier) or become blinded for 1 round. A successful save negates the blindness, but not the extra damage."
   },

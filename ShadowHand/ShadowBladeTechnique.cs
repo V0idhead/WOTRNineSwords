@@ -2,7 +2,6 @@
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
-using BlueprintCore.Blueprints.References;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
@@ -18,7 +17,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
     public const string Guid = "91EECC6B-84A8-4624-8683-865F13BDB259";
     const string name = "ShadowBladeTechnique.Name";
     const string desc = "ShadowBladeTechnique.Desc";
-    static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+    const string icon = Helpers.IconPrefix + "shadowbladetechnique.png";
 
     public static void Configure()
     {

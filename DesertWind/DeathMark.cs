@@ -23,8 +23,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
         private const string subAbilityGuid = "7D694B9E-6F0A-41CD-B6E4-0DAAF6122961";
         const string name = "DeathMark.Name";
         const string desc = "DeathMark.Desc";
-        //const string icon = Helpers.IconPrefix + "burningblade.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "deathmark.png";
         public static void Configure()
         {
             Main.Logger.Info($"Configuring {nameof(DeathMark)}");

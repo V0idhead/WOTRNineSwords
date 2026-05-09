@@ -19,8 +19,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
         public const string Guid = "91CF2611-F740-42D7-81A1-D864D95E3DC7";
         const string name = "DragonsFlame.Name";
         const string desc = "DragonsFlame.Desc";
-        //const string icon = Helpers.IconPrefix + "burningblade.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "dragonsflame.png";
         public static void Configure()
         {
             Main.Logger.Info($"Configuring {nameof(DragonsFlame)}");

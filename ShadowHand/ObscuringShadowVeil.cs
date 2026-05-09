@@ -19,8 +19,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         public const string Guid = "699D3551-3103-41E3-979C-58CC21DE446A";
         const string name = "ObscuringShadowVeil.Name";
         const string desc = "ObscuringShadowVeil.Desc";
-        //const string icon = Helpers.IconPrefix + "burningblade.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "obscuringshadowveil.png";
 
         public static void Configure()
         {

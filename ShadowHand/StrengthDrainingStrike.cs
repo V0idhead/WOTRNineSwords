@@ -2,7 +2,6 @@
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
-using BlueprintCore.Blueprints.References;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
@@ -18,8 +17,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         public const string Guid = "D0C52ACE-7F5A-43C3-A4C1-100EA645D1A9";
         const string name = "StrengthDrainingStrike.Name";
         const string desc = "StrengthDrainingStrike.Desc";
-        //const string icon = Helpers.IconPrefix + "bonesplittingstrike.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "strengthdrainingstrike.png";
 
         public static void Configure()
         {

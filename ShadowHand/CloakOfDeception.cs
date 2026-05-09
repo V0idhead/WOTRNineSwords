@@ -8,6 +8,7 @@ using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 
 namespace VoidHeadWOTRNineSwords.ShadowHand
 {
@@ -17,9 +18,9 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
     public const string Guid = "190C217A-5858-42EB-9833-095D126E8176";
     const string name = "CloakOfDeception.Name";
     const string desc = "CloakOfDeception.Desc";
-    static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+    const string icon = Helpers.IconPrefix + "cloakofdeception.png";
 
-    public static void Configure()
+        public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(CloakOfDeception)}");
 

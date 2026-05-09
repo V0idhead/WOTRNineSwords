@@ -12,6 +12,7 @@ using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 
 namespace VoidHeadWOTRNineSwords.DesertWind
 {
@@ -22,8 +23,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
         const string name = "SearingCharge.Name";
         const string desc = "SearingCharge.Desc";
 
-        //const string icon = Helpers.IconPrefix + "burningblade.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "searingcharge.png";
 
         private static readonly LogWrapper log = LogWrapper.Get("VoidHeadWOTRNineSwords");
 

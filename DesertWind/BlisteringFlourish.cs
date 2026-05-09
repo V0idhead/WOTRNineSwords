@@ -22,9 +22,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
     public const string Guid = "A4F1E5D7-0B2C-4F8A-8C3D-6E9F1B5A0E3F";
     const string name = "BlisteringFlourish.Name";
     const string desc = "BlisteringFlourish.Desc";
-    //const string icon = Helpers.IconPrefix + "blisteringflourish.png";
-    static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
-
+    const string icon = Helpers.IconPrefix + "blisteringflourish.png";
     public static void Configure()
     {
       Main.Logger.Info($"Configuring {nameof(BlisteringFlourish)}");

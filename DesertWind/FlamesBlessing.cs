@@ -1,10 +1,9 @@
 ﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.UnitLogic.ActivatableAbilities;
-using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 
 namespace VoidHeadWOTRNineSwords.DesertWind
 {
@@ -14,7 +13,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
     public const string Guid = "4F759304-3119-420D-AEFD-7B8909DE41AC";
     const string name = "FlamesBlessing.Name";
     const string desc = "FlamesBlessing.Desc";
-    static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+    const string icon = Helpers.IconPrefix + "flamesblessing.png";
 
     public static void Configure()
     {

@@ -3,12 +3,10 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using System.Linq;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 
@@ -20,8 +18,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
         public const string Guid = "CCB10F6A-6E02-42CD-BFEF-F27EAB5AB6B9";
         const string name = "LingeringInferno.Name";
         const string desc = "LingeringInferno.Desc";
-        //const string icon = Helpers.IconPrefix + "burningblade.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "lingerininferno.png";
         public static void Configure()
         {
             Main.Logger.Info($"Configuring {nameof(LingeringInferno)}");

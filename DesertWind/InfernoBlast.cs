@@ -24,8 +24,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
         public const string Guid = "8332FFAA-C073-43B0-A926-CED7A67E384B";
         const string name = "InfernoBlast.Name";
         const string desc = "InfernoBlast.Desc";
-        //const string icon = Helpers.IconPrefix + "blisteringflourish.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "infernoblast.png";
 
         public static void Configure()
         {

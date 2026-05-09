@@ -2,11 +2,11 @@
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
-using BlueprintCore.Blueprints.References;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 
 namespace VoidHeadWOTRNineSwords.DesertWind
 {
@@ -16,8 +16,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
         public const string Guid = "DE691AD6-C4E6-4C7F-9C11-24370B890316";
         const string name = "FlashingSun.Name";
         const string desc = "FlashingSun.Desc";
-        //const string icon = Helpers.IconPrefix + "burningblade.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "flashingsun.png";
         public static void Configure()
         {
             Main.Logger.Info($"Configuring {nameof(FlashingSun)}");

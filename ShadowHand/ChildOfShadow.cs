@@ -3,10 +3,9 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.UnitLogic.ActivatableAbilities;
-using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
 
 namespace VoidHeadWOTRNineSwords.ShadowHand
@@ -18,8 +17,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
     const string name = "ChildOfShadow.Name";
     const string desc = "ChildOfShadow.Desc";
     const string buffDesc = "ChildOfShadowBuff.Desc";
-    //const string icon = Helpers.IconPrefix + "burningblade.png";
-    static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+    const string icon = Helpers.IconPrefix + "childofshadow.png";
 
     public static void Configure()
     {

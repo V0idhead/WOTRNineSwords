@@ -2,14 +2,12 @@
 using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Facts;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using System.Collections.Generic;
-using System.Linq;
-using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Counters;
 using VoidHeadWOTRNineSwords.Swordsage;
 
@@ -27,8 +25,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
         public static BlueprintActivatableAbility Activatable { get; private set; }
         const string name = "LeapingFlame.Name";
         const string desc = "LeapingFlame.Desc";
-        //const string icon = Helpers.IconPrefix + "manticoreparry.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "leapingflame.png";
 
         private static readonly LogWrapper log = LogWrapper.Get("VoidHeadWOTRNineSwords");
 

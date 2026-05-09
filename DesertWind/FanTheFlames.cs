@@ -5,12 +5,10 @@ using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics;
-using System.Linq;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 
 namespace VoidHeadWOTRNineSwords.DesertWind
 {
@@ -20,8 +18,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
         public const string Guid = "BA6E3A9F-0B51-4268-A93F-1D1CB6099634";
         const string name = "FanTheFlames.Name";
         const string desc = "FanTheFlames.Desc";
-        //const string icon = Helpers.IconPrefix + "burningblade.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "fantheflames.png";
 
         public static void Configure()
         {

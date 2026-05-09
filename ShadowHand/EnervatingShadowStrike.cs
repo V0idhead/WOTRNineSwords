@@ -21,8 +21,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         public const string Guid = "0666000C-1285-4FB5-AFA6-17C8482B0726";
         const string name = "EnervatingShadowStrike.Name";
         const string desc = "EnervatingShadowStrike.Desc";
-        //const string icon = Helpers.IconPrefix + "burningblade.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "enervatingshadowstrike.png";
 
         public static void Configure()
         {

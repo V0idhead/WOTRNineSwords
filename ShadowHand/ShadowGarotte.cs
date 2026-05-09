@@ -20,8 +20,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         public const string Guid = "8605DBA9-EB21-4F90-B8D7-CE04B83E54F9";
         const string name = "ShadowGarotte.Name";
         const string desc = "ShadowGarotte.Desc";
-        //const string icon = Helpers.IconPrefix + "burningblade.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "shadowgarrote.png";
 
         public static void Configure()
         {

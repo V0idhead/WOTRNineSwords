@@ -19,8 +19,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
         public const string Guid = "E6D93DBD-13B3-4399-86F5-F5A3E3AB8AB7";
         const string name = "WyrmsFlame.Name";
         const string desc = "WyrmsFlame.Desc";
-        //const string icon = Helpers.IconPrefix + "burningblade.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "wyrmsflame.png";
         public static void Configure()
         {
             Main.Logger.Info($"Configuring {nameof(WyrmsFlame)}");

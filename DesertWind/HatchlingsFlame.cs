@@ -7,7 +7,6 @@ using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using System.Linq;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
@@ -20,8 +19,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
         public const string Guid = "007BE8BA-0F3F-466B-B842-8DDD00EFDACC";
         const string name = "HatchlingsFlame.Name";
         const string desc = "HatchlingsFlame.Desc";
-        //const string icon = Helpers.IconPrefix + "burningblade.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "hatchlingsflame.png";
         public static void Configure()
         {
             Main.Logger.Info($"Configuring {nameof(HatchlingsFlame)}");

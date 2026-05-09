@@ -2,12 +2,12 @@
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
-using BlueprintCore.Blueprints.References;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.Utility;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 
 namespace VoidHeadWOTRNineSwords.ShadowHand
 {
@@ -17,8 +17,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         public const string Guid = "BDA0794C-FDA0-4A3B-8FC8-AE51E6488FD8";
         const string name = "ShadowBlink.Name";
         const string desc = "ShadowBlink.Desc";
-        //const string icon = Helpers.IconPrefix + "shadowjaunt.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "shadowblink.png";
         public static void Configure()
         {
             Main.Logger.Info($"Configuring {nameof(ShadowBlink)}");
