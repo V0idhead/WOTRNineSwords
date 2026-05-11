@@ -66,7 +66,7 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
         .SetRanks(1)
         .AddFacts(new() { bolsteringVoiceActivatable })
 #if !DEBUG
-        .AddPrerequisiteFeature(DisciplineProficencies.TigerClawProficencyGuid, hideInUI: true)
+        .AddPrerequisiteFeature(DisciplineProficencies.WhiteRavenProficencyGuid, hideInUI: true)
 #endif
         .Configure(true);
     }

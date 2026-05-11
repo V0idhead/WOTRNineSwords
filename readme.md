@@ -4,6 +4,7 @@ There were some changes necessary both to adapt to the Pathfinder ruleset as wel
 
 ## Contents
  - Warblade class
+ - Swordsage class
  - 60+ Maneuvers (including a tiny number of Boosts and 6 Counters) and 10 Stances from the Diamond Mind, Iron Heart, Stone Dragon, Tiger Claw and White Raven disciplines
 
 ## Deviations from Rules as Written
