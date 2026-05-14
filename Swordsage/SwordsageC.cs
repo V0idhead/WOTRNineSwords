@@ -8,11 +8,6 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Root;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.RuleSystem;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Warblade;
 
@@ -68,6 +63,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
       var quickToAct = QuickToAct.Configure();
       var bonusWeaponFocus = BonusWeaponFocus.Configure();
       var swordsageACBonus = SwordsageACBonus.Configure();
+      var swordInsight = SwordInsight.Configure();
       var swordsageDamageBonus = SwordsageDamageBonus.Configure();
       var swordsageDefensiveStance = SwordsageDefensiveStance.Configure();
       var maneuverSelector = SwordsageManeuverSelection.Configure();
@@ -77,7 +73,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
       var swordsageProficiencies = FeatureConfigurator.New("SwordsageProficiencies", "E6DEFCF2-0C19-45F4-A047-13F71B52DD9A")
         .SetDisplayName("SwordsageProficiencies.Name")
         .SetDescription("SwordsageProficiencies.Desc")
-        .AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.Reference.Get(), FeatureRefs.MartialWeaponProficiency.Reference.Get(), FeatureRefs.LightArmorProficiency.Reference.Get(), DisciplineProficencies.DesertWindProficencyGuid, DisciplineProficencies.DiamondMindProficencyGuid, DisciplineProficencies.IronHeartProficencyGuid, DisciplineProficencies.SettingSunProficencyGuid, DisciplineProficencies.ShadowHandProficencyGuid, DisciplineProficencies.StoneDragonProficencyGuid, DisciplineProficencies.TigerClawProficencyGuid, DisciplineProficencies.StoneDragonProficencyGuid })
+        .AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.Reference.Get(), FeatureRefs.MartialWeaponProficiency.Reference.Get(), FeatureRefs.LightArmorProficiency.Reference.Get(), DisciplineProficencies.DesertWindProficencyGuid, DisciplineProficencies.DiamondMindProficencyGuid, DisciplineProficencies.IronHeartProficencyGuid, DisciplineProficencies.RivenHourglassProficencyGuid, DisciplineProficencies.ShadowHandProficencyGuid, DisciplineProficencies.StoneDragonProficencyGuid, DisciplineProficencies.TigerClawProficencyGuid, DisciplineProficencies.StoneDragonProficencyGuid })
         .SetIsClassFeature()
         .SetRanks(1)
         .Configure();
@@ -86,10 +82,10 @@ namespace VoidHeadWOTRNineSwords.Swordsage
         .AddEntry(1, swordsageProficiencies.AssetGuid, SwordsageRecoverManeuvers.Guid, quickToAct.AssetGuid, bonusWeaponFocus.AssetGuid, disciplineFocusSelection.AssetGuid, maneuverSelector.AssetGuid, maneuverSelector.AssetGuid, maneuverSelector.AssetGuid, maneuverSelector.AssetGuid, maneuverSelector.AssetGuid, maneuverSelector.AssetGuid, stanceSelector.AssetGuid, InitiatorLevels.Lvl1Guid, ManeuverResources.IncreaseManeuverUsesGuid) //6 maneuvers, 1 stance
         .AddEntry(2, swordsageACBonus.AssetGuid, maneuverSelector.AssetGuid, stanceSelector.AssetGuid)
         .AddEntry(3, maneuverSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid, InitiatorLevels.Lvl2Guid)
-        .AddEntry(4, swordsageDamageBonus.AssetGuid, maneuverSelector.AssetGuid) //Discipline Focus: replaced by general damage bonus
+        .AddEntry(4, swordInsight.AssetGuid, maneuverSelector.AssetGuid) //Discipline Focus: replaced by attack bonus
         .AddEntry(5, quickToAct.AssetGuid, maneuverSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid, stanceSelector.AssetGuid, InitiatorLevels.Lvl3Guid)
         .AddEntry(6, maneuverSelector.AssetGuid)
-        .AddEntry(7, maneuverSelector.AssetGuid, InitiatorLevels.Lvl4Guid)
+        .AddEntry(7, maneuverSelector.AssetGuid, swordsageDamageBonus.AssetGuid, InitiatorLevels.Lvl4Guid) //Sense Magic: replaced by damage bonus
         .AddEntry(8, swordsageDefensiveStance.AssetGuid, maneuverSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid) //Defensive Stance: replaced by general sabing throw bonus
         .AddEntry(9, FeatureRefs.Evasion.Reference.guid, maneuverSelector.AssetGuid, stanceSelector.AssetGuid, InitiatorLevels.Lvl5Guid)
         .AddEntry(10, quickToAct.AssetGuid, maneuverSelector.AssetGuid, stanceSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid)

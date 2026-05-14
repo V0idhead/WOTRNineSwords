@@ -3,6 +3,7 @@ using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes.Selection;
 using VoidHeadWOTRNineSwords.DesertWind;
 using VoidHeadWOTRNineSwords.DiamondMind;
+using VoidHeadWOTRNineSwords.RivenHourglass;
 using VoidHeadWOTRNineSwords.ShadowHand;
 using VoidHeadWOTRNineSwords.StoneDragon;
 using VoidHeadWOTRNineSwords.TigerClaw;
@@ -28,7 +29,13 @@ namespace VoidHeadWOTRNineSwords.Swordsage
           HearingTheAir.Guid,
           StrengthOfStone.Guid,
           ChildOfShadow.Guid,
-          FlamesBlessing.Guid
+          FlamesBlessing.Guid,
+          DeepShadowAura.Guid,
+          SandsOfTime.Guid,
+          EyeOfTheStorm.Guid,
+          LocalEclipse.Guid,
+          ThickShadows.Guid,
+          Shadowsight.Guid
         ).Configure();
 
       return swordsageManeuverSelection;

@@ -14,7 +14,10 @@ Instead of having to prepare maneuvers ahead of time as a wizard would, all clas
 ### Recovering Maneuvers
 Warblades recover maneuvers with a move action ability that HAS to hit an enemy and recovers two uses of maneuvers.
 Swordsages recover all their maneuvers by spending a single full round action.
-Both changes where made to balance maneuver recovery, as written Swordsage recovery was comically bad
+Both changes where made to balance maneuver recovery, as written Swordsage recovery was comically bad.
+
+### Riven Hourglass instead of Setting Sun
+Most Setting Sun maneuvers would not work in WOTR, so instead Riven Hourglass from Path of War was implemented for swordsages.
 
 ### Individual Maneuvers
  - Maneuvers that should give your allies an attack bonus against an individual enemy, instead lowers the targets natural armor
@@ -43,8 +46,6 @@ Counters had to be changed to a simple on/off toggle to compensate for the fact 
  - Several feats including Maneuver Focus, Maneuver Focus (Mythic) and a specific feat for each discipline with unique effects
 
 ## Roadmap
- - Swordsage class
- - Disciplines available to Swordsage
  - Prestige Classes from the Tome of Battle (probably as Archetypes for the two classes in order to Pathfinderfy them)
  - Classes and Maneuvers from the Path of War (https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/), probably I'll fold the Maneuvers into the disciples from Path of War
  - Homebrew Maneuvers to fill out any remaining gaps in the Maneuver-List because some Maneuvers in the books cannot be implemented or would not be useful in WOTR

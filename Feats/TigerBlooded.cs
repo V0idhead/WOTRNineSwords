@@ -5,19 +5,12 @@ using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Conditions.Builder;
-using BlueprintCore.Conditions.Builder.BasicEx;
 using BlueprintCore.Conditions.Builder.ContextEx;
 using BlueprintCore.Utils.Types;
-using Epic.OnlineServices;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.ElementsSystem;
-using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VoidHeadWOTRNineSwords.Feats
 {
@@ -38,7 +31,6 @@ namespace VoidHeadWOTRNineSwords.Feats
           .SetIcon(AbilityRefs.BeastShapeIII.Reference.Get().Icon)
           .SetDisplayName("TigerBlooded.Name")
           .SetDescription("TigerBlooded.Desc")
-          //.AddAttackBonusConditional(ContextValues.Constant(53), false, ConditionsBuilder.New().HasFact(TigerClawFocusFactGuid), ModifierDescriptor.UntypedStackable)
           .AddAttackBonus(3)
           .Configure();
         }

@@ -4,6 +4,7 @@ using Kingmaker.Blueprints.Classes.Selection;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.DesertWind;
 using VoidHeadWOTRNineSwords.DiamondMind;
+using VoidHeadWOTRNineSwords.RivenHourglass;
 using VoidHeadWOTRNineSwords.ShadowHand;
 using VoidHeadWOTRNineSwords.StoneDragon;
 using VoidHeadWOTRNineSwords.TigerClaw;
@@ -90,7 +91,17 @@ namespace VoidHeadWOTRNineSwords.Swordsage
           EnervatingShadowStrike.Guid,
           WyrmsFlame.Guid,
           InfernoBlast.Guid,
-          CreepingIceStrike.Guid
+          CreepingIceStrike.Guid,
+          MinuteHand.Guid,
+          TiringTouch.Guid,
+          StrikeTheHourglass.Guid,
+          ChronalAgression.Guid,
+          TemporalBurn.Guid,
+          UnhinderedStep.Guid,
+          TigerSnap.Guid,
+          TigerRake.Guid,
+          TigerMaul.Guid
+
         ).Configure();
 
       return swordsageManeuverSelection;

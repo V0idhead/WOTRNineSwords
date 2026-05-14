@@ -44,6 +44,7 @@ namespace VoidHeadWOTRNineSwords.Counters
 
                         RuleAttackRoll counterAttack = new RuleAttackRoll(Owner, evt.Initiator, Owner.GetThreatHandMelee().Weapon, 0);
                         Context.TriggerRule<RuleAttackRoll>(counterAttack);
+                        Owner.Resources.Spend(maneuverResource.Reference, 1);
                     }
                 }
                 catch (Exception e)

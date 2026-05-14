@@ -21,7 +21,8 @@ namespace VoidHeadWOTRNineSwords.Swordsage
                 UnnervingCalm.UnnervingCalmGuid,
                 ShadowPresence.ShadowPresenceGuid,
                 EnduranceOfStone.EnduranceOfStoneGuid,
-                TigerBlooded.TigerBloodedGuid
+                TigerBlooded.TigerBloodedGuid,
+                MarchOfTime.MarchOfTimeGuid
               ).Configure();
 
             return swordsageManeuverSelection;
