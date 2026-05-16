@@ -52,7 +52,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
                     .DealDamage(
                         DamageTypes.Direct(),
                         ContextDice.Value(Kingmaker.RuleSystem.DiceType.D6, ContextValues.Constant(2)))
-                    .SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: ContextValues.Constant(12), conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, MarchOfTime.RivenHourglassFocusFactGuid),
+                    .SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: ContextValues.Constant(12), conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, EternalMoment.RivenHourglassFocusFactGuid),
                         onResult: ActionsBuilder.New().ConditionalSaved(
                             failed: ActionsBuilder.New().ApplyBuff(BuffRefs.Sickened.Reference.Get(), ContextDuration.Fixed(1, Kingmaker.UnitLogic.Mechanics.DurationRate.Minutes)),
                             succeed: ActionsBuilder.New().ApplyBuff(BuffRefs.Sickened.Reference.Get(), ContextDuration.Fixed(1))

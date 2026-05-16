@@ -46,7 +46,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
               .AddAbilityDeliverProjectile(type: Kingmaker.UnitLogic.Abilities.Components.AbilityProjectileType.Cone, length: new Kingmaker.Utility.Feet(30), lineWidth: new Kingmaker.Utility.Feet(5), projectiles: new() { ProjectileRefs.EnchantmentCone30Feet00.ToString() })
               .AddAbilityEffectRunAction
               (
-                  ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Reflex, customDC: ContextValues.Constant(19), conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, MarchOfTime.RivenHourglassFocusFactGuid),
+                  ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Reflex, customDC: ContextValues.Constant(19), conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, EternalMoment.RivenHourglassFocusFactGuid),
                   onResult: ActionsBuilder.New().ConditionalSaved(
                       failed: ActionsBuilder.New().Kill(),
                       succeed: ActionsBuilder.New().ApplyBuff(BuffRefs.ExcaustedBuff.Reference.Get(), ContextDuration.FixedDice(Kingmaker.RuleSystem.DiceType.D4, 2)).ApplyBuff(BuffRefs.SlowBuff.Reference.Get(), ContextDuration.FixedDice(Kingmaker.RuleSystem.DiceType.D4, 2))

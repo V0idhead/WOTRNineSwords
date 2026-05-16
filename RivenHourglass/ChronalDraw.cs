@@ -53,13 +53,15 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
                 .Add<ContextMeleeAttackRolledBonusDamage>(bd =>
                 {
                     bd.ExtraDamage = new DiceFormula(4, DiceType.D6);
-                    bd.OnHit = ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Will, customDC: new ContextValue { Value = 14 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, MarchOfTime.RivenHourglassFocusFactGuid),
+                    bd.OnHit = ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Will, customDC: new ContextValue { Value = 14 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, EternalMoment.RivenHourglassFocusFactGuid),
                       onResult: ActionsBuilder.New()
                         .ConditionalSaved
                         (
                             failed: ActionsBuilder.New().ApplyBuff(BuffRefs.Exhausted.Reference.Get(), ContextDuration.Variable(ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, toCaster: true)))
                         )
-                      ).Build();
+                      )
+                     .AddAll(EternalMoment.GetEffectAction())
+                     .Build();
                 })
               )
               .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)

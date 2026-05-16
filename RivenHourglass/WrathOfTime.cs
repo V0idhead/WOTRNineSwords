@@ -51,7 +51,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
               .AddAbilityDeliverProjectile(type: Kingmaker.UnitLogic.Abilities.Components.AbilityProjectileType.Cone, length: new Kingmaker.Utility.Feet(120), lineWidth: new Kingmaker.Utility.Feet(5), projectiles: new() { ProjectileRefs.NecromancyCone50Feet00.ToString() })
               .AddAbilityEffectRunAction
               (
-                  ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Reflex, customDC: ContextValues.Constant(18), conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, MarchOfTime.RivenHourglassFocusFactGuid),
+                  ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Reflex, customDC: ContextValues.Constant(18), conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, EternalMoment.RivenHourglassFocusFactGuid),
                   onResult: ActionsBuilder.New().ConditionalSaved(
                       failed: ActionsBuilder.New().DealDamage(DamageTypes.Direct(), ContextDice.Value(Kingmaker.RuleSystem.DiceType.D6, ContextValues.Constant(12))),
                       succeed: ActionsBuilder.New().DealDamage(DamageTypes.Direct(), ContextDice.Value(Kingmaker.RuleSystem.DiceType.D6, ContextValues.Constant(6)))))

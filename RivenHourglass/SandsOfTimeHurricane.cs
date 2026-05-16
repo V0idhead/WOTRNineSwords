@@ -60,26 +60,30 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
                   .Add<MeleeAttackExtended>(bd =>
                   {
                       bd.OnHit = ActionsBuilder.New()
-                      .SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 17 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, MarchOfTime.RivenHourglassFocusFactGuid),
+                      .SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 17 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, EternalMoment.RivenHourglassFocusFactGuid),
                         onResult: ActionsBuilder.New()
                           .ConditionalSaved
                           (
                               failed: ActionsBuilder.New().ApplyBuff(BuffRefs.ExcaustedBuff.Reference.Get(), ContextDuration.FixedDice(DiceType.D6, 2)),
                               succeed: ActionsBuilder.New().ApplyBuff(BuffRefs.ExcaustedBuff.Reference.Get(), ContextDuration.Fixed(1))
                           )
-                        ).Build();
+                        )
+                        .AddAll(EternalMoment.GetEffectAction())
+                        .Build();
                   })
                   .Add<MeleeAttackExtended>(bd =>
                   {
                       bd.OnHit = ActionsBuilder.New()
-                      .SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 17 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, MarchOfTime.RivenHourglassFocusFactGuid),
+                      .SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 17 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, EternalMoment.RivenHourglassFocusFactGuid),
                         onResult: ActionsBuilder.New()
                           .ConditionalSaved
                           (
                               failed: ActionsBuilder.New().ApplyBuff(BuffRefs.SlowBuff.Reference.Get(), ContextDuration.FixedDice(DiceType.D4)),
                               succeed: ActionsBuilder.New().ApplyBuff(BuffRefs.SlowBuff.Reference.Get(), ContextDuration.Fixed(1))
                           )
-                        ).Build();
+                        )
+                        .AddAll(EternalMoment.GetEffectAction())
+                        .Build();
                   })
               )
               .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)

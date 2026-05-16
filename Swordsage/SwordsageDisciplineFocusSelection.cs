@@ -22,7 +22,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
                 ShadowPresence.ShadowPresenceGuid,
                 EnduranceOfStone.EnduranceOfStoneGuid,
                 TigerBlooded.TigerBloodedGuid,
-                MarchOfTime.MarchOfTimeGuid
+                EternalMoment.EternalMomentGuid
               ).Configure();
 
             return swordsageManeuverSelection;

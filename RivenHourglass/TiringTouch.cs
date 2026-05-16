@@ -54,8 +54,11 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
               (
                 ActionsBuilder.New().Add<MeleeAttackExtended>(mae => {
                     mae.OnHit =
-                  ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: ContextValues.Constant(11), conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, MarchOfTime.RivenHourglassFocusFactGuid),
-                    onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(BuffRefs.Fatigued.Reference.Get(), ContextDuration.VariableDice(DiceType.D4, 1)))).Build();
+                  ActionsBuilder.New()
+                  .SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: ContextValues.Constant(11), conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, EternalMoment.RivenHourglassFocusFactGuid),
+                    onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(BuffRefs.Fatigued.Reference.Get(), ContextDuration.VariableDice(DiceType.D4, 1))))
+                  .AddAll(EternalMoment.GetEffectAction())
+                  .Build();
                 })
               )
               .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)

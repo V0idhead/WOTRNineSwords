@@ -54,7 +54,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
               .SetShouldTurnToTarget()
               .SetType(AbilityType.CombatManeuver)
               .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
-              .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).MeleeAttack().RemoveBuff(buff, onlyFromCaster: true, toCaster: true))
+              .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).Add<MeleeAttackExtended>(mae => mae.OnHit = ActionsBuilder.New().AddAll(EternalMoment.GetEffectAction()).Build()).RemoveBuff(buff, onlyFromCaster: true, toCaster: true))
               .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
               .Configure();
 

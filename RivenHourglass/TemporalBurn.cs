@@ -16,6 +16,7 @@ using System.Text;
 using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
+using VoidHeadWOTRNineSwords.Feats;
 
 namespace VoidHeadWOTRNineSwords.RivenHourglass
 {
@@ -53,7 +54,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
               .AddAbilityEffectRunAction
               (
                 ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true)
-                .Add<ContextMeleeAttackRolledBonusDamage>(bd => { bd.ExtraDamage = new DiceFormula(2, DiceType.D6); })
+                .Add<ContextMeleeAttackRolledBonusDamage>(bd => { bd.ExtraDamage = new DiceFormula(2, DiceType.D6); bd.OnHit = ActionsBuilder.New().AddAll(EternalMoment.GetEffectAction()).Build(); })
                 .RemoveBuff(buff, true, toCaster: true)                
               )
               .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)

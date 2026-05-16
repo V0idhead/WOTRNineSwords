@@ -194,13 +194,13 @@
     "enGB": "While you are in a Shadow Hand stance you gain +2 AC. In addition you add +1 to the Difficulty Class for all saving throws against your Shadow Hand maneuvers."
   },
   {
-    "Key": "MarchOfTime.Name",
+    "Key": "EternalMoment.Name",
     "ProcessTemplates": false,
-    "enGB": "March of Time"
+    "enGB": "Eternal Moment"
   },
   {
-    "Key": "MarchOfTime.Desc",
-    "enGB": "tbd. In addition you add +1 to the Difficulty Class for all saving throws against your Riven Hourglass maneuvers."
+    "Key": "EternalMoment.Desc",
+    "enGB": "When you hit with a Riven Hourglass strike you can make a free attack against the same creature. In addition you add +1 to the Difficulty Class for all saving throws against your Riven Hourglass maneuvers."
   },
   {
     "Key": "RelentlessSirocco.Name",

@@ -13,7 +13,7 @@
             WhiteRavenDefense.Configure();
             ShadowPresence.Configure();
             RelentlessSirocco.Configure();
-            MarchOfTime.Configure();
+            EternalMoment.Configure();
         }
     }
 }

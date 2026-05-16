@@ -52,13 +52,15 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
               {
                   bd.OnHit = ActionsBuilder.New()
                   .DealDamage(DamageTypes.Direct(), ContextDice.Value(DiceType.One, ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, toCaster: true), ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, toCaster: true)))
-                  .SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 15 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, MarchOfTime.RivenHourglassFocusFactGuid),
+                  .SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 15 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, EternalMoment.RivenHourglassFocusFactGuid),
                     onResult: ActionsBuilder.New()
                       .ConditionalSaved
                       (
                           failed: ActionsBuilder.New().ApplyBuff(BuffRefs.Sickened.Reference.Get(), ContextDuration.FixedDice(DiceType.D4))
                       )
-                    ).Build();
+                    )
+                    .AddAll(EternalMoment.GetEffectAction())
+                    .Build();
               }))
               .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
               .Configure();
