@@ -21,9 +21,9 @@ namespace VoidHeadWOTRNineSwords
         public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> IronHeartGuids = [SteelyStrike.Guid, DisarmingStrike.Guid, ExorcismOfSteel.Guid, PunishingStance.Guid, AbsoluteSteel.Guid, MithralTornado.Guid, DazingStrike.Guid, FinishingMove.Guid, DancingBladeForm.Guid, ScythingBlade.Guid, SteelWind.Guid, AdamantineHurricane.Guid, BoomerangThrow.Guid, ViciousThrow.Guid, LightningThrow.Guid, SupremeBladeParry.Guid, StrikeOfPerfectClarity.Guid, WallOfBlades.Guid, LightningRecovery.Guid, IronHeartFocus.Guid, ManticoreParry.Guid];
         public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> ShadowHandGuids = [ChildOfShadow.Guid, ClingingShadowStrike.Guid, ShadowBladeTechnique.Guid, CloakOfDeception.Guid, DrainVitality.Guid, ShadowJaunt.Guid, ShadowGarotte.Guid, StrengthDrainingStrike.Guid, ObscuringShadowVeil.Guid, BloodlettingStrike.Guid, ShadowStride.Guid, ShadowBlink.Guid, EnervatingShadowStrike.Guid, CreepingIceStrike.Guid, DeepShadowAura.Guid, LocalEclipse.Guid, ThickShadows.Guid, Shadowsight.Guid];
         public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> StoneDragonGuids = [StoneBones.Guid, ChargingMinotaur.Guid, MountainHammer.Guid, StoneVise.Guid, BonesplittingStrike.Guid, OverwhelmingMountainStrike.Guid, ElderMountainHammer.Guid, CrushingVise.Guid, IronBones.Guid, IrresistibleMountainStrike.Guid, AncientMountainHammer.Guid, ColossusStrike.Guid, GiantsStance.Guid, AdamantineBones.Guid, EarthstrikeQuake.Guid, StrengthOfStone.Guid, MountainTombstoneStrike.Guid];
-        public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> TigerClawGuids = [HuntersSense.Guid, ClawAtTheMoon.Guid, RabidWolfStrike.Guid, FleshRipper.Guid, DancingMongoose.Guid, PouncingCharge.Guid, RabidBearStrike.Guid, HamstringAttack.Guid, FeralDeathBlow.Guid, TigerSnap.Guid, TigerRake.Guid, TigerMaul.Guid];
+        public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> TigerClawGuids = [HuntersSense.Guid, ClawAtTheMoon.Guid, RabidWolfStrike.Guid, FleshRipper.Guid, PouncingCharge.Guid, RabidBearStrike.Guid, HamstringAttack.Guid, FeralDeathBlow.Guid, TigerSnap.Guid, TigerRake.Guid, TigerMaul.Guid];
         public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> WhiteRavenGuids = [LeadingTheAttack.Guid, BattleLeadersCharge.Guid, LionsRoar.Guid, WhiteRavenStrike.Guid, WarLeadersCharge.Guid, BolsteringVoice.Guid, SwarmTactics.Guid, WhiteRavenHammer.Guid, WhiteRavenCall.Guid];
-        public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> RivenHourglassGuids = [MinuteHand.Guid, SandsOfTime.Guid, TiringTouch.Guid, StrikeTheHourglass.Guid, ChronalAgression.Guid, TemporalBurn.Guid, UnhinderedStep.Guid];
+        public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> RivenHourglassGuids = [MinuteHand.Guid, SandsOfTime.Guid, TiringTouch.Guid, StrikeTheHourglass.Guid, ChronalAgression.Guid, TemporalBurn.Guid, UnhinderedStep.Guid, HourglassStance.Guid, TemporalFury.Guid, ChronalDraw.Guid, TipTheHourglass.Guid, HourHand.Guid, SandsOfTimeTornado.Guid, SandBearersSwiftness.Guid, ShatterTheHourglass.Guid, TemporalWave.Guid, SandsOfTimeHurricane.Guid, WrathOfTime.Guid, BreakTheHourglass.Guid];
 
         public static void Configure()
         {
@@ -143,9 +143,30 @@ namespace VoidHeadWOTRNineSwords
             ChronalAgression.Configure();
             TemporalBurn.Configure();
             UnhinderedStep.Configure();
+            //Lvl3
+            TemporalFury.Configure();
+            //Lvl4
+            ChronalDraw.Configure();
+            TipTheHourglass.Configure();
+            //Lvl5
+            HourHand.Configure();
+            SandsOfTimeTornado.Configure();
+            //Lvl6
+            ShatterTheHourglass.Configure();
+            TemporalWave.Configure();
+            //Lvl7
+            SandsOfTimeHurricane.Configure();
+            //Lvl8
+            WrathOfTime.Configure();
+            //Lvl9
+            BreakTheHourglass.Configure();
             //--Stances--
             //Lvl1
             SandsOfTime.Configure();
+            //Lvl3
+            HourglassStance.Configure();
+            //Lvl6
+            SandBearersSwiftness.Configure();
             #endregion
             #region Shadow Hand
             //--Maneuvers--
@@ -221,7 +242,7 @@ namespace VoidHeadWOTRNineSwords
             FleshRipper.Configure();
             TigerSnap.Configure();
             //Lvl5
-            DancingMongoose.Configure();
+            //DancingMongoose.Configure();
             PouncingCharge.Configure();
             TigerRake.Configure();
             //Lvl6

@@ -1,5 +1,4 @@
 ﻿using BlueprintCore.Actions.Builder;
-using BlueprintCore.Actions.Builder.AVEx;
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.Configurators.Facts;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
@@ -9,18 +8,9 @@ using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Conditions.Builder.ContextEx;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Spells;
-using Kingmaker.Designers;
 using Kingmaker.ElementsSystem;
-using Kingmaker.RuleSystem.Rules;
-using Kingmaker.RuleSystem.Rules.Damage;
-using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.Utility;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VoidHeadWOTRNineSwords.Feats
 {

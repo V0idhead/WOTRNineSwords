@@ -16,7 +16,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
         {
             Main.Logger.Info($"Configuring {nameof(SwordInsight)}");
 
-            var ACBonusBuff = BuffConfigurator.New("SwordInsightBuff", "D8DE7C09-4CF8-4843-8B9D-9D4AD8C42929")
+            var AttackBonusBuff = BuffConfigurator.New("SwordInsightBuff", "D8DE7C09-4CF8-4843-8B9D-9D4AD8C42929")
               .SetDisplayName(name)
               .SetFlags(BlueprintBuff.Flags.HiddenInUi)
               .AddContextStatBonus(Kingmaker.EntitySystem.Stats.StatType.AdditionalAttackBonus, ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom))
@@ -28,7 +28,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
               .SetDescription(desc)
               .SetIsClassFeature()
               .AddRecalculateOnStatChange(stat: Kingmaker.EntitySystem.Stats.StatType.Wisdom)
-              .AddBuffOnLightOrNoArmor(ACBonusBuff)
+              .AddBuffOnLightOrNoArmor(AttackBonusBuff)
               .Configure();
 
             return swordsageAattackBonus;

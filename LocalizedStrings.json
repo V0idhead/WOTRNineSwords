@@ -1524,7 +1524,7 @@
   },
   {
     "Key": "TigerSnap.Desc",
-    "enGB": "Discipline: Tiger Snap\nManeuver Type: Strike\nRequired Initiator Level: Warblade 5, Swordsage 5\nYou attack your target twice, dealing normal damage. If both attacks hit your target starts bleeding for 3 rounds suffering 2d6 damage per round."
+    "enGB": "Discipline: Tiger Claw\nManeuver Type: Strike\nRequired Initiator Level: Warblade 5, Swordsage 5\nYou attack your target twice, dealing normal damage. If both attacks hit your target starts bleeding for 3 rounds suffering 2d6 damage per round."
   },
   {
     "Key": "TigerRake.Name",
@@ -1533,7 +1533,7 @@
   },
   {
     "Key": "TigerRake.Desc",
-    "enGB": "Discipline: Tiger Snap\nManeuver Type: Strike\nRequired Initiator Level: Warblade 5, Swordsage 5\nYou attack your target three times, dealing normal damage. If at least two attacks hit your target starts bleeding for 3 rounds suffering 2d6 damage per round. If all three attacks hit your target suffers 1d6 strength damage."
+    "enGB": "Discipline: Tiger Claw\nManeuver Type: Strike\nRequired Initiator Level: Warblade 5, Swordsage 5\nYou attack your target three times, dealing normal damage. If at least two attacks hit your target starts bleeding for 3 rounds suffering 2d6 damage per round. If all three attacks hit your target suffers 1d6 strength damage."
   },
   {
     "Key": "TigerMaul.Name",
@@ -1542,7 +1542,115 @@
   },
   {
     "Key": "TigerMaul.Desc",
-    "enGB": "Discipline: Tiger Snap\nManeuver Type: Strike\nRequired Initiator Level: Warblade 5, Swordsage 5\nYou attack your target four times, dealing normal damage. If at least two attacks hit your target starts bleeding for 3 rounds suffering 2d6 damage per round. If at least three attacks hit your target suffers 1d6 strength damage. If all four attacks hit you deal 4d12 bonus damage."
+    "enGB": "Discipline: Tiger Claw\nManeuver Type: Strike\nRequired Initiator Level: Warblade 5, Swordsage 5\nYou attack your target four times, dealing normal damage. If at least two attacks hit your target starts bleeding for 3 rounds suffering 2d6 damage per round. If at least three attacks hit your target suffers 1d6 strength damage. If all four attacks hit you deal 4d12 bonus damage."
+  },
+  {
+    "Key": "HourglassStance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Hourglass Stance"
+  },
+  {
+    "Key": "HourglassStance.Desc",
+    "enGB": "Discipline: Riven Hourglass\nRequired Initiator Level: Swordsage 5\nRequired Maneuvers: 1 Riven Hourglass\nWhile you maintain this stance, you gain a +4 dodge bonus to your AC and a +4 bonus on Initiative checks. In addition, you become immune to magic that impedes movement, such as paralysis, solid fog, slow, and web. And spells that target you suffer a 20% miss chance."
+  },
+  {
+    "Key": "TemporalFury.Name",
+    "ProcessTemplates": false,
+    "enGB": "Temporal Fury"
+  },
+  {
+    "Key": "TemporalFury.Desc",
+    "enGB": "Discipline: Riven Hourglass\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 5\nRequired Maneuvers: 1 Riven Hourglass\nMake an attack. If it hits, it deals weapon damage as normal plus an additional 2d6 points of damage, additionally the target must make a Fortitude (DC 13 + your Wisdom modifier) or become slowed for 2 rounds."
+  },
+  {
+    "Key": "ChronalDraw.Name",
+    "ProcessTemplates": false,
+    "enGB": "Chronal Draw"
+  },
+  {
+    "Key": "ChronalDraw.Desc",
+    "enGB": "Discipline: Riven Hourglass\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 7\nRequired Maneuvers: 1 Riven Hourglass\nMake an attack. If it hits, it deals weapon damage as normal plus an additional 4d6 points of damage, and the target must succeed at a Will save (DC 14 + your Wisdom modifier) or become exhausted for a number of rounds equal to your Wisdom modifier."
+  },
+  {
+    "Key": "TipTheHourglass.Name",
+    "ProcessTemplates": false,
+    "enGB": "Tip the Hourglass"
+  },
+  {
+    "Key": "TipTheHourglass.Desc",
+    "enGB": "Discipline: Riven Hourglass\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 7\nRequired Maneuvers: 1 Riven Hourglass\nMake a melee attack. If it hits, it deals weapon damage as normal plus an additional 4d6 points of damage, and target must succeed at a Fortitude save (DC 14 + your Wisdom modifier) or be affected as if by a slow spell for a number of rounds equal to your Wisdom modifier."
+  },
+  {
+    "Key": "HourHand.Name",
+    "ProcessTemplates": false,
+    "enGB": "Hour Hand"
+  },
+  {
+    "Key": "HourHand.Desc",
+    "enGB": "Discipline: Riven Hourglass\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 7\nRequired Maneuvers: 1 Riven Hourglass\nMake an attack with an -4 penalty as a swift action, dealing normal weapon damage plus 4d6 points of damage."
+  },
+  {
+    "Key": "SandsOfTimeTornado.Name",
+    "ProcessTemplates": false,
+    "enGB": "Sand of Time Tornado"
+  },
+  {
+    "Key": "SandsOfTimeTornado.Desc",
+    "enGB": "Discipline: Riven Hourglass\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 9\nRequired Maneuvers: 2 Riven Hourglass\nMake a melee attack roll against each adjacent opponent. Each target hit, suffers weapon damage as normal plus additional points of damage equal to twice your Wisdom modifier, and the target must succeed at a Fortitude save (DC 15 + your Wisdom modifier) or become sickened for 1d4 rounds."
+  },
+  {
+    "Key": "SandBearersSwiftness.Name",
+    "ProcessTemplates": false,
+    "enGB": "Sand-Bearer’s Swiftness"
+  },
+  {
+    "Key": "SandBearersSwiftness.Desc",
+    "enGB": "Discipline: Riven Hourglass\nRequired Initiator Level: Swordsage 11\nRequired Maneuvers: 2 Riven Hourglass\nWhile you maintain this stance, you gain the benefits of the haste spell. In addition, you become immune to magic that impedes movement, such as paralysis, solid fog, slow, and web. And spells that target you suffer a 20% miss chance."
+  },
+  {
+    "Key": "ShatterTheHourglass.Name",
+    "ProcessTemplates": false,
+    "enGB": "Shatter the Hourglass"
+  },
+  {
+    "Key": "ShatterTheHourglass.Desc",
+    "enGB": "Discipline: Riven Hourglass\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 11\nRequired Maneuvers: 2 Riven Hourglass\nMake a melee attack. If it hits, it deals weapon damage as normal, and target must succeed at a Fortitude save (DC 16 + your Wisdom modifier) or become paralyzed for 1d4 rounds. A successful save negates the paralysis and causes the foe to be affected as if by a slow spell for 1d4 rounds."
+  },
+  {
+    "Key": "TemporalWave.Name",
+    "ProcessTemplates": false,
+    "enGB": "Temporal Wave"
+  },
+  {
+    "Key": "TemporalWave.Desc",
+    "enGB": "Discipline: Riven Hourglass\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 11\nRequired Maneuvers: 2 Riven Hourglass\nWhen you initiate this maneuver, you create a 30-foot cone of quintessence. Creatures caught within the cone must succeed at a Will save (DC 16 + your Wisdom modifier) or become nauseated and affected as if by a slow spell for a number of rounds equal to your Wisdom modifier. Creatures that succeed on their save are instead affected as if by a slow spell for one round."
+  },
+  {
+    "Key": "SandsOfTimeHurricane.Name",
+    "ProcessTemplates": false,
+    "enGB": "Sand of Time Hurricane"
+  },
+  {
+    "Key": "SandsOfTimeHurricane.Desc",
+    "enGB": "Discipline: Riven Hourglass\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 13\nRequired Maneuvers: 2 Riven Hourglass\nMake two melee attack rolls with a +4 bonus against each adjacent opponent. Each target hit, suffers weapon damage as normal. The first hit exhausts targets for 2d4 rounds, the second slows them for 1d4 rounds. Both effects can be resisted with a Fortitude save (DC 17 + your Wisdom modified) to reduce the duration to 1 round."
+  },
+  {
+    "Key": "WrathOfTime.Name",
+    "ProcessTemplates": false,
+    "enGB": "Wrath of Time"
+  },
+  {
+    "Key": "WrathOfTime.Desc",
+    "enGB": "Discipline: Riven Hourglass\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 15\nRequired Maneuvers: 3 Riven Hourglass\nWhen you initiate this maneuver, you unleash a 120-foot cone of violent temporal energy dealing 12d6 damage to all creatures, a Will save (DC 18 + your Wisdom modifier) reduces this damage by half."
+  },
+  {
+    "Key": "BreakTheHourglass.Name",
+    "ProcessTemplates": false,
+    "enGB": "Break the Hourglass"
+  },
+  {
+    "Key": "BreakTheHourglass.Desc",
+    "enGB": "Discipline: Riven Hourglass\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 17\nRequired Maneuvers: 4 Riven Hourglass\nWhen you initiate this maneuver, you unleash a destructive temporal disturbance in a 30-foot cone. Enemies caught in the cone must make a Will save (DC 19 + your Wisdom modifier) or die. Creatures that succeed on their save are instead exhausted and slowed for 2d4 rounds."
   },
 
   {

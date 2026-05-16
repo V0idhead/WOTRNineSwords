@@ -100,8 +100,17 @@ namespace VoidHeadWOTRNineSwords.Swordsage
           UnhinderedStep.Guid,
           TigerSnap.Guid,
           TigerRake.Guid,
-          TigerMaul.Guid
-
+          TigerMaul.Guid,
+          TemporalFury.Guid,
+          ChronalDraw.Guid,
+          TipTheHourglass.Guid,
+          HourHand.Guid,
+          SandsOfTimeTornado.Guid,
+          ShatterTheHourglass.Guid,
+          TemporalWave.Guid,
+          SandsOfTimeHurricane.Guid,
+          WrathOfTime.Guid,
+          BreakTheHourglass.Guid
         ).Configure();
 
       return swordsageManeuverSelection;

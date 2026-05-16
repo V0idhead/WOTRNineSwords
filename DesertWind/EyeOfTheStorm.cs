@@ -61,7 +61,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
 
             FeatureConfigurator.New("EyeOfTheStormFeat", Guid, AllManeuversAndStances.featureGroup)
               .SetDisplayName(name)
-              .SetDescription("BolsteringVoice.Desc")
+              .SetDescription("EyeOfTheStorm.Desc")
               .SetIcon(icon)
               .SetRanks(1)
               .AddFacts(new() { activatable })

@@ -61,7 +61,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
               .SetRanks(1)
               .AddFacts(new() { activatable })
 #if !DEBUG
-              .AddPrerequisiteFeature(DisciplineProficencies.DesertWindProficencyGuid, hideInUI: true)
+              .AddPrerequisiteFeature(DisciplineProficencies.RivenHourglassProficencyGuid, hideInUI: true)
 #endif
               .Configure(true);
         }

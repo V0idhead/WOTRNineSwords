@@ -35,7 +35,9 @@ namespace VoidHeadWOTRNineSwords.Swordsage
           EyeOfTheStorm.Guid,
           LocalEclipse.Guid,
           ThickShadows.Guid,
-          Shadowsight.Guid
+          Shadowsight.Guid,
+          HourglassStance.Guid,
+          SandBearersSwiftness.Guid
         ).Configure();
 
       return swordsageManeuverSelection;

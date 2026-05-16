@@ -6,6 +6,7 @@ using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
@@ -17,48 +18,54 @@ using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
-using VoidHeadWOTRNineSwords.IronHeart;
 
 namespace VoidHeadWOTRNineSwords.RivenHourglass
 {
-    //https://www.d20pfsrd.com/ALTERNATIVE-RULE-SYSTEMS/3RD-PARTY-RULES-SYSTEMS/PATH-OF-WAR/DISCIPLINES-AND-MANEUVERS/RIVEN-HOURGLASS-MANEUVERS/#TOC-Minute-Hand
-    static class MinuteHand
+    //https://www.d20pfsrd.com/ALTERNATIVE-RULE-SYSTEMS/3RD-PARTY-RULES-SYSTEMS/PATH-OF-WAR/DISCIPLINES-AND-MANEUVERS/RIVEN-HOURGLASS-MANEUVERS/#TOC-Temporal-Fury
+    static class TemporalFury
     {
-        public const string Guid = "B7ED5625-B836-4962-A8E0-2779D0F7F393";
-        const string name = "MinuteHand.Name";
-        const string desc = "MinuteHand.Desc";
-        //const string icon = Helpers.IconPrefix + "minutehand.png";
+        public const string Guid = "E6CF7313-CE65-4151-81AB-A43839741DF9";
+        const string name = "TemporalFury.Name";
+        const string desc = "TemporalFury.Desc";
+        //const string icon = Helpers.IconPrefix + "temporalfury.png";
         static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
 
         public static void Configure()
         {
-            Main.Logger.Info($"Configuring {nameof(MinuteHand)}");
+            Main.Logger.Info($"Configuring {nameof(TemporalFury)}");
 
-            var buff = BuffConfigurator.New("MinuteHandBuff", "708A4EB3-51EE-4AB9-97F2-BD854B160601")
-              .SetDisplayName(name)
-              .SetDescription(desc)
-              .SetIcon(icon)
-              .AddAttackBonus(-2)
-              .Configure();
-
-            var ability = AbilityConfigurator.New(name, "8D39D429-CFAC-4751-A098-D9AEFC4981A7")
+            var ability = AbilityConfigurator.New("TemporalFuryAbility", "CCB313D6-B3C6-42FC-A6E7-37756899F309")
               .SetDisplayName(name)
               .SetDescription(desc)
               .SetIcon(icon)
               .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Special)
               .SetCanTargetEnemies()
-              .SetCanTargetFriends(false)
-              .SetCanTargetSelf(false)
+              .SetEffectOnEnemy(AbilityEffectOnUnit.Harmful)
               .SetRange(AbilityRange.Weapon)
-              .SetActionType(UnitCommand.CommandType.Swift)
+              .SetUseCurrentWeaponAsReasonItem()
+              .SetActionType(UnitCommand.CommandType.Standard)
               .SetShouldTurnToTarget()
               .SetType(AbilityType.CombatManeuver)
               .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
-              .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).MeleeAttack().RemoveBuff(buff, onlyFromCaster: true, toCaster: true))
+              .AddAbilityEffectRunAction
+              (
+                ActionsBuilder.New()
+                .Add<ContextMeleeAttackRolledBonusDamage>(bd => 
+                { 
+                    bd.ExtraDamage = new DiceFormula(2, DiceType.D6);
+                    bd.OnHit = ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 13 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, MarchOfTime.RivenHourglassFocusFactGuid),
+                      onResult: ActionsBuilder.New()
+                        .ConditionalSaved
+                        (
+                            failed: ActionsBuilder.New().ApplyBuff(BuffRefs.SlowBuff.Reference.Get(), ContextDuration.Fixed(2))
+                        )
+                      ).Build();
+                })
+              )
               .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
               .Configure();
 
-            var spell = FeatureConfigurator.New("MinuteHand", Guid, AllManeuversAndStances.featureGroup)
+            var spell = FeatureConfigurator.New("TemporalFury", Guid, AllManeuversAndStances.featureGroup)
               .SetDisplayName(name)
               .SetDescription(desc)
               .SetIcon(icon)
@@ -67,6 +74,8 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
               .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
 #if !DEBUG
               .AddPrerequisiteFeature(DisciplineProficencies.RivenHourglassProficencyGuid, hideInUI: true)
+              .AddPrerequisiteFeature(InitiatorLevels.Lvl3Guid)
+              .AddPrerequisiteFeaturesFromList(amount: 1, features: AllManeuversAndStances.RivenHourglassGuids.Except([Guid]).ToList())
 #endif
               .Configure();
         }

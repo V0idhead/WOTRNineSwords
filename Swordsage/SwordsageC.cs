@@ -73,7 +73,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
       var swordsageProficiencies = FeatureConfigurator.New("SwordsageProficiencies", "E6DEFCF2-0C19-45F4-A047-13F71B52DD9A")
         .SetDisplayName("SwordsageProficiencies.Name")
         .SetDescription("SwordsageProficiencies.Desc")
-        .AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.Reference.Get(), FeatureRefs.MartialWeaponProficiency.Reference.Get(), FeatureRefs.LightArmorProficiency.Reference.Get(), DisciplineProficencies.DesertWindProficencyGuid, DisciplineProficencies.DiamondMindProficencyGuid, DisciplineProficencies.IronHeartProficencyGuid, DisciplineProficencies.RivenHourglassProficencyGuid, DisciplineProficencies.ShadowHandProficencyGuid, DisciplineProficencies.StoneDragonProficencyGuid, DisciplineProficencies.TigerClawProficencyGuid, DisciplineProficencies.StoneDragonProficencyGuid })
+        .AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.Reference.Get(), FeatureRefs.MartialWeaponProficiency.Reference.Get(), FeatureRefs.LightArmorProficiency.Reference.Get(), DisciplineProficencies.DesertWindProficencyGuid, DisciplineProficencies.DiamondMindProficencyGuid, DisciplineProficencies.IronHeartProficencyGuid, DisciplineProficencies.RivenHourglassProficencyGuid, DisciplineProficencies.ShadowHandProficencyGuid, DisciplineProficencies.StoneDragonProficencyGuid, DisciplineProficencies.TigerClawProficencyGuid })
         .SetIsClassFeature()
         .SetRanks(1)
         .Configure();

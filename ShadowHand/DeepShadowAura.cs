@@ -64,7 +64,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
 
             var deepShadowAuraFeat = FeatureConfigurator.New("DeepShadowAuraFeat", Guid, AllManeuversAndStances.featureGroup)
               .SetDisplayName(name)
-              .SetDescription("BolsteringVoice.Desc")
+              .SetDescription("DeepShadowAura.Desc")
               .SetIcon(icon)
               .SetRanks(1)
               .AddFacts(new() { deepShadowAuraActivatable })
