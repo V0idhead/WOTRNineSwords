@@ -28,7 +28,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         const string name = "MinuteHand.Name";
         const string desc = "MinuteHand.Desc";
         //const string icon = Helpers.IconPrefix + "minutehand.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {

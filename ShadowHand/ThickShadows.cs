@@ -1,10 +1,13 @@
-﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Conditions.Builder.BasicEx;
+using BlueprintCore.Utils.Types;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
@@ -23,7 +26,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         public const string Guid = "83612CDB-BE5D-4D11-85C1-46E08A66811A";
         const string name = "ThickShadows.Name";
         //const string icon = Helpers.IconPrefix + "thickshadows.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {
@@ -36,9 +39,11 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
               .Configure();
 
             var area = AbilityAreaEffectConfigurator.New("ThickShadowsArea", "BF6E2E78-2CED-4D8B-A720-44AE62834F5C")
-              .AddAbilityAreaEffectBuff(deBuff, false, ConditionsBuilder.New().IsEnemy())
+              //.AddAbilityAreaEffectBuff(deBuff, false, ConditionsBuilder.New().IsEnemy())
+              .AddAbilityAreaEffectRunAction(round: ActionsBuilder.New().ApplyBuff(deBuff, ContextDuration.Fixed(1)))
               .SetShape(Kingmaker.UnitLogic.Abilities.Blueprints.AreaEffectShape.Cylinder)
               .SetSize(new Feet(40))
+              .SetTargetType(Kingmaker.UnitLogic.Abilities.Blueprints.BlueprintAbilityAreaEffect.TargetType.Enemy)
               .Configure();
 
             var self = BuffConfigurator.New("ThickShadowsSelf", "E24A9FC9-6134-42FE-9706-8990FDD1D94B")

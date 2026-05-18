@@ -29,7 +29,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         const string name = "TiringTouch.Name";
         const string desc = "TiringTouch.Desc";
         //const string icon = Helpers.IconPrefix + "tiringtouch.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {

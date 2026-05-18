@@ -1,10 +1,13 @@
-﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Conditions.Builder.BasicEx;
+using BlueprintCore.Utils.Types;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
@@ -23,21 +26,16 @@ namespace VoidHeadWOTRNineSwords.DesertWind
         public const string Guid = "ECABD9C8-49D6-47ED-B93E-83C8C24CCC7D";
         const string name = "EyeOfTheStorm.Name";
         //const string icon = Helpers.IconPrefix + "eyeofthestorm.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {
-            var buff = BuffConfigurator.New("EyeOfTheStormBuff", "D153168C-2A16-4040-9A9E-C6A740695617")
-              .SetDisplayName(name)
-              .SetDescription("EyeOfTheStorm.BuffDesc")
-              .SetIcon(icon)
-              .AddDamageOverTime(new Kingmaker.RuleSystem.DiceFormula(2, Kingmaker.RuleSystem.DiceType.D6), Kingmaker.Enums.Damage.DamageEnergyType.Fire, false)
-              .Configure();
-
             var area = AbilityAreaEffectConfigurator.New("EyeOfTheStormArea", "1998EB41-6604-4796-8B7B-135B2D58DB8F")
-              .AddAbilityAreaEffectBuff(buff, false, ConditionsBuilder.New().IsEnemy())
+               .AddAbilityAreaEffectRunAction(round: ActionsBuilder.New().DealDamage(DamageTypes.Energy(Kingmaker.Enums.Damage.DamageEnergyType.Fire), ContextDice.Value(Kingmaker.RuleSystem.DiceType.D6, ContextValues.Constant(2))))
               .SetShape(Kingmaker.UnitLogic.Abilities.Blueprints.AreaEffectShape.Cylinder)
-              .SetSize(new Feet(30))
+              .SetSize(new Feet(20))
+              .SetAffectEnemies()
+              .SetTargetType(Kingmaker.UnitLogic.Abilities.Blueprints.BlueprintAbilityAreaEffect.TargetType.Enemy)
               .Configure();
 
             var self = BuffConfigurator.New("EyeOfTheStormSelf", "BA3C2369-4DA8-4FA1-AAC2-319103750304")

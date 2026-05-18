@@ -27,7 +27,7 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
         const string name = "TigerSnap.Name";
         const string desc = "TigerSnap.Desc";
         //const string icon = Helpers.IconPrefix + "tigersnap.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {

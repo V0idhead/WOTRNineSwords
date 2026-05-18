@@ -86,7 +86,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
         .AddEntry(5, quickToAct.AssetGuid, maneuverSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid, stanceSelector.AssetGuid, InitiatorLevels.Lvl3Guid)
         .AddEntry(6, maneuverSelector.AssetGuid)
         .AddEntry(7, maneuverSelector.AssetGuid, swordsageDamageBonus.AssetGuid, InitiatorLevels.Lvl4Guid) //Sense Magic: replaced by damage bonus
-        .AddEntry(8, swordsageDefensiveStance.AssetGuid, maneuverSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid) //Defensive Stance: replaced by general sabing throw bonus
+        .AddEntry(8, swordsageDefensiveStance.AssetGuid, maneuverSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid) //Defensive Stance: replaced by general saving throw bonus
         .AddEntry(9, FeatureRefs.Evasion.Reference.guid, maneuverSelector.AssetGuid, stanceSelector.AssetGuid, InitiatorLevels.Lvl5Guid)
         .AddEntry(10, quickToAct.AssetGuid, maneuverSelector.AssetGuid, stanceSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid)
         .AddEntry(11, maneuverSelector.AssetGuid, InitiatorLevels.Lvl6Guid)

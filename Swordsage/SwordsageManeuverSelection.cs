@@ -77,7 +77,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
           FanTheFlames.Guid,
           ShadowGarotte.Guid,
           StrengthDrainingStrike.Guid,
-          ZephyrDance.Guid,
+          //ZephyrDance.Guid,
           ObscuringShadowVeil.Guid,
           SearingBlade.Guid,
           SearingCharge.Guid,

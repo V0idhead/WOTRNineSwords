@@ -28,7 +28,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         const string name = "ChronalDraw.Name";
         const string desc = "ChronalDraw.Desc";
         //const string icon = Helpers.IconPrefix + "chronaldraw.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {

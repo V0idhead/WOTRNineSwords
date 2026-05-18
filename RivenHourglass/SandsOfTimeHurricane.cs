@@ -28,7 +28,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         const string name = "SandsOfTimeHurricane.Name";
         const string desc = "SandsOfTimeHurricane.Desc";
         //const string icon = Helpers.IconPrefix + "sandsoftimehurricane.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {
@@ -64,8 +64,8 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
                         onResult: ActionsBuilder.New()
                           .ConditionalSaved
                           (
-                              failed: ActionsBuilder.New().ApplyBuff(BuffRefs.ExcaustedBuff.Reference.Get(), ContextDuration.FixedDice(DiceType.D6, 2)),
-                              succeed: ActionsBuilder.New().ApplyBuff(BuffRefs.ExcaustedBuff.Reference.Get(), ContextDuration.Fixed(1))
+                              failed: ActionsBuilder.New().ApplyBuff(BuffRefs.Exhausted.Reference.Get(), ContextDuration.FixedDice(DiceType.D6, 2)),
+                              succeed: ActionsBuilder.New().ApplyBuff(BuffRefs.Exhausted.Reference.Get(), ContextDuration.Fixed(1))
                           )
                         )
                         .AddAll(EternalMoment.GetEffectAction())

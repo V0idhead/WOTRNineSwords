@@ -1,10 +1,13 @@
-﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Conditions.Builder.BasicEx;
+using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.ActivatableAbilities;
@@ -24,7 +27,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         public const string Guid = "3B625F33-B6CC-46A8-9FD1-2849804CDBBF";
         const string name = "DeepShadowAura.Name";
         //const string icon = Helpers.IconPrefix + "deepshadowaura.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {
@@ -38,9 +41,10 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
               .Configure();
 
             var deepShadowAuraArea = AbilityAreaEffectConfigurator.New("DeepShadowAuraArea", "6F8A2FFC-1C4E-450F-BA70-74AEF6E5CF34")
-              .AddAbilityAreaEffectBuff(deepShadowAuraBuff, false, ConditionsBuilder.New().IsEnemy())
+              .AddAbilityAreaEffectRunAction(round: ActionsBuilder.New().ApplyBuff(deepShadowAuraBuff, ContextDuration.Fixed(1)))
               .SetShape(Kingmaker.UnitLogic.Abilities.Blueprints.AreaEffectShape.Cylinder)
               .SetSize(new Feet(40))
+              .SetTargetType(Kingmaker.UnitLogic.Abilities.Blueprints.BlueprintAbilityAreaEffect.TargetType.Enemy)
               .Configure();
 
             var deepShadowAuraSelf = BuffConfigurator.New("DeepShadowAuraSelf", "0FE575EF-5FD2-40FD-A127-389D7BE3B736")

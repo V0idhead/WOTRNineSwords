@@ -22,7 +22,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
         .SetDisplayName(Name)
         .SetDescription("SwordsageRecoverManeuvers.Desc")
         .SetIcon(icon)
-        .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Special)
+        .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.EnchantWeapon)
         .SetCanTargetSelf()
         .SetRange(Kingmaker.UnitLogic.Abilities.Blueprints.AbilityRange.Personal)
         .SetIsFullRoundAction(true)

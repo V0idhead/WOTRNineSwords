@@ -26,7 +26,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         const string name = "WrathOfTime.Name";
         const string desc = "WrathOfTime.Desc";
         //const string icon = Helpers.IconPrefix + "wrathoftime.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
         public static void Configure()
         {
             Main.Logger.Info($"Configuring {nameof(WrathOfTime)}");

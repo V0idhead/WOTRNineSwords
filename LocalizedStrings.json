@@ -412,7 +412,7 @@
   },
   {
     "Key": "SwordsageDefensiveStance.Desc",
-    "enGB": "not implemented"
+    "enGB": "You gain a bonus to saving throws equal to your Wisdom Bonus."
   },
 
   {
@@ -1444,7 +1444,7 @@
   },
   {
     "Key": "EyeOfTheStorm.Desc",
-    "enGB": "Discipline: Desert Wind\nRequired Initiator Level: Swordsage 9\nRequired Maneuvers: 1 Desert Wind\nWhile you maintain this stance, opponents within 30ft suffer 2d6 fire damage per round."
+    "enGB": "Discipline: Desert Wind\nRequired Initiator Level: Swordsage 9\nRequired Maneuvers: 1 Desert Wind\nWhile you maintain this stance, opponents within 20ft suffer 2d6 fire damage per round."
   },
   {
     "Key": "EyeOfTheStorm.BuffDesc",

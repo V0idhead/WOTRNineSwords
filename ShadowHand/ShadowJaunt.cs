@@ -32,7 +32,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
               .SetActionType(UnitCommand.CommandType.Move)
               .SetType(AbilityType.CombatManeuver)
               .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
-              .AddAbilityCustomDimensionDoor(1, false, dissapearTime: 1, landingTime: 1, radius: new Feet(1))
+              .AddAbilityCustomDimensionDoor(1, false, dissapearTime: 1, landingTime: 1)
               .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
               .Configure();
 

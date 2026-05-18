@@ -1,10 +1,13 @@
-﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Conditions.Builder.BasicEx;
+using BlueprintCore.Utils.Types;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
@@ -23,14 +26,15 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         public const string Guid = "D44B8DF8-C608-4A2D-A1FF-B17361E22220";
         const string name = "LocalEclipse.Name";
         //const string icon = Helpers.IconPrefix + "localeclipse.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {
             var area = AbilityAreaEffectConfigurator.New("LocalEclipseArea", "FA05B6CB-5408-4D5B-86B2-AB51B382B0ED")
-              .AddAbilityAreaEffectBuff(BuffRefs.Blind.Reference.Get(), true, ConditionsBuilder.New().IsEnemy())
+              .AddAbilityAreaEffectRunAction(round: ActionsBuilder.New().ApplyBuff(BuffRefs.Blind.Reference.Get(), ContextDuration.Fixed(1)))
               .SetShape(Kingmaker.UnitLogic.Abilities.Blueprints.AreaEffectShape.Cylinder)
               .SetSize(new Feet(20))
+              .SetTargetType(Kingmaker.UnitLogic.Abilities.Blueprints.BlueprintAbilityAreaEffect.TargetType.Enemy)
               .Configure();
 
             var self = BuffConfigurator.New("LocalEclipseSelf", "0EB19250-FFA4-475E-B2C1-5765100E8049")

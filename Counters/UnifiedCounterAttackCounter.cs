@@ -37,20 +37,20 @@ namespace VoidHeadWOTRNineSwords.Counters
 
         public void OnEventDidTrigger(RuleAttackRoll evt)
         {
-            Helpers.WriteCombatLogMessage("FireRiposte Trigger", GameLogStrings.Instance.DefaultColor, Owner);
+            //Helpers.WriteCombatLogMessage("FireRiposte Trigger", GameLogStrings.Instance.DefaultColor, Owner);
             if (Owner.HasFact(FireRiposte.OnFact))
             {
-                Helpers.WriteCombatLogMessage("FireRiposte: range Check; " + evt.Initiator.DistanceTo(Owner) + "|" + MeleeRange.Meters, GameLogStrings.Instance.DefaultColor, Owner);
+                //Helpers.WriteCombatLogMessage("FireRiposte: range Check; " + evt.Initiator.DistanceTo(Owner) + "|" + MeleeRange.Meters, GameLogStrings.Instance.DefaultColor, Owner);
                 if (evt.IsHit && evt.Initiator.DistanceTo(Owner) <= MeleeRange.Meters)
                 {
                     Blueprint<BlueprintAbilityResourceReference> maneuverResource = ManeuverResources.ManeuverResourceGuid;
 
-                    Helpers.WriteCombatLogMessage("FireRiposte: active? resource?", GameLogStrings.Instance.DefaultColor, Owner);
+                    //Helpers.WriteCombatLogMessage("FireRiposte: active? resource?", GameLogStrings.Instance.DefaultColor, Owner);
                     if (Owner.HasFact(FireRiposte.ActiveFact))
                         mode = Mode.FireRiposte;
                     else if (Owner.Resources.HasEnoughResource(maneuverResource.Reference, 2))
                     {
-                        Helpers.WriteCombatLogMessage("FireRiposte: activating!", GameLogStrings.Instance.DefaultColor, Owner);
+                        //Helpers.WriteCombatLogMessage("FireRiposte: activating!", GameLogStrings.Instance.DefaultColor, Owner);
                         Blueprint<BlueprintBuffReference> counterAttackBuff = Common.Common.CounterAttackActiveFact;
                         Owner.AddBuff(counterAttackBuff.Reference, Owner, new TimeSpan(0, 0, 6));
                         Owner.Resources.Spend(maneuverResource.Reference, 2);
@@ -61,7 +61,7 @@ namespace VoidHeadWOTRNineSwords.Counters
 
                     if (mode == Mode.FireRiposte)
                     {
-                        Helpers.WriteCombatLogMessage("FireRiposte: making attack", GameLogStrings.Instance.DefaultColor, Owner);
+                        //Helpers.WriteCombatLogMessage("FireRiposte: making attack", GameLogStrings.Instance.DefaultColor, Owner);
                         accumulatedPenalty++;
                         RuleAttackRoll counterAttack = new RuleAttackRoll(Owner, evt.Initiator, Owner.GetThreatHandMelee().Weapon, -accumulatedPenalty);
                         //RuleAttackRoll counterAttack = new RuleAttackRoll(Owner, evt.Initiator, , -accumulatedPenalty);

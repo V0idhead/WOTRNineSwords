@@ -24,7 +24,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         const string name = "BreakTheHourglass.Name";
         const string desc = "BreakTheHourglass.Desc";
         //const string icon = Helpers.IconPrefix + "breakthehourglass.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
         public static void Configure()
         {
             Main.Logger.Info($"Configuring {nameof(BreakTheHourglass)}");
@@ -49,7 +49,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
                   ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Reflex, customDC: ContextValues.Constant(19), conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, EternalMoment.RivenHourglassFocusFactGuid),
                   onResult: ActionsBuilder.New().ConditionalSaved(
                       failed: ActionsBuilder.New().Kill(),
-                      succeed: ActionsBuilder.New().ApplyBuff(BuffRefs.ExcaustedBuff.Reference.Get(), ContextDuration.FixedDice(Kingmaker.RuleSystem.DiceType.D4, 2)).ApplyBuff(BuffRefs.SlowBuff.Reference.Get(), ContextDuration.FixedDice(Kingmaker.RuleSystem.DiceType.D4, 2))
+                      succeed: ActionsBuilder.New().ApplyBuff(BuffRefs.Exhausted.Reference.Get(), ContextDuration.FixedDice(Kingmaker.RuleSystem.DiceType.D4, 2)).ApplyBuff(BuffRefs.SlowBuff.Reference.Get(), ContextDuration.FixedDice(Kingmaker.RuleSystem.DiceType.D4, 2))
                   ))
               )
               .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)

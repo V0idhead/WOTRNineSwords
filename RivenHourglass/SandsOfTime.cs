@@ -26,7 +26,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         const string name = "SandsOfTime.Name";
         const string desc = "SandsOfTime.Desc";
         //const string icon = Helpers.IconPrefix + "sandsoftime.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {

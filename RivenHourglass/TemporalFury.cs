@@ -28,7 +28,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         const string name = "TemporalFury.Name";
         const string desc = "TemporalFury.Desc";
         //const string icon = Helpers.IconPrefix + "temporalfury.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {

@@ -18,7 +18,6 @@ namespace VoidHeadWOTRNineSwords.Components
     class MultiAttackAction : ContextActionMeleeAttack
     {
         public int AttackCount = 1;
-        private int hitCount = 0;
         public List<ActionList> HitEffects = new List<ActionList>(); //List of Actions to run based on number of hits: at least one hit HitEffects[0] is run; at least two hits HitEffects[1] is run; ...
 
         public override void RunAction()
@@ -42,6 +41,7 @@ namespace VoidHeadWOTRNineSwords.Components
                 UnitEntityData target = SelectTarget(base.Context.MaybeCaster, threatHandMelee.Weapon.AttackRange.Meters, SelectNewTarget, base.Target?.Unit);
                 if (target != null)
                 {
+                    int hitCount = 0;
                     int attackPenalty = 0;
                     for (int i = 0; i < AttackCount; ++i)
                     {

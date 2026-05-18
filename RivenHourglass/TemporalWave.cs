@@ -26,7 +26,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         const string name = "TemporalWave.Name";
         const string desc = "TemporalWave.Desc";
         //const string icon = Helpers.IconPrefix + "temporalwave.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
         public static void Configure()
         {
             Main.Logger.Info($"Configuring {nameof(TemporalWave)}");

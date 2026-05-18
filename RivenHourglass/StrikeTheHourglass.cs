@@ -26,7 +26,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         const string name = "StrikeTheHourglass.Name";
         const string desc = "StrikeTheHourglass.Desc";
         //const string icon = Helpers.IconPrefix + "strikethehourhlass.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {

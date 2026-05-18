@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.Feats
@@ -28,7 +29,8 @@ namespace VoidHeadWOTRNineSwords.Feats
         .SetDescription("ManeuverFocus.Desc")
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
-        .AddPrerequisiteClassLevel(WarbladeC.Guid, 4)
+        //.AddPrerequisiteClassLevel(WarbladeC.Guid, 4)
+        .AddPrerequisiteFeature(InitiatorLevels.Lvl3Guid)
         .AddFacts(new() { fact })
         .Configure();
     }
