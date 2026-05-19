@@ -1551,7 +1551,7 @@
   },
   {
     "Key": "HourglassStance.Desc",
-    "enGB": "Discipline: Riven Hourglass\nRequired Initiator Level: Swordsage 5\nRequired Maneuvers: 1 Riven Hourglass\nWhile you maintain this stance, you gain a +4 dodge bonus to your AC and a +4 bonus on Initiative checks. In addition, you become immune to magic that impedes movement, such as paralysis, solid fog, slow, and web. And spells that target you suffer a 20% miss chance."
+    "enGB": "Discipline: Riven Hourglass\nRequired Initiator Level: Swordsage 5\nRequired Maneuvers: 1 Riven Hourglass\nWhile you maintain this stance, you gain a +4 dodge bonus to your AC, a +4 bonus on Initiative checks, and 20 spell resistance. In addition, you become immune to magic that impedes movement, such as paralysis, solid fog, slow, and web."
   },
   {
     "Key": "TemporalFury.Name",
@@ -1605,7 +1605,7 @@
   },
   {
     "Key": "SandBearersSwiftness.Desc",
-    "enGB": "Discipline: Riven Hourglass\nRequired Initiator Level: Swordsage 11\nRequired Maneuvers: 2 Riven Hourglass\nWhile you maintain this stance, you gain the benefits of the haste spell. In addition, you become immune to magic that impedes movement, such as paralysis, solid fog, slow, and web. And spells that target you suffer a 20% miss chance."
+    "enGB": "Discipline: Riven Hourglass\nRequired Initiator Level: Swordsage 11\nRequired Maneuvers: 2 Riven Hourglass\nWhile you maintain this stance, you gain the benefits of the haste spell and 20 spell resistance. In addition, you become immune to magic that impedes movement, such as paralysis, solid fog, slow, and web."
   },
   {
     "Key": "ShatterTheHourglass.Name",

@@ -6,12 +6,14 @@ using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Conditions.Builder.ContextEx;
+using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
+using Kingmaker.UnitLogic.Mechanics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,7 +54,8 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
               .AddSpecificBuffImmunity(buff: BuffRefs.AeonBlackHoleSlowBuff.Reference.Get())
               .AddSpecificBuffImmunity(buff: BuffRefs.SlowBuff.Reference.Get())
               .AddConditionImmunity(Kingmaker.UnitLogic.UnitCondition.Staggered)
-              .AddAttackerSpellFailureChance(20) //failure chance works, but also for buffs and heals
+              //.AddAttackerSpellFailureChance(20) //failure chance works, but also for buffs and heals
+              .AddSpellResistance(value: ContextValues.Constant(20))
               .Configure();
 
             var activatable = ActivatableAbilityConfigurator.New("SandBearersSwiftnessActivatable", "C32B90A1-C03D-42A5-97D9-99F0AF7B0F6B")

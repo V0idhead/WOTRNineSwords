@@ -2,6 +2,7 @@
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
@@ -41,7 +42,8 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
               .AddSpecificBuffImmunity(buff: BuffRefs.AeonBlackHoleSlowBuff.Reference.Get())
               .AddSpecificBuffImmunity(buff: BuffRefs.SlowBuff.Reference.Get())
               .AddConditionImmunity(Kingmaker.UnitLogic.UnitCondition.Staggered)
-              .AddAttackerSpellFailureChance(20) //does this work?
+              //.AddAttackerSpellFailureChance(20) //failure chance works, but also for buffs and heals
+              .AddSpellResistance(value: ContextValues.Constant(20))
               .Configure();
 
             var activatable = ActivatableAbilityConfigurator.New("HourglassStanceActivatable", "5433B2C6-0DE0-4429-83FE-C4CAEEBCDAF8")
