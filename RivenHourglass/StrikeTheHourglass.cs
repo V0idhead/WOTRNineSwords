@@ -19,7 +19,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         public const string Guid = "37248468-1D0C-4898-B5AB-9AEC419BFD89";
         const string name = "StrikeTheHourglass.Name";
         const string desc = "StrikeTheHourglass.Desc";
-        const string icon = Helpers.IconPrefix + "strikethehourhlass.png";
+        const string icon = Helpers.IconPrefix + "strikethehourglass.png";
 
         public static void Configure()
         {

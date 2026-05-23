@@ -33,15 +33,9 @@ namespace VoidHeadWOTRNineSwords.IronHeart
       var punishingStanceBuff = BuffConfigurator.New("PunishingStanceBuff", "58BBA9F5-13B5-4878-8C67-D31608AF58BE")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
         .AddNotDispelable()
-        //.SetDisplayName(name)
-        //.SetIcon(icon)
-        //.AdditionalDiceOnDamage(diceValue: new ContextDiceValue { DiceType = DiceType.D6, DiceCountValue = 1 }, damageTypeDescription: DamageTypes.Direct(), checkAbilityType: false, checkDamageDealt: false, checkEnergyDamageType: false, checkSpellDescriptor: false, checkSpellParent: false, checkWeaponType: false) //does nothing
-        //.AddDamageBonusConditional(bonus: new ContextValue {Value = 4 }, descriptor: ModifierDescriptor.UntypedStackable) //TODO: damage bonus should be 1d6 ?AdditionalDiceOnDamage?
         .AddInitiatorAttackRollTrigger(onlyHit: true, action:
             ActionsBuilder.New().DealDamage(new DamageTypeDescription { Type = DamageType.Untyped }, new ContextDiceValue { DiceType = DiceType.D6, DiceCountValue = 1 })
             .Build())
-        //.AddDamageBonusConditional(bonus: ContextValues., descriptor: ModifierDescriptor.UntypedStackable) //TODO: damage bonus should be 1d6
-        //.AdditionalDamageOnHit(energyDamageDice: new DiceFormula(1, DiceType.D6), onlyMelee: true, element: Kingmaker.Enums.Damage.DamageEnergyType.Magic)
         .AddACBonusAgainstAttacks(armorClassBonus: -2)
         .AddAreaEffect(IronHeartAura.IronHeartAuraArea)
         .Configure();

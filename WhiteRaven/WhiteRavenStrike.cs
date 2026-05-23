@@ -32,14 +32,6 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
         .AddCondition(Kingmaker.UnitLogic.UnitCondition.LoseDexterityToAC)
         .Configure();
 
-      /*var buff = BuffConfigurator.New("WhiteRavenStrikeBuff", "B1BCB605-A65D-4426-AB47-ECFB67204964")
-        .SetFlags(BlueprintBuff.Flags.HiddenInUi)
-        .AddDamageBonusConditional(bonus: new ContextValue { Value = 16 }, descriptor: ModifierDescriptor.UntypedStackable) //TODO: damage bonus should be 4d6; also should flat-foot the enemy
-        .AddInitiatorAttackRollTrigger(onlyHit: true,
-          action: ActionsBuilder.New().ApplyBuff(targetBuff, ContextDuration.Fixed(1))
-        )
-        .Configure();*/
-
       var ability = AbilityConfigurator.New(name, "130E3211-E6F8-4CC6-9F6B-FDC0CFD63F64")
         .SetDisplayName(name)
         .SetDescription(desc)

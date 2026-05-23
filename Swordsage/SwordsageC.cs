@@ -28,7 +28,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
       BlueprintCharacterClass swordsageC = CharacterClassConfigurator.New("Swordsage", Guid)
       .SetLocalizedName("SwordsageC.Name")
       .SetLocalizedDescription("SwordsageC.Desc")
-      .SetSkillPoints(0) //TODO: should be 5, lowered to speed up char creation for testing
+      .SetSkillPoints(4)
       .SetHitDie(DiceType.D8)
       .SetIsArcaneCaster(false).SetIsDivineCaster(false)
       .SetBaseAttackBonus(StatProgressionRefs.BABMedium.Reference.Get())
