@@ -6,6 +6,7 @@ using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
+using System.Linq;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 
