@@ -9,11 +9,8 @@ using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
@@ -25,8 +22,7 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
         public const string Guid = "6B5DF913-29D9-49D6-A486-86FBC1001475";
         const string name = "TigerMaul.Name";
         const string desc = "TigerMaul.Desc";
-        //const string icon = Helpers.IconPrefix + "tigermaul.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "tigermaul.png";
 
         public static void Configure()
         {

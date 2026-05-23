@@ -4,21 +4,14 @@ using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
-using BlueprintCore.Conditions.Builder;
-using BlueprintCore.Conditions.Builder.BasicEx;
 using BlueprintCore.Utils.Types;
-using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.Utility;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 
 namespace VoidHeadWOTRNineSwords.ShadowHand
 {
@@ -26,8 +19,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
     {
         public const string Guid = "3B625F33-B6CC-46A8-9FD1-2849804CDBBF";
         const string name = "DeepShadowAura.Name";
-        //const string icon = Helpers.IconPrefix + "deepshadowaura.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "deepshadowaura.png";
 
         public static void Configure()
         {

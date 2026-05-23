@@ -8,11 +8,7 @@ using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
@@ -25,8 +21,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         public const string Guid = "39FC921C-2E92-4A39-8009-C01557F118B1";
         const string name = "ShatterTheHourglass.Name";
         const string desc = "ShatterTheHourglass.Desc";
-        //const string icon = Helpers.IconPrefix + "shatterthehourglass.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "shatterthehourglass.png";
 
         public static void Configure()
         {

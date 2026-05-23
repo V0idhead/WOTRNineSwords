@@ -7,14 +7,9 @@ using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
-using VoidHeadWOTRNineSwords.DesertWind;
 using VoidHeadWOTRNineSwords.Feats;
 
 namespace VoidHeadWOTRNineSwords.RivenHourglass
@@ -25,8 +20,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         public const string Guid = "31CB27EF-52EE-4397-8F7A-24ACD8913E8C";
         const string name = "TemporalWave.Name";
         const string desc = "TemporalWave.Desc";
-        //const string icon = Helpers.IconPrefix + "temporalwave.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "temporalwave.png";
         public static void Configure()
         {
             Main.Logger.Info($"Configuring {nameof(TemporalWave)}");

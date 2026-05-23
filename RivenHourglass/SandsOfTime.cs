@@ -1,21 +1,11 @@
-﻿using BlueprintCore.Actions.Builder;
-using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
-using BlueprintCore.Utils.Types;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
-using VoidHeadWOTRNineSwords.DesertWind;
-using VoidHeadWOTRNineSwords.Feats;
 
 namespace VoidHeadWOTRNineSwords.RivenHourglass
 {
@@ -25,8 +15,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         public const string Guid = "8482F0D8-CE7C-4C6F-AAB1-9BF2020E32A6";
         const string name = "SandsOfTime.Name";
         const string desc = "SandsOfTime.Desc";
-        //const string icon = Helpers.IconPrefix + "sandsoftime.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "sandsoftime.png";
 
         public static void Configure()
         {

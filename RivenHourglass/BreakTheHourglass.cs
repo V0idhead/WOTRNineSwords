@@ -7,11 +7,7 @@ using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
@@ -23,8 +19,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         public const string Guid = "713A88EF-1629-485A-9474-87FAD85BAE42";
         const string name = "BreakTheHourglass.Name";
         const string desc = "BreakTheHourglass.Desc";
-        //const string icon = Helpers.IconPrefix + "breakthehourglass.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "breakthehourglass.png";
         public static void Configure()
         {
             Main.Logger.Info($"Configuring {nameof(BreakTheHourglass)}");

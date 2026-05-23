@@ -22,7 +22,7 @@ namespace VoidHeadWOTRNineSwords.Feats
       FeatureConfigurator.New("ShadowPresence", ShadowPresenceGuid, Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
         .SetDisplayName("ShadowPresence.Name")
         .SetDescription("ShadowPresence.Desc")
-        .SetIcon(FeatureRefs.SpellFocusAbjuration.Reference.Get().Icon)
+        .SetIcon(FeatureRefs.SpellFocusNecromancy.Reference.Get().Icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { shadowHandFocusFact })
         .AddPrerequisiteFeaturesFromList(amount: 1, features: AllManeuversAndStances.ShadowHandGuids.ToList())

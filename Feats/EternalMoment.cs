@@ -30,7 +30,7 @@ namespace VoidHeadWOTRNineSwords.Feats
             FeatureConfigurator.New("EternalMoment", EternalMomentGuid, Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
               .SetDisplayName("EternalMoment.Name")
               .SetDescription("EternalMoment.Desc")
-              .SetIcon(FeatureRefs.SpellFocusNecromancy.Reference.Get().Icon)
+              .SetIcon(FeatureRefs.SpellFocusIllusion.Reference.Get().Icon)
               .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
               .AddFacts(new() { rivenHourglassFocusFact })
               .AddPrerequisiteFeaturesFromList(amount: 1, features: AllManeuversAndStances.RivenHourglassGuids.ToList())

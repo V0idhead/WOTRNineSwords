@@ -3,23 +3,12 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Enums.Damage;
-using Kingmaker.RuleSystem;
-using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
-using VoidHeadWOTRNineSwords.DesertWind;
 
 namespace VoidHeadWOTRNineSwords.RivenHourglass
 {
@@ -29,8 +18,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         public const string Guid = "B7AC5388-D68B-4796-B87B-C086F3938D74";
         const string name = "UnhinderedStep.Name";
         const string desc = "UnhinderedStep.Desc";
-        //const string icon = Helpers.IconPrefix + "unhinderedstep.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "unhinderedstep.png";
 
         public static void Configure()
         {

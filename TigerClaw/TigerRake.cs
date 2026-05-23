@@ -1,5 +1,4 @@
 ﻿using BlueprintCore.Actions.Builder;
-using BlueprintCore.Actions.Builder.BasicEx;
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
@@ -10,11 +9,8 @@ using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
@@ -26,8 +22,7 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
         public const string Guid = "41A39C53-92C7-4D9E-85D7-E6E246A34BE0";
         const string name = "TigerRake.Name";
         const string desc = "TigerRake.Desc";
-        //const string icon = Helpers.IconPrefix + "tigerrake.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "tigerrake.png";
 
         public static void Configure()
         {

@@ -6,12 +6,7 @@ using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
 
 namespace VoidHeadWOTRNineSwords.RivenHourglass
 {
@@ -21,8 +16,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         public const string Guid = "30F491EF-E038-4D87-B3D0-0891DE679016";
         const string name = "HourglassStance.Name";
         const string desc = "HourglassStance.Desc";
-        //const string icon = Helpers.IconPrefix + "hourglassstance.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "hourglassstance.png";
 
         public static void Configure()
         {

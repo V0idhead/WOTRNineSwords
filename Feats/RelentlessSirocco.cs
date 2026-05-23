@@ -12,7 +12,7 @@ namespace VoidHeadWOTRNineSwords.Feats
     {
         public const string RelentlessSiroccoGuid = "7FA0F05D-F4D1-45C3-AFC9-ED62C76C9A50";
         public const string DesertWindFocusFactGuid = "272EF7E8-54E7-4681-BD33-64E7A7ECC242";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        static UnityEngine.Sprite icon = FeatureRefs.SpellFocusEvocation.Reference.Get().Icon;
 
         public static void Configure()
         {
@@ -35,7 +35,7 @@ namespace VoidHeadWOTRNineSwords.Feats
             FeatureConfigurator.New("RelentlessSirocco", RelentlessSiroccoGuid, Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
               .SetDisplayName("RelentlessSirocco.Name")
               .SetDescription("RelentlessSirocco.Desc")
-              .SetIcon(FeatureRefs.SpellFocusAbjuration.Reference.Get().Icon)
+              .SetIcon(icon)
               .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
               .AddFacts(new() { desertWindFocusFact })
               .AddBuffEnchantAnyWeapon(enchant)

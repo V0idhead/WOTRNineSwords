@@ -9,11 +9,7 @@ using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
@@ -26,8 +22,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         public const string Guid = "F7D60F4A-0FC8-4A3D-82CC-A911828635F8";
         const string name = "TipTheHourglass.Name";
         const string desc = "TipTheHourglass.Desc";
-        //const string icon = Helpers.IconPrefix + "tipthehourglass.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "tipthehourglass.png";
 
         public static void Configure()
         {

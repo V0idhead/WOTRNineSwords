@@ -2,23 +2,15 @@
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
-using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
-using VoidHeadWOTRNineSwords.IronHeart;
 
 namespace VoidHeadWOTRNineSwords.RivenHourglass
 {
@@ -28,8 +20,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         public const string Guid = "3D28D98F-1EBE-462D-A1E1-5211E9389D04";
         const string name = "TiringTouch.Name";
         const string desc = "TiringTouch.Desc";
-        //const string icon = Helpers.IconPrefix + "tiringtouch.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "tiringtouch.png";
 
         public static void Configure()
         {

@@ -48,7 +48,7 @@ namespace VoidHeadWOTRNineSwords.Feats
       var ironHeart = FeatureConfigurator.New("IronHeartAura", IronHeartAuraGuid, Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
         .SetDisplayName("IronHeartAura.Name")
         .SetDescription("IronHeartAura.Desc")
-        .SetIcon(FeatureRefs.SpellFocusTransmutation.Reference.Get().Icon)
+        .SetIcon(FeatureRefs.SpellFocusConjuration.Reference.Get().Icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { ironHeartFocusFact })
         .AddPrerequisiteFeaturesFromList(amount: 1, features: AllManeuversAndStances.IronHeartGuids.ToList())

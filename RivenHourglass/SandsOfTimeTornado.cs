@@ -9,15 +9,10 @@ using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
-using VoidHeadWOTRNineSwords.IronHeart;
 
 namespace VoidHeadWOTRNineSwords.RivenHourglass
 {
@@ -27,8 +22,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         public const string Guid = "9DBCE1C6-DD5B-4A8A-9A5F-0AEFA92B6F11";
         const string name = "SandsOfTimeTornado.Name";
         const string desc = "SandsOfTimeTornado.Desc";
-        //const string icon = Helpers.IconPrefix + "sandsoftimetornado.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "sandsoftimetornado.png";
 
         public static void Configure()
         {

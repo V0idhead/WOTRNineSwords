@@ -1,25 +1,11 @@
-﻿using BlueprintCore.Actions.Builder;
-using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
-using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
-using BlueprintCore.Conditions.Builder;
-using BlueprintCore.Conditions.Builder.ContextEx;
 using BlueprintCore.Utils.Types;
-using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Spells;
-using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
-using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 
 namespace VoidHeadWOTRNineSwords.RivenHourglass
@@ -30,8 +16,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         public const string Guid = "DB3373AF-8765-40E5-A322-8927FA9DE4E8";
         const string name = "SandBearersSwiftness.Name";
         const string desc = "SandBearersSwiftness.Desc";
-        //const string icon = Helpers.IconPrefix + "sandbearersswiftness.png";
-        static UnityEngine.Sprite icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "sandbearersswiftness.png";
 
         public static void Configure()
         {

@@ -3,21 +3,13 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
-using VoidHeadWOTRNineSwords.IronHeart;
 
 namespace VoidHeadWOTRNineSwords.RivenHourglass
 {
@@ -27,8 +19,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         public const string Guid = "B7ED5625-B836-4962-A8E0-2779D0F7F393";
         const string name = "MinuteHand.Name";
         const string desc = "MinuteHand.Desc";
-        //const string icon = Helpers.IconPrefix + "minutehand.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "minutehand.png";
 
         public static void Configure()
         {

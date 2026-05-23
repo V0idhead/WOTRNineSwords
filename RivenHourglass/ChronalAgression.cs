@@ -7,14 +7,8 @@ using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
-using VoidHeadWOTRNineSwords.DesertWind;
 using VoidHeadWOTRNineSwords.Feats;
 
 namespace VoidHeadWOTRNineSwords.RivenHourglass
@@ -25,8 +19,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         public const string Guid = "0A4965C3-FFF7-46BC-996E-5AC6C1CA152B";
         const string name = "ChronalAgression.Name";
         const string desc = "ChronalAgression.Desc";
-        //const string icon = Helpers.IconPrefix + "chronalagression.png";
-        static UnityEngine.Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "chronalagression.png";
 
         public static void Configure()
         {
