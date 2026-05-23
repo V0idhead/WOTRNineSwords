@@ -323,7 +323,7 @@
   {
     "Key": "SwordsageC.Name",
     "ProcessTemplates": false,
-    "enGB": "aaaSwordsage"
+    "enGB": "Swordsage"
   },
   {
     "Key": "SwordsageC.Desc",
@@ -1592,7 +1592,7 @@
   {
     "Key": "SandsOfTimeTornado.Name",
     "ProcessTemplates": false,
-    "enGB": "Sand of Time Tornado"
+    "enGB": "Sands of Time Tornado"
   },
   {
     "Key": "SandsOfTimeTornado.Desc",
@@ -1651,6 +1651,15 @@
   {
     "Key": "BreakTheHourglass.Desc",
     "enGB": "Discipline: Riven Hourglass\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 17\nRequired Maneuvers: 4 Riven Hourglass\nWhen you initiate this maneuver, you unleash a destructive temporal disturbance in a 30-foot cone. Enemies caught in the cone must make a Will save (DC 19 + your Wisdom modifier) or die. Creatures that succeed on their save are instead exhausted and slowed for 2d4 rounds."
+  },
+  {
+    "Key": "Shadowcloak.Name",
+    "ProcessTemplates": false,
+    "enGB": "Shadowcloak"
+  },
+  {
+    "Key": "Shadowcloak.Desc",
+    "enGB": "Discipline: Shadow Hand\nManeuver Type: Counter\nRequired Initiator Level: Swordsage 9\nRequired Maneuvers: 2 Shadow Hand\nThe first time you are attacked in a round you gain partial concealment before the attack resolves. If you are attacked a second time in the same turn you gain total concealment. Both activations cost 1 Maneuver Point."
   },
 
   {
