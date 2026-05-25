@@ -25,13 +25,17 @@ namespace VoidHeadWOTRNineSwords.Swordsage
       log.Info($"{nameof(SwordsageC)} configuring");
       BlueprintProgression progression = ConfigureProgression();
 
+      BlueprintStatProgression babProg = StatProgressionConfigurator.New("BABSwordsage", "B50BF310-D86D-41E9-BA7B-9D3328FD553F") //as Medium, but +1, so we start with 1 at level 1
+        .SetBonuses(0, 1, 2, 3, 4, 4, 5, 6, 7, 7, 8, 9, 10, 10, 11, 12, 13, 13, 14, 15, 16, 16, 17, 18, 19, 19, 20, 21, 22, 22, 23, 24, 25, 26, 26, 27, 28, 29, 29)
+        .Configure();
+
       BlueprintCharacterClass swordsageC = CharacterClassConfigurator.New("Swordsage", Guid)
       .SetLocalizedName("SwordsageC.Name")
       .SetLocalizedDescription("SwordsageC.Desc")
       .SetSkillPoints(4)
       .SetHitDie(DiceType.D8)
       .SetIsArcaneCaster(false).SetIsDivineCaster(false)
-      .SetBaseAttackBonus(StatProgressionRefs.BABMedium.Reference.Get())
+      .SetBaseAttackBonus(babProg)
       .SetFortitudeSave(StatProgressionRefs.SavesLow.Reference.Get())
       .SetReflexSave(StatProgressionRefs.SavesHigh.Reference.Get())
       .SetWillSave(StatProgressionRefs.SavesHigh.Reference.Get())

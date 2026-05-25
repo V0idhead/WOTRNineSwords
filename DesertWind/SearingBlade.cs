@@ -11,6 +11,7 @@ using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
+using System.Linq;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 
@@ -32,7 +33,6 @@ namespace VoidHeadWOTRNineSwords.DesertWind
               .SetDisplayName(name)
               .SetDescription("SearingBladeBuff.Desc")
               .SetIcon(icon)
-              //.AddOutgoingDamageTriggerFixed
               .AddInitiatorAttackRollTrigger(onlyHit: true, action:
                   ActionsBuilder.New().DealDamage(new DamageTypeDescription { Type = DamageType.Energy, Energy = DamageEnergyType.Fire }, new ContextDiceValue { DiceType = DiceType.D6, DiceCountValue = 2, BonusValue = 4 })
                   .Build())
@@ -62,7 +62,8 @@ namespace VoidHeadWOTRNineSwords.DesertWind
               .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
 #if !DEBUG
               .AddPrerequisiteFeature(DisciplineProficencies.DesertWindProficencyGuid, hideInUI: true)
-              .AddPrerequisiteFeature(InitiatorLevels.Lvl1Guid)
+              .AddPrerequisiteFeature(InitiatorLevels.Lvl7Guid)
+              .AddPrerequisiteFeaturesFromList(amount: 2, features: AllManeuversAndStances.DesertWindGuids.Except([Guid]).ToList())
 #endif
               .Configure();
         }

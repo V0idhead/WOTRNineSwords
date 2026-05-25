@@ -1117,10 +1117,6 @@
     "enGB": "Child of Shadow"
   },
   {
-    "Key": "ChildOfShadowBuff.Desc",
-    "enGB": "Concealment against all attacks."
-  },
-  {
     "Key": "ChildOfShadow.Desc",
     "enGB": "Discipline: Shadow Hand\nRequired Initiator Level: Swordsage 1\nIf you move at least 10 feet during your turn, you gain concealment against all melee and ranged attacks until the start of your next turn."
   },
