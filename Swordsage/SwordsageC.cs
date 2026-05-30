@@ -91,7 +91,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
         .AddEntry(6, maneuverSelector.AssetGuid)
         .AddEntry(7, maneuverSelector.AssetGuid, swordsageDamageBonus.AssetGuid, InitiatorLevels.Lvl4Guid) //Sense Magic: replaced by damage bonus
         .AddEntry(8, swordsageDefensiveStance.AssetGuid, maneuverSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid) //Defensive Stance: replaced by general saving throw bonus
-        .AddEntry(9, FeatureRefs.Evasion.Reference.guid, maneuverSelector.AssetGuid, stanceSelector.AssetGuid, InitiatorLevels.Lvl5Guid)
+        .AddEntry(9, FeatureRefs.Evasion.Reference.Get(), maneuverSelector.AssetGuid, stanceSelector.AssetGuid, InitiatorLevels.Lvl5Guid)
         .AddEntry(10, quickToAct.AssetGuid, maneuverSelector.AssetGuid, stanceSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid)
         .AddEntry(11, maneuverSelector.AssetGuid, InitiatorLevels.Lvl6Guid)
         .AddEntry(12, maneuverSelector.AssetGuid)
@@ -99,7 +99,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
         .AddEntry(14, maneuverSelector.AssetGuid, stanceSelector.AssetGuid)
         .AddEntry(15, quickToAct.AssetGuid, maneuverSelector.AssetGuid, InitiatorLevels.Lvl8Guid, ManeuverResources.IncreaseManeuverUsesGuid)
         .AddEntry(16, maneuverSelector.AssetGuid)
-        .AddEntry(17, FeatureRefs.ImprovedEvasion.Reference.guid, maneuverSelector.AssetGuid, InitiatorLevels.Lvl9Guid)
+        .AddEntry(17, FeatureRefs.ImprovedEvasion.Reference.Get(), maneuverSelector.AssetGuid, InitiatorLevels.Lvl9Guid)
         .AddEntry(18, maneuverSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid)
         .AddEntry(19, maneuverSelector.AssetGuid)
         .AddEntry(20, quickToAct.AssetGuid, maneuverSelector.AssetGuid, ManeuverResources.IncreaseManeuverUsesGuid, stanceSelector.AssetGuid);

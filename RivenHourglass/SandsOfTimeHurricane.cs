@@ -93,7 +93,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
               .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
 #if !DEBUG
               .AddPrerequisiteFeature(DisciplineProficencies.RivenHourglassProficencyGuid, hideInUI: true)
-              .AddPrerequisiteFeature(InitiatorLevels.Lvl5Guid)
+              .AddPrerequisiteFeature(InitiatorLevels.Lvl7Guid)
               .AddPrerequisiteFeaturesFromList(amount: 2, features: AllManeuversAndStances.RivenHourglassGuids.Except([Guid]).ToList())
 #endif
               .Configure();

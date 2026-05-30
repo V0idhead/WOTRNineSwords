@@ -26,7 +26,6 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
         .AddMovementDistanceTrigger(distanceInFeet: 10,
           action: ActionsBuilder.New().ApplyBuff(BuffRefs.BlurBuff.Reference.Get(), ContextDuration.Fixed(1), toCaster: true))
-        
         .Configure();
 
       var activatable = ActivatableAbilityConfigurator.New("ChildOfShadowActivatable", "82A2A2E8-446A-4BF5-BB05-A5D825DC9053")
