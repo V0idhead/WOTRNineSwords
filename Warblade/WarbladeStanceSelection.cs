@@ -14,7 +14,7 @@ using VoidHeadWOTRNineSwords.WhiteRaven;
 
 namespace VoidHeadWOTRNineSwords.Warblade
 {
-  static class WarbladeStanceSelection
+  static class SwordsageStanceSelection
   {
     public const string Guid = "D4E1FCD7-E813-4099-846F-06692E23D475";
 

@@ -51,7 +51,7 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         (
           ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).Add<ContextMeleeAttackRolledBonusDamage>(bd => { bd.ExtraDamage = new DiceFormula(6, DiceType.D6); bd.OnHit = EnduranceOfStone.GetEffectAction(); })
         )
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
       var spell = FeatureConfigurator.New("ElderMountainHammer", Guid, AllManeuversAndStances.featureGroup)
@@ -60,8 +60,9 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { ability })
-        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
+        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
 #if !DEBUG
+        .AddPrerequisiteFeature(DisciplineProficencies.StoneDragonProficencyGuid, hideInUI: true)
         .AddPrerequisiteFeature(InitiatorLevels.Lvl5Guid)
         .AddPrerequisiteFeaturesFromList(amount: 2, features: AllManeuversAndStances.StoneDragonGuids.Except([Guid]).ToList())
 #endif

@@ -51,7 +51,7 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
               onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(BuffRefs.Staggered.Reference.Get(), ContextDuration.Fixed(1)))).Build();
           })
         )
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
       var spell = FeatureConfigurator.New("OverwhelmingMountainStrike", Guid, AllManeuversAndStances.featureGroup)
@@ -60,8 +60,9 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { ability })
-        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
+        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
 #if !DEBUG
+        .AddPrerequisiteFeature(DisciplineProficencies.StoneDragonProficencyGuid, hideInUI: true)
         .AddPrerequisiteFeature(InitiatorLevels.Lvl4Guid)
 #endif
         .Configure();

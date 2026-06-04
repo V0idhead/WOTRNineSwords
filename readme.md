@@ -4,7 +4,8 @@ There were some changes necessary both to adapt to the Pathfinder ruleset as wel
 
 ## Contents
  - Warblade class
- - 60+ Maneuvers (including a tiny number of Boosts and 6 Counters) and 10 Stances from the Diamond Mind, Iron Heart, Stone Dragon, Tiger Claw and White Raven disciplines
+ - Swordsage class
+ - 100+ Maneuvers (including some Boosts and Counters) and 16 Stances from the Desert Wind, Diamond Mind, Iron Heart, Riven Hourglass, Shadow Hand, Stone Dragon, Tiger Claw and White Raven disciplines
 
 ## Deviations from Rules as Written
 ### Spontaneous preparation
@@ -13,7 +14,10 @@ Instead of having to prepare maneuvers ahead of time as a wizard would, all clas
 ### Recovering Maneuvers
 Warblades recover maneuvers with a move action ability that HAS to hit an enemy and recovers two uses of maneuvers.
 Swordsages recover all their maneuvers by spending a single full round action.
-Both changes where made to balance maneuver recovery, as written Swordsage recovery was comically bad
+Both changes where made to balance maneuver recovery, as written Swordsage recovery was comically bad.
+
+### Riven Hourglass instead of Setting Sun
+Most Setting Sun maneuvers would not work in WOTR, so instead Riven Hourglass from Path of War (https://www.d20pfsrd.com/alternative-rule-systems/3rd-party-rules-systems/path-of-war/) was implemented for swordsages.
 
 ### Individual Maneuvers
  - Maneuvers that should give your allies an attack bonus against an individual enemy, instead lowers the targets natural armor
@@ -39,14 +43,12 @@ Counters had to be changed to a simple on/off toggle to compensate for the fact 
 ### Homebrew
  - Boomerang Throw and Vicious Throw as lower level options for the level 8 Lightning Throw
  - White Raven Call as a replacement for the level 9 White Raven maneuver that cannot be implemented into WOTR; White Raven Call gives massive bonuses to self and allies for 1 round
+ - 4 Shadow Hand stances, 1 Desert Wind stance
+ - 3 Tiger Claw strike to replace strikes in that discipline that could not be implemented
  - Several feats including Maneuver Focus, Maneuver Focus (Mythic) and a specific feat for each discipline with unique effects
 
 ## Roadmap
- - Swordsage class
- - Disciplines available to Swordsage
- - Prestige Classes from the Tome of Battle (probably as Archetypes for the two classes in order to Pathfinderfy them)
- - Classes and Maneuvers from the Path of War (https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/), probably I'll fold the Maneuvers into the disciples from Path of War
- - Homebrew Maneuvers to fill out any remaining gaps in the Maneuver-List because some Maneuvers in the books cannot be implemented or would not be useful in WOTR
+ - Prestige Classes and Archetypes from Tome of Battle and Path of War
 
 # Contributing
 This is my first mod and I learned a lot while working on it, but I'm sure there is a lot that could be improved.

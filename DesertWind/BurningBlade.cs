@@ -1,0 +1,72 @@
+﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Blueprints.CustomConfigurators.Classes;
+using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
+using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
+using BlueprintCore.Utils.Types;
+using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.Enums.Damage;
+using Kingmaker.RuleSystem;
+using Kingmaker.RuleSystem.Rules.Damage;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.UnitLogic.Commands.Base;
+using Kingmaker.UnitLogic.Mechanics;
+using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
+
+namespace VoidHeadWOTRNineSwords.DesertWind
+{
+  //https://dndtools.net/spells/tome-of-battle-the-book-of-nine-swords--88/burning-blade--3568/
+  static class BurningBlade
+  {
+    public const string Guid = "F30C3415-CCE2-441F-98F8-F87689275DE9";
+    const string name = "BurningBlade.Name";
+    const string desc = "BurningBlade.Desc";
+    const string icon = Helpers.IconPrefix + "burningblade.png";
+
+    public static void Configure()
+    {
+      Main.Logger.Info($"Configuring {nameof(BurningBlade)}");
+
+      var selfBuff = BuffConfigurator.New("BurningBladeBuff", "4B6F7F9D-7235-48FB-98C7-2064B8E1FB95")
+        .SetDisplayName(name)
+        .SetDescription("BurningBladeBuff.Desc")
+        .SetIcon(icon)
+        //.AddOutgoingDamageTriggerFixed
+        .AddInitiatorAttackRollTrigger(onlyHit: true, action:
+            ActionsBuilder.New().DealDamage(new DamageTypeDescription { Type = DamageType.Energy, Energy = DamageEnergyType.Fire}, new ContextDiceValue { DiceType = DiceType.D6, DiceCountValue = 1, BonusValue = 1 })
+            .Build())
+        //.AdditionalDamageOnHit(DamageEnergyType.Fire, new DiceFormula(1, DiceType.D6), onlyMelee: true)
+        //.AdditionalDamageOnHit(DamageEnergyType.Fire, DiceFormula.One, onlyMelee: true) //TODO: should be 1 per initiator level
+        .Configure();
+
+      var ability = AbilityConfigurator.New("BurningBladeAbility", "DAB777FC-2AEE-49AD-9C89-68F808AF743F")
+        .SetDisplayName(name)
+        .SetDescription(desc)
+        .SetIcon(icon)
+        .SetCanTargetEnemies(false)
+        .SetCanTargetFriends(false)
+        .SetCanTargetSelf()
+        .SetRange(AbilityRange.Personal)
+        .SetActionType(UnitCommand.CommandType.Swift)
+        .SetType(AbilityType.CombatManeuver)
+        .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
+        .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(selfBuff, ContextDuration.Fixed(1), toCaster: true))
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
+        .Configure();
+
+      var spell = FeatureConfigurator.New("BurningBlade", Guid, AllManeuversAndStances.featureGroup)
+        .SetDisplayName(name)
+        .SetDescription(desc)
+        .SetIcon(icon)
+        .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
+        .AddFacts(new() { ability })
+        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
+#if !DEBUG
+        .AddPrerequisiteFeature(DisciplineProficencies.DesertWindProficencyGuid, hideInUI: true)
+        .AddPrerequisiteFeature(InitiatorLevels.Lvl1Guid)
+#endif
+        .Configure();
+    }
+  }
+}

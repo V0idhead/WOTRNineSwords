@@ -54,9 +54,9 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .SetRanks(1)
-        .AddPrerequisiteClassLevel(WarbladeC.Guid, 1, hideInUI: true)
         .AddFacts(new() { activatable })
 #if !DEBUG
+        .AddPrerequisiteFeature(DisciplineProficencies.DiamondMindProficencyGuid, hideInUI: true)
         .AddPrerequisiteFeature(InitiatorLevels.Lvl5Guid)
         .AddPrerequisiteFeaturesFromList(amount: 2, features: AllManeuversAndStances.DiamondMindGuids.Except([Guid]).ToList())
 #endif

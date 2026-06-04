@@ -52,9 +52,9 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .SetRanks(1)
-        .AddPrerequisiteClassLevel(WarbladeC.Guid, 1, hideInUI: true)
         .AddFacts(new() { activatable })
 #if !DEBUG
+        .AddPrerequisiteFeature(DisciplineProficencies.IronHeartProficencyGuid, hideInUI: true)
         .AddPrerequisiteFeature(InitiatorLevels.Lvl5Guid)
         .AddPrerequisiteFeaturesFromList(amount: 2, features: AllManeuversAndStances.IronHeartGuids.Except([Guid]).ToList())
 #endif

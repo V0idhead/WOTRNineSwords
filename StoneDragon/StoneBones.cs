@@ -10,9 +10,9 @@ using Kingmaker.Enums.Damage;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
+using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
-using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.StoneDragon
 {
@@ -62,7 +62,7 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .AddAbilityEffectRunAction(
           actions: ActionsBuilder.New().ApplyBuff(triggerBuff,ContextDuration.Fixed(1), toCaster: true).Add<MeleeAttackExtended>(mae => mae.OnHit = EnduranceOfStone.GetEffectAction())
         )
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
       var spell = FeatureConfigurator.New("StoneBones", Guid, AllManeuversAndStances.featureGroup)
@@ -71,7 +71,10 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { ability })
-        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
+        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
+#if !DEBUG
+        .AddPrerequisiteFeature(DisciplineProficencies.StoneDragonProficencyGuid, hideInUI: true)
+#endif
         .Configure();
     }
   }

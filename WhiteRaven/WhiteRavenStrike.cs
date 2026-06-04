@@ -32,14 +32,6 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
         .AddCondition(Kingmaker.UnitLogic.UnitCondition.LoseDexterityToAC)
         .Configure();
 
-      /*var buff = BuffConfigurator.New("WhiteRavenStrikeBuff", "B1BCB605-A65D-4426-AB47-ECFB67204964")
-        .SetFlags(BlueprintBuff.Flags.HiddenInUi)
-        .AddDamageBonusConditional(bonus: new ContextValue { Value = 16 }, descriptor: ModifierDescriptor.UntypedStackable) //TODO: damage bonus should be 4d6; also should flat-foot the enemy
-        .AddInitiatorAttackRollTrigger(onlyHit: true,
-          action: ActionsBuilder.New().ApplyBuff(targetBuff, ContextDuration.Fixed(1))
-        )
-        .Configure();*/
-
       var ability = AbilityConfigurator.New(name, "130E3211-E6F8-4CC6-9F6B-FDC0CFD63F64")
         .SetDisplayName(name)
         .SetDescription(desc)
@@ -57,7 +49,7 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
         (
           ActionsBuilder.New().Add<ContextMeleeAttackRolledBonusDamage>(marb => { marb.ExtraDamage = new DiceFormula(4, DiceType.D6); marb.OnHit = ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1)).AddAll(WhiteRavenDefense.GetEffectAction()).Build(); })
         )
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
       var spell = FeatureConfigurator.New("WhiteRavenStrike", Guid, AllManeuversAndStances.featureGroup)
@@ -66,8 +58,9 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { ability })
-        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
+        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
 #if !DEBUG
+        .AddPrerequisiteFeature(DisciplineProficencies.TigerClawProficencyGuid, hideInUI: true)
         .AddPrerequisiteFeature(InitiatorLevels.Lvl4Guid)
         .AddPrerequisiteFeaturesFromList(amount: 1, features: AllManeuversAndStances.WhiteRavenGuids.Except([Guid]).ToList())
 #endif

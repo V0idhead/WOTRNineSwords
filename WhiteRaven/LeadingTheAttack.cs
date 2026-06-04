@@ -8,9 +8,9 @@ using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
+using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
-using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.WhiteRaven
 {
@@ -57,7 +57,7 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
         (
           ActionsBuilder.New().ApplyBuff(triggerBuff, ContextDuration.Fixed(1), toCaster: true).Add<MeleeAttackExtended>(mae => mae.OnHit = WhiteRavenDefense.GetEffectAction())
         )
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
       var maneuver = FeatureConfigurator.New("LeadingTheAttack", Guid)
@@ -66,7 +66,10 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { ability })
-        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
+        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
+#if !DEBUG
+        .AddPrerequisiteFeature(DisciplineProficencies.TigerClawProficencyGuid, hideInUI: true)
+#endif
         .Configure();
     }
   }

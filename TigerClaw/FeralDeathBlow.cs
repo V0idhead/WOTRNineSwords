@@ -66,7 +66,7 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
             a.Failure = ActionsBuilder.New().MeleeAttack().Build();
           })
         )
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
       var spell = FeatureConfigurator.New("FeralDeathBlow", Guid, AllManeuversAndStances.featureGroup)
@@ -75,8 +75,9 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { ability })
-        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
+        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
 #if !DEBUG
+        .AddPrerequisiteFeature(DisciplineProficencies.TigerClawProficencyGuid, hideInUI: true)
         .AddPrerequisiteFeature(InitiatorLevels.Lvl9Guid)
         .AddPrerequisiteFeaturesFromList(amount: 4, features: AllManeuversAndStances.TigerClawGuids.Except([Guid]).ToList())
 #endif

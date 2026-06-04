@@ -64,7 +64,7 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buffSelf, ContextDuration.Fixed(1), toCaster: true))
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
       var whiteRavenCallFeat = FeatureConfigurator.New("WhiteRavenCallFeat", Guid, AllManeuversAndStances.featureGroup)
@@ -73,9 +73,9 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Defense)
         .SetRanks(1)
-        .AddPrerequisiteClassLevel(WarbladeC.Guid, 1, hideInUI: true)
         .AddFacts(new() { ability })
 #if !DEBUG
+        .AddPrerequisiteFeature(DisciplineProficencies.TigerClawProficencyGuid, hideInUI: true)
         .AddPrerequisiteFeature(InitiatorLevels.Lvl9Guid)
         .AddPrerequisiteFeaturesFromList(amount: 4, features: AllManeuversAndStances.WhiteRavenGuids.Except([Guid]).ToList())
 #endif

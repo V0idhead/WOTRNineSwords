@@ -64,6 +64,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .AddPrerequisiteClassLevel(WarbladeC.Guid, 1, hideInUI: true)
         .AddFacts(new() { Activatable })
 #if !DEBUG
+        .AddPrerequisiteFeature(DisciplineProficencies.DiamondMindProficencyGuid, hideInUI: true)
         .AddPrerequisiteFeature(InitiatorLevels.Lvl5Guid)
 #endif
         .Configure(true);

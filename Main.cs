@@ -5,7 +5,9 @@ using Kingmaker.Blueprints.JsonSystem;
 using Owlcat.Runtime.Core.Logging;
 using System;
 using UnityModManagerNet;
+using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Feats;
+using VoidHeadWOTRNineSwords.Swordsage;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords
@@ -64,9 +66,13 @@ namespace VoidHeadWOTRNineSwords
 
           Logger.Info("Configuring blueprints.");
 
+          ManeuverResources.Configure();
           Common.Common.Configure();
+          DisciplineProficencies.Configure();
           AllManeuversAndStances.Configure();
+          InitiatorLevels.Configure();
           WarbladeC.ConfigureClass();
+          SwordsageC.ConfigureClass();
           AllFeats.Configure();
         }
         catch (Exception e)

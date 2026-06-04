@@ -72,6 +72,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .AddPrerequisiteClassLevel(WarbladeC.Guid, 1, hideInUI: true)
         .AddFacts(new() { Activatable })
 #if !DEBUG
+        .AddPrerequisiteFeature(DisciplineProficencies.IronHeartProficencyGuid, hideInUI: true)
         .AddPrerequisiteFeature(InitiatorLevels.Lvl2Guid)
 #endif
         .Configure(true);

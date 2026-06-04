@@ -50,7 +50,7 @@ namespace VoidHeadWOTRNineSwords.IronHeart
       (
           ActionsBuilder.New().Add<MeleeAttackExtended>(attack => { attack.OnHit = ActionsBuilder.New().CombatManeuver(ActionsBuilder.New(), Kingmaker.RuleSystem.Rules.CombatManeuver.Disarm, newStat: Kingmaker.EntitySystem.Stats.StatType.Strength).Build(); })
         )
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
       var spell = FeatureConfigurator.New("DisarmingStrike", Guid, AllManeuversAndStances.featureGroup)
@@ -59,8 +59,9 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { ability })
-        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
+        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
 #if !DEBUG
+        .AddPrerequisiteFeature(DisciplineProficencies.IronHeartProficencyGuid, hideInUI: true)
         .AddPrerequisiteFeature(InitiatorLevels.Lvl2Guid)
 #endif
         .Configure();

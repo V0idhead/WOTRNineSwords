@@ -5,9 +5,9 @@ using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
 using System;
+using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.IronHeart;
-using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.Counters
 {
@@ -20,7 +20,7 @@ namespace VoidHeadWOTRNineSwords.Counters
     {
       if (!active && !evt.AutoHit) //skip if this save was caused by ourselves or it will auto-pass anyway
       {
-        Blueprint<BlueprintAbilityResourceReference> maneuverResource = WarbladeC.ManeuverResourceGuid; //TODO: switch Resource implementation
+        Blueprint<BlueprintAbilityResourceReference> maneuverResource = ManeuverResources.ManeuverResourceGuid; //TODO: switch Resource implementation
         if (Owner.Resources.HasEnoughResource(maneuverResource.Reference, 1)) //do we have enough resource?
         {
           active = true;

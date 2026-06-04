@@ -64,9 +64,9 @@ namespace VoidHeadWOTRNineSwords.WhiteRaven
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .SetRanks(1)
-        .AddPrerequisiteClassLevel(WarbladeC.Guid, 1, hideInUI: true)
         .AddFacts(new() { activatable })
 #if !DEBUG
+        .AddPrerequisiteFeature(DisciplineProficencies.TigerClawProficencyGuid, hideInUI: true)
         .AddPrerequisiteFeature(InitiatorLevels.Lvl8Guid)
         .AddPrerequisiteFeaturesFromList(amount: 1, features: AllManeuversAndStances.WhiteRavenGuids.Except([Guid]).ToList())
 #endif

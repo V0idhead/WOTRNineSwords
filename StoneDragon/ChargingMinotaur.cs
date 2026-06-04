@@ -16,6 +16,7 @@ using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Properties;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
+using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.StoneDragon
@@ -64,7 +65,7 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
               onSuccess: ActionsBuilder.New().DealDamage(new DamageTypeDescription { Physical = new DamageTypeDescription.PhysicalData { Form=PhysicalDamageForm.Bludgeoning } }, new ContextDiceValue { DiceType = Kingmaker.RuleSystem.DiceType.D6, DiceCountValue = 2, BonusValue = new ContextValue { Property = UnitProperty.StatBonusStrength } })
             )
          )
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();*/
 
       /* does not work
@@ -80,7 +81,7 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
               onSuccess: ActionsBuilder.New().DealDamage(new DamageTypeDescription { Physical = new DamageTypeDescription.PhysicalData { Form = PhysicalDamageForm.Bludgeoning } }, new ContextDiceValue { DiceType = Kingmaker.RuleSystem.DiceType.D6, DiceCountValue = 2, BonusValue = new ContextValue { Property = UnitProperty.StatBonusStrength } })
             )
          )
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();*/
 
       var chargeBuff = BuffConfigurator.New("ChargingMinotaurChargeBuff", "8BF0ABBB-6187-4898-A335-586DB998C47D")
@@ -101,7 +102,7 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(chargeBuff, ContextDuration.Fixed(1), toCaster: true))
-        .AddAbilityResourceLogic(1, requiredResource: WarbladeC.ManeuverResourceGuid, isSpendResource: true)
+        .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();
 
       var spell = FeatureConfigurator.New("ChargingMinotaur", Guid, AllManeuversAndStances.featureGroup)
@@ -110,7 +111,10 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .AddFacts(new() { ability })
-        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(WarbladeC.ManeuverResourceGuid))
+        .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
+#if !DEBUG
+        .AddPrerequisiteFeature(DisciplineProficencies.StoneDragonProficencyGuid, hideInUI: true)
+#endif
         .Configure();
     }
   }

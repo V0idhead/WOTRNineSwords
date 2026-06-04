@@ -1,12 +1,18 @@
-﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Enums;
+using Kingmaker.Enums.Damage;
+using Kingmaker.RuleSystem;
+using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Mechanics;
+using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade;
@@ -27,12 +33,9 @@ namespace VoidHeadWOTRNineSwords.IronHeart
       var punishingStanceBuff = BuffConfigurator.New("PunishingStanceBuff", "58BBA9F5-13B5-4878-8C67-D31608AF58BE")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
         .AddNotDispelable()
-        //.SetDisplayName(name)
-        //.SetIcon(icon)
-        //.AdditionalDiceOnDamage(diceValue: new ContextDiceValue { DiceType = DiceType.D6, DiceCountValue = 1 }, damageTypeDescription: DamageTypes.Direct(), checkAbilityType: false, checkDamageDealt: false, checkEnergyDamageType: false, checkSpellDescriptor: false, checkSpellParent: false, checkWeaponType: false) //does nothing
-        .AddDamageBonusConditional(bonus: new ContextValue {Value = 4 }, descriptor: ModifierDescriptor.UntypedStackable) //TODO: damage bonus should be 1d6 ?AdditionalDiceOnDamage?
-        //.AddDamageBonusConditional(bonus: ContextValues., descriptor: ModifierDescriptor.UntypedStackable) //TODO: damage bonus should be 1d6
-        //.AdditionalDamageOnHit(energyDamageDice: new DiceFormula(1, DiceType.D6), onlyMelee: true, element: Kingmaker.Enums.Damage.DamageEnergyType.Magic)
+        .AddInitiatorAttackRollTrigger(onlyHit: true, action:
+            ActionsBuilder.New().DealDamage(new DamageTypeDescription { Type = DamageType.Untyped }, new ContextDiceValue { DiceType = DiceType.D6, DiceCountValue = 1 })
+            .Build())
         .AddACBonusAgainstAttacks(armorClassBonus: -2)
         .AddAreaEffect(IronHeartAura.IronHeartAuraArea)
         .Configure();
@@ -57,8 +60,10 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .SetIcon(icon)
         .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
         .SetRanks(1)
-        .AddPrerequisiteClassLevel(WarbladeC.Guid, 1, hideInUI: true)
         .AddFacts(new() { punishingStanceActivatable })
+#if !DEBUG
+        .AddPrerequisiteFeature(DisciplineProficencies.IronHeartProficencyGuid, hideInUI: true)
+#endif
         .Configure(true);
     }
   }
