@@ -1,11 +1,5 @@
 ﻿using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
-using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes.Selection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.DiamondMind;
 using VoidHeadWOTRNineSwords.IronHeart;
@@ -18,8 +12,6 @@ namespace VoidHeadWOTRNineSwords.Warblade
   static class WarbladeManeuverSelection
   {
     public const string Guid = "4D8E01B8-3EB1-46C1-8223-A9AE9322746E";
-
-    private static readonly LogWrapper log = LogWrapper.Get("VoidHeadWOTRNineSwords");
 
     public static BlueprintFeatureSelection Configure()
     {

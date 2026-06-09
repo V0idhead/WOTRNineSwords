@@ -245,7 +245,7 @@
   },
   {
     "Key": "WarbladeManeuverSelection.Desc",
-    "enGB": "You begin your career with knowledge of three martial maneuvers. The disciplines available to you are Diamond Mind, Iron Heart, Stone Dragon, Tiger Claw, and White Raven."
+    "enGB": "You begin your career with knowledge of three martial maneuvers. The disciplines available to you are Diamond Mind, Iron Heart, Stone Dragon, Tiger Claw and White Raven."
   },
   {
     "Key": "WarbladeStanceSelection.Name",
@@ -321,6 +321,91 @@
   },
 
   {
+    "Key": "DeepstoneSentinel.Name",
+    "ProcessTemplates": false,
+    "enGB": "Deepstone Sentinel"
+  },
+  {
+    "Key": "DeepstoneSentinel.Desc",
+    "enGB": "Ancient Dwarven Martial Masters used their understanding of earth and metal to gain a deeper insight into the Stone Dragon and Iron Heart disciplines."
+  },
+  {
+    "Key": "MountainFortressRampart.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mountain Fortress Rampart"
+  },
+  {
+    "Key": "MountainFortressRampart.Desc",
+    "enGB": "tbd"
+  },
+  {
+    "Key": "MountainFortressRampart.BuffDesc",
+    "enGB": "tbd"
+  },
+  {
+     "Key": "CrashingMountainJuggernaut.Name",
+     "ProcessTemplates": false,
+     "enGB": "Crashing Mountain Juggernaut"
+  },
+  {
+    "Key": "CrashingMountainJuggernaut.Desc",
+    "enGB": "tbd"
+  },
+  {
+    "Key": "DeepstoneSentinelManeuverSelection.Name",
+    "ProcessTemplates": false,
+    "enGB": "Deepstone Sentinel Maneuver Selection"
+  },
+  {
+    "Key": "DeepstoneSentinelManeuverSelection.Desc",
+    "enGB": "You begin your career with knowledge of three martial maneuvers. The disciplines available to you are Iron Heart and Stone Dragon."
+  },
+  {
+    "Key": "Warlord.Name",
+    "ProcessTemplates": false,
+    "enGB": "Warlord"
+  },
+  {
+    "Key": "Warlord.Desc",
+    "enGB": "tbd"
+  },
+  {
+    "Key": "ForceOfPersonality.Name",
+    "ProcessTemplates": false,
+    "enGB": "Force of Personality"
+  },
+  {
+    "Key": "ForceOfPersonality.Desc",
+    "enGB": "You gain an insight bonus equal to your Charisma bonus on your Will saves."
+  },
+  {
+    "Key": "BattleOrders.Name",
+    "ProcessTemplates": false,
+    "enGB": "Battle Orders"
+  },
+  {
+    "Key": "BattleOrders.Desc",
+    "enGB": "Each ally (but not yourself) within 30 feet gains +1 to attack rolls."
+  },
+  {
+    "Key": "BattleOrders.EffectDesc",
+    "enGB": "+1 to attack rolls."
+  },
+  {
+    "Key": "IntimidatingGlare.Name",
+    "ProcessTemplates": false,
+    "enGB": "Intimidating Glare"
+  },
+  {
+    "Key": "IntimidatingGlare.Desc",
+    "enGB": "Each enemy within 30 feet gains a penalty to attack rolls equal to your Charisma bonus."
+  },
+  {
+    "Key": "IntimidatingGlare.EffectDesc",
+    "enGB": "Penalty to attack rolls."
+  },
+
+  {
     "Key": "SwordsageC.Name",
     "ProcessTemplates": false,
     "enGB": "Swordsage"
@@ -349,7 +434,7 @@
   },
   {
     "Key": "SwordsageManeuverSelection.Desc",
-    "enGB": "You begin your career with knowledge of six martial maneuvers. The disciplines available to you are Desert Wind, Diamond Mind, Setting Sun, Shadow Hand, Stone Dragon and Tiger Claw."
+    "enGB": "You begin your career with knowledge of six martial maneuvers. The disciplines available to you are Desert Wind, Diamond Mind, Riven Hourglass, Shadow Hand, Stone Dragon and Tiger Claw."
   },
   {
     "Key": "SwordsageStanceSelection.Name",
