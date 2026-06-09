@@ -34,9 +34,9 @@ namespace VoidHeadWOTRNineSwords.IronHeart
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
         .AddNotDispelable()
         .AddInitiatorAttackRollTrigger(onlyHit: true, action:
-            ActionsBuilder.New().DealDamage(new DamageTypeDescription { Type = DamageType.Untyped }, new ContextDiceValue { DiceType = DiceType.D6, DiceCountValue = 1 })
+            ActionsBuilder.New().DealDamage(new DamageTypeDescription { Type = DamageType.Untyped }, new ContextDiceValue { DiceType = DiceType.D6, DiceCountValue = 1, BonusValue = 0 })
             .Build())
-        .AddACBonusAgainstAttacks(armorClassBonus: -2)
+        .AddACBonusAgainstAttacks(armorClassBonus: -2, descriptor: ModifierDescriptor.Penalty)
         .AddAreaEffect(IronHeartAura.IronHeartAuraArea)
         .Configure();
 
