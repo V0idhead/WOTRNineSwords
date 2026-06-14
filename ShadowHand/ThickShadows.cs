@@ -12,6 +12,7 @@ using Kingmaker.Utility;
 using System.Linq;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
+using VoidHeadWOTRNineSwords.Feats;
 
 namespace VoidHeadWOTRNineSwords.ShadowHand
 {
@@ -45,6 +46,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
               .AddAreaEffect(area)
               .AddStatBonus(ModifierDescriptor.Penalty, null, Kingmaker.EntitySystem.Stats.StatType.Strength, 2)
               .AddStatBonus(ModifierDescriptor.Penalty, null, Kingmaker.EntitySystem.Stats.StatType.Dexterity, 2)
+              .AddStatBonusIfHasFactFixed(new BlueprintCore.Blueprints.Components.Replacements.AddStatBonusIfHasFactFixed(Kingmaker.EntitySystem.Stats.StatType.AC, ContextValues.Constant(2), [ShadowPresence.ShadowHandFocusFactGuid], descriptor: Kingmaker.Enums.ModifierDescriptor.NaturalArmorEnhancement))
               .Configure();
 
             var activatable = ActivatableAbilityConfigurator.New("ThickShadowsActivatable", "D50A81F6-AA99-4A4B-BEC8-C96F25A567F5")

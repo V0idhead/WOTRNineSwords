@@ -1,12 +1,14 @@
 ﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
+using BlueprintCore.Utils.Types;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.Utility;
 using System.Linq;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
+using VoidHeadWOTRNineSwords.Feats;
 
 namespace VoidHeadWOTRNineSwords.ShadowHand
 {
@@ -24,6 +26,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
               .AddFlatFootedIgnore()
               .AddBlindnessACCompensation()
               .AddRerollConcealment()
+              .AddStatBonusIfHasFactFixed(new BlueprintCore.Blueprints.Components.Replacements.AddStatBonusIfHasFactFixed(Kingmaker.EntitySystem.Stats.StatType.AC, ContextValues.Constant(2), [ShadowPresence.ShadowHandFocusFactGuid], descriptor: Kingmaker.Enums.ModifierDescriptor.NaturalArmorEnhancement))
               .Configure();
 
             var activatable = ActivatableAbilityConfigurator.New("ShadowsightActivatable", "A069331D-B5FC-43B7-8C7B-23B313F95753")

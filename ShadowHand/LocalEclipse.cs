@@ -12,6 +12,7 @@ using Kingmaker.Utility;
 using System.Linq;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
+using VoidHeadWOTRNineSwords.Feats;
 
 namespace VoidHeadWOTRNineSwords.ShadowHand
 {
@@ -34,6 +35,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
               .SetFlags(BlueprintBuff.Flags.HiddenInUi)
               .AddNotDispelable()
               .AddAreaEffect(area)
+              .AddStatBonusIfHasFactFixed(new BlueprintCore.Blueprints.Components.Replacements.AddStatBonusIfHasFactFixed(Kingmaker.EntitySystem.Stats.StatType.AC, ContextValues.Constant(2), [ShadowPresence.ShadowHandFocusFactGuid], descriptor: Kingmaker.Enums.ModifierDescriptor.NaturalArmorEnhancement))
               .Configure();
 
             var activatable = ActivatableAbilityConfigurator.New("LocalEclipseActivatable", "B7D42D17-F0C1-4214-B68F-452A7B4A1B36")

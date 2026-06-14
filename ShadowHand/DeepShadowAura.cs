@@ -12,6 +12,7 @@ using Kingmaker.Utility;
 using System.Linq;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
+using VoidHeadWOTRNineSwords.Feats;
 
 namespace VoidHeadWOTRNineSwords.ShadowHand
 {
@@ -43,6 +44,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
               .SetFlags(BlueprintBuff.Flags.HiddenInUi)
               .AddNotDispelable()
               .AddAreaEffect(deepShadowAuraArea)
+              .AddStatBonusIfHasFactFixed(new BlueprintCore.Blueprints.Components.Replacements.AddStatBonusIfHasFactFixed(Kingmaker.EntitySystem.Stats.StatType.AC, ContextValues.Constant(2), [ShadowPresence.ShadowHandFocusFactGuid], descriptor: Kingmaker.Enums.ModifierDescriptor.NaturalArmorEnhancement))
               .Configure();
 
             var deepShadowAuraActivatable = ActivatableAbilityConfigurator.New("DeepShadowAuraActivatable", "AAB6FE45-4F8A-45DC-BA8D-7A91A896F72B")

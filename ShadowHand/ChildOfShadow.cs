@@ -9,6 +9,7 @@ using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
+using VoidHeadWOTRNineSwords.Feats;
 
 namespace VoidHeadWOTRNineSwords.ShadowHand
 {
@@ -26,6 +27,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
         .AddMovementDistanceTrigger(distanceInFeet: 10,
           action: ActionsBuilder.New().ApplyBuff(BuffRefs.BlurBuff.Reference.Get(), ContextDuration.Fixed(1), toCaster: true))
+        .AddStatBonusIfHasFactFixed(new BlueprintCore.Blueprints.Components.Replacements.AddStatBonusIfHasFactFixed(Kingmaker.EntitySystem.Stats.StatType.AC, ContextValues.Constant(2), [ShadowPresence.ShadowHandFocusFactGuid], descriptor: Kingmaker.Enums.ModifierDescriptor.NaturalArmorEnhancement))
         .Configure();
 
       var activatable = ActivatableAbilityConfigurator.New("ChildOfShadowActivatable", "82A2A2E8-446A-4BF5-BB05-A5D825DC9053")
