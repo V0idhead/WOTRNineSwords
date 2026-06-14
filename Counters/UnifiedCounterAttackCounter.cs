@@ -38,7 +38,7 @@ namespace VoidHeadWOTRNineSwords.Counters
         public void OnEventDidTrigger(RuleAttackRoll evt)
         {
             //Helpers.WriteCombatLogMessage("FireRiposte Trigger", GameLogStrings.Instance.DefaultColor, Owner);
-            if (Owner.HasFact(FireRiposte.OnFact))
+            if (Owner.HasFact(FireRiposte.OnFact) && evt.Initiator.IsPlayersEnemy)
             {
                 //Helpers.WriteCombatLogMessage("FireRiposte: range Check; " + evt.Initiator.DistanceTo(Owner) + "|" + MeleeRange.Meters, GameLogStrings.Instance.DefaultColor, Owner);
                 if (evt.IsHit && evt.Initiator.DistanceTo(Owner) <= MeleeRange.Meters)

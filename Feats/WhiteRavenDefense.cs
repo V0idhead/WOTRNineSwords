@@ -51,7 +51,7 @@ namespace VoidHeadWOTRNineSwords.Feats
     public static ActionList GetEffectAction()
     {
       return ActionsBuilder.New().Conditional(ConditionsBuilder.New().CasterHasFact(WhiteRavenFocusFactGuid), ActionsBuilder.New()
-        .CastSpell(WhiteRavenDefenseEffectGuid))
+          .OnContextCaster(ActionsBuilder.New().CastSpell(WhiteRavenDefenseEffectGuid)))
         .Build();
     }
   }
