@@ -9,6 +9,7 @@ using Kingmaker.Blueprints.Root;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.RuleSystem;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Swordsage.Archetypes;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.Swordsage
@@ -17,6 +18,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
   public static class SwordsageC
   {
     public const string Guid = "600E0E53-9A37-4D59-89ED-2234908D283B";
+    public const string SwordsageProficienciesGuid = "E6DEFCF2-0C19-45F4-A047-13F71B52DD9A";
 
     private static readonly LogWrapper log = LogWrapper.Get("VoidHeadWOTRNineSwords");
 
@@ -59,6 +61,10 @@ namespace VoidHeadWOTRNineSwords.Swordsage
       root.Progression.m_CharacterClasses = CommonTool.Append(root.Progression.m_CharacterClasses, classRef);
 
       log.Info($"{nameof(SwordsageC)} done");
+
+      RimeRavager.Configure();
+
+      log.Info($"{nameof(SwordsageC)} Archetypes done");
     }
 
     public static BlueprintProgression ConfigureProgression()
@@ -74,7 +80,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
       var stanceSelector = SwordsageStanceSelection.Configure();
       var disciplineFocusSelection = SwordsageDisciplineFocusSelection.Configure();
 
-      var swordsageProficiencies = FeatureConfigurator.New("SwordsageProficiencies", "E6DEFCF2-0C19-45F4-A047-13F71B52DD9A")
+      var swordsageProficiencies = FeatureConfigurator.New("SwordsageProficiencies", SwordsageProficienciesGuid)
         .SetDisplayName("SwordsageProficiencies.Name")
         .SetDescription("SwordsageProficiencies.Desc")
         .AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.Reference.Get(), FeatureRefs.MartialWeaponProficiency.Reference.Get(), FeatureRefs.LightArmorProficiency.Reference.Get(), DisciplineProficencies.DesertWindProficencyGuid, DisciplineProficencies.DiamondMindProficencyGuid, DisciplineProficencies.IronHeartProficencyGuid, DisciplineProficencies.RivenHourglassProficencyGuid, DisciplineProficencies.ShadowHandProficencyGuid, DisciplineProficencies.StoneDragonProficencyGuid, DisciplineProficencies.TigerClawProficencyGuid })

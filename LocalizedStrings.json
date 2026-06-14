@@ -404,6 +404,15 @@
     "Key": "IntimidatingGlare.EffectDesc",
     "enGB": "Penalty to attack rolls."
   },
+  {
+    "Key": "TacticalAssistance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Tactical Assistance"
+  },
+  {
+    "Key": "TacticalAssistance.Desc",
+    "enGB": "As a move action you can apply a penalty to Armor Class equal to your Charisma bonus to a single enemy within melee range."
+  },
 
   {
     "Key": "SwordsageC.Name",
@@ -498,6 +507,50 @@
   {
     "Key": "SwordsageDefensiveStance.Desc",
     "enGB": "You gain a bonus to saving throws equal to your Wisdom Bonus."
+  },
+  {
+    "Key": "RimeRavager.Name",
+    "ProcessTemplates": false,
+    "enGB": "Rime Ravager"
+  },
+  {
+    "Key": "RimeRavager.Desc",
+    "enGB": "tbd"
+  },
+  {
+    "Key": "RimeRavagerFocus.Name",
+    "ProcessTemplates": false,
+    "enGB": "tbd"
+  },
+  {
+    "Key": "RimeRavagerFocus.Desc",
+    "enGB": "tbd"
+  },
+  {
+    "Key": "RimeRavagerProficiencies.Name",
+    "ProcessTemplates": false,
+    "enGB": "Rime Ravager Proficiencie"
+  },
+  {
+    "Key": "RimeRavagerProficiencies.Desc",
+    "enGB": "You are proficient with simple, martial melee weapons (including those that can be used as thrown weapons) and light armor, but not shields. Loses access to the Desert Wind discipline."
+  },
+  {
+    "Key": "BorealisStance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Borealis Stance"
+  },
+  {
+    "Key": "BorealisStance.Desc",
+    "enGB": "Discipline: Rime Ravager\nRequired Initiator Level: Rime Ravager 4\nWhile you maintain this stance, all opponents within 100ft have their speed reduced by 20. Furthermore opponents within 10ft have their attack bonus reduced by 2."
+  },
+  {
+    "Key": "BorealisStance.Buff1Desc",
+    "enGB": "Speed reduced by 20."
+  },
+  {
+    "Key": "BorealisStance.Buff2Desc",
+    "enGB": "Attack bonus reduced by 2."
   },
 
   {

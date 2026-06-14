@@ -49,6 +49,7 @@ Counters had to be changed to a simple on/off toggle to compensate for the fact 
 
 ## Roadmap
  - Prestige Classes and Archetypes from Tome of Battle and Path of War
+ - rounding out the White Raven and Tiger Claw disciplines
 
 # Contributing
 This is my first mod and I learned a lot while working on it, but I'm sure there is a lot that could be improved.

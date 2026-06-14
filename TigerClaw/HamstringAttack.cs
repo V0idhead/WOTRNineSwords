@@ -29,35 +29,6 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
     {
       Main.Logger.Info($"Configuring {nameof(HamstringAttack)}");
 
-      /*var targetBuff = BuffConfigurator.New("HamstringAttackTargetBuff", "84E070B9-00B1-4504-AA1B-C660356054AA")
-        .SetDisplayName(name)
-        .SetDescription("HamstringAttack.TargetBuff")
-        .SetIcon(icon)
-        .AddContextCalculateSharedValue(value: new ContextDiceValue { DiceCountValue = 1, DiceType = DiceType.D8 })
-        .AddContextStatBonus(Kingmaker.EntitySystem.Stats.StatType.Dexterity, new ContextValue { ValueShared = Kingmaker.UnitLogic.Abilities.AbilitySharedValue.StatBonus})
-        .AddBuffMovementSpeed(value: -10)
-        .Configure();
-
-      var targetSavedBuff = BuffConfigurator.New("HamstringAttackTargetSavedBuff", "84E070B9-00B1-4504-AA1B-C660356054AB")
-        .SetDisplayName(name)
-        .SetDescription("HamstringAttack.TargetBuff")
-        .SetIcon(icon)
-        .AddContextCalculateSharedValue(value: new ContextDiceValue { DiceCountValue = 1, DiceType = DiceType.D4 })
-        .AddContextStatBonus(Kingmaker.EntitySystem.Stats.StatType.Dexterity, new ContextValue { ValueShared = Kingmaker.UnitLogic.Abilities.AbilitySharedValue.StatBonus })
-        .AddBuffMovementSpeed(value: -5)
-        .Configure();
-
-      var buff = BuffConfigurator.New("HamstringAttackBuff", "C4E6CDB0-6EF5-4EBB-860B-D01529114186")
-        .SetDisplayName(name)
-        .SetDescription(desc)
-        .SetIcon(icon)
-        .AddInitiatorAttackRollTrigger(onlyHit: true,
-          action: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 17 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength),
-            onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(targetBuff, ContextDuration.Fixed(1)))
-          )
-        )
-        .Configure();*/
-
       var moveDebuffSaved = BuffConfigurator.New("HamstringMoveDebuffSaved", "84E070B9-00B1-4504-AA1B-C660356054AA")
         .SetDisplayName(name)
         .SetDescription("HamstringAttack.TargetBuff")
