@@ -19,7 +19,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using VoidHeadWOTRNineSwords.Components;
 
-namespace VoidHeadWOTRNineSwords.Swordsage.RimeRavager
+namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes
 {
     static class BorealisStance
     {

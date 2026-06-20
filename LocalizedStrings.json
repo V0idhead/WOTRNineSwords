@@ -536,6 +536,28 @@
     "enGB": "You are proficient with simple, martial melee weapons (including those that can be used as thrown weapons) and light armor, but not shields. Loses access to the Desert Wind discipline."
   },
   {
+    "Key": "PiercingIcicle.Name",
+    "ProcessTemplates": false,
+    "enGB": "Piercing Icicle"
+  },
+  {
+    "Key": "PiercingIcicle.Desc",
+    "enGB": "Discipline: Rime Ravager\nManeuver Type: Strike\nRequired Initiator Level: Rime Ravager 2\nYou fling an icicle at an opponent. On a hit it deals 2d6 piercing damage and 2d6 cold damage. If your attack is successful, your target must make a successful Fortitude save (DC 13 + your Wis modifier) or start bleeding for 2d6 damage for 2 rounds."
+  },
+  {
+    "Key": "FrigidSkin.Name",
+    "ProcessTemplates": false,
+    "enGB": "Frigid Skin"
+  },
+  {
+    "Key": "FrigidSkin.Desc",
+    "enGB": "Discipline: Rime Ravager\nManeuver Type: Counter\nRequired Initiator Level: Rime Ravager 4\nCost: 2 maneuver points per round wehen triggered\nWhen you are struck with a melee weapon while this counter is active, the attacker must make a successful Reflex save (DC 14 + your Wis modifier) or become disarmed for one round."
+  },
+  {
+    "Key": "FrigidSkin.LogMsg",
+    "enGB": "Spent 2 maneuver points on Frgid Skin."
+  },
+  {
     "Key": "BorealisStance.Name",
     "ProcessTemplates": false,
     "enGB": "Borealis Stance"
@@ -551,6 +573,19 @@
   {
     "Key": "BorealisStance.Buff2Desc",
     "enGB": "Attack bonus reduced by 2."
+  },
+  {
+    "Key": "IceJawStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ice Jaw Strike"
+  },
+  {
+    "Key": "IceJawStrike.Desc",
+    "enGB": "Discipline: Rime Ravager\nManeuver Type: Strike\nRequired Initiator Level: Rime Ravager 4\nMake a melee attack. On a hit your weapon deals 2d12 additional cold damage. Additionally your target must make a successful Reflex save (DC 15 + your Wis modifier) or become stuck to the ground for a number of rounds equal to your WIS modifier, taking an additoinal 1d12 cold damage every round while stuck."
+  },
+  {
+    "Key": "IceJawStrike.TargetBuff",
+    "enGB": "Stuck to ground cannot move. Takes 1d10 cold damage every round."
   },
 
   {

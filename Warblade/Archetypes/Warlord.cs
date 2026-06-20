@@ -34,12 +34,12 @@ namespace VoidHeadWOTRNineSwords.Warblade.Archetypes
         public static void Configure()
         {
             #region Tactitian
-            var tactitianResource = AbilityResourceConfigurator.New("WarlordTactitianResource", "{5DA60312-E0C0-4439-AE02-F4DB2293400B}")
+            var tactitianResource = AbilityResourceConfigurator.New("WarlordTactitianResource", "5DA60312-E0C0-4439-AE02-F4DB2293400B")
                 .SetMaxAmount(ResourceAmountBuilder.New(1).IncreaseByLevelStartPlusDivStep(new string[] { WarbladeC.Guid }, 0, 5, 1, 5, 1).Build())
                 .Configure();
 
             var origAbility = AbilityRefs.CavalierTacticianAbility.Reference.Get();
-            var tactitianAbility = AbilityConfigurator.New("WarlordTactitianAbility", "{29DFCCEA-7678-4FDD-A104-C47982FF66D4}")
+            var tactitianAbility = AbilityConfigurator.New("WarlordTactitianAbility", "29DFCCEA-7678-4FDD-A104-C47982FF66D4")
                 .SetIcon(origAbility.Icon)
                 .SetDisplayName(origAbility.m_DisplayName)
                 .SetDescription(origAbility.m_Description)
@@ -60,7 +60,7 @@ namespace VoidHeadWOTRNineSwords.Warblade.Archetypes
                 .Configure();
 
             var origFeat = FeatureRefs.CavalierTacticianFeature.Reference.Get();
-            var tactitianFeature = FeatureConfigurator.New("WarlordTactitian", "{9F45A05A-0C01-472B-AA8A-07847EC0FB7D}")
+            var tactitianFeature = FeatureConfigurator.New("WarlordTactitian", "9F45A05A-0C01-472B-AA8A-07847EC0FB7D")
                 .SetIcon(origFeat.Icon)
                 .SetDisplayName(origFeat.m_DisplayName)
                 .SetDescription(origFeat.m_Description)
@@ -69,7 +69,7 @@ namespace VoidHeadWOTRNineSwords.Warblade.Archetypes
                 .Configure();
 
             var origGAbility = AbilityRefs.CavalierTacticianAbilitySwift.Reference.Get();
-            var tactitianGreaterAbility = AbilityConfigurator.New("WarlordGreaterTactitianAbility", "{29DFCCEA-7678-4FDD-A104-C47982FF66D4}")
+            var tactitianGreaterAbility = AbilityConfigurator.New("WarlordGreaterTactitianAbility", "CDD3243E-90D1-4EAC-B9F8-5E25D153FE7B")
                 .SetIcon(origAbility.Icon)
                 .SetDisplayName(origAbility.m_DisplayName)
                 .SetDescription(origAbility.m_Description)
@@ -90,7 +90,7 @@ namespace VoidHeadWOTRNineSwords.Warblade.Archetypes
                 .Configure();
 
             var origGFeat = FeatureRefs.CavalierTacticianGreater.Reference.Get();
-            var tactitianGreaterFeature = FeatureConfigurator.New("WarlordGreaterTactitian", "{9F45A05A-0C01-472B-AA8A-07847EC0FB7D}")
+            var tactitianGreaterFeature = FeatureConfigurator.New("WarlordGreaterTactitian", "CA9271B7-4FED-4C10-8408-E72FAB5CC6F4")
                 .SetIcon(origFeat.Icon)
                 .SetDisplayName(origFeat.m_DisplayName)
                 .SetDescription(origFeat.m_Description)
@@ -99,7 +99,7 @@ namespace VoidHeadWOTRNineSwords.Warblade.Archetypes
                 .Configure();
             #endregion
 
-            BlueprintFeature forceOfPersonality = FeatureConfigurator.New("ForceOfPersonality", "{A26B1DE0-73FF-461B-8932-75DBE54F490C}")
+            BlueprintFeature forceOfPersonality = FeatureConfigurator.New("ForceOfPersonality", "A26B1DE0-73FF-461B-8932-75DBE54F490C")
               .SetDisplayName("ForceOfPersonality.Name")
               .SetDescription("ForceOfPersonality.Desc")
               .SetIsClassFeature()
@@ -108,7 +108,7 @@ namespace VoidHeadWOTRNineSwords.Warblade.Archetypes
               .AddContextStatBonus(Kingmaker.EntitySystem.Stats.StatType.SaveWill, ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusCharisma), Kingmaker.Enums.ModifierDescriptor.Insight)
               .Configure();
 
-            BlueprintBuff battleOrdersEffect = BuffConfigurator.New("BattleOrdersEffect", "{9099F371-29A9-4A99-9BBF-962FE321492D}")
+            BlueprintBuff battleOrdersEffect = BuffConfigurator.New("BattleOrdersEffect", "9099F371-29A9-4A99-9BBF-962FE321492D")
                 .SetDisplayName("BattleOrders.Name")
                 .SetDescription("BattleOrders.EffectDesc")
                 .SetIcon(AbilityRefs.Flare.Reference.Get().Icon) //TODO: replace
@@ -122,12 +122,12 @@ namespace VoidHeadWOTRNineSwords.Warblade.Archetypes
                 .SetSize(new Feet(30))
                 .Configure();
 
-            BlueprintBuff battleOrdersBuff = BuffConfigurator.New("BattleOrdersBuff", "{F8DC5F48-E1B0-41BC-BF4C-4F602949C000}")
+            BlueprintBuff battleOrdersBuff = BuffConfigurator.New("BattleOrdersBuff", "F8DC5F48-E1B0-41BC-BF4C-4F602949C000")
                 .SetFlags(BlueprintBuff.Flags.HiddenInUi)
                 .AddAreaEffect(battleOrdersAura)
                 .Configure();
 
-            BlueprintFeature battleOrders = FeatureConfigurator.New("BattleOrders", "{74ECC2E0-5D16-442F-BCB3-070A4D8D369E}")
+            BlueprintFeature battleOrders = FeatureConfigurator.New("BattleOrders", "74ECC2E0-5D16-442F-BCB3-070A4D8D369E")
                 .SetDisplayName("BattleOrders.Name")
                 .SetDescription("BattleOrders.Desc")
                 .SetIsClassFeature()
@@ -135,26 +135,26 @@ namespace VoidHeadWOTRNineSwords.Warblade.Archetypes
                 .AddAuraFeatureComponent(battleOrdersBuff)
                 .Configure();
 
-            BlueprintBuff intimidatingGlareEffect = BuffConfigurator.New("IntimidatingGlareEffect", "{3AD04888-C441-4E05-BCC0-0B34D2570909}")
+            BlueprintBuff intimidatingGlareEffect = BuffConfigurator.New("IntimidatingGlareEffect", "3AD04888-C441-4E05-BCC0-0B34D2570909")
                 .SetDisplayName("IntimidatingGlare.Name")
                 .SetDescription("IntimidatingGlare.EffectDesc") //TODO: write
                 .SetIcon(AbilityRefs.Flare.Reference.Get().Icon) //TODO: replace
                 .AddTargetSavingThrowTrigger(ActionsBuilder.New().ApplyBuff(BuffRefs.Shaken.Reference.Get(), ContextDuration.Fixed(3), toCaster: true), onlyFail: true)
                 .Configure();
 
-            var intimidatingGlareAura = AbilityAreaEffectConfigurator.New("IntimidatingGlareArea", "{8BC41C63-E1F8-484F-933C-B38FBF308A80}")
+            var intimidatingGlareAura = AbilityAreaEffectConfigurator.New("IntimidatingGlareArea", "8BC41C63-E1F8-484F-933C-B38FBF308A80")
                 .AddAbilityAreaEffectBuff(intimidatingGlareEffect)
                 .SetTargetType(Kingmaker.UnitLogic.Abilities.Blueprints.BlueprintAbilityAreaEffect.TargetType.Enemy)
                 .SetShape(Kingmaker.UnitLogic.Abilities.Blueprints.AreaEffectShape.Cylinder)
                 .SetSize(new Feet(20))
                 .Configure();
 
-            BlueprintBuff intimidatingGlareBuff = BuffConfigurator.New("IntimidatingGlareBuff", "{33E093D8-84F1-4A8D-A70C-71F9563F9363}")
+            BlueprintBuff intimidatingGlareBuff = BuffConfigurator.New("IntimidatingGlareBuff", "33E093D8-84F1-4A8D-A70C-71F9563F9363")
                 .SetFlags(BlueprintBuff.Flags.HiddenInUi)
                 .AddAreaEffect(intimidatingGlareAura)
                 .Configure();
 
-            BlueprintFeature intimidatingGlare = FeatureConfigurator.New("IntimidatingGlare", "{F92CA6EF-52E2-4A5D-B94D-F6350225F57D}")
+            BlueprintFeature intimidatingGlare = FeatureConfigurator.New("IntimidatingGlare", "F92CA6EF-52E2-4A5D-B94D-F6350225F57D")
                 .SetDisplayName("IntimidatingGlare.Name")
                 .SetDescription("IntimidatingGlare.Desc")
                 .AddAuraFeatureComponent(intimidatingGlareBuff)
@@ -167,7 +167,7 @@ namespace VoidHeadWOTRNineSwords.Warblade.Archetypes
                 .SetIcon(FeatureRefs.Mobility.Reference.Get().Icon)
                 .Configure();*/
 
-            BlueprintAbility tacticalAssistanceAbility = AbilityConfigurator.New("TacticalAssistanceAbility", "{FF16F435-9424-4B1A-979C-270F2D936C15}")
+            BlueprintAbility tacticalAssistanceAbility = AbilityConfigurator.New("TacticalAssistanceAbility", "FF16F435-9424-4B1A-979C-270F2D936C15")
                 .SetDisplayName("TacticalAssistance.Name")
                 .SetDescription("TacticalAssistance.Desc")
                 .SetIcon(FeatureRefs.Mobility.Reference.Get().Icon)
@@ -178,7 +178,7 @@ namespace VoidHeadWOTRNineSwords.Warblade.Archetypes
                 .AddAbilityEffectRunAction(ActionsBuilder.New().DealDamageToAbility(Kingmaker.EntitySystem.Stats.StatType.AC, ContextDice.Value(Kingmaker.RuleSystem.DiceType.One, ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusCharisma, toCaster: true))))
                 .Configure();
 
-            BlueprintFeature tacticalAssistance = FeatureConfigurator.New("TacticalAssistance", "{1906929A-DB25-4211-A3FF-BD9BFDB755CE}")
+            BlueprintFeature tacticalAssistance = FeatureConfigurator.New("TacticalAssistance", "1906929A-DB25-4211-A3FF-BD9BFDB755CE")
                 .SetDisplayName("TacticalAssistance.Name")
                 .SetDescription("TacticalAssistance.Desc")
                 .AddFacts([tacticalAssistanceAbility])

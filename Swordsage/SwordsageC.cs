@@ -62,7 +62,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
 
       log.Info($"{nameof(SwordsageC)} done");
 
-      RimeRavager.Configure();
+      VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavager.Configure();
 
       log.Info($"{nameof(SwordsageC)} Archetypes done");
     }

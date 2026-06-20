@@ -32,6 +32,7 @@ namespace VoidHeadWOTRNineSwords.Warblade
         .SetIcon(icon)
         .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Special)
         .SetCanTargetEnemies()
+        .SetCanTargetSelf(false)
         .SetRange(Kingmaker.UnitLogic.Abilities.Blueprints.AbilityRange.Weapon)
         .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move)
         .AddAbilityEffectRunAction(ActionsBuilder.New().Add<MeleeAttackExtended>(mae => mae.OnHit = ActionsBuilder.New().OnContextCaster(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid, value: 2)).Build()))
