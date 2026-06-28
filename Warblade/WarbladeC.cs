@@ -40,7 +40,7 @@ namespace VoidHeadWOTRNineSwords.Warblade
             .SetProgression(progression)
             .AddToRecommendedAttributes(StatType.Strength, StatType.Constitution, StatType.Intelligence)
             .AddToNotRecommendedAttributes(StatType.Wisdom, StatType.Charisma)
-            .AddPrerequisiteIsPet(not: true)
+            .AddPrerequisiteIsPet(not: true, hideInUI: true)
             .AddPrerequisiteNoClassLevel(SwordsageC.Guid, hideInUI: true) //no multiclassing with swordsage
             .SetStartingGold(200)
             .SetStartingItems(ItemWeaponRefs.ColdIronBattleaxe.Reference.Get(), ItemArmorRefs.ScalemailStandard.Reference.Get(), ItemEquipmentUsableRefs.PotionOfCureLightWounds.Reference.Get())

@@ -227,7 +227,7 @@
   },
   {
     "Key": "WarbladeC.Desc",
-    "enGB": "The warblade was born for conflict. Swift, strong, enduring, and utterly confident in his martial skills, he seeks to test himself against worthy foes. Battle is beautiful to him - a perfect moment in which life hangs suspended on the bright edge of a sword.\n\nIn addition to normal weapon attacks available to all martial classes warblades can perform maneuvers and counters as well as enter stances. Maneuvers are special weapon attack that rival magic in effect.\nCounters are similar but react to specific conditions or actions performed by enemies.\n\nWarblades have access to maneuvers from the Diamond Mind, Iron Heart, Stone Dragon, Tiger Claw and White Raven disciplines.\nAt level one 3 maneuvers can be performed per battle, this number increases as more warblades levels are taken. During battle the number of available maneuvers can be restored using the Recover Maneuvers ability."
+    "enGB": "The warblade was born for conflict. Swift, strong, enduring, and utterly confident in his martial skills, he seeks to test himself against worthy foes. Battle is beautiful to him - a perfect moment in which life hangs suspended on the bright edge of a sword.\n\nIn addition to normal weapon attacks available to all martial classes, warblades can perform maneuvers and counters as well as enter stances. Maneuvers are special weapon attack that rival magic in effect.\nCounters are similar but react to specific conditions or actions performed by enemies.\n\nWarblades have access to maneuvers from the Diamond Mind, Iron Heart, Stone Dragon, Tiger Claw and White Raven disciplines.\nAt level one 3 maneuvers can be performed per battle, this number increases as more warblades levels are taken. During battle the number of available maneuvers can be restored using the Recover Maneuvers ability."
   },
   {
     "Key": "WarbladeProficiencies.Name",
@@ -367,7 +367,7 @@
   },
   {
     "Key": "Warlord.Desc",
-    "enGB": "tbd"
+    "enGB": "While most commanders meticulously prepare strategies and develop tactis for their troops. The Warlord dives straight into battle and relies on his force of personality to inspires their allies to perform as a single unit in battle. Allowing all individual parts of his warband to react to the uncertainties of battle as if they spent hours preparing for each possible scenario."
   },
   {
     "Key": "ForceOfPersonality.Name",
@@ -421,7 +421,7 @@
   },
   {
     "Key": "SwordsageC.Desc",
-    "enGB": "A master of martial maneuvers, the sword sage is a physical adept — a blade wizard whose knowledge of the Sublime Way lets him unlock potent abilities, many of which are overtly supernatural or magical in nature. Depending on which disciplines he chooses to study, a swordsage might be capable of walking through walls, leaping dozens of feet into the air, shattering boulders with a single touch, or even mastering the elements of fire or shadow. Whatever his specific training, a swordsage blurs the line between martial prowess and magical skill."
+    "enGB": "A master of martial maneuvers, the sword sage is a physical adept — a blade wizard whose knowledge of the Sublime Way lets him unlock potent abilities, many of which are overtly supernatural or magical in nature. Depending on which disciplines he chooses to study, a swordsage might be capable of walking through walls, leaping dozens of feet into the air, shattering boulders with a single touch, or even mastering the elements of fire or shadow. Whatever his specific training, a swordsage blurs the line between martial prowess and magical skill.\n\nIn addition to normal weapon attacks available to all martial classes, swordsages can perform maneuvers and counters as well as enter stances. Maneuvers are special weapon attack that rival magic in effect.\nCounters are similar but react to specific conditions or actions performed by enemies.\n\nSwordsages have access to maneuvers from the Desert Wind, Diamond Mind, Riven Hourglass, Shadow Hand, Stone Dragon and Tiger Claw disciplines.\nAt level one 6 maneuvers can be performed per battle, this number increases as more swordsage levels are taken. During battle the number of available maneuvers can be restored using the Recover Maneuvers ability."
   },
   {
     "Key": "SwordsageProficiencies.Name",
@@ -515,16 +515,7 @@
   },
   {
     "Key": "RimeRavager.Desc",
-    "enGB": "tbd"
-  },
-  {
-    "Key": "RimeRavagerFocus.Name",
-    "ProcessTemplates": false,
-    "enGB": "tbd"
-  },
-  {
-    "Key": "RimeRavagerFocus.Desc",
-    "enGB": "tbd"
+    "enGB": "The secretive order of the Rime Ravagers has a special connection to the forces of cold and frost. Their students are expected to rigidly follow the tenents of the pale precepts, most fail their training, those that suceed are rewarded with an amazing command over the powers of ice and steel."
   },
   {
     "Key": "RimeRavagerProficiencies.Name",
@@ -534,6 +525,19 @@
   {
     "Key": "RimeRavagerProficiencies.Desc",
     "enGB": "You are proficient with simple, martial melee weapons (including those that can be used as thrown weapons) and light armor, but not shields. Loses access to the Desert Wind discipline."
+  },
+  {
+    "Key": "PolarisStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Polaris Strike"
+  },
+  {
+    "Key": "PolarisStrike.Desc",
+    "enGB": "Discipline: Rime Ravager\nManeuver Type: Strike\nRequired Initiator Level: Rime Ravager 1\nWhen you initiate this maneuver you make a melee attack against a target, dealing 1d6 extra cold damage. Additionally on hit the target must make a Will save (DC 12 + your WIS modifier) or gain a -2 penalty to attack for 1 round."
+  },
+  {
+    "Key": "PolarisStrike.TargetBuff",
+    "enGB": "-2 penalty to attack."
   },
   {
     "Key": "PiercingIcicle.Name",
@@ -586,6 +590,89 @@
   {
     "Key": "IceJawStrike.TargetBuff",
     "enGB": "Stuck to ground cannot move. Takes 1d10 cold damage every round."
+  },
+  {
+    "Key": "FreezeMagic.Name",
+    "ProcessTemplates": false,
+    "enGB": "Freeze Magic"
+  },
+  {
+    "Key": "FreezeMagic.Desc",
+    "enGB": "Discipline: Rime Ravager\nManeuver Type: Strike\nRequired Initiator Level: Rime Ravager 8\nMake a melee attack. On a hit you dispel one ongoing spell active on your target, transforming the magic into a jagged ice shard, dealing 2d10 cold damage."
+  },
+  {
+    "Key": "IceMirrorStance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ice Mirror Stance"
+  },
+  {
+    "Key": "IceMirrorStance.Desc",
+    "enGB": "Discipline: Rime Ravager\nRequired Initiator Level: Rime Ravager 8\nWhile you maintain this stance a coat of ice forms on your skin. Attacks against you break of ice shards that are flung against attackers in melee range, dealing 2d10 cold damage, additionally attackers must make a Fortitude save (DC 16 + your WIS modifier) or suffer 1d4-1 strenght damage."
+  },
+  {
+    "Key": "ShatterResistance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Shatter Resistance"
+  },
+  {
+    "Key": "ShatterResistance.Desc",
+    "enGB": "Discipline: Rime Ravager\nManeuver Type: Strike\nRequired Initiator Level: Rime Ravager 10\nWhen you initiate this maneuver you make a melee attack against a target, dealing 5d8 extra cold damage. Additionally on hit the target must make a Fortitude save (DC 17 + your WIS modifier) or become vulerable to cold damage for a number of rounds equal to your WIS modifier."
+  },
+  {
+    "Key": "ShatterResistance.TargetBuff",
+    "enGB": "Vulerable to cold damage."
+  },
+  {
+    "Key": "IceSpikeStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ice Spike Strike"
+  },
+  {
+    "Key": "IceSpikeStrike.Desc",
+    "enGB": "Discipline: Rime Ravager\nManeuver Type: Strike\nRequired Initiator Level: Rime Ravager 12\nWhen you initiate this maneuver you attempt to drive an Ice Spike through your targets body. For each spike present in your targets body you deal extra cold damage with this strike and a stat penalty is imposed on your target. Your target can resist a spike by making a Fortitude save (DC 18 + your WIS modifier).\n\nOne spike: -4 penalty to Dexterity, 6d4 damage\nTwo spikes: -6 to Dexterity and -6 to Strength, 6d8 damage\nThree spikes: Target is paralyzed, 6d12 damage\n\nSpikes melt after 2 turns unless new spikes are driven into your target."
+  },
+  {
+    "Key": "IceSpikeStrike.TargetBuff1",
+    "enGB": "-4 to Dexterity"
+  },
+  {
+    "Key": "IceSpikeStrike.TargetBuff2",
+    "enGB": "-6 to Dexterity, -6 to Strength"
+  },
+  {
+    "Key": "IceSpikeStrike.TargetBuff3",
+    "enGB": "Paralyzed"
+  },
+  {
+    "Key": "BlizzardStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Blizzard Strike"
+  },
+  {
+    "Key": "BlizzardStrike.Desc",
+    "enGB": "Discipline: Rime Ravager\nManeuver Type: Strike\nRequired Initiator Level: Rime Ravager 14\nWhen you initiate this maneuver you make a melee attack against a target, dealing 8d8 extra cold damage. Additionally on hit the target must make a Fortitude save (DC 19 + your WIS modifier) or become blinded and have a 25% chance for spell failure for a number of rounds equal to your WIS bonus."
+  },
+  {
+    "Key": "BlizzardStrike.TargetBuff",
+    "enGB": "Blind. 25% spell failure chance"
+  },
+  {
+    "Key": "BonechillingStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Bonechilling Strike"
+  },
+  {
+    "Key": "BonechillingStrike.Desc",
+    "enGB": "Discipline: Rime Ravager\nManeuver Type: Strike\nRequired Initiator Level: Rime Ravager 16\nWhen you initiate this maneuver you make a melee attack against a target, dealing 8d12 extra cold damage. Additionally on hit the target must make a Will save (DC 20 + your WIS modifier) on a failure the target becomes paralyzed for a number of rounds equal to your WIS bonus, on a success the duration is shortened to 1 round."
+  },
+  {
+    "Key": "EternalBlade.Name",
+    "ProcessTemplates": false,
+    "enGB": "Eternal Blade"
+  },
+  {
+    "Key": "EternalBlade.Desc",
+    "enGB": ""
   },
 
   {

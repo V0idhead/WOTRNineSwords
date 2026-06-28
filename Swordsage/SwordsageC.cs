@@ -46,7 +46,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
       .AddToRecommendedAttributes(StatType.Strength, StatType.Constitution, StatType.Wisdom)
       .AddToNotRecommendedAttributes(StatType.Intelligence, StatType.Charisma)
       .AddPrerequisiteNoClassLevel(WarbladeC.Guid, hideInUI: true) //no multiclassing with Warblade
-      .AddPrerequisiteIsPet(not: true)
+      .AddPrerequisiteIsPet(not: true, hideInUI: true)
       .SetStartingGold(200)
       .SetStartingItems(ItemWeaponRefs.ColdIronBattleaxe.Reference.Get(), ItemArmorRefs.ScalemailStandard.Reference.Get(), ItemEquipmentUsableRefs.PotionOfCureLightWounds.Reference.Get())
       .SetPrimaryColor(11)
@@ -63,6 +63,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
       log.Info($"{nameof(SwordsageC)} done");
 
       VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavager.Configure();
+      EternalBlade.Configure();
 
       log.Info($"{nameof(SwordsageC)} Archetypes done");
     }
@@ -83,7 +84,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
       var swordsageProficiencies = FeatureConfigurator.New("SwordsageProficiencies", SwordsageProficienciesGuid)
         .SetDisplayName("SwordsageProficiencies.Name")
         .SetDescription("SwordsageProficiencies.Desc")
-        .AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.Reference.Get(), FeatureRefs.MartialWeaponProficiency.Reference.Get(), FeatureRefs.LightArmorProficiency.Reference.Get(), DisciplineProficencies.DesertWindProficencyGuid, DisciplineProficencies.DiamondMindProficencyGuid, DisciplineProficencies.IronHeartProficencyGuid, DisciplineProficencies.RivenHourglassProficencyGuid, DisciplineProficencies.ShadowHandProficencyGuid, DisciplineProficencies.StoneDragonProficencyGuid, DisciplineProficencies.TigerClawProficencyGuid })
+        .AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.Reference.Get(), FeatureRefs.MartialWeaponProficiency.Reference.Get(), FeatureRefs.LightArmorProficiency.Reference.Get(), DisciplineProficencies.DesertWindProficencyGuid, DisciplineProficencies.DiamondMindProficencyGuid, DisciplineProficencies.RivenHourglassProficencyGuid, DisciplineProficencies.ShadowHandProficencyGuid, DisciplineProficencies.StoneDragonProficencyGuid, DisciplineProficencies.TigerClawProficencyGuid })
         .SetIsClassFeature()
         .SetRanks(1)
         .Configure();
