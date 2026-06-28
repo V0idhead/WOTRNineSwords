@@ -47,6 +47,10 @@ Counters had to be changed to a simple on/off toggle to compensate for the fact 
  - 3 Tiger Claw strike to replace strikes in that discipline that could not be implemented
  - Several feats including Maneuver Focus, Maneuver Focus (Mythic) and a specific feat for each discipline with unique effects
 
+## Compatibility with other mods
+Mods that add content *should* be fine. Mods that change mechanics or provide fixes *might* produce unexpected behaviour.
+Specifically Tabletop Tweaks Base causes some issues depending on which fixes are enabled. Feel free to report strange behaviour, but I cannot guarantee a fix for all such issues.
+
 ## Roadmap
  - Prestige Classes and Archetypes from Tome of Battle and Path of War
 
