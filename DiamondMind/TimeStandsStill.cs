@@ -42,7 +42,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
         .AddAbilityEffectRunAction(
-          actions: ActionsBuilder.New().MeleeAttack(fullAttack: true).MeleeAttack(fullAttack: true)
+          actions: ActionsBuilder.New().MeleeAttack(fullAttack: true, selectNewTarget: true).MeleeAttack(fullAttack: true, selectNewTarget: true)
         )
         .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();

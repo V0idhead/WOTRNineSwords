@@ -330,26 +330,17 @@
     "enGB": "Ancient Dwarven Martial Masters used their understanding of earth and metal to gain a deeper insight into the Stone Dragon and Iron Heart disciplines."
   },
   {
-    "Key": "MountainFortressRampart.Name",
+    "Key": "MountainFortress.Name",
     "ProcessTemplates": false,
-    "enGB": "Mountain Fortress Rampart"
+    "enGB": "Mountain Fortress Defense"
   },
   {
-    "Key": "MountainFortressRampart.Desc",
-    "enGB": "tbd"
+    "Key": "MountainFortress.Desc",
+    "enGB": "The secrets of the Deepstone confer extraordinary defensive capabilities as long as you defend an area and do not move more than 15 feet in a single round.\n\nAt 2nd level: +2 to AC\nAt 5th level: 10% Spell resistance against evocation and Transmutation spells\n8th level: damage resistance equal to your CON Bonus\n11th level: +4 to AC\n14th level: 50% Fortification\n17th level: +6 to AC"
   },
   {
-    "Key": "MountainFortressRampart.BuffDesc",
-    "enGB": "tbd"
-  },
-  {
-     "Key": "CrashingMountainJuggernaut.Name",
-     "ProcessTemplates": false,
-     "enGB": "Crashing Mountain Juggernaut"
-  },
-  {
-    "Key": "CrashingMountainJuggernaut.Desc",
-    "enGB": "tbd"
+    "Key": "MountainFortress.BuffDesc",
+    "enGB": "At 2nd level: +2 to AC\nAt 5th level: 10% Spell resistance against evocation and Transmutation spells\n8th level: damage resistance equal to your CON Bonus\n11th level: +4 to AC\n14th level: 50% Fortification\n17th level: +6 to AC"
   },
   {
     "Key": "DeepstoneSentinelManeuverSelection.Name",
@@ -359,6 +350,24 @@
   {
     "Key": "DeepstoneSentinelManeuverSelection.Desc",
     "enGB": "You begin your career with knowledge of three martial maneuvers. The disciplines available to you are Iron Heart and Stone Dragon."
+  },
+  {
+    "Key": "DeepstoneSentinelStanceSelection.Name",
+    "ProcessTemplates": false,
+    "enGB": "Deepstone Sentinel Stance Selection"
+  },
+  {
+    "Key": "DeepstoneSentinelStanceSelection.Desc",
+    "enGB": "You begin with knowledge of one 1st level stance from any discipline open to Deepstone Sentinels. At 4th, 10th, and 16th level, you can choose additional stances. Unlike maneuvers, stances are not expended, and you do not have to ready them. All the stances you know are available to you at all times, and you can change the stance you are currently using as a swift action. A stance is an extraordinary ability unless otherwise stated in the stance description."
+  },
+  {
+    "Key": "DeepstoneSentinelResistance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Deepstone Sentinel Spell Resistance"
+  },
+  {
+    "Key": "DeepstoneSentinelResistance.Desc",
+    "enGB": "You gain spell resistance 10 against Transmutation and Evocation spells."
   },
   {
     "Key": "Warlord.Name",
@@ -421,7 +430,7 @@
   },
   {
     "Key": "SwordsageC.Desc",
-    "enGB": "A master of martial maneuvers, the sword sage is a physical adept — a blade wizard whose knowledge of the Sublime Way lets him unlock potent abilities, many of which are overtly supernatural or magical in nature. Depending on which disciplines he chooses to study, a swordsage might be capable of walking through walls, leaping dozens of feet into the air, shattering boulders with a single touch, or even mastering the elements of fire or shadow. Whatever his specific training, a swordsage blurs the line between martial prowess and magical skill.\n\nIn addition to normal weapon attacks available to all martial classes, swordsages can perform maneuvers and counters as well as enter stances. Maneuvers are special weapon attack that rival magic in effect.\nCounters are similar but react to specific conditions or actions performed by enemies.\n\nSwordsages have access to maneuvers from the Desert Wind, Diamond Mind, Riven Hourglass, Shadow Hand, Stone Dragon and Tiger Claw disciplines.\nAt level one 6 maneuvers can be performed per battle, this number increases as more swordsage levels are taken. During battle the number of available maneuvers can be restored using the Recover Maneuvers ability."
+    "enGB": "A master of martial maneuvers, the sword sage is a physical adept — a blade wizard whose knowledge of the Sublime Way lets him unlock potent abilities, many of which are overtly supernatural or magical in nature. Depending on which disciplines he chooses to study, a swordsage might be capable of walking through walls, leaping dozens of feet into the air, shattering boulders with a single touch, or even mastering the elements of fire or shadow. Whatever his specific training, a swordsage blurs the line between martial prowess and magical skill.\n\nIn addition to normal weapon attacks available to all martial classes, swordsages can perform maneuvers and counters as well as enter stances. Maneuvers are special weapon attack that rival magic in effect.\nCounters are similar but react to specific conditions or actions performed by enemies.\n\nUses a non standard BAB Table: like medium with a +1 bonus, thus starting on 1 at level 1\n\nSwordsages have access to maneuvers from the Desert Wind, Diamond Mind, Riven Hourglass, Shadow Hand, Stone Dragon and Tiger Claw disciplines.\nAt level one 6 maneuvers can be performed per battle, this number increases as more swordsage levels are taken. During battle the number of available maneuvers can be restored using the Recover Maneuvers ability."
   },
   {
     "Key": "SwordsageProficiencies.Name",
@@ -546,7 +555,7 @@
   },
   {
     "Key": "PiercingIcicle.Desc",
-    "enGB": "Discipline: Rime Ravager\nManeuver Type: Strike\nRequired Initiator Level: Rime Ravager 2\nYou fling an icicle at an opponent. On a hit it deals 2d6 piercing damage and 2d6 cold damage. If your attack is successful, your target must make a successful Fortitude save (DC 13 + your Wis modifier) or start bleeding for 2d6 damage for 2 rounds."
+    "enGB": "Discipline: Rime Ravager\nManeuver Type: Strike\nRequired Initiator Level: Rime Ravager 2\nYou fling an icicle at an opponent. On a hit it deals 1d6 piercing damage and 1d6 cold damage. If your attack is successful, your target must make a successful Fortitude save (DC 13 + your Wis modifier) or start bleeding for 2d6 damage for 2 rounds."
   },
   {
     "Key": "FrigidSkin.Name",
@@ -1916,6 +1925,15 @@
   {
     "Key": "Shadowcloak.Desc",
     "enGB": "Discipline: Shadow Hand\nManeuver Type: Counter\nRequired Initiator Level: Swordsage 9\nRequired Maneuvers: 2 Shadow Hand\nThe first time you are attacked in a round you gain partial concealment before the attack resolves. If you are attacked a second time in the same turn you gain total concealment. Both activations cost 1 Maneuver Point."
+  },
+  {
+    "Key": "StoneshellStance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Stoneshell Stance"
+  },
+  {
+    "Key": "StoneshellStance.Desc",
+    "enGB": "Discipline: Stone Dragon\nRequired Initiator Level: Warblade 3, Swordsage 3\nRequired Maneuvers: 1 Stone Dragon\nWhile you are in this stance, you gain a +2 enhancement bonus to your existing natural armor bonus and a further +2 bonus to AC against attacks of opportunity."
   },
 
   {

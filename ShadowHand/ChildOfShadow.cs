@@ -25,7 +25,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
     {
       var triggerBuff = BuffConfigurator.New("ChildOfShadowTriggerBuff", "DA0BD533-B972-492A-9AD6-F06420C144DB")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
-        .AddMovementDistanceTrigger(distanceInFeet: 10,
+        .AddMovementDistanceTrigger(distanceInFeet: 10, limitTiggerCountInOneRound: true, tiggerCountMaximumInOneRound: 1,
           action: ActionsBuilder.New().ApplyBuff(BuffRefs.BlurBuff.Reference.Get(), ContextDuration.Fixed(1), toCaster: true))
         .AddStatBonusIfHasFactFixed(new BlueprintCore.Blueprints.Components.Replacements.AddStatBonusIfHasFactFixed(Kingmaker.EntitySystem.Stats.StatType.AC, ContextValues.Constant(2), [ShadowPresence.ShadowHandFocusFactGuid], descriptor: Kingmaker.Enums.ModifierDescriptor.NaturalArmorEnhancement))
         .Configure();
@@ -41,7 +41,7 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         .SetDoNotTurnOffOnRest()
         .SetGroup(ActivatableAbilityGroup.CombatStyle)
         .SetWeightInGroup(1)
-        .SetOnlyInCombat()
+        //.SetOnlyInCombat()
         .Configure();
 
       var feat = FeatureConfigurator.New("ChildOfShadowFeat", Guid)

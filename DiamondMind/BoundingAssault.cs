@@ -51,7 +51,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         .SetActionType(UnitCommand.CommandType.Move)
         .SetType(AbilityType.CombatManeuver)
         .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
-        .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).CastSpell(AbilityRefs.MantisZealotTeleportToEnemyAbility.Reference.Guid))
+        .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).CastSpell(AbilityRefs.MantisZealotTeleportToEnemyAbility.Reference.Guid, logIfCanNotTarget: true))
         //.AddAbilityCustomTeleportation()
         .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
         .Configure();

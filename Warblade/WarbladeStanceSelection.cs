@@ -14,7 +14,7 @@ using VoidHeadWOTRNineSwords.WhiteRaven;
 
 namespace VoidHeadWOTRNineSwords.Warblade
 {
-  static class SwordsageStanceSelection
+  static class WarbladeStanceSelection
   {
     public const string Guid = "D4E1FCD7-E813-4099-846F-06692E23D475";
 
@@ -37,7 +37,8 @@ namespace VoidHeadWOTRNineSwords.Warblade
           HearingTheAir.Guid,
           StrengthOfStone.Guid,
           SupremeBladeParry.Guid,
-          SwarmTactics.Guid
+          SwarmTactics.Guid,
+          StoneshellStance.Guid
         ).Configure();
 
       return warbladeManeuverSelection;

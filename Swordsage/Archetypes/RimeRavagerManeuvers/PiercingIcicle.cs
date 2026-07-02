@@ -28,7 +28,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes
         const string name = "PiercingIcicle.Name";
         const string desc = "PiercingIcicle.Desc";
         //const string icon = Helpers.IconPrefix + "piercingicicle.png";
-        static Sprite icon = AbilityRefs.Flare.Reference.Get().Icon;
+        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static BlueprintFeature Configure()
         {
@@ -53,11 +53,11 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes
                 actions: ActionsBuilder.New()
                     .DealDamage(
                         DamageTypes.Energy(Kingmaker.Enums.Damage.DamageEnergyType.Cold),
-                        ContextDice.Value(Kingmaker.RuleSystem.DiceType.D6, ContextValues.Constant(2))
+                        ContextDice.Value(Kingmaker.RuleSystem.DiceType.D6, ContextValues.Constant(1))
                     ).
                     DealDamage(
                         DamageTypes.Physical(form: Kingmaker.Enums.Damage.PhysicalDamageForm.Piercing),
-                        ContextDice.Value(Kingmaker.RuleSystem.DiceType.D6, ContextValues.Constant(2))
+                        ContextDice.Value(Kingmaker.RuleSystem.DiceType.D6, ContextValues.Constant(1))
                     ).
                     SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 13 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, ShadowPresence.ShadowHandFocusFactGuid),
                         onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(BuffRefs.Bleed2d6Buff.Reference.Get(), ContextDuration.Fixed(2)))

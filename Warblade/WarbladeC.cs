@@ -74,7 +74,7 @@ namespace VoidHeadWOTRNineSwords.Warblade
             var battleMastery = BattleMastery.Configure();
             var stanceMastery = StanceMastery.Configure();
             var maneuverSelector = WarbladeManeuverSelection.Configure();
-            var stanceSelector = SwordsageStanceSelection.Configure();
+            var stanceSelector = WarbladeStanceSelection.Configure();
 
             var warbladeProficiencies = FeatureConfigurator.New("WarbladeProficiencies", "A68BE9ED-C7D6-45CE-8334-7D0551D6F971")
               .SetDisplayName("WarbladeProficiencies.Name")

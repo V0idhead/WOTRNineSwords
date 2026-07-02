@@ -8,7 +8,7 @@ namespace VoidHeadWOTRNineSwords.Warblade.Archetypes
 {
     static class DeepstoneSentinelManeuverSelection
     {
-        public const string Guid = "{C6CC8DED-7609-427F-AC01-05689FD6DE6C}";
+        public const string Guid = "C6CC8DED-7609-427F-AC01-05689FD6DE6C";
 
         public static BlueprintFeatureSelection Configure()
         {

@@ -23,78 +23,93 @@ namespace VoidHeadWOTRNineSwords.Warblade.Archetypes
         public static void Configure()
         {
             var maneuverSelector = DeepstoneSentinelManeuverSelection.Configure();
+            var stanceSelector = DeepstoneSentinelStanceSelection.Configure();
 
-            var mountainFortressBuff = BuffConfigurator.New("MountainFortressRampartBuff", "{9301216D-0296-4A46-8827-55AFBA069453}")
-                .SetDisplayName("MountainFortressRampart.Name")
-                .SetDescription("MountainFortressRampart.BuffDesc")
-                .SetIcon(BuffRefs.SacredArmorEnchantFortification50Buff.Reference.Get().Icon)
-                .AddFortification(50)
-                .AddACBonusAgainstAttacks(value: ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusIntelligence, true), descriptor: Kingmaker.Enums.ModifierDescriptor.UntypedStackable)
+            var mountainFortressBuff2 = BuffConfigurator.New("MountainFortressBuff2", "9301216D-0296-4A46-8827-55AFBA069453")
+                .SetDisplayName("MountainFortress.Name")
+                .SetDescription("MountainFortress.BuffDesc")
+                .SetIcon(FeatureRefs.ArmoredHulkIndomitableStance.Reference.Get().Icon)
+                .AddACBonusAgainstAttacks(value: ContextValues.Constant(2), descriptor: Kingmaker.Enums.ModifierDescriptor.UntypedStackable)
+                .Configure();
+
+            var mountainFortressBuff5 = BuffConfigurator.New("MountainFortressBuff5", "33E0FFB8-AA88-4EC4-A51C-66FD5C45522C")
+                .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+                .AddSpellResistanceAgainstSpellSchool(spellSchool: Kingmaker.Blueprints.Classes.Spells.SpellSchool.Evocation, value: ContextValues.Constant(10))
+                .Configure();
+
+            var mountainFortressBuff8 = BuffConfigurator.New("MountainFortressBuff8", "C568F049-CD82-4FE3-9EE3-4C5DECCCBD20")
+                .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
                 .AddDamageResistancePhysical(value: ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusConstitution, true))
                 .Configure();
 
-            var mountainFortressAbility = AbilityConfigurator.New("MountainFortressRampartAbility", "{8FEC2B3F-0B8C-4A23-83A8-1B09D3204A48}")
-                .AddMovementDistanceTrigger(limitTiggerCountInOneRound: true)
+            var mountainFortressBuff11 = BuffConfigurator.New("MountainFortressBuff11", "80B059C2-E8A4-417E-8DD3-2C185D08644D")
+                .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+                .AddACBonusAgainstAttacks(value: ContextValues.Constant(2), descriptor: Kingmaker.Enums.ModifierDescriptor.UntypedStackable)
                 .Configure();
 
-            var mountainFortressRampart = FeatureConfigurator.New("MountainFortressRampart", "{D1F4B19B-5182-439E-B8DE-B6B09DFC180A}")
-                .SetDisplayName("MountainFortressRampart.Name")
-                .SetDescription("MountainFortressRampart.Desc")
-                .SetIcon(BuffRefs.SacredArmorEnchantFortification50Buff.Reference.Get().Icon)
-                .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New().ApplyBuff(mountainFortressBuff, ContextDuration.Fixed(1)))
-                .AddMovementDistanceTrigger(ActionsBuilder.New().RemoveBuff(mountainFortressBuff, true, toCaster:true))
-                //.AddFacts(new() { mountainFortressAbility })
+            var mountainFortressBuff14 = BuffConfigurator.New("MountainFortressBuff14", "5D43A984-FB8C-492A-914F-4882B577DF89")
+                .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+                .AddFortification(50)
                 .Configure();
 
-            /*var crashingMountainJuggernautAura = AbilityAreaEffectConfigurator.New("CrashingMountainJuggernautAura", "")
+            var mountainFortressBuff17 = BuffConfigurator.New("MountainFortressBuff17", "950C27FD-4C8D-47F2-A06D-52508536A045")
+                .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+                .AddACBonusAgainstAttacks(value: ContextValues.Constant(2), descriptor: Kingmaker.Enums.ModifierDescriptor.UntypedStackable)
                 .Configure();
 
-            var crashingMountainJuggernautBuff = BuffConfigurator.New("CrashingMountainJuggernautBuff", "{9878D0A5-635B-4BC3-8092-3637576B2D0D}")
-                .SetDisplayName("CrashingMountainJuggernaut.Name")
-                .SetDescription("CrashingMountainJuggernaut.BuffDesc")
-                .SetIcon(FeatureRefs.IncredibleHeftFeature.Reference.Get().Icon)
+            var mountainFortressDefense = FeatureConfigurator.New("mountainFortressDefense", "D1F4B19B-5182-439E-B8DE-B6B09DFC180A")
+                .SetDisplayName("MountainFortress.Name")
+                .SetDescription("MountainFortress.Desc")
+                .SetIcon(FeatureRefs.ArmoredHulkIndomitableStance.Reference.Get().Icon)
+                .AddNewRoundTrigger(newRoundActions:
+                    ActionsBuilder.New().Conditional(ConditionsBuilder.New().IsShieldEquipped(true), ActionsBuilder.New()
+                        .ApplyBuff(mountainFortressBuff2, ContextDuration.Fixed(1))
+                        .Conditional(ConditionsBuilder.New().CharacterClass(true, WarbladeC.Guid, 5),
+                            ActionsBuilder.New().ApplyBuff(mountainFortressBuff5, ContextDuration.Fixed(1)))
+                        .Conditional(ConditionsBuilder.New().CharacterClass(true, WarbladeC.Guid, 8),
+                            ActionsBuilder.New().ApplyBuff(mountainFortressBuff8, ContextDuration.Fixed(1)))
+                        .Conditional(ConditionsBuilder.New().CharacterClass(true, WarbladeC.Guid, 11),
+                            ActionsBuilder.New().ApplyBuff(mountainFortressBuff11, ContextDuration.Fixed(1)))
+                        .Conditional(ConditionsBuilder.New().CharacterClass(true, WarbladeC.Guid, 14),
+                            ActionsBuilder.New().ApplyBuff(mountainFortressBuff14, ContextDuration.Fixed(1)))
+                        .Conditional(ConditionsBuilder.New().CharacterClass(true, WarbladeC.Guid, 17),
+                            ActionsBuilder.New().ApplyBuff(mountainFortressBuff17, ContextDuration.Fixed(1)))
+                    )
+                )
                 .Configure();
 
-            var crashingMountainJuggernautAbility = AbilityConfigurator.New("CrashingMountainJuggernautAbility", "")
-                .AddAbilityTargetsAround(radius: new Feet(10))
-                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(BuffRefs.Prone.Reference, context)*/
-
-            //make it work like grease?
-            var crashingMountainJuggernaut = FeatureConfigurator.New("CrashingMountainJuggernaut", "{7284A5C0-DD9D-4EB1-A386-FB47E213002B}")
-                .SetDisplayName("CrashingMountainJuggernaut.Name")
-                .SetDescription("CrashingMountainJuggernaut.Desc")
-                .SetIcon(FeatureRefs.IncredibleHeftFeature.Reference.Get().Icon)
-                .Configure();
-
-            //TODO: need one more stance to be able to choose at lvl 4 to also restrict stances
             ArchetypeConfigurator.New("DeepstoneSentinel", Guid, WarbladeC.Guid)
                 .SetLocalizedName("DeepstoneSentinel.Name")
                 .SetLocalizedDescription("DeepstoneSentinel.Desc")
                 .AddPrerequisiteFeature(RaceRefs.DwarfRace.Reference.Get())
-                .AddToRemoveFeatures(1, WarbladeManeuverSelection.Guid, WarbladeManeuverSelection.Guid, WarbladeManeuverSelection.Guid)
+                .AddToRemoveFeatures(1, WarbladeManeuverSelection.Guid, WarbladeManeuverSelection.Guid, WarbladeManeuverSelection.Guid, WarbladeStanceSelection.Guid)
                 .AddToRemoveFeatures(2, WarbladeManeuverSelection.Guid)
                 .AddToRemoveFeatures(3, WarbladeManeuverSelection.Guid)
+                .AddToRemoveFeatures(4, WarbladeStanceSelection.Guid)
                 .AddToRemoveFeatures(5, WarbladeManeuverSelection.Guid)
                 .AddToRemoveFeatures(7, WarbladeManeuverSelection.Guid)
                 .AddToRemoveFeatures(9, WarbladeManeuverSelection.Guid)
+                .AddToRemoveFeatures(10, WarbladeStanceSelection.Guid)
                 .AddToRemoveFeatures(11, WarbladeManeuverSelection.Guid)
                 .AddToRemoveFeatures(13, WarbladeManeuverSelection.Guid)
                 .AddToRemoveFeatures(15, WarbladeManeuverSelection.Guid)
+                .AddToRemoveFeatures(16, WarbladeStanceSelection.Guid)
                 .AddToRemoveFeatures(17, WarbladeManeuverSelection.Guid)
                 .AddToRemoveFeatures(19, WarbladeManeuverSelection.Guid)
-                .AddToAddFeatures(1, maneuverSelector, maneuverSelector, maneuverSelector)
-                .AddToAddFeatures(2, FeatureRefs.ShieldFocus.Reference.Get())
+                .AddToAddFeatures(1, maneuverSelector, maneuverSelector, maneuverSelector, stanceSelector)
+                .AddToAddFeatures(2, FeatureRefs.ShieldFocus.Reference.Get(), mountainFortressDefense)
                 .AddToAddFeatures(2, maneuverSelector)
                 .AddToAddFeatures(3, maneuverSelector)
+                .AddToAddFeatures(4, stanceSelector)
                 .AddToAddFeatures(5, maneuverSelector)
-                .AddToAddFeatures(6, mountainFortressRampart)
                 .AddToAddFeatures(7, maneuverSelector)
                 .AddToAddFeatures(8, FeatureRefs.ShieldFocusGreater.Reference.Get())
                 .AddToAddFeatures(9, maneuverSelector)
-                .AddToAddFeatures(11, crashingMountainJuggernaut)
+                .AddToAddFeatures(10, stanceSelector)
                 .AddToAddFeatures(11, maneuverSelector)
                 .AddToAddFeatures(13, maneuverSelector)
                 .AddToAddFeatures(15, maneuverSelector)
+                .AddToAddFeatures(16, stanceSelector)
                 .AddToAddFeatures(17, maneuverSelector)
                 .AddToAddFeatures(19, maneuverSelector)
                 .Configure();
