@@ -142,7 +142,7 @@
   },
   {
     "Key": "UnnervingCalm.Desc",
-    "enGB": "When you hit with a Diamond Mind strike you regain the use of that strike. In addition you add +1 to the Difficulty Class for all saving throws against your Diamond Mind maneuvers."
+    "enGB": "When you successfully (if the strike requires a skill check, you need to succeed. if the target gets a save, the target must fail) hit with a Diamond Mind strike you regain the use of that strike. In addition you add +1 to the Difficulty Class for all saving throws against your Diamond Mind maneuvers."
   },
   {
     "Key": "IronHeartAura.Name",

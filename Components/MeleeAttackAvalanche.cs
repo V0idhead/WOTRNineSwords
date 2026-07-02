@@ -44,10 +44,10 @@ namespace VoidHeadWOTRNineSwords.Components
         {
           RunAttackRule(maybeCaster, target, threatHandMelee, attackPenalty);
           var attack = AbilityContext.RulebookContext?.LastEvent<RuleAttackWithWeapon>();
+          if (!unnervingCalmApplied && attack != null && attack.AttackRoll.IsHit)
+            UnnervingCalm.GetEffectAction().Run();
           if (attack == null || !attack.AttackRoll.IsHit || attack.Target.HPLeft < 1)
             break;
-          if (!unnervingCalmApplied)
-            UnnervingCalm.GetEffectAction().Run();
           attackPenalty += 4;
         }
       }
