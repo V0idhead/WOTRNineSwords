@@ -62,7 +62,7 @@ namespace VoidHeadWOTRNineSwords.DesertWind
               .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
 #if !DEBUG
               .AddPrerequisiteFeature(DisciplineProficencies.DesertWindProficencyGuid, hideInUI: true)
-              .AddPrerequisiteFeature(InitiatorLevels.Lvl7Guid)
+              .AddPrerequisiteFeature(InitiatorLevels.Lvl4Guid)
               .AddPrerequisiteFeaturesFromList(amount: 2, features: AllManeuversAndStances.DesertWindGuids.Except([Guid]).ToList())
 #endif
               .Configure();
