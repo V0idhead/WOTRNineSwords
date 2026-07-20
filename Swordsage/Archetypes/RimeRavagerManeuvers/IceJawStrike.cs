@@ -25,8 +25,8 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavagerManeuvers
     static class IceJawStrike
     {
         public const string Guid = "21AA0CE3-AFC0-433D-AF1E-1EE6EB559E32";
-        const string name = "PiercingIcicle.Name";
-        const string desc = "PiercingIcicle.Desc";
+        const string name = "IceJawStrike.Name";
+        const string desc = "IceJawStrike.Desc";
         //const string icon = Helpers.IconPrefix + "icejawstrike.png";
         static Sprite icon = AbilityRefs.Flare.Reference.Get().Icon;
 
