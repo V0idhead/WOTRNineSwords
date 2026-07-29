@@ -5,7 +5,6 @@ using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
@@ -20,30 +19,29 @@ using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
 
-namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavagerManeuvers
+namespace VoidHeadWOTRNineSwords.DiamondMind
 {
-    static class IceJawStrike
+    static class BuzzingStrike
     {
-        public const string Guid = "21AA0CE3-AFC0-433D-AF1E-1EE6EB559E32";
-        const string name = "IceJawStrike.Name";
-        const string desc = "IceJawStrike.Desc";
-        //const string icon = Helpers.IconPrefix + "icejawstrike.png";
+        public const string Guid = "BA1CB9D6-9AD1-4147-9F6B-816A414808BF";
+        const string name = "BuzzingStrike.Name";
+        const string desc = "BuzzingStrike.Desc";
+        //const string icon = Helpers.IconPrefix + "buzzingstrike.png";
         static Sprite icon = AbilityRefs.Flare.Reference.Get().Icon;
 
-        public static BlueprintFeature Configure()
+        public static void Configure()
         {
-            Main.Logger.Info($"Configuring {nameof(IceJawStrike)}");
+            Main.Logger.Info($"Configuring {nameof(BuzzingStrike)}");
 
-            var targetBuff = BuffConfigurator.New("IceJawStrikeTargetBuff", "637D4BD8-53B3-4D86-988E-275E2B71FD95")
+            var buff = BuffConfigurator.New("BuzzingStrikeBuff", "91AACC5D-E113-4173-883A-BE602A80A33D")
               .SetDisplayName(name)
-              .SetDescription("IceJawStrike.TargetBuff")
+              .SetDescription(desc)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.Harmful)
               .SetIcon(icon)
-              .AddBuffMovementSpeed(value: -200)
-              .AddDamageOverTime(new Kingmaker.RuleSystem.DiceFormula(1, Kingmaker.RuleSystem.DiceType.D12), Kingmaker.Enums.Damage.DamageEnergyType.Cold, false)
+              .AddArcaneSpellFailureIncrease(10, universal: true)
               .Configure();
 
-            var ability = AbilityConfigurator.New("IceJawStrikeAbility", "EBABEA5F-1920-4CA8-BD64-FB7E8EBC5C78")
+            var ability = AbilityConfigurator.New("BuzzingStrikeAbility", "062FC25B-6742-45DD-999B-E31D55F932B4")
               .SetDisplayName(name)
               .SetDescription(desc)
               .SetIcon(icon)
@@ -52,31 +50,30 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavagerManeuvers
               .SetCanTargetFriends(false)
               .SetCanTargetSelf(false)
               .SetRange(AbilityRange.Weapon)
-              .SetUseCurrentWeaponAsReasonItem()
               .SetActionType(UnitCommand.CommandType.Standard)
               .SetShouldTurnToTarget()
               .SetType(AbilityType.CombatManeuver)
               .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
-              .AddAbilityEffectRunAction(
-                actions: ActionsBuilder.New().
-                    Add<MeleeAttackExtended>(mae => mae.OnHit = ActionsBuilder.New().
-                        DealDamage(DamageTypes.Energy(Kingmaker.Enums.Damage.DamageEnergyType.Cold), ContextDice.Value(Kingmaker.RuleSystem.DiceType.D12, ContextValues.Constant(2))).
-                        SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Reflex, customDC: new ContextValue { Value = 15 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom),
-                            onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(targetBuff, ContextDuration.Variable(ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, true)))
-                            )
-                        ).Build()
-                    )
+              .AddAbilityEffectRunAction
+              (
+                ActionsBuilder.New().Add<MeleeAttackExtended>(mae =>
+                    mae.OnHit = ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Will, customDC: new ContextValue { Value = 11 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusStrength, UnnervingCalm.DiamondFocusFactGuid),
+                        onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(6)))).AddAll(UnnervingCalm.GetEffectAction()).Build()
+                )
               )
               .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
               .Configure();
 
-            return FeatureConfigurator.New("IceJawStrike", Guid, AllManeuversAndStances.featureGroup)
+            var maneuver = FeatureConfigurator.New("BuzzingStrike", Guid)
               .SetDisplayName(name)
               .SetDescription(desc)
               .SetIcon(icon)
-              .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee | FeatureTag.Ranged)
+              .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
               .AddFacts(new() { ability })
               .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
+#if !DEBUG
+              .AddPrerequisiteFeature(DisciplineProficencies.DiamondMindProficencyGuid, hideInUI: true)
+#endif
               .Configure();
         }
     }

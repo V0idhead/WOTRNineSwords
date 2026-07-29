@@ -577,7 +577,7 @@
   },
   {
     "Key": "BorealisStance.Desc",
-    "enGB": "Discipline: Rime Ravager\nRequired Initiator Level: Rime Ravager 4\nWhile you maintain this stance, all opponents within 100ft have their speed reduced by 20. Furthermore opponents within 10ft have their attack bonus reduced by 2."
+    "enGB": "Discipline: Rime Ravager\nRequired Initiator Level: Rime Ravager 4\nWhile you maintain this stance, all opponents within 30ft have their speed reduced by 20. Furthermore opponents within 10ft have their attack bonus reduced by 2."
   },
   {
     "Key": "BorealisStance.Buff1Desc",
@@ -1934,6 +1934,33 @@
   {
     "Key": "StoneshellStance.Desc",
     "enGB": "Discipline: Stone Dragon\nRequired Initiator Level: Warblade 3, Swordsage 3\nRequired Maneuvers: 1 Stone Dragon\nWhile you are in this stance, you gain a +2 enhancement bonus to your existing natural armor bonus and a further +2 bonus to AC against attacks of opportunity."
+  },
+  {
+    "Key": "BuzzingStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Buzzing Strike"
+  },
+  {
+    "Key": "BuzzingStrike.Desc",
+    "enGB": "Discipline: Diamond Mind\nManeuver Type: Strike\nRequired Initiator Level: Warblade 1, Swordsage 1\nWhen you initiate this maneuver, you unleash a destructive temporal disturbance in a 30-foot cone. Enemies caught in the cone must make a Will save (DC 19 + your Wisdom modifier) or die. Creatures that succeed on their save are instead exhausted and slowed for 2d4 rounds."
+  },
+  {
+    "Key": "DiamondShimmerStance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Diamond Shimmer Stance"
+  },
+  {
+    "Key": "DiamondShimmerStance.Desc",
+    "enGB": "Discipline: Diamond Mind\nRequired Initiator Level: Warblade 13, Swordsage 13\nRequired Maneuvers: 2 Diamond Mind\nWhile you maintain this stance, you gain 21 spell resistance."
+  },
+  {
+    "Key": "DiamondLockStance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Diamond Lock Stance"
+  },
+  {
+    "Key": "DiamondLockStance.Desc",
+    "enGB": "Discipline: Diamond Mind\nRequired Initiator Level: Warblade 17, Swordsage 17\nRequired Maneuvers: 4 Diamond Mind\nWhile you maintain this stance, you cannot be directly targeted by spells."
   },
 
   {

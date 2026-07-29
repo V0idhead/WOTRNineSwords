@@ -80,7 +80,8 @@ namespace VoidHeadWOTRNineSwords.Warblade
           RapidCounter.Guid,
           ManticoreParry.Guid,
           DiamondDefense.Guid,
-          WhiteRavenCall.Guid
+          WhiteRavenCall.Guid,
+          BuzzingStrike.Guid
         ).Configure();
 
       return warbladeManeuverSelection;

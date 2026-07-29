@@ -41,7 +41,6 @@ namespace VoidHeadWOTRNineSwords.ShadowHand
         .SetDoNotTurnOffOnRest()
         .SetGroup(ActivatableAbilityGroup.CombatStyle)
         .SetWeightInGroup(1)
-        //.SetOnlyInCombat()
         .Configure();
 
       var feat = FeatureConfigurator.New("ChildOfShadowFeat", Guid)

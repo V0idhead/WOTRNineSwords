@@ -33,6 +33,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes
             var borealisStanceBuff1 = BuffConfigurator.New("BorealisStanceBuff1", "3E8DF091-D5BB-4842-B90C-287D160198EA")
               .SetDisplayName(name)
               .SetDescription("BorealisStance.Buff1Desc")
+              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.Harmful)
               .SetIcon(icon)
               .AddStatBonus(ModifierDescriptor.Penalty, null, Kingmaker.EntitySystem.Stats.StatType.Speed, -20)
               .Configure();
@@ -40,13 +41,14 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes
             var borealisStanceArea1 = AbilityAreaEffectConfigurator.New("BorealisStanceArea1", "9827E42E-226F-4F19-A3E5-D10B87F38F98")
               .AddAbilityAreaEffectRunAction(round: ActionsBuilder.New().ApplyBuff(borealisStanceBuff1, ContextDuration.Fixed(1)))
               .SetShape(Kingmaker.UnitLogic.Abilities.Blueprints.AreaEffectShape.Cylinder)
-              .SetSize(new Feet(100))
+              .SetSize(new Feet(30))
               .SetTargetType(Kingmaker.UnitLogic.Abilities.Blueprints.BlueprintAbilityAreaEffect.TargetType.Enemy)
               .Configure();
 
             var borealisStanceBuff2 = BuffConfigurator.New("BorealisStanceBuff2", "E90526FC-D0FD-433C-A44F-ACE7A13531ED")
               .SetDisplayName(name)
               .SetDescription("BorealisStance.Buff2Desc")
+              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.Harmful)
               .SetIcon(icon)
               .AddStatBonus(ModifierDescriptor.Penalty, null, Kingmaker.EntitySystem.Stats.StatType.AdditionalAttackBonus, -2)
               .Configure();

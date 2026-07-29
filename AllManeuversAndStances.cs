@@ -16,7 +16,7 @@ namespace VoidHeadWOTRNineSwords
     internal static class AllManeuversAndStances
     {
         public static readonly FeatureGroup featureGroup = (Kingmaker.Blueprints.Classes.FeatureGroup)100; //None == Background :(
-        public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> DiamondMindGuids = [SapphireNightmareBlade.Guid, EmeraldRazor.Guid, BoundingAssault.Guid, MindStrike.Guid, RubyNightmareBlade.Guid, DisruptingBlow.Guid, AvalancheOfBlades.Guid, HearingTheAir.Guid, DiamondNightmareBlade.Guid, TimeStandsStill.Guid, RapidCounter.Guid, DiamondDefense.Guid];
+        public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> DiamondMindGuids = [SapphireNightmareBlade.Guid, EmeraldRazor.Guid, BoundingAssault.Guid, MindStrike.Guid, RubyNightmareBlade.Guid, DisruptingBlow.Guid, AvalancheOfBlades.Guid, HearingTheAir.Guid, DiamondNightmareBlade.Guid, TimeStandsStill.Guid, RapidCounter.Guid, DiamondDefense.Guid, BuzzingStrike.Guid, DiamondShimmerStance.Guid, DiamondLockStance.Guid];
         public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> DesertWindGuids = [BlisteringFlourish.Guid, BurningBlade.Guid, FlamesBlessing.Guid, FireRiposte.Guid, WindStride.Guid, FlashingSun.Guid, HatchlingsFlame.Guid, DeathMark.Guid, FanTheFlames.Guid, /*ZephyrDance.Guid,*/ SearingBlade.Guid, SearingCharge.Guid, DragonsFlame.Guid, LeapingFlame.Guid, LingeringInferno.Guid, InfernoBlade.Guid, WyrmsFlame.Guid, InfernoBlast.Guid, EyeOfTheStorm.Guid];
         public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> IronHeartGuids = [SteelyStrike.Guid, DisarmingStrike.Guid, ExorcismOfSteel.Guid, PunishingStance.Guid, AbsoluteSteel.Guid, MithralTornado.Guid, DazingStrike.Guid, FinishingMove.Guid, DancingBladeForm.Guid, ScythingBlade.Guid, SteelWind.Guid, AdamantineHurricane.Guid, BoomerangThrow.Guid, ViciousThrow.Guid, LightningThrow.Guid, SupremeBladeParry.Guid, StrikeOfPerfectClarity.Guid, WallOfBlades.Guid, LightningRecovery.Guid, IronHeartFocus.Guid, ManticoreParry.Guid];
         public static readonly IEnumerable<Blueprint<BlueprintFeatureReference>> ShadowHandGuids = [ChildOfShadow.Guid, ClingingShadowStrike.Guid, ShadowBladeTechnique.Guid, CloakOfDeception.Guid, DrainVitality.Guid, ShadowJaunt.Guid, ShadowGarotte.Guid, StrengthDrainingStrike.Guid, ObscuringShadowVeil.Guid, BloodlettingStrike.Guid, ShadowStride.Guid, ShadowBlink.Guid, EnervatingShadowStrike.Guid, CreepingIceStrike.Guid, DeepShadowAura.Guid, LocalEclipse.Guid, ThickShadows.Guid, Shadowsight.Guid, Shadowcloak.Guid];
@@ -31,6 +31,7 @@ namespace VoidHeadWOTRNineSwords
             //--Maneuvers--
             //Lvl1
             SapphireNightmareBlade.Configure();
+            BuzzingStrike.Configure();
             //Lvl2
             EmeraldRazor.Configure();
             //Lvl4
@@ -47,6 +48,8 @@ namespace VoidHeadWOTRNineSwords
             TimeStandsStill.Configure();
             //--Stances--
             HearingTheAir.Configure();
+            DiamondShimmerStance.Configure();
+            DiamondLockStance.Configure();
             //--Counters--
             //Lvl5
             RapidCounter.Configure();

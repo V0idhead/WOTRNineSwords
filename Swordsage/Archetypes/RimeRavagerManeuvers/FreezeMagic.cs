@@ -27,7 +27,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavagerManeuvers
         const string name = "FreezeMagic.Name";
         const string desc = "FreezeMagic.Desc";
         //const string icon = Helpers.IconPrefix + "freezemagic.png";
-        static Sprite icon = AbilityRefs.Flare.Reference.Get().Icon;
+        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static BlueprintFeature Configure()
         {

@@ -38,7 +38,9 @@ namespace VoidHeadWOTRNineSwords.Warblade
           StrengthOfStone.Guid,
           SupremeBladeParry.Guid,
           SwarmTactics.Guid,
-          StoneshellStance.Guid
+          StoneshellStance.Guid,
+          DiamondShimmerStance.Guid,
+          DiamondLockStance.Guid
         ).Configure();
 
       return warbladeManeuverSelection;
