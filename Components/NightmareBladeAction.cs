@@ -29,7 +29,6 @@ namespace VoidHeadWOTRNineSwords.Components
         var target = Context.MainTarget.Unit;
 
         var check = Game.Instance.Rulebook.TriggerEvent<RuleSkillCheck>(new RuleSkillCheck(caster, Kingmaker.EntitySystem.Stats.StatType.SkillPerception, target.Stats.AC));
-        //check.Calculate();
         check.RollD20();
 
         if (check.Success)

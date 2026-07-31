@@ -1962,6 +1962,37 @@
     "Key": "DiamondLockStance.Desc",
     "enGB": "Discipline: Diamond Mind\nRequired Initiator Level: Warblade 17, Swordsage 17\nRequired Maneuvers: 4 Diamond Mind\nWhile you maintain this stance, you cannot be directly targeted by spells."
   },
+  {
+    "Key": "ElementalShell.Name",
+    "ProcessTemplates": false,
+    "enGB": "Elemental Shell"
+  },
+  {
+    "Key": "ElementalShell.Desc",
+    "enGB": "Discipline: Diamond Mind\nRequired Initiator Level: Warblade 1, Swordsage 1\nWhile you maintain this stance, you gain 5 energy resistance."
+  },
+  {
+    "Key": "PainEcho.Name",
+    "ProcessTemplates": false,
+    "enGB": "Pain Echo"
+  },
+  {
+    "Key": "PainEcho.Desc",
+    "enGB": "Discipline: Riven Hourglass\nManeuver Type: Counter\nRequired Initiator Level: Swordsage 1\nRequired Maneuvers: 1 Riven Hourglass\nWhile this counter is active, once per round upon being hit, you can create a mirror image of yourself. The mirror image lasts for 2 rounds."
+  },
+  {
+    "Key": "PainEcho.BuffDesc",
+    "enGB": "Mirror Image created through Pain Echo."
+  },
+  {
+    "Key": "DiamondFocus.Name",
+    "ProcessTemplates": false,
+    "enGB": "Diamond Focus"
+  },
+  {
+    "Key": "DiamondFocus.Desc",
+    "enGB": "Discipline: Diamond Mind\nManeuver Type: Boost\nRequired Initiator Level: Warblade 1, Swordsage 1\nWhen you activate this boost, you gain +1 to attacks for 1 turn."
+  },
 
   {
     "Key": "nam.Name",

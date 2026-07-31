@@ -40,7 +40,8 @@ namespace VoidHeadWOTRNineSwords.Warblade
           SwarmTactics.Guid,
           StoneshellStance.Guid,
           DiamondShimmerStance.Guid,
-          DiamondLockStance.Guid
+          DiamondLockStance.Guid,
+          ElementalShell.Guid
         ).Configure();
 
       return warbladeManeuverSelection;

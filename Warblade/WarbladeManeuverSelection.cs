@@ -81,7 +81,8 @@ namespace VoidHeadWOTRNineSwords.Warblade
           ManticoreParry.Guid,
           DiamondDefense.Guid,
           WhiteRavenCall.Guid,
-          BuzzingStrike.Guid
+          BuzzingStrike.Guid,
+          DiamondFocus.Guid
         ).Configure();
 
       return warbladeManeuverSelection;

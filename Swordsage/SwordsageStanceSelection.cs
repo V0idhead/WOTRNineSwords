@@ -40,7 +40,8 @@ namespace VoidHeadWOTRNineSwords.Swordsage
           SandBearersSwiftness.Guid,
           StoneshellStance.Guid,
           DiamondShimmerStance.Guid,
-          DiamondLockStance.Guid
+          DiamondLockStance.Guid,
+          ElementalShell.Guid
         ).Configure();
 
       return swordsageManeuverSelection;
