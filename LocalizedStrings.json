@@ -681,6 +681,60 @@
   },
   {
     "Key": "EternalBlade.Desc",
+    "enGB": "Eternal Baldes are masters of time as well as masters of the sword. By focusing their will through their chosen weapon they can both stretch and compress time and keep their enemies off-guard by seemingly appearing in two places at once or crossing vast distances on the battlefield in the blink of an eye.\n\nEternal Blades only have access to the Diamond Mind and Riven Hourglass disciplines."
+  },
+  {
+    "Key": "TimelessReflexes.Name",
+    "ProcessTemplates": false,
+    "enGB": "Timeless Reflexes"
+  },
+  {
+    "Key": "TimelessReflexes.Desc",
+    "enGB": "You gain a +2 bonus to Reflex saves."
+  },
+  {
+    "Key": "TimelessReaction.Name",
+    "ProcessTemplates": false,
+    "enGB": "Timeless Reaction"
+  },
+  {
+    "Key": "TimelessReaction.Desc",
+    "enGB": "You gain a bonus equal to your wisdom modifier to attack and damage rolls made as part of attacks of opportunity."
+  },
+  {
+    "Key": "TimelessBody.Name",
+    "ProcessTemplates": false,
+    "enGB": "Timeless Body"
+  },
+  {
+    "Key": "TimelessBody.Desc",
+    "enGB": "You cannot be slowed or paralyzed."
+  },
+  {
+    "Key": "nam.Name",
+    "ProcessTemplates": false,
+    "enGB": "identifier"
+  },
+  {
+    "Key": "desc.Desc",
+    "enGB": ""
+  },
+  {
+    "Key": "nam.Name",
+    "ProcessTemplates": false,
+    "enGB": "identifier"
+  },
+  {
+    "Key": "desc.Desc",
+    "enGB": ""
+  },
+  {
+    "Key": "nam.Name",
+    "ProcessTemplates": false,
+    "enGB": "identifier"
+  },
+  {
+    "Key": "desc.Desc",
     "enGB": ""
   },
 
