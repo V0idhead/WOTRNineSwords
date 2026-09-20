@@ -1,11 +1,16 @@
 ﻿using BlueprintCore.Blueprints.CustomConfigurators.Classes;
+using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
+using Kingmaker.Blueprints.Classes.Selection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Components;
+using VoidHeadWOTRNineSwords.Feats;
 using VoidHeadWOTRNineSwords.Warblade.Archetypes;
 
 namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes
@@ -18,6 +23,17 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes
         {
             var maneuverSelector = EternalBladeManeuverSelection.Configure();
             var stanceSelector = EternalBladeStanceSelection.Configure();
+
+            BlueprintFeatureSelection disciplineFocusSelection = FeatureSelectionConfigurator.New("EternalBladeDisciplineFocusSelection", "4AEAE06C-64AB-4797-A7CD-E04C661D214F")
+              .SetDisplayName("EternalBladeDisciplineFocusSelection.Name")
+              .SetDescription("EternalBladeDisciplineFocusSelection.Desc")
+              .SetIsClassFeature()
+              .SetMode(SelectionMode.OnlyNew)
+              .SetIgnorePrerequisites()
+              .SetAllFeatures(
+                UnnervingCalm.UnnervingCalmGuid,
+                EternalMoment.EternalMomentGuid
+              ).Configure();
 
             var timelessReflexes = FeatureConfigurator.New("TimelessReflexes", "2239CCB0-9084-4C60-8D6A-46D4C2BC51F2")
                 .SetDisplayName("TimelessReflexes.Name")
@@ -36,7 +52,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes
                 .SetDisplayName("TimelessBody.Name")
                 .SetDescription("TimelessBody.Desc")
                 .AddConditionImmunity(Kingmaker.UnitLogic.UnitCondition.Slowed)
-                .AddConditionImmunity(Kingmaker.UnitLogic.UnitCondition.Paralyzed)
+                .AddConditionImmunity(Kingmaker.UnitLogic.UnitCondition.Staggered)
                 .Configure();
 
             var timelessAwareness = FeatureConfigurator.New("TimelessAwareness", "3C5933C0-8B49-4FF9-8AAD-45C742D81009")
@@ -48,19 +64,19 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes
             var islandInTime = FeatureConfigurator.New("IslandInTime", "5ECC068F-41CB-4DDE-BD0B-072B59D8BBC6")
                 .SetDisplayName("IslandInTime.Name")
                 .SetDescription("IslandInTime.Desc")
-                .AddConditionImmunity(Kingmaker.UnitLogic.UnitCondition.Paralyzed) //find something cooler, move paralyzed to timelessBody
+                .AddComponent<IslandInTime>()
                 .Configure();
 
             ArchetypeConfigurator.New("EternalBlade", Guid, SwordsageC.Guid)
                 .SetLocalizedName("EternalBlade.Name")
                 .SetLocalizedDescription("EternalBlade.Desc")
-                .AddToRemoveFeatures(1, SwordsageManeuverSelection.Guid, SwordsageManeuverSelection.Guid, SwordsageManeuverSelection.Guid, SwordsageManeuverSelection.Guid, SwordsageManeuverSelection.Guid, SwordsageManeuverSelection.Guid, SwordsageStanceSelection.Guid)
+                .AddToRemoveFeatures(1, SwordsageManeuverSelection.Guid, SwordsageManeuverSelection.Guid, SwordsageManeuverSelection.Guid, SwordsageManeuverSelection.Guid, SwordsageManeuverSelection.Guid, SwordsageManeuverSelection.Guid, SwordsageStanceSelection.Guid, BonusWeaponFocus.Guid, SwordsageDisciplineFocusSelection.Guid)
                 .AddToRemoveFeatures(2, SwordsageManeuverSelection.Guid, SwordsageStanceSelection.Guid)
                 .AddToRemoveFeatures(3, SwordsageManeuverSelection.Guid)
                 .AddToRemoveFeatures(4, SwordsageManeuverSelection.Guid)
                 .AddToRemoveFeatures(5, SwordsageManeuverSelection.Guid, SwordsageStanceSelection.Guid)
                 .AddToRemoveFeatures(6, SwordsageManeuverSelection.Guid)
-                .AddToRemoveFeatures(7, SwordsageManeuverSelection.Guid)
+                .AddToRemoveFeatures(7, SwordsageManeuverSelection.Guid, SwordsageDamageBonus.Guid)
                 .AddToRemoveFeatures(8, SwordsageManeuverSelection.Guid)
                 .AddToRemoveFeatures(9, SwordsageManeuverSelection.Guid, SwordsageStanceSelection.Guid)
                 .AddToRemoveFeatures(10, SwordsageManeuverSelection.Guid, SwordsageStanceSelection.Guid)
@@ -74,7 +90,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes
                 .AddToRemoveFeatures(18, SwordsageManeuverSelection.Guid)
                 .AddToRemoveFeatures(19, SwordsageManeuverSelection.Guid)
                 .AddToRemoveFeatures(20, SwordsageManeuverSelection.Guid, SwordsageStanceSelection.Guid)
-                .AddToAddFeatures(1, maneuverSelector, maneuverSelector, maneuverSelector, maneuverSelector, maneuverSelector, maneuverSelector, stanceSelector)
+                .AddToAddFeatures(1, maneuverSelector, maneuverSelector, maneuverSelector, maneuverSelector, maneuverSelector, maneuverSelector, stanceSelector, disciplineFocusSelection)
                 .AddToAddFeatures(2, FeatureRefs.UncannyDodge.Reference.Get(), maneuverSelector, stanceSelector)
                 .AddToAddFeatures(3, maneuverSelector)
                 .AddToAddFeatures(4, maneuverSelector)

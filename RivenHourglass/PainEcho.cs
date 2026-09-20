@@ -34,7 +34,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
         const string name = "PainEcho.Name";
         const string desc = "PainEcho.Desc";
         //const string icon = Helpers.IconPrefix + "painecho.png";
-        static Sprite icon = AbilityRefs.Flare.Reference.Get().Icon;
+        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {
@@ -52,9 +52,10 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
 
             var activeBuff = BuffConfigurator.New("PainEchoeActiveBuff", ActiveBuffGuid)
               .AddFacts(new() { ActiveFact })
-              .SetDisplayName(name)
-              .SetDescription("PainEchoeBuff.Desc")
-              .SetIcon(icon)
+              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              /*.SetDisplayName(name)
+              .SetDescription("PainEchoe.BuffDesc")
+              .SetIcon(icon)*/
               .Configure();
 
             var toggleBuff = BuffConfigurator.New("PainEchoeOn", "FA7A69F7-3213-4966-BDF0-6E55C359E636")

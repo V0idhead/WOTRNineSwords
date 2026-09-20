@@ -28,7 +28,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavagerManeuvers
         const string name = "IceJawStrike.Name";
         const string desc = "IceJawStrike.Desc";
         //const string icon = Helpers.IconPrefix + "icejawstrike.png";
-        static Sprite icon = AbilityRefs.Flare.Reference.Get().Icon;
+        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static BlueprintFeature Configure()
         {
@@ -39,8 +39,8 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavagerManeuvers
               .SetDescription("IceJawStrike.TargetBuff")
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.Harmful)
               .SetIcon(icon)
-              .AddBuffMovementSpeed(value: -200)
               .AddDamageOverTime(new Kingmaker.RuleSystem.DiceFormula(1, Kingmaker.RuleSystem.DiceType.D12), Kingmaker.Enums.Damage.DamageEnergyType.Cold, false)
+              .AddCondition(Kingmaker.UnitLogic.UnitCondition.CantMove)
               .Configure();
 
             var ability = AbilityConfigurator.New("IceJawStrikeAbility", "EBABEA5F-1920-4CA8-BD64-FB7E8EBC5C78")

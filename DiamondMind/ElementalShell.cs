@@ -1,5 +1,6 @@
 ﻿using BlueprintCore.Actions.Builder;
 using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
@@ -7,6 +8,7 @@ using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Commands.Base;
 using System;
 using System.Collections.Generic;
@@ -42,23 +44,17 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
               .AddDamageResistanceEnergy(type: Kingmaker.Enums.Damage.DamageEnergyType.Acid, value: ContextValues.Constant(5))
               .Configure();
 
-            var ability = AbilityConfigurator.New("ElementalShellAbility", "A25759E5-869D-4671-B97C-4145F30FE717")
+            var ability = ActivatableAbilityConfigurator.New("ElementalShellAbility", "A25759E5-869D-4671-B97C-4145F30FE717")
               .SetDisplayName(name)
               .SetDescription(desc)
               .SetIcon(icon)
-              .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Special)
-              .SetCanTargetEnemies(false)
-              .SetCanTargetFriends(false)
-              .SetCanTargetSelf()
-              .SetRange(AbilityRange.Personal)
-              .SetActionType(UnitCommand.CommandType.Swift)
-              .SetType(AbilityType.CombatManeuver)
-              .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
-              .AddAbilityEffectRunAction
-              (
-                ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true)
-              )
-              .AddAbilityResourceLogic(1, requiredResource: ManeuverResources.ManeuverResourceGuid, isSpendResource: true)
+              .SetActivationType(AbilityActivationType.Immediately)
+              .SetBuff(buff)
+              .SetDeactivateIfOwnerDisabled()
+              .SetDeactivateIfOwnerUnconscious()
+              .SetDoNotTurnOffOnRest()
+              .SetGroup(ActivatableAbilityGroup.CombatStyle)
+              .SetWeightInGroup(1)
               .Configure();
 
             var feat = FeatureConfigurator.New("ElementalShellFeat", Guid, AllManeuversAndStances.featureGroup)
@@ -67,7 +63,6 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
               .SetIcon(icon)
               .AddFeatureTagsComponent(FeatureTag.Attack | FeatureTag.Melee)
               .AddFacts(new() { ability })
-              .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(ManeuverResources.ManeuverResourceGuid))
 #if !DEBUG
               .AddPrerequisiteFeature(DisciplineProficencies.DiamondMindProficencyGuid, hideInUI: true)
 #endif

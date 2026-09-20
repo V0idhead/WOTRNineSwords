@@ -18,10 +18,10 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
     static class DiamondLockStance
     {
         public const string Guid = "EC46E70E-720B-4320-B18D-85919EBC4CAC";
-        const string name = "DiamondShimmerStance.Name";
-        const string desc = "DiamondShimmerStance.Desc";
+        const string name = "DiamondLockStance.Name";
+        const string desc = "DiamondLockStance.Desc";
         //const string icon = Helpers.IconPrefix + "diamondlockstance.png";
-        static Sprite icon = AbilityRefs.Flare.Reference.Get().Icon;
+        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {

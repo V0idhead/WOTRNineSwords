@@ -407,11 +407,11 @@
   },
   {
     "Key": "IntimidatingGlare.Desc",
-    "enGB": "Each enemy within 30 feet gains a penalty to attack rolls equal to your Charisma bonus."
+    "enGB": "Each enemy within 30 feet gains a -1 penalty to attack rolls."
   },
   {
     "Key": "IntimidatingGlare.EffectDesc",
-    "enGB": "Penalty to attack rolls."
+    "enGB": "-1 Penalty to attack rolls."
   },
   {
     "Key": "TacticalAssistance.Name",
@@ -420,7 +420,15 @@
   },
   {
     "Key": "TacticalAssistance.Desc",
-    "enGB": "As a move action you can apply a penalty to Armor Class equal to your Charisma bonus to a single enemy within melee range."
+    "enGB": "As a move action you can apply a bonus to Armor Class and Attack Rolls equal to your Charisma bonus to a single ally within melee range for one round."
+  },
+  {
+    "Key": "WarlordTactitian.Desc",
+    "enGB": "At 1st level, a warlord receives a teamwork {g|Encyclopedia:Feat}feat{/g} as a bonus feat. He must meet the prerequisites for this feat. As a {g|Encyclopedia:Standard_Actions}standard action{/g}, the warlord can grant his teamwork feat to all allies within 30 feet who can see and hear him. Allies retain the use of this bonus feat for 3 {g|Encyclopedia:Combat_Round}rounds{/g} plus 1 round for every two levels the cavalier possesses. Allies do not need to meet the prerequisites of these bonus feats. The warlord can use this ability once per day at 1st level, plus one additional time per day at 5th level and for every 5 levels thereafter."
+  },
+  {
+    "Key": "WarlordGreaterTactitian.Desc",
+    "enGB": "At 9th level, the warlord receives an additional teamwork {g|Encyclopedia:Feat}feat{/g} as a bonus feat. He must meet the prerequisites for this feat. Using the tactician ability is a {g|Encyclopedia:Swift_Action}swift action{/g}."
   },
 
   {
@@ -684,6 +692,33 @@
     "enGB": "Eternal Baldes are masters of time as well as masters of the sword. By focusing their will through their chosen weapon they can both stretch and compress time and keep their enemies off-guard by seemingly appearing in two places at once or crossing vast distances on the battlefield in the blink of an eye.\n\nEternal Blades only have access to the Diamond Mind and Riven Hourglass disciplines."
   },
   {
+    "Key": "EternalBladeManeuverSelection.Name",
+    "ProcessTemplates": false,
+    "enGB": "Eternal Blade Maneuver Selection"
+  },
+  {
+    "Key": "EternalBladeManeuverSelection.Desc",
+    "enGB": "You begin your career with knowledge of six martial maneuvers. The disciplines available to you are Diamond Mind and Riven Hourglass."
+  },
+  {
+    "Key": "EternalBladeStanceSelection.Name",
+    "ProcessTemplates": false,
+    "enGB": "Eternal Blade Stance Selection"
+  },
+  {
+    "Key": "EternalBladeStanceSelection.Desc",
+    "enGB": "You begin with knowledge of one 1st level stance from any discipline open to Eteral Blades. At 2nd, 5th, 9th, 14th, and 20th level, you can choose additional stances. Unlike maneuvers, stances are not expended, and you do not have to ready them. All the stances you know are available to you at all times, and you can change the stance you are currently using as a swift action. A stance is an extraordinary ability unless otherwise stated in the stance description.\n\nIn addition to normal weapon attacks available to all martial classes swordsages can perform maneuvers and counters as well as enter stances. Maneuvers are special weapon attack that rival magic in effect.\nCounters are similar but react to specific conditions or actions performed by enemies.\n\nSwordsages have access to maneuvers from the Desert Wind, Diamond Mind, Setting Sun, shadow Hand, Stone Dragon and Tiger Claw disciplines.\nAt level one 4 maneuvers can be performed per battle, this number increases as more swordsage levels are taken. During battle the number of available maneuvers can be restored using the Recover Maneuvers ability."
+  },
+  {
+    "Key": "EternalBladeDisciplineFocusSelection.Name",
+    "ProcessTemplates": false,
+    "enGB": "Eternal Blade Discipline Focus Selection"
+  },
+  {
+    "Key": "EternalBladeDisciplineFocusSelection.Desc",
+    "enGB": "At level 1 choose a discipline available to Eternal Blades. You gain the Focus feat for that discipline."
+  },
+  {
     "Key": "TimelessReflexes.Name",
     "ProcessTemplates": false,
     "enGB": "Timeless Reflexes"
@@ -708,34 +743,25 @@
   },
   {
     "Key": "TimelessBody.Desc",
-    "enGB": "You cannot be slowed or paralyzed."
+    "enGB": "You cannot be slowed or staggered."
   },
   {
-    "Key": "nam.Name",
+    "Key": "TimelessAwareness.Name",
     "ProcessTemplates": false,
-    "enGB": "identifier"
+    "enGB": "Timeless Awareness"
   },
   {
-    "Key": "desc.Desc",
-    "enGB": ""
+    "Key": "TimelessAwareness.Desc",
+    "enGB": "You can make 2 additional attacks of opportunity per round."
   },
   {
-    "Key": "nam.Name",
+    "Key": "IslandInTime.Name",
     "ProcessTemplates": false,
-    "enGB": "identifier"
+    "enGB": "Island in Time"
   },
   {
-    "Key": "desc.Desc",
-    "enGB": ""
-  },
-  {
-    "Key": "nam.Name",
-    "ProcessTemplates": false,
-    "enGB": "identifier"
-  },
-  {
-    "Key": "desc.Desc",
-    "enGB": ""
+    "Key": "IslandInTime.Desc",
+    "enGB": "When making attacks of opportunity you can make a full attack instead of a single attack."
   },
 
   {
@@ -1996,7 +2022,7 @@
   },
   {
     "Key": "BuzzingStrike.Desc",
-    "enGB": "Discipline: Diamond Mind\nManeuver Type: Strike\nRequired Initiator Level: Warblade 1, Swordsage 1\nWhen you initiate this maneuver, you unleash a destructive temporal disturbance in a 30-foot cone. Enemies caught in the cone must make a Will save (DC 19 + your Wisdom modifier) or die. Creatures that succeed on their save are instead exhausted and slowed for 2d4 rounds."
+    "enGB": "Discipline: Diamond Mind\nManeuver Type: Strike\nRequired Initiator Level: Warblade 1, Swordsage 1\nMake a melee attack. On a hit your target must make a Will save (DC 11 + your WIS modifier) or suffer 10% additional Arcane Spell failure for 6 rounds."
   },
   {
     "Key": "DiamondShimmerStance.Name",
