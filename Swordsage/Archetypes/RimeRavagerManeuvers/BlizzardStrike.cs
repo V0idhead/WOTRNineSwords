@@ -27,7 +27,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavagerManeuvers
         const string name = "BlizzardStrike.Name";
         const string desc = "BlizzardStrike.Desc";
         //const string icon = Helpers.IconPrefix + "blizzardstrike.png";
-        static Sprite icon = AbilityRefs.Flare.Reference.Get().Icon;
+        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static BlueprintFeature Configure()
         {

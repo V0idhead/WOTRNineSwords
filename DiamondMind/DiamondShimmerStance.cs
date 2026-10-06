@@ -26,7 +26,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         const string name = "DiamondShimmerStance.Name";
         const string desc = "DiamondShimmerStance.Desc";
         //const string icon = Helpers.IconPrefix + "diamondshimmerstance.png";
-        static Sprite icon = AbilityRefs.Flare.Reference.Get().Icon;
+        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {

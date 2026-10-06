@@ -26,7 +26,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavagerManeuvers
         const string name = "BonechillingStrike.Name";
         const string desc = "BonechillingStrike.Desc";
         //const string icon = Helpers.IconPrefix + "bonechillingstrike.png";
-        static Sprite icon = AbilityRefs.Flare.Reference.Get().Icon;
+        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static BlueprintFeature Configure()
         {

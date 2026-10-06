@@ -27,7 +27,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavagerManeuvers
         public const string Guid = "4950A778-ACD3-4A43-B629-91912AAFE8C8";
         const string name = "IceMirrorStance.Name";
         //const string icon = Helpers.IconPrefix + "icemirrorstance.png";
-        static Sprite icon = AbilityRefs.Flare.Reference.Get().Icon;
+        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static BlueprintFeature Configure()
         {
@@ -45,7 +45,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavagerManeuvers
 
             var stanceActivatable = ActivatableAbilityConfigurator.New("IceMirrorStanceActivatable", "5750CEAB-C856-49E3-B968-624F30A2171E")
               .SetDisplayName(name)
-              .SetDescription("BorealisStance.Desc")
+              .SetDescription("IceMirrorStance.Desc")
               .SetIcon(icon)
               .SetActivationType(AbilityActivationType.Immediately)
               .SetBuff(stanceSelf)

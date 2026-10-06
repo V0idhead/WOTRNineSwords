@@ -30,7 +30,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavagerManeuvers
         const string name = "IceSpikeStrike.Name";
         const string desc = "IceSpikeStrike.Desc";
         //const string icon = Helpers.IconPrefix + "icespikestrike.png";
-        static Sprite icon = AbilityRefs.Flare.Reference.Get().Icon;
+        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static BlueprintFeature Configure()
         {
@@ -38,24 +38,26 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavagerManeuvers
 
             var targetBuff1 = BuffConfigurator.New("IceSpikeStrikeBuff1", "92696320-C4F6-4776-8FF2-A6CA7AB8AD05")
               .SetDisplayName(name)
-              .SetDescription("ShatterResistance.TargetBuff1")
+              .SetDescription("IceSpikeStrike.TargetBuff1")
               .SetIcon(icon)
-              .AddStatBonus(Kingmaker.Enums.ModifierDescriptor.Penalty, stat: Kingmaker.EntitySystem.Stats.StatType.Dexterity, value: -4)
+              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.Harmful)
               .Configure();
 
             var targetBuff2 = BuffConfigurator.New("IceSpikeStrikeBuff2", "D178E216-5A5D-4C2D-9AE1-D1088D1871C4")
               .SetDisplayName(name)
-              .SetDescription("ShatterResistance.TargetBuff2")
+              .SetDescription("IceSpikeStrike.TargetBuff2")
               .SetIcon(icon)
-              .AddStatBonus(Kingmaker.Enums.ModifierDescriptor.Penalty, stat: Kingmaker.EntitySystem.Stats.StatType.Dexterity, value: -6)
-              .AddStatBonus(Kingmaker.Enums.ModifierDescriptor.Penalty, stat: Kingmaker.EntitySystem.Stats.StatType.Strength, value: -6)
+              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.Harmful)
+              .AddStatBonus(Kingmaker.Enums.ModifierDescriptor.Penalty, stat: Kingmaker.EntitySystem.Stats.StatType.Dexterity, value: -4)
               .Configure();
 
             var targetBuff3 = BuffConfigurator.New("IceSpikeStrikeBuff3", "CF08FF5C-EEAF-413F-ADF7-4DECE5CEF06C")
               .SetDisplayName(name)
-              .SetDescription("ShatterResistance.TargetBuff3")
+              .SetDescription("IceSpikeStrike.TargetBuff3")
               .SetIcon(icon)
-              .AddBuffStatusCondition(Kingmaker.UnitLogic.UnitCondition.Paralyzed)
+              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.Harmful)
+              .AddStatBonus(Kingmaker.Enums.ModifierDescriptor.Penalty, stat: Kingmaker.EntitySystem.Stats.StatType.Dexterity, value: -6)
+              .AddStatBonus(Kingmaker.Enums.ModifierDescriptor.Penalty, stat: Kingmaker.EntitySystem.Stats.StatType.Strength, value: -6)
               .Configure();
 
             var ability = AbilityConfigurator.New("IceSpikeStrikeAbility", "EEC310EB-A26B-42A1-9444-DD8B539DDEA0")
@@ -74,12 +76,12 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavagerManeuvers
               .AddAbilityRequirementHasItemInHands(type: Kingmaker.UnitLogic.Abilities.Components.AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
               .AddAbilityEffectRunAction(actions: ActionsBuilder.New().Add<MeleeAttackExtended>(mae => mae.OnHit = ActionsBuilder.New().
                 Conditional(ConditionsBuilder.New().HasBuff(targetBuff3),
-                    ifTrue: ActionsBuilder.New().DealDamage(DamageTypes.Energy(DamageEnergyType.Cold), ContextDice.Value(Kingmaker.RuleSystem.DiceType.D12, ContextValues.Constant(6))).IncreaseBuffDuration(ContextDuration.Fixed(2), targetBuff3).IncreaseBuffDuration(ContextDuration.Fixed(2), targetBuff2),
+                    ifTrue: ActionsBuilder.New().DealDamage(DamageTypes.Energy(DamageEnergyType.Cold), ContextDice.Value(Kingmaker.RuleSystem.DiceType.D12, ContextValues.Constant(6))).IncreaseBuffDuration(ContextDuration.Fixed(2), targetBuff3).ApplyBuff(BuffRefs.Paralyzed.Reference.Guid, ContextDuration.Fixed(3)),
                     ifFalse: ActionsBuilder.New().Conditional(ConditionsBuilder.New().HasBuff(targetBuff2),
-                        ifTrue: ActionsBuilder.New().DealDamage(DamageTypes.Energy(DamageEnergyType.Cold), ContextDice.Value(Kingmaker.RuleSystem.DiceType.D8, ContextValues.Constant(6))).IncreaseBuffDuration(ContextDuration.Fixed(1), targetBuff2).SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 18 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom), onResult: ActionsBuilder.New().ConditionalSaved(ActionsBuilder.New().ApplyBuff(targetBuff3, ContextDuration.Fixed(2)))),
+                        ifTrue: ActionsBuilder.New().DealDamage(DamageTypes.Energy(DamageEnergyType.Cold), ContextDice.Value(Kingmaker.RuleSystem.DiceType.D8, ContextValues.Constant(6))).IncreaseBuffDuration(ContextDuration.Fixed(1), targetBuff2).SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 18 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom), onResult: ActionsBuilder.New().ConditionalSaved(ActionsBuilder.New().RemoveBuff(targetBuff2).ApplyBuff(targetBuff3, ContextDuration.Fixed(3)))),
                         ifFalse: ActionsBuilder.New().Conditional(ConditionsBuilder.New().HasBuff(targetBuff1),
-                            ifTrue: ActionsBuilder.New().DealDamage(DamageTypes.Energy(DamageEnergyType.Cold), ContextDice.Value(Kingmaker.RuleSystem.DiceType.D4, ContextValues.Constant(6))).SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 18 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom), onResult: ActionsBuilder.New().ConditionalSaved(ActionsBuilder.New().RemoveBuff(targetBuff1).ApplyBuff(targetBuff2, ContextDuration.Fixed(2)))),
-                            ifFalse: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 18 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom), onResult: ActionsBuilder.New().ConditionalSaved(ActionsBuilder.New().ApplyBuff(targetBuff1, ContextDuration.Fixed(2))))
+                            ifTrue: ActionsBuilder.New().DealDamage(DamageTypes.Energy(DamageEnergyType.Cold), ContextDice.Value(Kingmaker.RuleSystem.DiceType.D4, ContextValues.Constant(6))).SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 18 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom), onResult: ActionsBuilder.New().ConditionalSaved(ActionsBuilder.New().RemoveBuff(targetBuff1).ApplyBuff(targetBuff2, ContextDuration.Fixed(3)))),
+                            ifFalse: ActionsBuilder.New().SavingThrow(Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, customDC: new ContextValue { Value = 18 }, conditionalDCModifiers: Helpers.GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom), onResult: ActionsBuilder.New().ConditionalSaved(ActionsBuilder.New().ApplyBuff(targetBuff1, ContextDuration.Fixed(3))))
                         )
                     )
                 ).Build()

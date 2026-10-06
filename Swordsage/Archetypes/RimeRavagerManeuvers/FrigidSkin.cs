@@ -32,7 +32,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavagerManeuvers
         const string name = "FrigidSkin.Name";
         const string desc = "FrigidSkin.Desc";
         //const string icon = Helpers.IconPrefix + "frigidskin.png";
-        static Sprite icon = AbilityRefs.Flare.Reference.Get().Icon;
+        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static BlueprintFeature Configure()
         {

@@ -27,7 +27,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavagerManeuvers
         const string name = "ShatterResistance.Name";
         const string desc = "ShatterResistance.Desc";
         //const string icon = Helpers.IconPrefix + "shatterresistance.png";
-        static Sprite icon = AbilityRefs.Flare.Reference.Get().Icon;
+        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static BlueprintFeature Configure()
         {

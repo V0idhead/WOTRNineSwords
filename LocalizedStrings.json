@@ -624,7 +624,7 @@
   },
   {
     "Key": "IceMirrorStance.Desc",
-    "enGB": "Discipline: Rime Ravager\nRequired Initiator Level: Rime Ravager 8\nWhile you maintain this stance a coat of ice forms on your skin. Attacks against you break of ice shards that are flung against attackers in melee range, dealing 2d10 cold damage, additionally attackers must make a Fortitude save (DC 16 + your WIS modifier) or suffer 1d4-1 strenght damage."
+    "enGB": "Discipline: Rime Ravager\nRequired Initiator Level: Rime Ravager 8\nWhile you maintain this stance a coat of ice forms on your skin. Attacks against you break off ice shards that are flung against attackers in melee range, dealing 2d10 cold damage, additionally attackers must make a Fortitude save (DC 16 + your WIS modifier) or suffer 1d4-1 strenght damage."
   },
   {
     "Key": "ShatterResistance.Name",
@@ -650,15 +650,15 @@
   },
   {
     "Key": "IceSpikeStrike.TargetBuff1",
-    "enGB": "-4 to Dexterity"
+    "enGB": "Has 1 ice spike."
   },
   {
     "Key": "IceSpikeStrike.TargetBuff2",
-    "enGB": "-6 to Dexterity, -6 to Strength"
+    "enGB": "Has 2 ice spikes. -4 to Dexterity"
   },
   {
     "Key": "IceSpikeStrike.TargetBuff3",
-    "enGB": "Paralyzed"
+    "enGB": "Has 3 ice spikes. -6 to Dexterity, -6 to Strength"
   },
   {
     "Key": "BlizzardStrike.Name",

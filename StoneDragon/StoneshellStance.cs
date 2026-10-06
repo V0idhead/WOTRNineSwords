@@ -24,7 +24,7 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         const string name = "StoneshellStance.Name";
         const string desc = "StoneshellStance.Desc";
         //const string icon = Helpers.IconPrefix + "stoneshellstance.png";
-        static Sprite icon = AbilityRefs.Flare.Reference.Get().Icon;
+        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {

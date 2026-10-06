@@ -30,7 +30,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         const string name = "DiamondFocus.Name";
         const string desc = "DiamondFocus.Desc";
         //const string icon = Helpers.IconPrefix + "diamondfocus.png";
-        static Sprite icon = AbilityRefs.Flare.Reference.Get().Icon;
+        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static void Configure()
         {

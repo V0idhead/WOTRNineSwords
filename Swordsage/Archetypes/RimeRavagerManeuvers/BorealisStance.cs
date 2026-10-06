@@ -26,7 +26,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes
         public const string Guid = "0C2ABE80-D308-483C-9FA7-2C09DBC090B7";
         const string name = "BorealisStance.Name";
         //const string icon = Helpers.IconPrefix + "borealisStance.png";
-        static Sprite icon = AbilityRefs.Flare.Reference.Get().Icon;
+        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static BlueprintFeature Configure()
         {
