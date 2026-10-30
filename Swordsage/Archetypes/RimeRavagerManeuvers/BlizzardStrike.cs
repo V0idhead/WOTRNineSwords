@@ -3,19 +3,12 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 
@@ -26,8 +19,8 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavagerManeuvers
         public const string Guid = "ACC1D5ED-57D9-4D1E-A6BC-E35876289C45";
         const string name = "BlizzardStrike.Name";
         const string desc = "BlizzardStrike.Desc";
-        //const string icon = Helpers.IconPrefix + "blizzardstrike.png";
-        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "blizzardstrike.png";
+        //static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
 
         public static BlueprintFeature Configure()
         {

@@ -13,12 +13,6 @@ using Kingmaker.Enums.Damage;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 
@@ -29,8 +23,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavagerManeuvers
         public const string Guid = "914C5650-7C65-4CED-8043-7EE1FB98F9FE";
         const string name = "IceSpikeStrike.Name";
         const string desc = "IceSpikeStrike.Desc";
-        //const string icon = Helpers.IconPrefix + "icespikestrike.png";
-        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "icespikestrike.png";
 
         public static BlueprintFeature Configure()
         {

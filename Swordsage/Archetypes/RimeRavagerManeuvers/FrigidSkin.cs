@@ -2,21 +2,14 @@
 using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Facts;
 using Kingmaker.UnitLogic.ActivatableAbilities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Counters;
-using VoidHeadWOTRNineSwords.DesertWind;
 
 namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavagerManeuvers
 {
@@ -31,8 +24,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavagerManeuvers
         public static BlueprintActivatableAbility Activatable { get; private set; }
         const string name = "FrigidSkin.Name";
         const string desc = "FrigidSkin.Desc";
-        //const string icon = Helpers.IconPrefix + "frigidskin.png";
-        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "frigidskincounter.png";
 
         public static BlueprintFeature Configure()
         {

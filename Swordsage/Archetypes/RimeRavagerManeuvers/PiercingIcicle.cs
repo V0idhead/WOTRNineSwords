@@ -9,16 +9,9 @@ using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
-using VoidHeadWOTRNineSwords.ShadowHand;
 
 namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes
 {
@@ -27,8 +20,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes
         public const string Guid = "CC3627BE-B344-4749-BF1F-03CE80A36C52";
         const string name = "PiercingIcicle.Name";
         const string desc = "PiercingIcicle.Desc";
-        //const string icon = Helpers.IconPrefix + "piercingicicle.png";
-        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "piercingicicle.png";
 
         public static BlueprintFeature Configure()
         {

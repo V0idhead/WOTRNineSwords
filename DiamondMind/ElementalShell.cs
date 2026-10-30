@@ -1,24 +1,11 @@
-﻿using BlueprintCore.Actions.Builder;
-using BlueprintCore.Actions.Builder.ContextEx;
-using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
-using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.ActivatableAbilities;
-using Kingmaker.UnitLogic.Commands.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
-using VoidHeadWOTRNineSwords.ShadowHand;
 
 namespace VoidHeadWOTRNineSwords.DiamondMind
 {
@@ -27,8 +14,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         public const string Guid = "62399D2F-2A8F-4753-9915-0A559FFB6ED6";
         const string name = "ElementalShell.Name";
         const string desc = "ElementalShell.Desc";
-        //const string icon = Helpers.IconPrefix + "elementalshell.png";
-        static Sprite icon = AbilityRefs.Flare.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "elementalshell.png";
 
         public static void Configure()
         {

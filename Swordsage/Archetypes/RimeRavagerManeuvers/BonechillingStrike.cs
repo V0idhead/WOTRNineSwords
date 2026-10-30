@@ -9,12 +9,6 @@ using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 
@@ -25,8 +19,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavagerManeuvers
         public const string Guid = "1A6A71A4-C710-4783-A102-E3376A783D2F";
         const string name = "BonechillingStrike.Name";
         const string desc = "BonechillingStrike.Desc";
-        //const string icon = Helpers.IconPrefix + "bonechillingstrike.png";
-        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "bonechillingstrike.png";
 
         public static BlueprintFeature Configure()
         {

@@ -1,19 +1,10 @@
 ﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
-using Kingmaker.UnitLogic.FactLogic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
-using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 
 namespace VoidHeadWOTRNineSwords.StoneDragon
@@ -23,8 +14,7 @@ namespace VoidHeadWOTRNineSwords.StoneDragon
         public const string Guid = "77AC2973-7BD7-4F92-B9C6-F831844A42F3";
         const string name = "StoneshellStance.Name";
         const string desc = "StoneshellStance.Desc";
-        //const string icon = Helpers.IconPrefix + "stoneshellstance.png";
-        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "stoneshellstance.png";
 
         public static void Configure()
         {

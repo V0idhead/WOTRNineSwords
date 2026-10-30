@@ -4,19 +4,12 @@ using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.Utility;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
 using VoidHeadWOTRNineSwords.Components;
 
 namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes
@@ -25,8 +18,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes
     {
         public const string Guid = "0C2ABE80-D308-483C-9FA7-2C09DBC090B7";
         const string name = "BorealisStance.Name";
-        //const string icon = Helpers.IconPrefix + "borealisStance.png";
-        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "borealisStance.png";
 
         public static BlueprintFeature Configure()
         {

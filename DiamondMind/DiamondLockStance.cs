@@ -1,16 +1,9 @@
 ﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
-using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.ActivatableAbilities;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
 using VoidHeadWOTRNineSwords.Common;
 
 namespace VoidHeadWOTRNineSwords.DiamondMind
@@ -20,8 +13,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         public const string Guid = "EC46E70E-720B-4320-B18D-85919EBC4CAC";
         const string name = "DiamondLockStance.Name";
         const string desc = "DiamondLockStance.Desc";
-        //const string icon = Helpers.IconPrefix + "diamondlockstance.png";
-        static Sprite icon = AbilityRefs.CausticEruption.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "diamondlockstance.png";
 
         public static void Configure()
         {

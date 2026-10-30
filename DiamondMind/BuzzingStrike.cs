@@ -3,18 +3,11 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
-using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.Mechanics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Feats;
@@ -26,8 +19,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         public const string Guid = "BA1CB9D6-9AD1-4147-9F6B-816A414808BF";
         const string name = "BuzzingStrike.Name";
         const string desc = "BuzzingStrike.Desc";
-        //const string icon = Helpers.IconPrefix + "buzzingstrike.png";
-        static Sprite icon = AbilityRefs.Flare.Reference.Get().Icon;
+        const string icon = Helpers.IconPrefix + "buzzingstrike.png";
 
         public static void Configure()
         {
@@ -38,7 +30,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
               .SetDescription(desc)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.Harmful)
               .SetIcon(icon)
-              .AddArcaneSpellFailureIncrease(10, universal: true)
+              .AddArcaneSpellFailureIncrease(20, universal: true)
               .Configure();
 
             var ability = AbilityConfigurator.New("BuzzingStrikeAbility", "062FC25B-6742-45DD-999B-E31D55F932B4")
