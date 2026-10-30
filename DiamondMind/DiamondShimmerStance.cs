@@ -15,7 +15,7 @@ namespace VoidHeadWOTRNineSwords.DiamondMind
         public const string Guid = "F416BEC6-35EC-45DB-B8C8-C4D8C35C310C";
         const string name = "DiamondShimmerStance.Name";
         const string desc = "DiamondShimmerStance.Desc";
-        const string icon = Helpers.IconPrefix + "diamondshimmerstance.png";
+        const string icon = Helpers.IconPrefix + "diamonshimmerstance.png";
 
         public static void Configure()
         {
