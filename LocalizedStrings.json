@@ -376,7 +376,7 @@
   },
   {
     "Key": "Warlord.Desc",
-    "enGB": "While most commanders meticulously prepare strategies and develop tactis for their troops. The Warlord dives straight into battle and relies on his force of personality to inspire his allies to perform as a single unit in battle. Allowing all individual parts of his warband to react to the uncertainties of battle as if they spent hours preparing for each possible scenario."
+    "enGB": "While most commanders meticulously prepare strategies and develop tactics for their troops. The Warlord dives straight into battle and relies on his force of personality to inspire his allies to perform as a single unit in battle. Allowing all individual parts of his warband to react to the uncertainties of battle as if they spent hours preparing for each possible scenario."
   },
   {
     "Key": "ForceOfPersonality.Name",
@@ -1179,7 +1179,7 @@
   },
   {
     "Key": "ScythingBlade.Desc",
-    "enGB": "Discipline: Iron Heart\nManeuver Type: Strike\nRequired Initiator Level: Warblade 13\nRequired Maneuvers: 3 Iron Heart\nMake an attack as a switft action."
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Strike\nRequired Initiator Level: Warblade 13\nRequired Maneuvers: 3 Iron Heart\nMake an attack as a swift action."
   },
   {
     "Key": "AdamantineBones.Name",
@@ -1346,7 +1346,7 @@
   },
   {
     "Key": "WallOfBlades.Desc",
-    "enGB": "Discipline: Iron Heart\nManeuver Type: Counter\nRequired Initiator Level: Warblade 3\nWhile this counter is active you attempt to parry incoming attacks. Uses two maneuver points when you are being attacked for the first time in a round. Each successful parry adds a cummulative -1 penalty to subsequent parries in the same round."
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Counter\nRequired Initiator Level: Warblade 3\nWhile this counter is active you attempt to parry incoming attacks. Uses two maneuver points when you are being attacked for the first time in a round. Each successful parry adds a cumulative -1 penalty to subsequent parries in the same round."
   },
   {
     "Key": "WallOfBladesBuff.Desc",
@@ -1410,7 +1410,7 @@
   },
   {
     "Key": "ManticoreParry.Desc",
-    "enGB": "Discipline: Iron Heart\nManeuver Type: Counter\nRequired Initiator Level: Warblade 11\nRequired Maneuvers: 2 Iron Heart\nWhile this counter is active you attempt to parry incoming attacks with melee weapon attacks, if your parry succeeds the attacks hits an adjacent enemy instead. Uses two maneuver points when you are being attacked for the first time in a round. Each successful parry adds a cummulative -1 penalty to subsequent parries in the same round."
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Counter\nRequired Initiator Level: Warblade 11\nRequired Maneuvers: 2 Iron Heart\nWhile this counter is active you attempt to parry incoming attacks with melee weapon attacks, if your parry succeeds the attacks hits an adjacent enemy instead. Uses two maneuver points when you are being attacked for the first time in a round. Each successful parry adds a cumulative -1 penalty to subsequent parries in the same round."
   },
   {
     "Key": "ManticoreParry.LogMsg",
@@ -1521,7 +1521,7 @@
   },
   {
     "Key": "FireRiposte.Desc",
-    "enGB": "Discipline: Desert Wind\nManeuver Type: Counter\nRequired Initiator Level: Swordsage 3\nRequired Maneuvers: 1 Desert Wind\nWhile this counter is active you attempt a melee touch attack against creatures damaging you. Uses two maneuver points when you are damaged for the first time in a round. Each successful counterattack adds a cummulative -1 penalty to subsequent counterattacks in the same round."
+    "enGB": "Discipline: Desert Wind\nManeuver Type: Counter\nRequired Initiator Level: Swordsage 3\nRequired Maneuvers: 1 Desert Wind\nWhile this counter is active you attempt a melee touch attack against creatures damaging you. Uses two maneuver points when you are damaged for the first time in a round. Each successful counterattack adds a cumulative -1 penalty to subsequent counterattacks in the same round."
   },
   {
     "Key": "FireRiposte.LogMsg",
@@ -2072,15 +2072,5 @@
   {
     "Key": "DiamondFocus.Desc",
     "enGB": "Discipline: Diamond Mind\nManeuver Type: Boost\nRequired Initiator Level: Warblade 1, Swordsage 1\nWhen you activate this boost, you gain +1 to attacks for 1 turn."
-  },
-
-  {
-    "Key": "nam.Name",
-    "ProcessTemplates": false,
-    "enGB": ""
-  },
-  {
-    "Key": "desc.Desc",
-    "enGB": ""
   }
 ]
