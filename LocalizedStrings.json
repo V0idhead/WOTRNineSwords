@@ -124,7 +124,7 @@
   },
   {
     "Key": "ManeuverFocus.Desc",
-    "enGB": "Your maneuvers are particualarly hard to resist.\nBenefit: Add +1 to the Difficulty Class for all saving throws against your maneuvers."
+    "enGB": "Your maneuvers are particularly hard to resist.\nBenefit: Add +1 to the Difficulty Class for all saving throws against your maneuvers."
   },
   {
     "Key": "MythicManeuverFocus.Name",
@@ -227,7 +227,7 @@
   },
   {
     "Key": "WarbladeC.Desc",
-    "enGB": "The warblade was born for conflict. Swift, strong, enduring, and utterly confident in his martial skills, he seeks to test himself against worthy foes. Battle is beautiful to him - a perfect moment in which life hangs suspended on the bright edge of a sword.\n\nIn addition to normal weapon attacks available to all martial classes warblades can perform maneuvers and counters as well as enter stances. Maneuvers are special weapon attack that rival magic in effect.\nCounters are similar but react to specific conditions or actions performed by enemies.\n\nWarblades have access to maneuvers from the Diamond Mind, Iron Heart, Stone Dragon, Tiger Claw and White Raven disciplines.\nAt level one 3 maneuvers can be performed per battle, this number increases as more warblades levels are taken. During battle the number of available maneuvers can be restored using the Recover Maneuvers ability."
+    "enGB": "The warblade was born for conflict. Swift, strong, enduring, and utterly confident in his martial skills, he seeks to test himself against worthy foes. Battle is beautiful to him - a perfect moment in which life hangs suspended on the bright edge of a sword.\n\nIn addition to normal weapon attacks available to all martial classes, warblades can perform maneuvers and counters as well as enter stances. Maneuvers are special weapon attack that rival magic in effect.\nCounters are similar but react to specific conditions or actions performed by enemies.\n\nWarblades have access to maneuvers from the Diamond Mind, Iron Heart, Stone Dragon, Tiger Claw and White Raven disciplines.\nAt level one 3 maneuvers can be performed per battle, this number increases as more warblades levels are taken. During battle the number of available maneuvers can be restored using the Recover Maneuvers ability."
   },
   {
     "Key": "WarbladeProficiencies.Name",
@@ -236,7 +236,7 @@
   },
   {
     "Key": "WarbladeProficiencies.Desc",
-    "enGB": "You are proficient with simple and martial melee weapons (including those that can be used as thrown weapons), light and medium armor, and all shields except tower shields. Warblades"
+    "enGB": "You are proficient with simple and martial melee weapons (including those that can be used as thrown weapons), light and medium armor, and all shields except tower shields."
   },
   {
     "Key": "WarbladeManeuverSelection.Name",
@@ -245,7 +245,7 @@
   },
   {
     "Key": "WarbladeManeuverSelection.Desc",
-    "enGB": "You begin your career with knowledge of three martial maneuvers. The disciplines available to you are Diamond Mind, Iron Heart, Stone Dragon, Tiger Claw, and White Raven."
+    "enGB": "You begin your career with knowledge of three martial maneuvers. The disciplines available to you are Diamond Mind, Iron Heart, Stone Dragon, Tiger Claw and White Raven."
   },
   {
     "Key": "WarbladeStanceSelection.Name",
@@ -299,7 +299,7 @@
   },
   {
     "Key": "BattleSkill.Desc",
-    "enGB": "You gain an insight bonus equal to your Intelligence bonus Combat Maneuver Defense."
+    "enGB": "You gain an insight bonus equal to your Intelligence bonus on Combat Maneuver Defense."
   },
   {
     "Key": "BattleMastery.Name",
@@ -321,13 +321,124 @@
   },
 
   {
+    "Key": "DeepstoneSentinel.Name",
+    "ProcessTemplates": false,
+    "enGB": "Deepstone Sentinel"
+  },
+  {
+    "Key": "DeepstoneSentinel.Desc",
+    "enGB": "Ancient Dwarven Martial Masters used their understanding of earth and metal to gain a deeper insight into the Stone Dragon and Iron Heart disciplines."
+  },
+  {
+    "Key": "MountainFortress.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mountain Fortress Defense"
+  },
+  {
+    "Key": "MountainFortress.Desc",
+    "enGB": "The secrets of the Deepstone confer extraordinary defensive capabilities as long as you defend an area and do not move more than 15 feet in a single round.\n\nAt 2nd level: +2 to AC\nAt 5th level: 10% Spell resistance against evocation and Transmutation spells\n8th level: damage resistance equal to your CON Bonus\n11th level: +4 to AC\n14th level: 50% Fortification\n17th level: +6 to AC"
+  },
+  {
+    "Key": "MountainFortress.BuffDesc",
+    "enGB": "At 2nd level: +2 to AC\nAt 5th level: 10% Spell resistance against evocation and Transmutation spells\n8th level: damage resistance equal to your CON Bonus\n11th level: +4 to AC\n14th level: 50% Fortification\n17th level: +6 to AC"
+  },
+  {
+    "Key": "DeepstoneSentinelManeuverSelection.Name",
+    "ProcessTemplates": false,
+    "enGB": "Deepstone Sentinel Maneuver Selection"
+  },
+  {
+    "Key": "DeepstoneSentinelManeuverSelection.Desc",
+    "enGB": "You begin your career with knowledge of three martial maneuvers. The disciplines available to you are Iron Heart and Stone Dragon."
+  },
+  {
+    "Key": "DeepstoneSentinelStanceSelection.Name",
+    "ProcessTemplates": false,
+    "enGB": "Deepstone Sentinel Stance Selection"
+  },
+  {
+    "Key": "DeepstoneSentinelStanceSelection.Desc",
+    "enGB": "You begin with knowledge of one 1st level stance from any discipline open to Deepstone Sentinels. At 4th, 10th, and 16th level, you can choose additional stances. Unlike maneuvers, stances are not expended, and you do not have to ready them. All the stances you know are available to you at all times, and you can change the stance you are currently using as a swift action. A stance is an extraordinary ability unless otherwise stated in the stance description."
+  },
+  {
+    "Key": "DeepstoneSentinelResistance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Deepstone Sentinel Spell Resistance"
+  },
+  {
+    "Key": "DeepstoneSentinelResistance.Desc",
+    "enGB": "You gain spell resistance 10 against Transmutation and Evocation spells."
+  },
+  {
+    "Key": "Warlord.Name",
+    "ProcessTemplates": false,
+    "enGB": "Warlord"
+  },
+  {
+    "Key": "Warlord.Desc",
+    "enGB": "While most commanders meticulously prepare strategies and develop tactics for their troops. The Warlord dives straight into battle and relies on his force of personality to inspire his allies to perform as a single unit in battle. Allowing all individual parts of his warband to react to the uncertainties of battle as if they spent hours preparing for each possible scenario."
+  },
+  {
+    "Key": "ForceOfPersonality.Name",
+    "ProcessTemplates": false,
+    "enGB": "Force of Personality"
+  },
+  {
+    "Key": "ForceOfPersonality.Desc",
+    "enGB": "You gain an insight bonus equal to your Charisma bonus on your Will saves."
+  },
+  {
+    "Key": "BattleOrders.Name",
+    "ProcessTemplates": false,
+    "enGB": "Battle Orders"
+  },
+  {
+    "Key": "BattleOrders.Desc",
+    "enGB": "Each ally (but not yourself) within 30 feet gains +1 to attack rolls."
+  },
+  {
+    "Key": "BattleOrders.EffectDesc",
+    "enGB": "+1 to attack rolls."
+  },
+  {
+    "Key": "IntimidatingGlare.Name",
+    "ProcessTemplates": false,
+    "enGB": "Intimidating Glare"
+  },
+  {
+    "Key": "IntimidatingGlare.Desc",
+    "enGB": "Each enemy within 30 feet gains a -1 penalty to attack rolls."
+  },
+  {
+    "Key": "IntimidatingGlare.EffectDesc",
+    "enGB": "-1 Penalty to attack rolls."
+  },
+  {
+    "Key": "TacticalAssistance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Tactical Assistance"
+  },
+  {
+    "Key": "TacticalAssistance.Desc",
+    "enGB": "As a move action you can apply a bonus to Armor Class and Attack Rolls equal to your Charisma bonus to a single ally within melee range for one round."
+  },
+  {
+    "Key": "WarlordTactitian.Desc",
+    "enGB": "At 1st level, a warlord receives a teamwork {g|Encyclopedia:Feat}feat{/g} as a bonus feat. He must meet the prerequisites for this feat. As a {g|Encyclopedia:Standard_Actions}standard action{/g}, the warlord can grant his teamwork feat to all allies within 30 feet who can see and hear him. Allies retain the use of this bonus feat for 3 {g|Encyclopedia:Combat_Round}rounds{/g} plus 1 round for every two levels the cavalier possesses. Allies do not need to meet the prerequisites of these bonus feats. The warlord can use this ability once per day at 1st level, plus one additional time per day at 5th level and for every 5 levels thereafter."
+  },
+  {
+    "Key": "WarlordGreaterTactitian.Desc",
+    "enGB": "At 9th level, the warlord receives an additional teamwork {g|Encyclopedia:Feat}feat{/g} as a bonus feat. He must meet the prerequisites for this feat. Using the tactician ability is a {g|Encyclopedia:Swift_Action}swift action{/g}."
+  },
+
+  {
     "Key": "SwordsageC.Name",
     "ProcessTemplates": false,
     "enGB": "Swordsage"
   },
   {
     "Key": "SwordsageC.Desc",
-    "enGB": "A master of martial maneuvers, the sword sage is a physical adept — a blade wizard whose knowledge of the Sublime Way lets him unlock potent abilities, many of which are overtly supernatural or magical in nature. Depending on which disciplines he chooses to study, a swordsage might be capable of walking through walls, leaping dozens of feet into the air, shattering boulders with a single touch, or even mastering the elements of fire or shadow. Whatever his specific training, a swordsage blurs the line between martial prowess and magical skill."
+    "enGB": "A master of martial maneuvers, the sword sage is a physical adept — a blade wizard whose knowledge of the Sublime Way lets him unlock potent abilities, many of which are overtly supernatural or magical in nature. Depending on which disciplines he chooses to study, a swordsage might be capable of walking through walls, leaping dozens of feet into the air, shattering boulders with a single touch, or even mastering the elements of fire or shadow. Whatever his specific training, a swordsage blurs the line between martial prowess and magical skill.\n\nIn addition to normal weapon attacks available to all martial classes, swordsages can perform maneuvers and counters as well as enter stances. Maneuvers are special weapon attack that rival magic in effect.\nCounters are similar but react to specific conditions or actions performed by enemies.\n\nUses a non standard BAB Table: like medium with a +1 bonus, thus starting on 1 at level 1\n\nSwordsages have access to maneuvers from the Desert Wind, Diamond Mind, Riven Hourglass, Shadow Hand, Stone Dragon and Tiger Claw disciplines.\nAt level one 6 maneuvers can be performed per battle, this number increases as more swordsage levels are taken. During battle the number of available maneuvers can be restored using the Recover Maneuvers ability."
   },
   {
     "Key": "SwordsageProficiencies.Name",
@@ -349,7 +460,7 @@
   },
   {
     "Key": "SwordsageManeuverSelection.Desc",
-    "enGB": "You begin your career with knowledge of six martial maneuvers. The disciplines available to you are Desert Wind, Diamond Mind, Setting Sun, Shadow Hand, Stone Dragon and Tiger Claw."
+    "enGB": "You begin your career with knowledge of six martial maneuvers. The disciplines available to you are Desert Wind, Diamond Mind, Riven Hourglass, Shadow Hand, Stone Dragon and Tiger Claw."
   },
   {
     "Key": "SwordsageStanceSelection.Name",
@@ -413,6 +524,244 @@
   {
     "Key": "SwordsageDefensiveStance.Desc",
     "enGB": "You gain a bonus to saving throws equal to your Wisdom Bonus."
+  },
+  {
+    "Key": "RimeRavager.Name",
+    "ProcessTemplates": false,
+    "enGB": "Rime Ravager"
+  },
+  {
+    "Key": "RimeRavager.Desc",
+    "enGB": "The secretive order of the Rime Ravagers has a special connection to the forces of cold and frost. Their students are expected to rigidly follow the tenets of the pale precepts, most fail their training, those that succeed are rewarded with an amazing command over the powers of ice and steel."
+  },
+  {
+    "Key": "RimeRavagerProficiencies.Name",
+    "ProcessTemplates": false,
+    "enGB": "Rime Ravager Proficiencie"
+  },
+  {
+    "Key": "RimeRavagerProficiencies.Desc",
+    "enGB": "You are proficient with simple, martial melee weapons (including those that can be used as thrown weapons) and light armor, but not shields. Loses access to the Desert Wind discipline."
+  },
+  {
+    "Key": "PolarisStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Polaris Strike"
+  },
+  {
+    "Key": "PolarisStrike.Desc",
+    "enGB": "Discipline: Rime Ravager\nManeuver Type: Strike\nRequired Initiator Level: Rime Ravager 1\nWhen you initiate this maneuver you make a melee attack against a target, dealing 1d6 extra cold damage. Additionally on hit the target must make a Will save (DC 12 + your WIS modifier) or gain a -2 penalty to attack for 1 round."
+  },
+  {
+    "Key": "PolarisStrike.TargetBuff",
+    "enGB": "-2 penalty to attack."
+  },
+  {
+    "Key": "PiercingIcicle.Name",
+    "ProcessTemplates": false,
+    "enGB": "Piercing Icicle"
+  },
+  {
+    "Key": "PiercingIcicle.Desc",
+    "enGB": "Discipline: Rime Ravager\nManeuver Type: Strike\nRequired Initiator Level: Rime Ravager 2\nYou fling an icicle at an opponent. On a hit it deals 1d6 piercing damage and 1d6 cold damage. If your attack is successful, your target must make a successful Fortitude save (DC 13 + your Wis modifier) or start bleeding for 2d6 damage for 2 rounds."
+  },
+  {
+    "Key": "FrigidSkin.Name",
+    "ProcessTemplates": false,
+    "enGB": "Frigid Skin"
+  },
+  {
+    "Key": "FrigidSkin.Desc",
+    "enGB": "Discipline: Rime Ravager\nManeuver Type: Counter\nRequired Initiator Level: Rime Ravager 4\nCost: 2 maneuver points per round when triggered\nWhen you are struck with a melee weapon while this counter is active, the attacker must make a successful Reflex save (DC 14 + your Wis modifier) or become disarmed for one round."
+  },
+  {
+    "Key": "FrigidSkin.LogMsg",
+    "enGB": "Spent 2 maneuver points on Frigid Skin."
+  },
+  {
+    "Key": "BorealisStance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Borealis Stance"
+  },
+  {
+    "Key": "BorealisStance.Desc",
+    "enGB": "Discipline: Rime Ravager\nRequired Initiator Level: Rime Ravager 4\nWhile you maintain this stance, all opponents within 30ft have their speed reduced by 20. Furthermore opponents within 10ft have their attack bonus reduced by 2."
+  },
+  {
+    "Key": "BorealisStance.Buff1Desc",
+    "enGB": "Speed reduced by 20."
+  },
+  {
+    "Key": "BorealisStance.Buff2Desc",
+    "enGB": "Attack bonus reduced by 2."
+  },
+  {
+    "Key": "IceJawStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ice Jaw Strike"
+  },
+  {
+    "Key": "IceJawStrike.Desc",
+    "enGB": "Discipline: Rime Ravager\nManeuver Type: Strike\nRequired Initiator Level: Rime Ravager 4\nMake a melee attack. On a hit your weapon deals 2d12 additional cold damage. Additionally your target must make a successful Reflex save (DC 15 + your Wis modifier) or become stuck to the ground for a number of rounds equal to your WIS modifier, taking an additional 1d12 cold damage every round while stuck."
+  },
+  {
+    "Key": "IceJawStrike.TargetBuff",
+    "enGB": "Stuck to ground cannot move. Takes 1d12 cold damage every round."
+  },
+  {
+    "Key": "FreezeMagic.Name",
+    "ProcessTemplates": false,
+    "enGB": "Freeze Magic"
+  },
+  {
+    "Key": "FreezeMagic.Desc",
+    "enGB": "Discipline: Rime Ravager\nManeuver Type: Strike\nRequired Initiator Level: Rime Ravager 8\nMake a melee attack. On a hit you dispel one ongoing spell active on your target, transforming the magic into a jagged ice shard, dealing 2d10 cold damage."
+  },
+  {
+    "Key": "IceMirrorStance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ice Mirror Stance"
+  },
+  {
+    "Key": "IceMirrorStance.Desc",
+    "enGB": "Discipline: Rime Ravager\nRequired Initiator Level: Rime Ravager 8\nWhile you maintain this stance a coat of ice forms on your skin. Attacks against you break off ice shards that are flung against attackers in melee range, dealing 2d10 cold damage, additionally attackers must make a Fortitude save (DC 16 + your WIS modifier) or suffer 1d4-1 strength damage."
+  },
+  {
+    "Key": "ShatterResistance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Shatter Resistance"
+  },
+  {
+    "Key": "ShatterResistance.Desc",
+    "enGB": "Discipline: Rime Ravager\nManeuver Type: Strike\nRequired Initiator Level: Rime Ravager 10\nWhen you initiate this maneuver you make a melee attack against a target, dealing 5d8 extra cold damage. Additionally on hit the target must make a Fortitude save (DC 17 + your WIS modifier) or become vulnerable to cold damage for a number of rounds equal to your WIS modifier."
+  },
+  {
+    "Key": "ShatterResistance.TargetBuff",
+    "enGB": "Vulnerable to cold damage."
+  },
+  {
+    "Key": "IceSpikeStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ice Spike Strike"
+  },
+  {
+    "Key": "IceSpikeStrike.Desc",
+    "enGB": "Discipline: Rime Ravager\nManeuver Type: Strike\nRequired Initiator Level: Rime Ravager 12\nWhen you initiate this maneuver you attempt to drive an Ice Spike through your targets body. For each spike present in your targets body you deal extra cold damage with this strike and a stat penalty is imposed on your target. Your target can resist a spike by making a Fortitude save (DC 18 + your WIS modifier).\n\nOne spike: -4 penalty to Dexterity, 6d4 damage\nTwo spikes: -6 to Dexterity and -6 to Strength, 6d8 damage\nThree spikes: Target is paralyzed, 6d12 damage\n\nSpikes melt after 2 turns unless new spikes are driven into your target."
+  },
+  {
+    "Key": "IceSpikeStrike.TargetBuff1",
+    "enGB": "Has 1 ice spike."
+  },
+  {
+    "Key": "IceSpikeStrike.TargetBuff2",
+    "enGB": "Has 2 ice spikes. -4 to Dexterity"
+  },
+  {
+    "Key": "IceSpikeStrike.TargetBuff3",
+    "enGB": "Has 3 ice spikes. -6 to Dexterity, -6 to Strength"
+  },
+  {
+    "Key": "BlizzardStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Blizzard Strike"
+  },
+  {
+    "Key": "BlizzardStrike.Desc",
+    "enGB": "Discipline: Rime Ravager\nManeuver Type: Strike\nRequired Initiator Level: Rime Ravager 14\nWhen you initiate this maneuver you make a melee attack against a target, dealing 8d8 extra cold damage. Additionally on hit the target must make a Fortitude save (DC 19 + your WIS modifier) or become blinded and have a 25% chance for spell failure for a number of rounds equal to your WIS bonus."
+  },
+  {
+    "Key": "BlizzardStrike.TargetBuff",
+    "enGB": "Blind. 25% spell failure chance"
+  },
+  {
+    "Key": "BonechillingStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Bonechilling Strike"
+  },
+  {
+    "Key": "BonechillingStrike.Desc",
+    "enGB": "Discipline: Rime Ravager\nManeuver Type: Strike\nRequired Initiator Level: Rime Ravager 16\nWhen you initiate this maneuver you make a melee attack against a target, dealing 8d12 extra cold damage. Additionally on hit the target must make a Will save (DC 20 + your WIS modifier) on a failure the target becomes paralyzed for a number of rounds equal to your WIS bonus, on a success the duration is shortened to 1 round."
+  },
+  {
+    "Key": "EternalBlade.Name",
+    "ProcessTemplates": false,
+    "enGB": "Eternal Blade"
+  },
+  {
+    "Key": "EternalBlade.Desc",
+    "enGB": "Eternal Blades are masters of time as well as masters of the sword. By focusing their will through their chosen weapon they can both stretch and compress time and keep their enemies off-guard by seemingly appearing in two places at once or crossing vast distances on the battlefield in the blink of an eye.\n\nEternal Blades only have access to the Diamond Mind and Riven Hourglass disciplines."
+  },
+  {
+    "Key": "EternalBladeManeuverSelection.Name",
+    "ProcessTemplates": false,
+    "enGB": "Eternal Blade Maneuver Selection"
+  },
+  {
+    "Key": "EternalBladeManeuverSelection.Desc",
+    "enGB": "You begin your career with knowledge of six martial maneuvers. The disciplines available to you are Diamond Mind and Riven Hourglass."
+  },
+  {
+    "Key": "EternalBladeStanceSelection.Name",
+    "ProcessTemplates": false,
+    "enGB": "Eternal Blade Stance Selection"
+  },
+  {
+    "Key": "EternalBladeStanceSelection.Desc",
+    "enGB": "You begin with knowledge of one 1st level stance from any discipline open to Eternal Blades. At 2nd, 5th, 9th, 14th, and 20th level, you can choose additional stances. Unlike maneuvers, stances are not expended, and you do not have to ready them. All the stances you know are available to you at all times, and you can change the stance you are currently using as a swift action. A stance is an extraordinary ability unless otherwise stated in the stance description.\n\nIn addition to normal weapon attacks available to all martial classes swordsages can perform maneuvers and counters as well as enter stances. Maneuvers are special weapon attack that rival magic in effect.\nCounters are similar but react to specific conditions or actions performed by enemies.\n\nSwordsages have access to maneuvers from the Desert Wind, Diamond Mind, Setting Sun, shadow Hand, Stone Dragon and Tiger Claw disciplines.\nAt level one 4 maneuvers can be performed per battle, this number increases as more swordsage levels are taken. During battle the number of available maneuvers can be restored using the Recover Maneuvers ability."
+  },
+  {
+    "Key": "EternalBladeDisciplineFocusSelection.Name",
+    "ProcessTemplates": false,
+    "enGB": "Eternal Blade Discipline Focus Selection"
+  },
+  {
+    "Key": "EternalBladeDisciplineFocusSelection.Desc",
+    "enGB": "At level 1 choose a discipline available to Eternal Blades. You gain the Focus feat for that discipline."
+  },
+  {
+    "Key": "TimelessReflexes.Name",
+    "ProcessTemplates": false,
+    "enGB": "Timeless Reflexes"
+  },
+  {
+    "Key": "TimelessReflexes.Desc",
+    "enGB": "You gain a +2 bonus to Reflex saves."
+  },
+  {
+    "Key": "TimelessReaction.Name",
+    "ProcessTemplates": false,
+    "enGB": "Timeless Reaction"
+  },
+  {
+    "Key": "TimelessReaction.Desc",
+    "enGB": "You gain a bonus equal to your wisdom modifier to attack and damage rolls made as part of attacks of opportunity."
+  },
+  {
+    "Key": "TimelessBody.Name",
+    "ProcessTemplates": false,
+    "enGB": "Timeless Body"
+  },
+  {
+    "Key": "TimelessBody.Desc",
+    "enGB": "You cannot be slowed or staggered."
+  },
+  {
+    "Key": "TimelessAwareness.Name",
+    "ProcessTemplates": false,
+    "enGB": "Timeless Awareness"
+  },
+  {
+    "Key": "TimelessAwareness.Desc",
+    "enGB": "You can make 2 additional attacks of opportunity per round."
+  },
+  {
+    "Key": "IslandInTime.Name",
+    "ProcessTemplates": false,
+    "enGB": "Island in Time"
+  },
+  {
+    "Key": "IslandInTime.Desc",
+    "enGB": "When making attacks of opportunity you can make a full attack instead of a single attack."
   },
 
   {
@@ -830,7 +1179,7 @@
   },
   {
     "Key": "ScythingBlade.Desc",
-    "enGB": "Discipline: Iron Heart\nManeuver Type: Strike\nRequired Initiator Level: Warblade 13\nRequired Maneuvers: 3 Iron Heart\nMake an attack as a switft action."
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Strike\nRequired Initiator Level: Warblade 13\nRequired Maneuvers: 3 Iron Heart\nMake an attack as a swift action."
   },
   {
     "Key": "AdamantineBones.Name",
@@ -997,7 +1346,7 @@
   },
   {
     "Key": "WallOfBlades.Desc",
-    "enGB": "Discipline: Iron Heart\nManeuver Type: Counter\nRequired Initiator Level: Warblade 3\nWhile this counter is active you attempt to parry incoming attacks. Uses two maneuver points when you are being attacked for the first time in a round. Each successful parry adds a cummulative -1 penalty to subsequent parries in the same round."
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Counter\nRequired Initiator Level: Warblade 3\nWhile this counter is active you attempt to parry incoming attacks. Uses two maneuver points when you are being attacked for the first time in a round. Each successful parry adds a cumulative -1 penalty to subsequent parries in the same round."
   },
   {
     "Key": "WallOfBladesBuff.Desc",
@@ -1061,7 +1410,7 @@
   },
   {
     "Key": "ManticoreParry.Desc",
-    "enGB": "Discipline: Iron Heart\nManeuver Type: Counter\nRequired Initiator Level: Warblade 11\nRequired Maneuvers: 2 Iron Heart\nWhile this counter is active you attempt to parry incoming attacks with melee weapon attacks, if your parry succeeds the attacks hits an adjacent enemy instead. Uses two maneuver points when you are being attacked for the first time in a round. Each successful parry adds a cummulative -1 penalty to subsequent parries in the same round."
+    "enGB": "Discipline: Iron Heart\nManeuver Type: Counter\nRequired Initiator Level: Warblade 11\nRequired Maneuvers: 2 Iron Heart\nWhile this counter is active you attempt to parry incoming attacks with melee weapon attacks, if your parry succeeds the attacks hits an adjacent enemy instead. Uses two maneuver points when you are being attacked for the first time in a round. Each successful parry adds a cumulative -1 penalty to subsequent parries in the same round."
   },
   {
     "Key": "ManticoreParry.LogMsg",
@@ -1172,7 +1521,7 @@
   },
   {
     "Key": "FireRiposte.Desc",
-    "enGB": "Discipline: Desert Wind\nManeuver Type: Counter\nRequired Initiator Level: Swordsage 3\nRequired Maneuvers: 1 Desert Wind\nWhile this counter is active you attempt a melee touch attack against creatures damaging you. Uses two maneuver points when you are damaged for the first time in a round. Each successful counterattack adds a cummulative -1 penalty to subsequent counterattacks in the same round."
+    "enGB": "Discipline: Desert Wind\nManeuver Type: Counter\nRequired Initiator Level: Swordsage 3\nRequired Maneuvers: 1 Desert Wind\nWhile this counter is active you attempt a melee touch attack against creatures damaging you. Uses two maneuver points when you are damaged for the first time in a round. Each successful counterattack adds a cumulative -1 penalty to subsequent counterattacks in the same round."
   },
   {
     "Key": "FireRiposte.LogMsg",
@@ -1306,7 +1655,7 @@
   },
   {
     "Key": "DragonsFlame.Desc",
-    "enGB": "Discipline: Desert Wind\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 9\nhen you initiate this maneuver, you blast forth a 30ft cone of flame that deals 6d6 points of fire damage. Creatures in the area can attempt Reflex saves (DC 15 + your Wis modifier) for half damage."
+    "enGB": "Discipline: Desert Wind\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 9\nWhen you initiate this maneuver, you blast forth a 30ft cone of flame that deals 6d6 points of fire damage. Creatures in the area can attempt Reflex saves (DC 15 + your Wis modifier) for half damage."
   },
   {
     "Key": "LeapingFlame.Name",
@@ -1315,7 +1664,7 @@
   },
   {
     "Key": "LeapingFlame.Desc",
-    "enGB": "Discipline: Desert Wind\nManeuver Type: Counter\nRequired Initiator Level: Swordsage 9\nRequired Maneuvers: 2 Desert Wind\nWhile this counter is active you when you are attacked for the first time in a round you instanstly teleport to a space adjacent to your attacker (up to 100 feet), then attack with your weapon."
+    "enGB": "Discipline: Desert Wind\nManeuver Type: Counter\nRequired Initiator Level: Swordsage 9\nRequired Maneuvers: 2 Desert Wind\nWhile this counter is active you when you are attacked for the first time in a round you instantly teleport to a space adjacent to your attacker (up to 100 feet), then attack with your weapon."
   },
   {
     "Key": "LingeringInferno.Name",
@@ -1373,7 +1722,7 @@
   },
   {
     "Key": "WyrmsFlame.Desc",
-    "enGB": "Discipline: Desert Wind\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 15\nhen you initiate this maneuver, you blast forth a 30ft cone of flame that deals 10d6 points of fire damage. Creatures in the area can attempt Reflex saves (DC 18 + your Wis modifier) for half damage."
+    "enGB": "Discipline: Desert Wind\nManeuver Type: Strike\nRequired Initiator Level: Swordsage 15\nWhen you initiate this maneuver, you blast forth a 30ft cone of flame that deals 10d6 points of fire damage. Creatures in the area can attempt Reflex saves (DC 18 + your Wis modifier) for half damage."
   },
   {
     "Key": "CreepingIceStrike.Name",
@@ -1462,7 +1811,7 @@
   },
   {
     "Key": "ThickShadows.Desc",
-    "enGB": "Discipline: Shadow Hand\nRequired Initiator Level: Swordsage 5\nRequired Maneuvers: 1 Shadow Hand\nWhile you maintain this stance, you gain +2 bonus to strength and dexterity, opponents within 20ft suffer a -2 penalty to strenght and dexterity."
+    "enGB": "Discipline: Shadow Hand\nRequired Initiator Level: Swordsage 5\nRequired Maneuvers: 1 Shadow Hand\nWhile you maintain this stance, you gain +2 bonus to strength and dexterity, opponents within 20ft suffer a -2 penalty to strength and dexterity."
   },
   {
     "Key": "ThickShadows.BuffDesc",
@@ -1489,7 +1838,7 @@
   {
     "Key": "ChronalAgression.Name",
     "ProcessTemplates": false,
-    "enGB": "Chronal Agression"
+    "enGB": "Chronal Aggression"
   },
   {
     "Key": "ChronalAgression.Desc",
@@ -1657,14 +2006,71 @@
     "Key": "Shadowcloak.Desc",
     "enGB": "Discipline: Shadow Hand\nManeuver Type: Counter\nRequired Initiator Level: Swordsage 9\nRequired Maneuvers: 2 Shadow Hand\nThe first time you are attacked in a round you gain partial concealment before the attack resolves. If you are attacked a second time in the same turn you gain total concealment. Both activations cost 1 Maneuver Point."
   },
-
   {
-    "Key": "nam.Name",
+    "Key": "StoneshellStance.Name",
     "ProcessTemplates": false,
-    "enGB": "identifier"
+    "enGB": "Stoneshell Stance"
   },
   {
-    "Key": "desc.Desc",
-    "enGB": ""
+    "Key": "StoneshellStance.Desc",
+    "enGB": "Discipline: Stone Dragon\nRequired Initiator Level: Warblade 3, Swordsage 3\nRequired Maneuvers: 1 Stone Dragon\nWhile you are in this stance, you gain a +2 enhancement bonus to your existing natural armor bonus and a further +2 bonus to AC against attacks of opportunity."
+  },
+  {
+    "Key": "BuzzingStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Buzzing Strike"
+  },
+  {
+    "Key": "BuzzingStrike.Desc",
+    "enGB": "Discipline: Diamond Mind\nManeuver Type: Strike\nRequired Initiator Level: Warblade 1, Swordsage 1\nMake a melee attack. On a hit your target must make a Will save (DC 11 + your WIS modifier) or suffer 20% additional Arcane Spell failure for 6 rounds."
+  },
+  {
+    "Key": "DiamondShimmerStance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Diamond Shimmer Stance"
+  },
+  {
+    "Key": "DiamondShimmerStance.Desc",
+    "enGB": "Discipline: Diamond Mind\nRequired Initiator Level: Warblade 13, Swordsage 13\nRequired Maneuvers: 2 Diamond Mind\nWhile you maintain this stance, you gain 21 spell resistance."
+  },
+  {
+    "Key": "DiamondLockStance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Diamond Lock Stance"
+  },
+  {
+    "Key": "DiamondLockStance.Desc",
+    "enGB": "Discipline: Diamond Mind\nRequired Initiator Level: Warblade 17, Swordsage 17\nRequired Maneuvers: 4 Diamond Mind\nWhile you maintain this stance, you cannot be directly targeted by spells."
+  },
+  {
+    "Key": "ElementalShell.Name",
+    "ProcessTemplates": false,
+    "enGB": "Elemental Shell"
+  },
+  {
+    "Key": "ElementalShell.Desc",
+    "enGB": "Discipline: Diamond Mind\nRequired Initiator Level: Warblade 1, Swordsage 1\nWhile you maintain this stance, you gain 5 energy resistance."
+  },
+  {
+    "Key": "PainEcho.Name",
+    "ProcessTemplates": false,
+    "enGB": "Pain Echo"
+  },
+  {
+    "Key": "PainEcho.Desc",
+    "enGB": "Discipline: Riven Hourglass\nManeuver Type: Counter\nRequired Initiator Level: Swordsage 1\nRequired Maneuvers: 1 Riven Hourglass\nWhile this counter is active, once per round upon being hit, you can create a mirror image of yourself. The mirror image lasts for 2 rounds."
+  },
+  {
+    "Key": "PainEcho.BuffDesc",
+    "enGB": "Mirror Image created through Pain Echo."
+  },
+  {
+    "Key": "DiamondFocus.Name",
+    "ProcessTemplates": false,
+    "enGB": "Diamond Focus"
+  },
+  {
+    "Key": "DiamondFocus.Desc",
+    "enGB": "Discipline: Diamond Mind\nManeuver Type: Boost\nRequired Initiator Level: Warblade 1, Swordsage 1\nWhen you activate this boost, you gain +1 to attacks for 1 turn."
   }
 ]

@@ -3,8 +3,8 @@ A mod for Pathfinder: Wrath of the Righteous implementing the classes found in t
 There were some changes necessary both to adapt to the Pathfinder ruleset as well as accommodate Wrath of the Righteous
 
 ## Contents
- - Warblade class
- - Swordsage class
+ - Warblade class (+ 2 Archetypes)
+ - Swordsage class (+ 2 Archetypes)
  - 100+ Maneuvers (including some Boosts and Counters) and 16 Stances from the Desert Wind, Diamond Mind, Iron Heart, Riven Hourglass, Shadow Hand, Stone Dragon, Tiger Claw and White Raven disciplines
 
 ## Deviations from Rules as Written
@@ -41,10 +41,8 @@ Counters had to be changed to a simple on/off toggle to compensate for the fact 
  - Diamond Defense was changed to a simple toggle and gives a +9 bonus to all saves at a cost of 1 maneuver point per round
 
 ### Homebrew
- - Boomerang Throw and Vicious Throw as lower level options for the level 8 Lightning Throw
- - White Raven Call as a replacement for the level 9 White Raven maneuver that cannot be implemented into WOTR; White Raven Call gives massive bonuses to self and allies for 1 round
- - 4 Shadow Hand stances, 1 Desert Wind stance
- - 3 Tiger Claw strike to replace strikes in that discipline that could not be implemented
+ - about 20 maneuvers and stances
+ - Archetypes
  - Several feats including Maneuver Focus, Maneuver Focus (Mythic) and a specific feat for each discipline with unique effects
 
 ## Compatibility with other mods
@@ -52,7 +50,9 @@ Mods that add content *should* be fine. Mods that change mechanics or provide fi
 Specifically Tabletop Tweaks Base causes some issues depending on which fixes are enabled. Feel free to report strange behaviour, but I cannot guarantee a fix for all such issues.
 
 ## Roadmap
- - Prestige Classes and Archetypes from Tome of Battle and Path of War
+ - Bugfixing
+ - Archetypes for non Nine Swords / Path of War classes
+ - rounding out the White Raven and Tiger Claw disciplines
 
 # Contributing
 This is my first mod and I learned a lot while working on it, but I'm sure there is a lot that could be improved.

@@ -2,12 +2,14 @@
 using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
+using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Facts;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 using VoidHeadWOTRNineSwords.Common;
 using VoidHeadWOTRNineSwords.Components;
 using VoidHeadWOTRNineSwords.Counters;
@@ -26,7 +28,8 @@ namespace VoidHeadWOTRNineSwords.DesertWind
         public static BlueprintActivatableAbility Activatable { get; private set; }
         const string name = "ZephyrDance.Name";
         const string desc = "ZephyrDance.Desc";
-        const string icon = Helpers.IconPrefix + "zephyrdance.png";
+        //const string icon = Helpers.IconPrefix + "zephyrdance.png";
+        static Sprite icon = AbilityRefs.Flare.Reference.Get().Icon;
 
         public static void Configure()
         {

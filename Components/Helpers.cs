@@ -30,6 +30,15 @@ namespace VoidHeadWOTRNineSwords.Components
         (ConditionsBuilder.New().CasterHasFact(MythicManeuverFocus.Guid), new ContextValue{Property = Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.MythicLevel, ValueType = ContextValueType.CasterProperty})
       };
     }
+    public static List<(ConditionsBuilder conditions, ContextValue modifier)> GetManeuverDCModifier(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty property)
+    {
+      return new List<(ConditionsBuilder conditions, ContextValue modifier)>
+      {
+        (ConditionsBuilder.New().AddTrue(), new ContextValue { Property = property, ValueType = ContextValueType.CasterProperty }),
+        (ConditionsBuilder.New().CasterHasFact(ManeuverFocus.Guid), new ContextValue{Value = 1}),
+        (ConditionsBuilder.New().CasterHasFact(MythicManeuverFocus.Guid), new ContextValue{Property = Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.MythicLevel, ValueType = ContextValueType.CasterProperty})
+      };
+    }
 
     public static void WriteCombatLogMessage(LocalString messageText, Color color, UnitEntityData source_entity = null, UnitEntityData target = null, string text = "", string description = "", string text_with_tags = "")
     {

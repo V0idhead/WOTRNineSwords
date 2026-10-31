@@ -111,7 +111,10 @@ namespace VoidHeadWOTRNineSwords.Swordsage
           SandsOfTimeHurricane.Guid,
           WrathOfTime.Guid,
           BreakTheHourglass.Guid,
-          Shadowcloak.Guid
+          Shadowcloak.Guid,
+          BuzzingStrike.Guid,
+          PainEcho.Guid,
+          DiamondFocus.Guid
         ).Configure();
 
       return swordsageManeuverSelection;

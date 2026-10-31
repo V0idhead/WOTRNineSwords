@@ -9,6 +9,7 @@ using Kingmaker.Blueprints.Root;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.RuleSystem;
 using VoidHeadWOTRNineSwords.Common;
+using VoidHeadWOTRNineSwords.Swordsage.Archetypes;
 using VoidHeadWOTRNineSwords.Warblade;
 
 namespace VoidHeadWOTRNineSwords.Swordsage
@@ -17,6 +18,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
   public static class SwordsageC
   {
     public const string Guid = "600E0E53-9A37-4D59-89ED-2234908D283B";
+    public const string SwordsageProficienciesGuid = "E6DEFCF2-0C19-45F4-A047-13F71B52DD9A";
 
     private static readonly LogWrapper log = LogWrapper.Get("VoidHeadWOTRNineSwords");
 
@@ -44,7 +46,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
       .AddToRecommendedAttributes(StatType.Strength, StatType.Constitution, StatType.Wisdom)
       .AddToNotRecommendedAttributes(StatType.Intelligence, StatType.Charisma)
       .AddPrerequisiteNoClassLevel(WarbladeC.Guid, hideInUI: true) //no multiclassing with Warblade
-      .AddPrerequisiteIsPet(not: true)
+      .AddPrerequisiteIsPet(not: true, hideInUI: true)
       .SetStartingGold(200)
       .SetStartingItems(ItemWeaponRefs.ColdIronBattleaxe.Reference.Get(), ItemArmorRefs.ScalemailStandard.Reference.Get(), ItemEquipmentUsableRefs.PotionOfCureLightWounds.Reference.Get())
       .SetPrimaryColor(11)
@@ -59,6 +61,11 @@ namespace VoidHeadWOTRNineSwords.Swordsage
       root.Progression.m_CharacterClasses = CommonTool.Append(root.Progression.m_CharacterClasses, classRef);
 
       log.Info($"{nameof(SwordsageC)} done");
+
+      VoidHeadWOTRNineSwords.Swordsage.Archetypes.RimeRavager.Configure();
+      EternalBlade.Configure();
+
+      log.Info($"{nameof(SwordsageC)} Archetypes done");
     }
 
     public static BlueprintProgression ConfigureProgression()
@@ -74,10 +81,10 @@ namespace VoidHeadWOTRNineSwords.Swordsage
       var stanceSelector = SwordsageStanceSelection.Configure();
       var disciplineFocusSelection = SwordsageDisciplineFocusSelection.Configure();
 
-      var swordsageProficiencies = FeatureConfigurator.New("SwordsageProficiencies", "E6DEFCF2-0C19-45F4-A047-13F71B52DD9A")
+      var swordsageProficiencies = FeatureConfigurator.New("SwordsageProficiencies", SwordsageProficienciesGuid)
         .SetDisplayName("SwordsageProficiencies.Name")
         .SetDescription("SwordsageProficiencies.Desc")
-        .AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.Reference.Get(), FeatureRefs.MartialWeaponProficiency.Reference.Get(), FeatureRefs.LightArmorProficiency.Reference.Get(), DisciplineProficencies.DesertWindProficencyGuid, DisciplineProficencies.DiamondMindProficencyGuid, DisciplineProficencies.IronHeartProficencyGuid, DisciplineProficencies.RivenHourglassProficencyGuid, DisciplineProficencies.ShadowHandProficencyGuid, DisciplineProficencies.StoneDragonProficencyGuid, DisciplineProficencies.TigerClawProficencyGuid })
+        .AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.Reference.Get(), FeatureRefs.MartialWeaponProficiency.Reference.Get(), FeatureRefs.LightArmorProficiency.Reference.Get(), DisciplineProficencies.DesertWindProficencyGuid, DisciplineProficencies.DiamondMindProficencyGuid, DisciplineProficencies.RivenHourglassProficencyGuid, DisciplineProficencies.ShadowHandProficencyGuid, DisciplineProficencies.StoneDragonProficencyGuid, DisciplineProficencies.TigerClawProficencyGuid })
         .SetIsClassFeature()
         .SetRanks(1)
         .Configure();
