@@ -82,7 +82,10 @@ namespace VoidHeadWOTRNineSwords.Warblade
           DiamondDefense.Guid,
           WhiteRavenCall.Guid,
           BuzzingStrike.Guid,
-          DiamondFocus.Guid
+          DiamondFocus.Guid,
+          TigerSnap.Guid,
+          TigerRake.Guid,
+          TigerMaul.Guid
         ).Configure();
 
       return warbladeManeuverSelection;

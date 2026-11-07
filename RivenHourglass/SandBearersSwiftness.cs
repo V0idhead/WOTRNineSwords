@@ -41,7 +41,6 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
               .AddSpecificBuffImmunity(buff: BuffRefs.AeonBlackHoleSlowBuff.Reference.Get())
               .AddSpecificBuffImmunity(buff: BuffRefs.SlowBuff.Reference.Get())
               .AddConditionImmunity(Kingmaker.UnitLogic.UnitCondition.Staggered)
-              //.AddAttackerSpellFailureChance(20) //failure chance works, but also for buffs and heals
               .AddSpellResistance(value: ContextValues.Constant(20))
               .Configure();
 
@@ -66,7 +65,7 @@ namespace VoidHeadWOTRNineSwords.RivenHourglass
               .AddFacts(new() { activatable })
 #if !DEBUG
               .AddPrerequisiteFeature(DisciplineProficencies.RivenHourglassProficencyGuid, hideInUI: true)
-              .AddPrerequisiteFeature(InitiatorLevels.Lvl3Guid)
+              .AddPrerequisiteFeature(InitiatorLevels.Lvl6Guid)
               .AddPrerequisiteFeaturesFromList(amount: 1, features: AllManeuversAndStances.RivenHourglassGuids.Except([Guid]).ToList())
 #endif
               .Configure(true);
