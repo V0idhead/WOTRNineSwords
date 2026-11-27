@@ -36,7 +36,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage.Archetypes
 
             var rimeRavagerProficiencies = FeatureConfigurator.New("RimeRavagerProficiencies", "39B57D69-1EA0-4629-9A1F-A91C2034AE2F")
               .SetDisplayName("RimeRavagerProficiencies.Name")
-              .SetDescription("RimeRavagereProficiencies.Desc")
+              .SetDescription("RimeRavagerProficiencies.Desc")
               .AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.Reference.Get(), FeatureRefs.MartialWeaponProficiency.Reference.Get(), FeatureRefs.LightArmorProficiency.Reference.Get(), DisciplineProficencies.DiamondMindProficencyGuid, DisciplineProficencies.IronHeartProficencyGuid, DisciplineProficencies.RivenHourglassProficencyGuid, DisciplineProficencies.ShadowHandProficencyGuid, DisciplineProficencies.StoneDragonProficencyGuid, DisciplineProficencies.TigerClawProficencyGuid })
               .SetIsClassFeature()
               .SetRanks(1)
