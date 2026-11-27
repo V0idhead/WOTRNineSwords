@@ -30,7 +30,7 @@ namespace VoidHeadWOTRNineSwords.TigerClaw
 
       var buff = BuffConfigurator.New("RabidWolfStrikeBuff", "DCA00E50-1EF7-4C22-A28E-16C1E77D24BC")
         .SetFlags(BlueprintBuff.Flags.HiddenInUi)
-        .AddAttackBonus(4)
+        .AddAttackBonusConditional(4, descriptor: Kingmaker.Enums.ModifierDescriptor.UntypedStackable)
         .AddACBonusAgainstAttacks(armorClassBonus: -4)
         //.AddACBonusUnlessFactMultiple(bonus: -4, facts: new List<BlueprintCore.Utils.Blueprint<Kingmaker.Blueprints.BlueprintUnitFactReference>> { help})
         .Configure();
