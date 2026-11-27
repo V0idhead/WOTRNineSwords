@@ -48,7 +48,7 @@ namespace VoidHeadWOTRNineSwords.Swordsage
       .AddPrerequisiteNoClassLevel(WarbladeC.Guid, hideInUI: true) //no multiclassing with Warblade
       .AddPrerequisiteIsPet(not: true, hideInUI: true)
       .SetStartingGold(200)
-      .SetStartingItems(ItemWeaponRefs.ColdIronBattleaxe.Reference.Get(), ItemArmorRefs.ScalemailStandard.Reference.Get(), ItemEquipmentUsableRefs.PotionOfCureLightWounds.Reference.Get())
+      .SetStartingItems(ItemWeaponRefs.ColdIronBattleaxe.Reference.Get(), ItemArmorRefs.StuddedStandard.Reference.Get(), ItemEquipmentUsableRefs.PotionOfCureLightWounds.Reference.Get())
       .SetPrimaryColor(11)
       .SetSecondaryColor(47)
       .SetDifficulty(5)
